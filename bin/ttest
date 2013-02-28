@@ -1,0 +1,8 @@
+#! /usr/bin/env ruby
+
+if ARGV.count < 1
+  puts 'USAGE: ttest <args>'
+  exit 1
+end
+
+puts "Your args: #{ARGV.join(', ')}"

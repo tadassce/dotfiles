@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+alias ll='ls -la' # -lahGt
+alias go='git checkout '
+alias glp='git pls'
+alias vi='vim'
+alias tmux='tmux -u'
+alias less='less -R '
+alias ..='cd ..'
+alias ttr='touch tmp/restart.txt'
+alias tailx='tail -f /opt/nginx/logs/access.log'
+alias rec_pull_bash='for i in `ls`; do cd $i; git pull; cd ..; done'
+function grp() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git $1 . }
+alias rspec_cov='RUN_COVERAGE=true rspec spec'
+alias gi='gem install'
+
+# OS X
+alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
+alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO'
+alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
+
+# Fun
+alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
+alias drumroll='afplay ~/Dropbox/Resources/Sounds/drumroll.mp3'
+alias drumrollplease='curl -Ls http://bit.ly/drumrollplease | bash'
+
+# dw specific
+alias daw='cd ~/code/dawanda_main'

@@ -1,0 +1,13 @@
+#! /usr/bin/env ruby
+require 'colorize'
+
+Dir['*'].each do |dir|
+  if File.directory? dir
+    Dir.chdir dir
+    name = dir.split('/').last
+    puts  "Updating #{name.blue}"
+    system 'git up'
+    Dir.chdir '..'
+    puts
+  end
+end

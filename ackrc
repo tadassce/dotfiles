@@ -1,0 +1,9 @@
+# Search
+--type-set=coffee=.coffee
+--type-set=haml=.haml
+--type-set=sass=.sass,.scss
+
+# Don't search
+--ignore-dir=log
+--ignore-dir=tags
+--ignore-dir=tmp

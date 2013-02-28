@@ -1,0 +1,21 @@
+set nohidden
+set noswapfile
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set smarttab
+set smartindent
+set autoindent
+set number
+set laststatus=2
+set nowrap
+set textwidth=72
+set formatoptions=qrn1
+set hlsearch
+set ignorecase
+set wildmenu
+set wildmode=list:longest,full
+set showcmd
+set splitbelow
+nmap <space> :

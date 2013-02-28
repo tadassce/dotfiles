@@ -1,0 +1,9 @@
+backups
+dw_*
+home_*
+tmux/powerline
+vim/autoload
+vim/bundle
+vim/cache
+vim/share
+vim/ruby
