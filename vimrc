@@ -148,9 +148,9 @@ abbrev gc :! open -a 'Google Chrome.app' %:p<cr>
 nmap ,ev :tabedit $MYVIMRC<cr>
 
 " Faster shortcut for commenting
-map <leader>c <Plug>CommentaryLine
-map <leader>C <Plug>CommentaryLinej<Plug>CommentaryLine
-map ,c <Plug>CommentaryLine
+map ,c \\\
+map <leader>c \\\
+map <leader>C \\\j\\\
 
 " Delete all buffers
 nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
