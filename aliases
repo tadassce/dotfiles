@@ -3,6 +3,7 @@
 alias ll='ls -la' # -lahGt
 alias go='git checkout '
 alias glp='git pls'
+alias grm='git rm $(git ls-files --deleted)'
 alias vi='vim'
 alias tmux='tmux -u'
 alias less='less -R '
