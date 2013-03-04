@@ -194,6 +194,8 @@ nmap <c-p> :CommandT<cr>
 map <leader>rt :CommandTFlush<cr>
 let g:CommandTMaxHeight=20
 
+set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf
+
 nmap <leader>f :Ack<space>
 
 " Toggle invisibles
