@@ -14,6 +14,7 @@ alias rec_pull_bash='for i in `ls`; do cd $i; git pull; cd ..; done'
 function grp() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git $1 . }
 alias rspec_cov='RUN_COVERAGE=true rspec spec'
 alias gi='gem install'
+alias prod='production'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
