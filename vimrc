@@ -256,6 +256,15 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 nmap ,r :Rlib<space>
 nmap ,s :Rspec<space>
 
+
+" Rspec focus toggle
+autocmd FileType ruby let b:switch_custom_definitions = [
+      \ {
+      \   'it \([''"].\{-}[''"]\), focus: true': 'it \1',
+      \   'it \([''"].\{-}[''"]\) do': 'it \1, focus: true do',
+      \ }]
+nnoremap + ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
+
 " plugin vim-ruby-doc
 " RB/RR/RS for Ruby/Rails/Rspec
 let g:ruby_doc_command='open'
