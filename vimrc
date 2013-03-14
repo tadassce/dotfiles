@@ -194,7 +194,7 @@ nmap <leader>p :CommandT<cr>
 nmap <c-p> :CommandT<cr>
 " map <leader>b :CommandTBuffer<cr>
 map <leader>rt :CommandTFlush<cr>
-let g:CommandTMaxHeight=20
+let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=0
 
 set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf
