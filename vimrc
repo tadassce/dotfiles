@@ -115,6 +115,8 @@ set formatoptions=qrn1
 " Set incremental searching
 set incsearch
 
+set lazyredraw
+
 " Highlight searching
 set hlsearch
 set ignorecase
