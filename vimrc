@@ -365,7 +365,7 @@ endfunction
 xnoremap <silent> <expr> p <SID>Repl()
 
 
-map ,t :NERDTreeTabsToggle<cr>
+map ,t :NERDTreeToggle<cr>
 let NERDTreeDirArrows = 0
 let NERDTreeMinimalUI = 1
 
