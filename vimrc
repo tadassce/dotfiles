@@ -197,7 +197,7 @@ map <leader>rt :CommandTFlush<cr>
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=0
 
-set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf
+set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf,vendor/*
 
 nmap <leader>f :Ack<space>
 
