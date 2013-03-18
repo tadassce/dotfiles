@@ -393,3 +393,6 @@ let g:gist_clip_command = 'pbcopy'
 
 " Make surround.vim work with lowercase s
 xmap s S
+
+" Don't go into Ex mode!
+nmap Q <nop>
