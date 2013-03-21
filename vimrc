@@ -160,8 +160,6 @@ function! s:Open(visual, ...)
   redraw!
 endfunction
 
-nmap ,ev :tabedit $MYVIMRC<cr>
-
 " Faster shortcut for commenting
 map ,c \\\
 map <leader>c \\\
@@ -176,14 +174,13 @@ nmap <space> :
 " autocmd bufwritepost .vimrc source $MYVIMRC
 map <leader>s :source $MYVIMRC<CR>:nohl<cr>:<esc>
 
+nmap ,ev :tabedit $MYVIMRC<cr>
+
 let g:netrw_list_hide= '.*\.DS_Store$'
 
 " Some abbreviations
 iab lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus felis sed mauris sagittis sodales. Maecenas hendrerit tincidunt nulla vel eleifend. Integer eu ante nisi. Morbi at mollis neque. Donec hendrerit enim ut felis semper fringilla. Morbi scelerisque ligula non risus varius sit amet pharetra ante tristique. Etiam eu ligula lectus. Sed sed cursus diam. Fusce a fringilla purus. Fusce quis nunc nec est laoreet interdum sed ac est. Duis feugiat urna eu odio facilisis sit amet consectetur libero hendrerit. Sed enim elit, faucibus id tincidunt vel, accumsan a nisi. Duis sit amet nisl ullamcorper nulla sagittis tincidunt quis et augue. Etiam nibh ipsum, ullamcorper quis aliquet ut, posuere sed orci. Nulla gravida luctus sapien, in mollis nisl semper at. Nulla tincidunt faucibus metus eget interdum.
-
-" Insert mode shortcuts
-imap <C-l> <space>=><space>
 
 " For faster window switching
 map <C-j> <C-w>j
@@ -199,9 +196,6 @@ set wmw=0
 
 " ragtag
 let g:ragtag_global_maps = 1
-
-" Markdown to HTML
-nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 
 nmap <leader>p :CommandT<cr>
 nmap <c-p> :CommandT<cr>
@@ -265,25 +259,7 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" nmap ,r :TRecentlyUsedFiles<CR>
-nmap ,r :Rlib<space>
-nmap ,s :Rspec<space>
-
-
-" Rspec focus toggle
-autocmd FileType ruby let b:switch_custom_definitions = [
-      \ {
-      \   'it \([''"].\{-}[''"]\), focus: true': 'it \1',
-      \   'it \([''"].\{-}[''"]\) do': 'it \1, focus: true do',
-      \ }]
-nnoremap ! ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
-
-" plugin vim-ruby-doc
-" RB/RR/RS for Ruby/Rails/Rspec
-let g:ruby_doc_command='open'
-
 set completefunc=syntaxcomplete#Complete
-
 
 " Lazy shift
 if has("user_commands")
@@ -299,30 +275,6 @@ if has("user_commands")
   command! -bang Bd bd<bang>
   command! -bang K k<bang>
 endif
-
-" statusline
-" cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
-" format markers:
-"   %< truncation point
-"   %n buffer number
-"   %f relative path to file
-"   %m modified flag [+] (modified), [-] (unmodifiable) or nothing
-"   %r readonly flag [RO]
-"   %y filetype [ruby]
-"   %= split point for left and right justification
-"   %-35. width specification
-"   %l current line number
-"   %L number of lines in buffer
-"   %c current column number
-"   %V current virtual column number (-n), if different from %c
-"   %P percentage through buffer
-"   %) end of width specification
-"
-" Fugitive (git) status line
-" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-" set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
-" set statusline=%<\ %n:%f\ %m%r%y%{fugitive#statusline()}%=%-20.(L:%l\/%L\ C:%c%V\ (%P)%)
-
 
 " Join lines without surrounding whitespace
 nnoremap gJ :call <SID>JoinWithoutSpaces(0)<cr>
@@ -352,6 +304,15 @@ nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
 nnoremap - :Switch<cr>
+nnoremap <tab> :Switch<cr>
+
+let g:todo_switch_definition =
+      \ {
+      \    '- \[ \]\(.*\)$': '- [x]\1',
+      \    '- \[x\]\(.*\)$': '- [ ]\1',
+      \ }
+
+autocmd BufEnter,BufNew *.txt set filetype=markdown
 
 function! HTMLEscape()
 ruby << EOF
