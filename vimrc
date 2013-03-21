@@ -174,7 +174,7 @@ nmap <space> :
 
 " Auto reload vim when this file is saved
 " autocmd bufwritepost .vimrc source $MYVIMRC
-map <leader>s :source $MYVIMRC<CR>
+map <leader>s :source $MYVIMRC<CR>:nohl<cr>:<esc>
 
 let g:netrw_list_hide= '.*\.DS_Store$'
 
