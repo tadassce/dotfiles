@@ -276,7 +276,7 @@ autocmd FileType ruby let b:switch_custom_definitions = [
       \   'it \([''"].\{-}[''"]\), focus: true': 'it \1',
       \   'it \([''"].\{-}[''"]\) do': 'it \1, focus: true do',
       \ }]
-nnoremap + ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
+nnoremap ! ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
 
 " plugin vim-ruby-doc
 " RB/RR/RS for Ruby/Rails/Rspec
