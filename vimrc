@@ -273,8 +273,11 @@ if has("user_commands")
   command! -bang QA qa<bang>
   command! -bang Qa qa<bang>
   command! -bang Bd bd<bang>
-  command! -bang K k<bang>
 endif
+
+nmap K k
+xmap s S
+
 
 " Join lines without surrounding whitespace
 nnoremap gJ :call <SID>JoinWithoutSpaces(0)<cr>
@@ -364,9 +367,6 @@ endfunction
 
 
 let g:gist_clip_command = 'pbcopy'
-
-" Make surround.vim work with lowercase s
-xmap s S
 
 " Don't go into Ex mode!
 nmap Q <nop>
