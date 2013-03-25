@@ -307,7 +307,6 @@ nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
 nnoremap - :Switch<cr>
-nnoremap <tab> :Switch<cr>
 
 let g:todo_switch_definition =
       \ {
@@ -343,6 +342,7 @@ xnoremap <silent> <expr> p <SID>Repl()
 
 
 map ,t :NERDTreeToggle<cr>
+map <tab> :NERDTreeToggle<cr>
 let NERDTreeDirArrows = 0
 let NERDTreeMinimalUI = 1
 
