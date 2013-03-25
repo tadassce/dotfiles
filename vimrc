@@ -134,9 +134,12 @@ set wildmenu
 set wildmode=list:longest,full
 set showcmd
 
-
 " Split windows below the current window.
 set splitbelow
+
+" Spell checking
+nmap <silent> ,s :set spell!<CR>
+set spelllang=en_us
 
 " Hard-wrap paragraphs of text
 nnoremap <leader>q gqip
