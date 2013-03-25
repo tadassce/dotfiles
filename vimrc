@@ -61,6 +61,9 @@ set cursorline
 " Forget compatibility with Vi. Who cares.
 set nocompatible
 
+" Make backspace work properly (no setting makes it vi compatible)
+set backspace=indent,eol,start
+
 set enc=utf-8
 
 " Enable filetypes
