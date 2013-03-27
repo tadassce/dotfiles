@@ -57,3 +57,10 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 source ~/.aliases
+
+
+# search up/down by taking the current line content into account
+bindkey -M viins '^[[A' history-beginning-search-backward
+bindkey -M viins '^[[B' history-beginning-search-forward
+bindkey -M vicmd 'k' history-beginning-search-backward
+bindkey -M vicmd 'j' history-beginning-search-forward
