@@ -64,3 +64,6 @@ bindkey -M viins '^[[A' history-beginning-search-backward
 bindkey -M viins '^[[B' history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
+
+# go up one dir with <C-u>
+bindkey -M viins -s ^U "cd ..\C-m"
