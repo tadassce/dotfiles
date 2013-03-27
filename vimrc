@@ -176,6 +176,8 @@ nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
 
 nmap <space> :
 
+nmap ,z :sh<cr>
+
 " Auto reload vim when this file is saved
 " autocmd bufwritepost .vimrc source $MYVIMRC
 map <leader>s :source $MYVIMRC<CR>:nohl<cr>:<esc>
