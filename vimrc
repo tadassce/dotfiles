@@ -13,8 +13,6 @@ call pathogen#helptags()
 " otherwise:
 syntax enable
 
-call togglebg#map("<F5>")
-
 " The ones that are suffixed by 'ts' are my forks..
 colorscheme busybee_ts
 " colorscheme github_ts " light
@@ -177,6 +175,8 @@ nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
 nmap <space> :
 
 nmap ,z :sh<cr>
+
+nmap <F5> :!touch tmp/restart.txt<cr><cr>
 
 " Auto reload vim when this file is saved
 " autocmd bufwritepost .vimrc source $MYVIMRC
