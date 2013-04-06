@@ -220,7 +220,7 @@ nmap <leader>f :Ack<space>
 nmap ,l :set list!<CR>
 
 " Indent guides
-let g:indent_guides_start_level=3
+let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors=0
 hi IndentGuidesOdd  ctermbg=235
