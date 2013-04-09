@@ -165,7 +165,7 @@ function! s:Open(visual, ...)
 endfunction
 
 " Faster shortcut for commenting
-map ,c \\\
+" map ,c \\\
 map <leader>c \\\
 map <leader>C \\\j\\\
 
@@ -353,6 +353,11 @@ map ,t :NERDTreeToggle<cr>
 map <tab> :NERDTreeToggle<cr>
 let NERDTreeDirArrows = 0
 let NERDTreeMinimalUI = 1
+
+" MiniBufExplorer
+let g:statusLineText = ''
+map ,b   :MiniBufExplorer<cr>
+map ,cb :CMiniBufExplorer<cr>
 
 " Rebuild tags database:
 command! RebuildTags call s:RebuildTags()
