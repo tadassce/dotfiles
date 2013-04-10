@@ -29,3 +29,4 @@ alias drumrollplease='curl -Ls http://bit.ly/drumrollplease | bash'
 
 # dw specific
 alias daw='cd ~/code/dawanda_main'
+alias lo='loveos-cli'
