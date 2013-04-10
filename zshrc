@@ -67,3 +67,7 @@ bindkey -M vicmd 'j' history-beginning-search-forward
 
 # go up one dir with <C-u>
 bindkey -M viins -s ^U "cd ..\C-m"
+
+precmd(){
+  echo -ne "\e]1;${PWD##*/}\a"
+}
