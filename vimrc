@@ -354,11 +354,6 @@ map <tab> :NERDTreeToggle<cr>
 let NERDTreeDirArrows = 0
 let NERDTreeMinimalUI = 1
 
-" MiniBufExplorer
-let g:statusLineText = ''
-map ,b   :MiniBufExplorer<cr>
-map ,cb :CMiniBufExplorer<cr>
-
 " Rebuild tags database:
 command! RebuildTags call s:RebuildTags()
 function! s:RebuildTags()
