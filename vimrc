@@ -34,7 +34,7 @@ set linespace=0
 
 " colorcolumn for short, adds a vertical ruler
 set cc=80
-" hi ColorColumn ctermbg=white guibg=white
+" hi ColorColumn ctermbg=255 guibg=white
 hi ColorColumn ctermbg=235 guibg=black
 
 " disable beep (e.g. when hitting Esc in normal mode)
