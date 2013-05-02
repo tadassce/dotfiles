@@ -1,9 +1,7 @@
-"
 " My .vimrc File
 " Maintained by: Tadas Scerbinskas
 " tadas@sce.lt
 " http://tadas.me
-"
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -28,6 +26,7 @@ set guifont=espresso_mono_for_powerline:h13
 
 " let g:Powerline_symbols = 'unicode'
 let g:Powerline_symbols = 'fancy'
+" let g:Powerline_colorscheme = 'tadas'
 
 " line height
 set linespace=0
@@ -53,7 +52,7 @@ set ffs=unix
 " set guicursor+=n-v-c:blinkon0
 
 " Highlight current line
-set cursorline
+" set cursorline
 " hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
 
 " Forget compatibility with Vi. Who cares.
@@ -119,7 +118,7 @@ set incsearch
 set lazyredraw
 
 " Highlight searching
-set hlsearch
+" set hlsearch
 set ignorecase
 
 " Enable code folding
