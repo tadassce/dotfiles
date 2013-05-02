@@ -65,7 +65,7 @@ hi Directory	guifg=#990000
 " }}}
 
 " {{{ Search, Visual, etc
-hi Visual		guifg=#FFFFFF guibg=#3465a4 gui=none ctermbg=81
+hi Visual		guifg=#FFFFFF guibg=#3465a4 gui=none ctermbg=147
 hi VisualNOS    guifg=#FFFFFF guibg=#204a87 gui=none
 hi IncSearch	guibg=#cdcdfd guifg=#000000 gui=italic
 hi Search		guibg=#cdcdfd guifg=#000000 gui=italic
