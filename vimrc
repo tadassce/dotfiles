@@ -321,8 +321,6 @@ let g:todo_switch_definition =
       \    '- \[x\]\(.*\)$': '- [ ]\1',
       \ }
 
-autocmd BufEnter,BufNew *.txt set filetype=markdown
-
 function! HTMLEscape()
 ruby << EOF
   require 'cgi'
