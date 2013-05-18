@@ -18,7 +18,7 @@ if version > 580
 	syntax reset
     endif
 endif
-let g:colors_name="github"
+let g:colors_name="github_ts"
 
 hi Normal       guifg=#000000 guibg=#F8F8FF
 hi ColorColumn  guibg=#e7e7e7
