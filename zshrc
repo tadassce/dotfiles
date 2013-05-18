@@ -71,3 +71,6 @@ bindkey -M viins -s ^U "cd ..\C-m"
 precmd(){
   echo -ne "\e]1;${PWD##*/}\a"
 }
+
+disable -r time       # disable shell reserved word
+alias time='time -p ' # -p for POSIX output
