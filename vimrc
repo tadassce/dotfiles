@@ -282,9 +282,9 @@ if has("user_commands")
   command! -bang Bd bd<bang>
 endif
 
-nmap K k
+nmap J 5j
+nmap K 5k
 xmap s S
-
 
 " Join lines without surrounding whitespace
 nnoremap gJ :call <SID>JoinWithoutSpaces(0)<cr>
