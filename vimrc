@@ -12,8 +12,8 @@ call pathogen#helptags()
 syntax enable
 
 " The ones that are suffixed by 'ts' are my forks..
-colorscheme busybee_ts
-" colorscheme github_ts " light
+" colorscheme busybee_ts
+colorscheme github_ts " light
 " colorscheme code_ts " dark
 " colorscheme tomorrow-night-ts
 " colorscheme tomorrow-night-eighties-ts
@@ -33,8 +33,8 @@ set linespace=0
 
 " colorcolumn for short, adds a vertical ruler
 set cc=80
-" hi ColorColumn ctermbg=255 guibg=white
-hi ColorColumn ctermbg=235 guibg=black
+hi ColorColumn ctermbg=255 guibg=white
+" hi ColorColumn ctermbg=235 guibg=black
 
 " disable beep (e.g. when hitting Esc in normal mode)
 set vb
