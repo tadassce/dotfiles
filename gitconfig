@@ -37,7 +37,6 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  standup = "!git log --since yesterday --author `git config user.email` --pretty=format:'%Cred%h%Creset -%Creset %s'"
   ls = ls-files
   ignored = ls-files -o -i --exclude-standard
   discard = checkout -- .
