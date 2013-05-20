@@ -6,6 +6,8 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
+
 " if you want vim to overrule your settings, use:
 " syntax on
 " otherwise:
