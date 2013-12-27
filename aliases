@@ -16,7 +16,7 @@ alias ..='cd ..'
 alias ttr='touch tmp/restart.txt'
 alias tailx='tail -f /opt/nginx/logs/access.log'
 alias rec_pull_bash='for i in `ls`; do cd $i; git pull; cd ..; done'
-function grp() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git $1 . }
+function grp() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null }
 alias rspec_cov='RUN_COVERAGE=true rspec spec'
 alias gi='gem install'
 alias prod='production'
