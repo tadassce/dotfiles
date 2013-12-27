@@ -37,7 +37,7 @@ fi
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
   TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
     # "earthquake 3 0" \
-    "pwd 60 0" \
+    # "pwd 60 0" \
     # "vcs_branch 29 0" \
     # "vcs_compare 60 255" \
     # "vcs_staged 64 255" \
