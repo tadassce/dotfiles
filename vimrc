@@ -8,42 +8,46 @@ call pathogen#helptags()
 
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 
-" if you want vim to overrule your settings, use:
-" syntax on
-" otherwise:
 syntax enable
 
-" The ones that are suffixed by 'ts' are my forks..
-" colorscheme busybee_ts
-colorscheme github_ts " light
+" The ones that are suffixed by 'ts' are my 'forks'..
+colorscheme purplebee
+" colorscheme github_ts " light
 " colorscheme code_ts " dark
 " colorscheme tomorrow-night-ts
 " colorscheme tomorrow-night-eighties-ts
-" colorscheme grb256_ts
+" colorscheme grb256_ts " dark
+" colorscheme topfunky-light
 
-" set guifont=monaco:h14
-" set guifont=menlo:h14
-set guifont=espresso_mono:h13
-set guifont=espresso_mono_for_powerline:h13
+function! ToggleColors()
+  if (g:colors_name == 'purplebee')
+    colors github_ts
+  else
+    colors purplebee
+  endif
+endfunction
+nnoremap <F5> :call ToggleColors()<cr>
 
-" let g:Powerline_symbols = 'unicode'
-let g:Powerline_symbols = 'fancy'
-" let g:Powerline_colorscheme = 'tadas'
+" set guifont=monaco:h13
+set guifont=monaco_for_powerline:h13
+" set guifont=menlo:h13
+" set guifont=menlo_for_powerline:h13
+" set guifont=espresso_mono:h13
+" set guifont=espresso_mono_for_powerline:h13
+" set guifont=source_code_pro:h13
 
 " line height
 set linespace=0
 
 " colorcolumn for short, adds a vertical ruler
 set cc=80
-hi ColorColumn ctermbg=255 guibg=white
-" hi ColorColumn ctermbg=235 guibg=black
+hi ColorColumn ctermbg=235 guibg=black
 
 " disable beep (e.g. when hitting Esc in normal mode)
 set vb
 
 set clipboard=unnamed
 
-" set ffs=unix,dos
 set ffs=unix
 
 " Cursor
@@ -55,6 +59,7 @@ set ffs=unix
 
 " Highlight current line
 " set cursorline
+" hi CursorLine cterm=NONE ctermbg=235 guibg=black
 " hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
 
 " Forget compatibility with Vi. Who cares.
@@ -75,13 +80,6 @@ set autowrite
 
 " Display current cursor position in lower right corner.
 set ruler
-
-" Want a different map leader than \
-" set mapleader = ","
-
-" Ever notice a slight lag after typing the leader key + command? This lowers
-" the timeout.
-" set timeoutlen=500
 
 " Switch between buffers without saving
 " set hidden
@@ -104,8 +102,12 @@ set autoindent
 
 set number
 
-" Always show the status line
-set laststatus=2
+set undodir=~/.vim/undo
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+
+set autoread
 
 " Better line wrapping
 set nowrap
@@ -120,7 +122,7 @@ set incsearch
 set lazyredraw
 
 " Highlight searching
-" set hlsearch
+set hlsearch
 set ignorecase
 
 " Enable code folding
@@ -133,18 +135,32 @@ set wildmenu
 set wildmode=list:longest,full
 set showcmd
 
+" don't show startup message when opening Vim without a file
+set shortmess+=I
+
 " Split windows below the current window.
 set splitbelow
+
+set showbreak=↪\ " keep the space
 
 " Spell checking
 nmap <silent> ,s :set spell!<CR>
 set spelllang=en_us
+" word completion - <C-N> or <C-P>
+set complete+=kspell
+" zg - add word to the dictionary
+
+" Dash documentation lookup
+nmap <silent> ,D <Plug>DashSearch
 
 " Hard-wrap paragraphs of text
 nnoremap <leader>q gqip
 
 " Shortcut to fold tags with leader + ft
 nnoremap <leader>ft Vatzf
+
+nmap ,f :FoldMatching def -1<cr>
+" unfold all: zE
 
 " Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
@@ -165,8 +181,11 @@ function! s:Open(visual, ...)
   redraw!
 endfunction
 
+map ,o :Open<cr>
+map ,O 0f(vi):Open<cr>
+
 " Faster shortcut for commenting
-" map ,c \\\
+map ,c \\\
 map <leader>c \\\
 map <leader>C \\\j\\\
 
@@ -177,13 +196,11 @@ nmap <space> :
 
 nmap ,z :sh<cr>
 
-nmap <F5> :!touch tmp/restart.txt<cr><cr>
-
 " Auto reload vim when this file is saved
 " autocmd bufwritepost .vimrc source $MYVIMRC
 map <leader>s :source $MYVIMRC<CR>:nohl<cr>:<esc>
 
-nmap ,ev :tabedit $MYVIMRC<cr>
+nmap ,ev :e $MYVIMRC<cr>
 
 let g:netrw_list_hide= '.*\.DS_Store$'
 
@@ -206,22 +223,16 @@ set wmw=0
 " ragtag
 let g:ragtag_global_maps = 1
 
-nmap <leader>p :CommandT<cr>
-nmap <c-p> :CommandT<cr>
-" map <leader>b :CommandTBuffer<cr>
-map <leader>rt :CommandTFlush<cr>
-let g:CommandTMaxHeight=10
-let g:CommandTMatchWindowAtTop=0
-
-set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf,vendor/*
+set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf,*.ico
+set wildignore+=vendor/*,*/node_modules/*,*/tmp/*
 
 nmap <leader>f :Ack<space>
 
 " Toggle invisibles
-nmap ,l :set list!<CR>
+nmap ,; :set list!<CR>
 
 " Indent guides
-let g:indent_guides_start_level=2
+let g:indent_guides_start_level=1
 let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors=0
 hi IndentGuidesOdd  ctermbg=235
@@ -231,28 +242,16 @@ nmap ,i :IndentGuidesToggle<CR>
 " Toggle wrapping
 nmap ,w :set nowrap!<CR>
 
-" Remove search highlighting
-nmap ,m :nohl<cr>
-
-" Show trailing whitespace:
-" highlight ExtraWhitespace ctermbg=red guibg=red
-" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-
-" Show trailing whitespace
-nmap ,; /\s\+$<cr>
-
-" Delete trailing whitespace
-nmap ,: :%s/\s\+$<cr>
-
-" Copy current line to clipboard
-" nmap ,c :.!pbcopy
+" Toggle search highlighting
+nmap ,m :set hls!<cr>
 
 " vim-slime configuration (<C-cc> to send to tmux)
 let g:slime_target = "tmux"
 
 " Notes
 nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
-nmap ,not :e ~/Dropbox/Notes/dawanda\ todo.txt<CR>
+nmap ,ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
+nmap ,dtd :e ~/Dropbox/Notes/dawanda-todo.txt<CR>
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
@@ -284,7 +283,7 @@ if has("user_commands")
   command! -bang Bd bd<bang>
 endif
 
-nmap J 5j
+" nmap J 5j
 nmap K 5k
 xmap s S
 
@@ -332,6 +331,8 @@ EOF
 endfunction
 nnoremap <Leader>h :call HTMLEscape()<cr>
 
+nmap ,x A # =><esc>:%!xmpfilter<cr>
+nmap ,X 0f#hDA # =><esc>:%!xmpfilter<cr>
 
 " Get rid of annoying register rewriting when pasting on visually selected
 " text.
@@ -348,10 +349,39 @@ endfunction
 xnoremap <silent> <expr> p <SID>Repl()
 
 
-map ,t :NERDTreeToggle<cr>
 map <tab> :NERDTreeToggle<cr>
 let NERDTreeDirArrows = 0
 let NERDTreeMinimalUI = 1
+hi Directory guifg=#7e8aa2 ctermfg=60
+
+" Always show the status line
+set laststatus=2
+" or don't
+" set laststatus=0
+
+" minibufexpl
+map ,b :MBEToggle<cr>:<esc>
+let g:miniBufExplorerAutoStart = 0
+
+hi MBENormal              ctermfg=187 ctermbg=237 guifg=#cfbfad guibg=#2e2e3f guisp=#2e2e3f
+hi MBEVisibleActiveNormal ctermfg=7 ctermbg=60  guibg=#5f6086
+hi MBEVisibleNormal       ctermfg=60  ctermbg=237  guifg=#5f6086 guibg=#2e2e3f guisp=#4e4e8f
+"
+" hi MBEChanged guibg=darkblue ctermbg=darkblue termbg=white
+" MBENormal               - for buffers that have NOT CHANGED and are NOT VISIBLE
+" MBEChanged              - for buffers that have CHANGED and are NOT VISIBLE
+" MBEVisibleNormal        - for buffers that have NOT CHANGED and are VISIBLE
+" MBEVisibleChanged       - for buffers that have CHANGED and are VISIBLE
+" MBEVisibleActiveNormal  - for buffers that have NOT CHANGED and are VISIBLE and is the active buffer
+" MBEVisibleActiveChanged - for buffers that have CHANGED and are VISIBLE and is the active buffer
+
+nmap ]w :tabn<cr>
+nmap [w :tabp<cr>
+
+" vim-ctrlspace colors
+hi CtrlSpaceSelected term=reverse ctermfg=60  ctermbg=234 cterm=bold
+hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=236  cterm=NONE
+hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
 
 " Rebuild tags database:
 command! RebuildTags call s:RebuildTags()
@@ -372,8 +402,16 @@ function! s:TagsExclude(bang, ...)
   call extend(g:ctags_exclude_patterns, a:000)
 endfunction
 
-
 let g:gist_clip_command = 'pbcopy'
 
 " Don't go into Ex mode!
 nmap Q <nop>
+
+" Rename window title
+nmap ,, :set titlestring=
+
+" Move tabs left/right in MacVim
+map <s-d-right> :execute "tabmove" tabpagenr()<cr>
+map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>
+
+let g:mta_use_matchparen_group = 1
