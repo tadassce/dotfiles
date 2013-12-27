@@ -1,4 +1,5 @@
-" Vim color file - BusyBee_TS
+" Vim color file - PurpleBee
+" orignally BusyBee with quite a bit of changes by @tadassce
 
 set background=dark
 if version > 580
@@ -9,7 +10,15 @@ if version > 580
 endif
 
 set t_Co=256
-let g:colors_name = "BusyBee_TS"
+let g:colors_name = "PurpleBee"
+
+" ----------------
+" 103 light purple
+" 208 orange
+" 230 light yellow
+" 236 darker grey
+" 238 grey
+" ----------------
 
 "hi IncSearch -- no settings --
 "hi WildMenu -- no settings --
@@ -30,7 +39,9 @@ hi NonText guifg=#808080 guibg=#202020 guisp=#202020 gui=NONE ctermfg=8 ctermbg=
 "hi Ignore -- no settings --
 hi Debug guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 hi PMenuSbar guifg=NONE guibg=#202020 guisp=#202020 gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
-hi Identifier guifg=#90a642 guibg=NONE guisp=NONE gui=NONE ctermfg=143 ctermbg=NONE cterm=NONE
+" hi Identifier guifg=#90a642 guibg=NONE guisp=NONE gui=NONE ctermfg=143 ctermbg=NONE cterm=NONE
+" hi Identifier guifg=#5c6a94 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
+hi Identifier guifg=#7281b6 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 hi SpecialChar guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 hi Conditional guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 hi StorageClass guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
@@ -42,7 +53,7 @@ hi Normal guifg=#e2e2e5 guibg=#202020 guisp=#202020 gui=NONE ctermfg=254 ctermbg
 hi Label guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 "hi CTagsImport -- no settings --
 hi PMenuSel guifg=#000000 guibg=#9cb348 guisp=#9cb348 gui=NONE ctermfg=NONE ctermbg=143 cterm=NONE
-"hi Search -- no settings --
+hi Search guibg=#7e8aa2 ctermbg=103
 "hi CTagsGlobalVariable -- no settings --
 hi Delimiter guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 hi Statement guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
@@ -52,7 +63,7 @@ hi Comment guifg=#3f3f3f guibg=NONE guisp=NONE gui=italic ctermfg=237 ctermbg=NO
 hi Character guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 "hi TabLineSel -- no settings --
 hi Number guifg=#5ba66d guibg=NONE guisp=NONE gui=NONE ctermfg=71 ctermbg=NONE cterm=NONE
-hi Boolean guifg=#b1d631 guibg=NONE guisp=NONE gui=NONE ctermfg=149 ctermbg=NONE cterm=NONE
+hi Boolean guifg=#97a9dd guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 hi Operator guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 hi CursorLine guifg=NONE guibg=#202020 guisp=#202020 gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 "hi Union -- no settings --
@@ -64,7 +75,8 @@ hi CursorLine guifg=NONE guibg=#202020 guisp=#202020 gui=NONE ctermfg=NONE cterm
 "hi ModeMsg -- no settings --
 hi CursorColumn guifg=NONE guibg=#202020 guisp=#202020 gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 hi Define guifg=#faf4c6 guibg=NONE guisp=NONE gui=NONE ctermfg=230 ctermbg=NONE cterm=NONE
-hi Function guifg=#d6d64d guibg=NONE guisp=NONE gui=NONE ctermfg=185 ctermbg=NONE cterm=NONE
+" hi Function guifg=#d6d64d guibg=NONE guisp=NONE gui=NONE ctermfg=185 ctermbg=NONE cterm=NONE
+  hi Function guifg=#97a9dd guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 "hi FoldColumn -- no settings --
 hi PreProc guifg=#faf4c6 guibg=NONE guisp=NONE gui=NONE ctermfg=230 ctermbg=NONE cterm=NONE
 "hi EnumerationName -- no settings --
@@ -124,3 +136,5 @@ hi doxygenspecialonelinedesc guifg=#ad600b guibg=NONE guisp=NONE gui=NONE ctermf
 hi cspecialcharacter guifg=#c080d0 guibg=#404040 guisp=#404040 gui=NONE ctermfg=176 ctermbg=238 cterm=NONE
 hi doxygensmallspecial guifg=#fdd090 guibg=NONE guisp=NONE gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
 "hi clear -- no settings --
+
+hi ColorColumn ctermbg=235 guibg=black
