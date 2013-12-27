@@ -3,7 +3,6 @@ nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr>
 
 let b:switch_custom_definitions = [g:todo_switch_definition]
 
-nnoremap <buffer> x :Switch<cr>
-nnoremap <buffer> C o- [ ]<space>
-nnoremap <buffer> J :m .+1<cr>==
-nnoremap <buffer> K :m .-2<cr>==
+nnoremap <buffer> ,c o- [ ]<space>
+" nnoremap <buffer> J :m .+1<cr>==
+" nnoremap <buffer> K :m .-2<cr>==
