@@ -21,11 +21,13 @@ alias rspec_cov='RUN_COVERAGE=true rspec spec'
 alias gi='gem install'
 alias prod='production'
 alias pow='powder'
+alias start_memcached='/usr/local/opt/memcached/bin/memcached'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO'
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
+alias brewup="brew update && echo \"$fg[blue]==>$reset_color\" && brew outdated"
 
 # Fun
 alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
@@ -35,3 +37,4 @@ alias drumrollplease='curl -Ls http://bit.ly/drumrollplease | bash'
 # dw specific
 alias daw='cd ~/code/dawanda_main'
 alias lo='loveos-cli'
+alias cl='cd ~/code/loveos'
