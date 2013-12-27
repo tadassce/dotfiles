@@ -19,15 +19,17 @@
 [color "diff"]
   whitespace = red reverse
 [core]
-  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = /Users/tadas/.gitignore_global
   editor = /usr/local/bin/vim
   warnambiguousrefs = false
+  pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
 [alias]
   co = checkout
   ci = commit -v
   cia = commit -av
-  st = status -sb
+  cp = cherry-pick
+  st = status
   br = branch
   type = cat-file -t
   dump = cat-file -p
@@ -56,3 +58,5 @@
 [pull]
   default = tracking
   rebase = true
+[git-up "bundler"]
+  check = true
