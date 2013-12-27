@@ -1,6 +1,7 @@
 backups
 dw_*
 home_*
+powerline
 tmux/powerline
 vim/.netrwhist
 vim/autoload
