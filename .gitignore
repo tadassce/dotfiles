@@ -2,8 +2,14 @@ backups
 dw_*
 home_*
 tmux/powerline
+vim/.netrwhist
 vim/autoload
 vim/bundle
+vim/bundlenot/
 vim/cache
-vim/share
+vim/doc/
+vim/plugin/
 vim/ruby
+vim/share
+vim/spell/
+vim/undo/
