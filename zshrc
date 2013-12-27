@@ -25,7 +25,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(brew bundler extract Forklift gem github git github osx rails3 urltools vi-mode)
+plugins=(brew bundler extract Forklift gem github git osx rails urltools vi-mode)
 # brew: brews (and brew's dirs in front of /usr/bin)
 # bundler: bi, bu, be [cmd]
 # extract
@@ -37,8 +37,6 @@ plugins=(brew bundler extract Forklift gem github git github osx rails3 urltools
 # rails3: rc, rdb, rg, rdm, rs
 # urltools: urlencode, urldecode
 
-source $ZSH/oh-my-zsh.sh
-
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 PATH=$PATH:/usr/X11/bin:/opt/local/bin:/usr/local/mysql/bin
 PATH=$PATH:/opt/nginx/sbin
@@ -47,7 +45,7 @@ PATH=$PATH:/Users/tadas/Dropbox/Dotfiles/bin
 PATH=$PATH:./bin
 
 export PATH
-export GREP_COLOR=7
+export GREP_COLOR=35
 export EDITOR=vim
 
 # For tmux-powerline
@@ -65,12 +63,18 @@ bindkey -M viins '^[[B' history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 
-# go up one dir with <C-u>
-bindkey -M viins -s ^U "cd ..\C-m"
-
 precmd(){
   echo -ne "\e]1;${PWD##*/}\a"
 }
 
 disable -r time       # disable shell reserved word
 alias time='time -p ' # -p for POSIX output
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Ruby
+export RUBY_GC_MALLOC_LIMIT=90000000
+export RUBY_FREE_MIN=200000
+
+source $ZSH/oh-my-zsh.sh
