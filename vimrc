@@ -249,7 +249,7 @@ nmap ,m :set hls!<cr>
 let g:slime_target = "tmux"
 
 " Add a TODO comment above current line
-nmap ,t OTODO <esc>==$"=strftime("(%Y-%m-%d) ")<cr>p\\\A
+nmap ,t O<esc>0CTODO <esc>==$"=strftime("(%Y-%m-%d) ")<cr>p\\\A
 
 " Notes
 nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
