@@ -248,6 +248,9 @@ nmap ,m :set hls!<cr>
 " vim-slime configuration (<C-cc> to send to tmux)
 let g:slime_target = "tmux"
 
+" Add a TODO comment above current line
+nmap ,t OTODO <esc>==$"=strftime("(%Y-%m-%d) ")<cr>p\\\A
+
 " Notes
 nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
 nmap ,ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
