@@ -24,6 +24,7 @@ alias gi='gem install'
 alias prod='production'
 alias pow='powder'
 alias start_memcached='/usr/local/opt/memcached/bin/memcached'
+alias largefiles='find . -ls | sort -n -k 7 | tail -n 20'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
