@@ -62,8 +62,8 @@ set cursorline
 " ...only in the current window
 augroup CursorLine
   au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
+  au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
+  au WinLeave,InsertEnter * setlocal nocursorline
 augroup END
 " hi CursorLine cterm=NONE ctermbg=235 guibg=black
 " hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
