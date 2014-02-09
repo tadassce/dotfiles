@@ -426,3 +426,14 @@ map <s-d-right> :execute "tabmove" tabpagenr()<cr>
 map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>
 
 let g:mta_use_matchparen_group = 1
+
+function! ShowColors()
+  let num = 255
+  while num >= 0
+    exec 'hi col_'.num.' ctermbg='.num.' ctermfg=white'
+    exec 'syn match col_'.num.' "ctermbg='.num.':...." containedIn=ALL'
+    call append(0, 'ctermbg='.num.':....')
+    let num = num - 1
+  endwhile
+endfunction
+nnoremap ,C :call ShowColors()<cr>
