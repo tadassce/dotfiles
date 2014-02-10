@@ -65,7 +65,7 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
   au WinLeave,InsertEnter * setlocal nocursorline
 augroup END
-hi CursorLine ctermbg=236
+hi CursorLine ctermbg=234
 " hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
 
 " Forget compatibility with Vi. Who cares.
