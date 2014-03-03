@@ -15,3 +15,7 @@ set fuopt+=maxhorz
 
 " Maximize window
 nmap ,x :set columns=999 lines=99<CR>
+
+" Move tabs left/right in MacVim
+map <s-d-right> :execute "tabmove" tabpagenr()<cr>
+map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>

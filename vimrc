@@ -420,10 +420,6 @@ nmap Q <nop>
 " Rename window title
 nmap ,, :set titlestring=
 
-" Move tabs left/right in MacVim
-map <s-d-right> :execute "tabmove" tabpagenr()<cr>
-map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>
-
 let g:mta_use_matchparen_group = 1
 
 function! ShowColors()
