@@ -165,7 +165,7 @@ nnoremap <leader>q gqip
 " Shortcut to fold tags with leader + ft
 nnoremap <leader>ft Vatzf
 
-nmap ,f :FoldMatching def -1<cr>
+" nmap ,f :FoldMatching def -1<cr>
 " unfold all: zE
 
 " Opens a vertical split and switches over (\v)
@@ -432,3 +432,8 @@ function! ShowColors()
   endwhile
 endfunction
 nnoremap ,C :call ShowColors()<cr>
+
+" Focus for writing.
+" Creates two empty windows on the sides (same buffer) and keeps the current
+" window in the center. Also enables word wrap and line break by word
+nmap ,f :new<cr><c-w>L:sp<cr><c-w>H20<c-w><<c-w>l20<c-w>>:set wrap<cr>:set lbr<cr>
