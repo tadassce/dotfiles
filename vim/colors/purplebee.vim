@@ -34,7 +34,6 @@ hi StatusLineNC guifg=#939395 guibg=#303030 guisp=#303030 gui=NONE ctermfg=246 c
 "hi CTagsMember -- no settings --
 hi NonText guifg=#808080 guibg=#202020 guisp=#202020 gui=NONE ctermfg=8 ctermbg=234 cterm=NONE
 "hi CTagsGlobalConstant -- no settings --
-"hi DiffText -- no settings --
 "hi ErrorMsg -- no settings --
 "hi Ignore -- no settings --
 hi Debug guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
@@ -73,7 +72,6 @@ hi CursorLine guifg=NONE guibg=#202020 guisp=#202020 gui=NONE ctermfg=NONE cterm
 "hi Question -- no settings --
 "hi WarningMsg -- no settings --
 "hi VisualNOS -- no settings --
-"hi DiffDelete -- no settings --
 "hi ModeMsg -- no settings --
 hi CursorColumn guifg=NONE guibg=#202020 guisp=#202020 gui=NONE ctermfg=NONE ctermbg=234 cterm=NONE
 hi Define guifg=#faf4c6 guibg=NONE guisp=NONE gui=NONE ctermfg=230 ctermbg=NONE cterm=NONE
@@ -89,7 +87,6 @@ hi VertSplit guifg=#444444 guibg=#303030 guisp=#303030 gui=NONE ctermfg=238 cter
 hi Exception guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 hi Keyword guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 hi Type guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
-"hi DiffChange -- no settings --
 hi Cursor guifg=NONE guibg=#626262 guisp=#626262 gui=NONE ctermfg=NONE ctermbg=241 cterm=NONE
 "hi SpellLocal -- no settings --
 "hi Error -- no settings --
@@ -109,7 +106,6 @@ hi Repeat guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE 
 hi Structure guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 hi Macro guifg=#faf4c6 guibg=NONE guisp=NONE gui=NONE ctermfg=230 ctermbg=NONE cterm=NONE
 "hi Underlined -- no settings --
-"hi DiffAdd -- no settings --
 "hi TabLine -- no settings --
 hi mbenormal guifg=#cfbfad guibg=#2e2e3f guisp=#2e2e3f gui=NONE ctermfg=187 ctermbg=237 cterm=NONE
 hi perlspecialstring guifg=#c080d0 guibg=#404040 guisp=#404040 gui=NONE ctermfg=176 ctermbg=238 cterm=NONE
@@ -138,5 +134,12 @@ hi doxygenspecialonelinedesc guifg=#ad600b guibg=NONE guisp=NONE gui=NONE ctermf
 hi cspecialcharacter guifg=#c080d0 guibg=#404040 guisp=#404040 gui=NONE ctermfg=176 ctermbg=238 cterm=NONE
 hi doxygensmallspecial guifg=#fdd090 guibg=NONE guisp=NONE gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
 "hi clear -- no settings --
+
+hi DiffChange     ctermfg=103 ctermbg=0
+hi DiffText       ctermfg=0 ctermbg=103
+hi DiffDelete     ctermfg=1 ctermbg=0
+hi DiffAdd        ctermfg=2 ctermbg=0
+hi gitDiffRemoved ctermfg=1 ctermbg=0
+hi gitDiffAdded   ctermfg=2 ctermbg=0
 
 hi ColorColumn ctermbg=235 guibg=black
