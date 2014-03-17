@@ -47,6 +47,7 @@
   uncommit = reset --soft HEAD^
   startover = reset --hard HEAD
   ready = rebase -i @{u}
+  g = grep --break --heading --line-number
 [github]
   user = tadassce
 [difftool]
@@ -60,3 +61,6 @@
   rebase = true
 [git-up "bundler"]
   check = true
+[grep]
+  extendRegexp = true
+  lineNumber = true
