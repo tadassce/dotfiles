@@ -14,6 +14,7 @@ alias vi='vim -u NONE -N' # plain vim without vimrc, but not vi compatible
 alias tmux='tmux -u'
 alias less='less -R '
 alias ..='cd ..'
+alias :q='exit'
 alias ttr='touch tmp/restart.txt'
 alias tailx='tail -f /opt/nginx/logs/access.log'
 alias rec_pull_bash='for i in `ls`; do cd $i; git pull; cd ..; done'
