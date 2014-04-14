@@ -50,13 +50,6 @@ set clipboard=unnamed
 
 set ffs=unix
 
-" Cursor
-" highlight Cursor guifg=white guibg=#6092bb
-" highlight iCursor guifg=white guibg=#b6d6f2
-" set guicursor=n-v-c:block-Cursor
-" set guicursor+=i:ver25-iCursor
-" set guicursor+=n-v-c:blinkon0
-
 " " Highlight current line
 " set cursorline
 " " ...only in the current window
