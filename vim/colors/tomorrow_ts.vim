@@ -7,8 +7,9 @@
 let s:foreground = "4d4d4c"
 let s:background = "ffffff"
 let s:selection = "c5cce9"
+let s:line = "f4f4f4"
 " let s:line = "e9efff"
-let s:line = "f4f6ff"
+" let s:line = "f4f6ff"
 let s:comment = "8e908c"
 let s:red = "c82829"
 let s:orange = "f5871f"
@@ -325,3 +326,13 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	delf <SID>grey_level
 	delf <SID>grey_number
 endif
+
+" diffs
+hi DiffText       ctermfg=3   ctermbg=255
+hi DiffChange     ctermfg=255 ctermbg=3
+hi DiffDelete     ctermfg=255 ctermbg=1
+hi diffRemoved    ctermfg=255 ctermbg=1
+hi gitDiffRemoved ctermfg=255 ctermbg=1
+hi DiffAdd        ctermfg=255 ctermbg=2
+hi diffAdded      ctermfg=255 ctermbg=2
+hi gitDiffAdded   ctermfg=255 ctermbg=2
