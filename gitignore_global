@@ -4,3 +4,6 @@
 .ruby-version
 tags
 gems.tags
+coverage
+.powenv
+.bundle
