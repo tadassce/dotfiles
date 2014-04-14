@@ -5,38 +5,6 @@ export GIT_MERGE_AUTOEDIT
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME='tadassce'
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(brew bundler extract Forklift gem github git osx rails urltools vi-mode)
-# brew: brews (and brew's dirs in front of /usr/bin)
-# bundler: bi, bu, be [cmd]
-# extract
-# Forklift: fl .
-# gem: (completion)
-# git: g, gl, gp, gca, ga, grh, gdv, ..
-# github: gh (completion)
-# osx: tab, pfd, pfs, cdf, quick-look, man-preview, trash
-# rails3: rc, rdb, rg, rdm, rs
-# urltools: urlencode, urldecode
-
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
 PATH=$PATH:/usr/X11/bin:/opt/local/bin:/usr/local/mysql/bin
 PATH=$PATH:/opt/nginx/sbin
@@ -48,20 +16,31 @@ export PATH
 export GREP_COLOR=35
 export EDITOR=vim
 
-# For tmux-powerline
-PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
-
 # Enable rbenv shims and autocompletion:
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 source ~/.aliases
 
+# History
+if [ -z $HISTFILE ]; then
+  HISTFILE=$HOME/.zsh_history
+fi
+HISTSIZE=10000
+SAVEHIST=10000
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
 
 # search up/down by taking the current line content into account
 bindkey -M viins '^[[A' history-beginning-search-backward
 bindkey -M viins '^[[B' history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
+
 
 precmd(){
   echo -ne "\e]1;${PWD##*/}\a"
@@ -77,4 +56,26 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_GC_HEAP_FREE_SLOTS=500000
 
-source $ZSH/oh-my-zsh.sh
+# Prompt
+autoload -U colors && colors
+setopt promptsubst
+git_br() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  if [[ -n $(git status -s 2> /dev/null) ]]
+  then
+    echo "%{$fg[magenta]%}${ref#refs/heads/} "
+  else
+    echo "%{$fg[green]%}${ref#refs/heads/} "
+  fi
+}
+local gitbr='$(git_br)'
+local pwd='%{$fg[blue]%}%c%{$reset_color%} '
+local last_char='%{$fg[blue]%}%%%{$reset_color%} '
+PROMPT="${pwd}${gitbr}${last_char}"
+
+# Case insensitive completions
+autoload -U compinit
+autoload -U zstyle+
+compinit -C
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _complete _list _oldlist _expand _ignored _match _correct _approximate _prefix
