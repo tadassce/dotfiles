@@ -29,9 +29,6 @@ function! ToggleColors()
 endfunction
 nnoremap <F5> :call ToggleColors()<cr>
 
-" line height
-set linespace=0
-
 " Vertical ruler
 set colorcolumn=80
 

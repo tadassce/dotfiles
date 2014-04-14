@@ -27,4 +27,7 @@ map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>
 " set guifont=espresso_mono:h13
 " set guifont=espresso_mono_for_powerline:h13
 " set guifont=source_code_pro:h13
-set guifont=droid_sans_mono_for_powerline:h13
+set guifont=droid_sans_mono_for_powerline:h14
+
+" line height
+set linespace=2
