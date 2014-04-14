@@ -31,6 +31,7 @@ setopt extended_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups # ignore duplication command history list
 setopt hist_ignore_space
+setopt hist_reduce_blanks
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
@@ -41,6 +42,9 @@ bindkey -M viins '^[[B' history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 
+# Incremental search
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
 
 precmd(){
   echo -ne "\e]1;${PWD##*/}\a"
@@ -79,3 +83,26 @@ autoload -U zstyle+
 compinit -C
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' completer _complete _list _oldlist _expand _ignored _match _correct _approximate _prefix
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name ''
+
+# generate descriptions with magic.
+zstyle ':completion:*' auto-description 'specify: %d'
+
+# Don't prompt for a huge list, page it!
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+
+# Don't prompt for a huge list, menu it!
+zstyle ':completion:*:default' menu 'select=0'
+
+# Have the newer files last so I see them first
+zstyle ':completion:*' file-sort modification reverse
+
+# color code completion
+zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
+
+bindkey -M vicmd 'u' undo
