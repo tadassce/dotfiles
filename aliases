@@ -4,6 +4,7 @@ alias ll='ls -la' # -lahGt
 alias g='git'
 alias go='git checkout '
 alias gb='git branch'
+alias gup='git up'
 alias gpp='git up && git push'
 alias gp='git push'
 alias gpa='git push --all'
