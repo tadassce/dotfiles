@@ -1,16 +1,20 @@
 #!/bin/zsh
 
 alias ll='ls -la' # -lahGt
+alias g='git'
 alias go='git checkout '
+alias gb='git branch'
 alias gpp='git up && git push'
+alias gp='git push'
 alias gpa='git push --all'
 alias grm='git rm $(git ls-files --deleted)'
 alias gs='git status -sb'
 alias gst='git status -sb'
 alias glg='git lg'
+alias gd='git diff'
 alias gdc='git diff --cached'
 alias gap='git add -p'
-alias vi='vim -u NONE -N' # plain vim without vimrc, but not vi compatible
+alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
 alias tmux='tmux -u'
 alias less='less -R '
 alias ..='cd ..'
@@ -27,6 +31,11 @@ alias pow='powder'
 alias start_memcached='/usr/local/opt/memcached/bin/memcached'
 alias largefiles='find . -ls | sort -n -k 7 | tail -n 20'
 alias bs='brew services'
+alias pt='heroku addons:open papertrail'
+alias bd='bundle'
+alias bi='bundle install'
+alias bu='bundle update'
+alias bo='bundle outdated'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
@@ -43,3 +52,24 @@ alias drumrollplease='curl -Ls http://bit.ly/drumrollplease | bash'
 alias daw='cd ~/code/dawanda_main'
 alias lo='loveos-cli'
 alias cl='cd ~/code/loveos'
+
+# Other
+trash () {
+  local trash_dir="${HOME}/.Trash"
+  local temp_ifs=$IFS
+  IFS=$'\n'
+  for item in "$@"
+  do
+    if [[ -e "$item" ]]
+    then
+      item_name="$(basename $item)"
+      if [[ -e "${trash_dir}/${item_name}" ]]
+      then
+        mv -f "$item" "${trash_dir}/${item_name} $(date "+%H-%M-%S")"
+      else
+        mv -f "$item" "${trash_dir}/"
+      fi
+    fi
+  done
+  IFS=$temp_ifs
+}
