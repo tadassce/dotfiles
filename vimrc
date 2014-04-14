@@ -11,13 +11,14 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 syntax enable
 
 " The ones that are suffixed by 'ts' are my 'forks'..
-colorscheme purplebee
+" colorscheme purplebee
+" colorscheme easy
+" colorscheme tomorrow
+colorscheme tomorrow_ts
 " colorscheme github_ts " light
 " colorscheme code_ts " dark
 " colorscheme tomorrow-night-ts
 " colorscheme tomorrow-night-eighties-ts
-" colorscheme grb256_ts " dark
-" colorscheme topfunky-light
 
 function! ToggleColors()
   if (g:colors_name == 'purplebee')
@@ -29,7 +30,7 @@ endfunction
 nnoremap <F5> :call ToggleColors()<cr>
 
 " set guifont=monaco:h13
-set guifont=monaco_for_powerline:h13
+" set guifont=monaco_for_powerline:h13
 " set guifont=menlo:h13
 " set guifont=menlo_for_powerline:h13
 " set guifont=espresso_mono:h13
@@ -39,9 +40,8 @@ set guifont=monaco_for_powerline:h13
 " line height
 set linespace=0
 
-" colorcolumn for short, adds a vertical ruler
-set cc=80
-hi ColorColumn ctermbg=235 guibg=black
+" Vertical ruler
+set colorcolumn=80
 
 " disable beep (e.g. when hitting Esc in normal mode)
 set vb
@@ -57,16 +57,17 @@ set ffs=unix
 " set guicursor+=i:ver25-iCursor
 " set guicursor+=n-v-c:blinkon0
 
-" Highlight current line
-set cursorline
-" ...only in the current window
-augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
-  au WinLeave,InsertEnter * setlocal nocursorline
-augroup END
-hi CursorLine ctermbg=234
-" hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
+" " Highlight current line
+" set cursorline
+" " ...only in the current window
+" augroup CursorLine
+"   au!
+"   au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
+"   au WinLeave,InsertEnter * setlocal nocursorline
+" augroup END
+" " hi CursorLine ctermbg=234
+" hi CursorLine ctermbg=255
+" " hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
 
 " Forget compatibility with Vi. Who cares.
 set nocompatible
@@ -240,8 +241,6 @@ nmap ,; :set list!<CR>
 let g:indent_guides_start_level=1
 let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors=0
-hi IndentGuidesOdd  ctermbg=235
-hi IndentGuidesEven ctermbg=236
 nmap ,i :IndentGuidesToggle<CR>
 
 " Toggle wrapping
@@ -362,7 +361,6 @@ xnoremap <silent> <expr> p <SID>Repl()
 map <tab> :NERDTreeToggle<cr>
 let NERDTreeDirArrows = 0
 let NERDTreeMinimalUI = 1
-hi Directory guifg=#7e8aa2 ctermfg=60
 
 " Always show the status line
 set laststatus=2
@@ -370,13 +368,9 @@ set laststatus=2
 " set laststatus=0
 
 " minibufexpl
-map ,b :MBEToggle<cr>:<esc>
+map ,b :MBEToggle<cr>:set laststatus=0<cr>:<esc><c-z>
 let g:miniBufExplorerAutoStart = 0
 
-hi MBENormal              ctermfg=187 ctermbg=237 guifg=#cfbfad guibg=#2e2e3f guisp=#2e2e3f
-hi MBEVisibleActiveNormal ctermfg=7 ctermbg=60  guibg=#5f6086
-hi MBEVisibleNormal       ctermfg=60  ctermbg=237  guifg=#5f6086 guibg=#2e2e3f guisp=#4e4e8f
-"
 " hi MBEChanged guibg=darkblue ctermbg=darkblue termbg=white
 " MBENormal               - for buffers that have NOT CHANGED and are NOT VISIBLE
 " MBEChanged              - for buffers that have CHANGED and are NOT VISIBLE
@@ -387,11 +381,6 @@ hi MBEVisibleNormal       ctermfg=60  ctermbg=237  guifg=#5f6086 guibg=#2e2e3f g
 
 nmap ]w :tabn<cr>
 nmap [w :tabp<cr>
-
-" vim-ctrlspace colors
-hi CtrlSpaceSelected term=reverse ctermfg=60  ctermbg=234 cterm=bold
-hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=236  cterm=NONE
-hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
 
 " Rebuild tags database:
 command! RebuildTags call s:RebuildTags()
@@ -437,3 +426,21 @@ nnoremap ,C :call ShowColors()<cr>
 " Creates two empty windows on the sides (same buffer) and keeps the current
 " window in the center. Also enables word wrap and line break by word
 nmap ,f :new<cr><c-w>L:sp<cr><c-w>H20<c-w><<c-w>l20<c-w>>:set wrap<cr>:set lbr<cr>
+
+let g:vimrubocop_keymap = 0
+nmap ,r :RuboCop<CR>
+
+nmap ,j gqaj
+
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+set fillchars=stl:\ ,stlnc:-,vert:\|,fold:-,diff:-
+" let g:airline#extensions#tabline#enabled = 1 " :set showtabline=0/1/2
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+" let g:airline#extensions#tabline#fnamecollapse = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
