@@ -98,7 +98,6 @@ hi MatchParen     guifg=#d0ffc0 guibg=#202020 guisp=#202020 gui=bold ctermfg=193
 hi Repeat         guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 "hi SpellBad -- no settings --
 "hi CTagsClass -- no settings --
-"hi Directory -- no settings --
 hi Structure      guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 hi Macro          guifg=#faf4c6 guibg=NONE guisp=NONE gui=NONE ctermfg=230 ctermbg=NONE cterm=NONE
 "hi Underlined -- no settings --
@@ -132,12 +131,21 @@ hi doxygensmallspecial         guifg=#fdd090 guibg=NONE guisp=NONE gui=NONE cter
 "hi clear -- no settings --
 
 hi DiffChange     ctermfg=103 ctermbg=0
-hi DiffText       ctermfg=0 ctermbg=103
+hi DiffText       ctermfg=3 ctermbg=0
 hi DiffDelete     ctermfg=1 ctermbg=0
-hi DiffAdd        ctermfg=2 ctermbg=0
 hi diffRemoved    ctermfg=1 ctermbg=0
-hi diffAdded      ctermfg=2 ctermbg=0
 hi gitDiffRemoved ctermfg=1 ctermbg=0
+hi DiffAdd        ctermfg=2 ctermbg=0
+hi diffAdded      ctermfg=2 ctermbg=0
 hi gitDiffAdded   ctermfg=2 ctermbg=0
 
 hi ColorColumn ctermbg=235 guibg=black
+hi Directory guifg=#7e8aa2 ctermfg=60
+
+hi MBENormal              ctermfg=187 ctermbg=237 guifg=#cfbfad guibg=#2e2e3f guisp=#2e2e3f
+hi MBEVisibleActiveNormal ctermfg=7 ctermbg=60  guibg=#5f6086
+hi MBEVisibleNormal       ctermfg=60  ctermbg=237  guifg=#5f6086 guibg=#2e2e3f guisp=#4e4e8f
+
+hi CtrlSpaceSelected term=reverse ctermfg=60  ctermbg=234 cterm=bold
+hi CtrlSpaceNormal   term=NONE    ctermfg=244  ctermbg=236  cterm=NONE
+hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
