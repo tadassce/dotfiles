@@ -37,6 +37,7 @@ alias bd='bundle'
 alias bi='bundle install'
 alias bu='bundle update'
 alias bo='bundle outdated'
+alias be='bundle exec'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
