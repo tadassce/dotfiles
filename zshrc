@@ -74,8 +74,9 @@ git_br() {
 }
 local gitbr='$(git_br)'
 local pwd='%{$fg[blue]%}%c%{$reset_color%} '
-local last_char='%{$fg[blue]%}%%%{$reset_color%} '
-PROMPT="${pwd}${gitbr}${last_char}"
+local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})%%%{$reset_color%} '
+# local last_char='%{$fg[blue]%}%%%{$reset_color%} '
+PROMPT="${pwd}${gitbr}${last_cmd_status}"
 
 # Case insensitive completions
 autoload -U compinit
