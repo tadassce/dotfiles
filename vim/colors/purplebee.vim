@@ -159,7 +159,7 @@ hi CtrlSpaceFound    ctermfg=220  ctermbg=NONE cterm=bold
 " The first two are for gui hex colors - not used atm
 "
 let g:airline#themes#purplebee#palette = {}
-let s:N1 = [ '' , '' , 232 ,   5 ]
+let s:N1 = [ '' , '' , 255 ,  60 ]
 let s:N2 = [ '' , '' , 255 , 238 ]
 let s:N3 = [ '' , '' , 103 , 234 ]
 let g:airline#themes#purplebee#palette.normal = airline#themes#generate_color_map(s:N1, s:N2, s:N3)
