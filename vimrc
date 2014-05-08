@@ -148,9 +148,6 @@ nnoremap <leader>ft Vatzf
 " nmap ,f :FoldMatching def -1<cr>
 " unfold all: zE
 
-" Opens a vertical split and switches over (\v)
-nnoremap <leader>v <C-w>v<C-w>l
-
 " Open the current file (or selection or provided as arg) in the default app
 command! -count=0 -nargs=* -complete=file Open :call s:Open(<count>, <f-args>)
 function! s:Open(visual, ...)
