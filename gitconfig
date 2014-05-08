@@ -35,7 +35,7 @@
   dump = cat-file -p
   df = diff
   dc = diff --cached
-  lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %Creset- %Cblue%an%Creset'
+  lg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cr) %Creset- %Cblue%an%Creset - %s'
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
