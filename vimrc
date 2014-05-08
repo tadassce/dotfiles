@@ -139,9 +139,6 @@ set spelllang=en_us
 set complete+=kspell
 " zg - add word to the dictionary
 
-" Dash documentation lookup
-nmap <silent> ,D <Plug>DashSearch
-
 " Hard-wrap paragraphs of text
 nnoremap <leader>q gqip
 
