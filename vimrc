@@ -168,9 +168,8 @@ map ,o :Open<cr>
 map ,O 0f(vi):Open<cr>
 
 " Faster shortcut for commenting
-map ,c \\\
-map <leader>c \\\
-map <leader>C \\\j\\\
+map ,c gcc
+map ,C gccjgcc
 
 " Delete all buffers
 nmap <silent> ,da :exec "1," . bufnr('$') . "bd"<cr>
@@ -396,7 +395,7 @@ function! ShowColors()
     let num = num - 1
   endwhile
 endfunction
-nnoremap ,C :call ShowColors()<cr>
+" nnoremap ,C :call ShowColors()<cr>
 
 " Focus for writing.
 " Creates two empty windows on the sides (same buffer) and keeps the current
