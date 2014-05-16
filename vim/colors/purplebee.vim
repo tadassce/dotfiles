@@ -81,7 +81,7 @@ hi Visual         guifg=#faf4c6 guibg=#3c414c guisp=#3c414c gui=NONE ctermfg=230
 "hi SpellCap -- no settings --
 hi VertSplit      guifg=#444444 guibg=#303030 guisp=#303030 gui=NONE ctermfg=238 ctermbg=236 cterm=NONE
 hi Exception      guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
-hi Keyword        guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
+hi Keyword        guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=2 ctermbg=NONE cterm=NONE
 hi Type           guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 hi Cursor         guifg=NONE guibg=#626262 guisp=#626262 gui=NONE ctermfg=NONE ctermbg=241 cterm=NONE
 "hi SpellLocal -- no settings --
