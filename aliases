@@ -16,8 +16,9 @@ alias gd='git diff -b'
 alias gdc='git diff --cached'
 alias gap='git add -p'
 alias gm='git merge'
+
 alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
-alias tmux='tmux -u attach || tmux -u new'
+alias tm='tmux -u attach || tmux -u new'
 alias less='less -R '
 alias ..='cd ..'
 alias :q='exit'
