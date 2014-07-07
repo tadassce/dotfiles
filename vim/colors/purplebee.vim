@@ -26,7 +26,8 @@ let g:colors_name = "PurpleBee"
 hi SpecialComment guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
 hi Typedef        guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 hi Title          guifg=#f6f3e8 guibg=NONE guisp=NONE gui=bold ctermfg=230 ctermbg=NONE cterm=bold
-hi Folded         guifg=#a0a8b0 guibg=#384048 guisp=#384048 gui=NONE ctermfg=103 ctermbg=238 cterm=NONE
+" hi Folded         guifg=#a0a8b0 guibg=#384048 guisp=#384048 gui=NONE ctermfg=103 ctermbg=238 cterm=NONE
+hi Folded         guifg=#a0a8b0 guibg=#384048 guisp=#384048 gui=NONE ctermfg=237 ctermbg=235 cterm=NONE
 hi PreCondit      guifg=#faf4c6 guibg=NONE guisp=NONE gui=NONE ctermfg=230 ctermbg=NONE cterm=NONE
 hi Include        guifg=#faf4c6 guibg=NONE guisp=NONE gui=NONE ctermfg=230 ctermbg=NONE cterm=NONE
 hi Float          guifg=#ff9800 guibg=NONE guisp=NONE gui=NONE ctermfg=208 ctermbg=NONE cterm=NONE
@@ -47,7 +48,7 @@ hi Special        guifg=#73428f guibg=NONE guisp=NONE gui=NONE ctermfg=96 ctermb
 hi LineNr         guifg=#303030 guibg=#202020 guisp=#202020 gui=NONE ctermfg=236 ctermbg=234 cterm=NONE
 hi CursorLineNr   guifg=#303030 guibg=#202020 guisp=#202020 gui=NONE ctermfg=240 ctermbg=234 cterm=NONE
 hi StatusLine     guifg=#d3d3d5 guibg=#303030 guisp=#303030 gui=NONE ctermfg=188 ctermbg=236 cterm=NONE
-hi Normal         guifg=#e2e2e5 guibg=#202020 guisp=#202020 gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
+hi Normal         guifg=#e2e2e5 guibg=#202020 guisp=#202020 gui=NONE ctermfg=252 ctermbg=NONE cterm=NONE
 hi Label          guifg=#7e8aa2 guibg=NONE guisp=NONE gui=NONE ctermfg=103 ctermbg=NONE cterm=NONE
 "hi CTagsImport -- no settings --
 hi PMenuSel       guifg=#000000 guibg=#9cb348 guisp=#9cb348 gui=NONE ctermfg=NONE ctermbg=143 cterm=NONE
