@@ -1,10 +1,10 @@
 # encoding: utf-8
 
-# Pry.plugins['doc'].activate!
+require 'awesome_print'
+
+Pry.plugins['doc'].activate! if Pry.plugins.keys.include?('doc')
 
 # Launch Pry with access to the entire Rails stack.
-# If you have Pry in your Gemfile, you can pass: ./script/console --irb=pry instead.
-# If you don't, you can load it through the lines below :)
 rails = File.join Dir.getwd, 'config', 'environment.rb'
 
 if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
@@ -25,4 +25,5 @@ Gem.path.each do |gemset|
   $:.concat(Dir.glob("#{gemset}/gems/pry-*/lib"))
 end if defined?(Bundler)
 $:.uniq!
-# require 'pry-editline'
+
+AwesomePrint.pry! if AwesomePrint.respond_to?(:pry!)
