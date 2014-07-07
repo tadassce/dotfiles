@@ -1,5 +1,3 @@
-#! /usr/bin/env ruby
+#!/bin/zsh
 
-require '~/code/todo/cli/todo'
-
-Todo::Cli.exec(ARGV)
+cat ~/Dropbox/Notes/todo.txt
