@@ -13,6 +13,7 @@ PATH=$PATH:/Users/tadas/Dropbox/Dotfiles/bin
 PATH=$PATH:./bin
 
 export PATH
+export GREP_OPTIONS='--color=auto'
 export GREP_COLOR=35
 export EDITOR=vim
 
