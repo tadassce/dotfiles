@@ -12,9 +12,7 @@ syntax enable
 
 " The ones that are suffixed by 'ts' are my 'forks'..
 " colorscheme purplebee
-" colorscheme easy
-" colorscheme tomorrow
-colorscheme tomorrow_ts
+colorscheme tomorrow_ts "light
 " colorscheme github_ts " light
 " colorscheme code_ts " dark
 " colorscheme tomorrow-night-ts
@@ -47,8 +45,8 @@ set ffs=unix
 "   au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
 "   au WinLeave,InsertEnter * setlocal nocursorline
 " augroup END
-" " hi CursorLine ctermbg=234
 " hi CursorLine ctermbg=255
+" " hi CursorLine ctermbg=234
 " " hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
 
 " Forget compatibility with Vi. Who cares.
@@ -168,7 +166,7 @@ map ,o :Open<cr>
 map ,O 0f(vi):Open<cr>
 
 " Faster shortcut for commenting
-map ,c gcc
+" map ,c gcc
 map ,C gccjgcc
 
 " Delete all buffers
@@ -188,6 +186,7 @@ let g:netrw_list_hide= '.*\.DS_Store$'
 
 " Some abbreviations
 iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus felis sed mauris sagittis sodales. Maecenas hendrerit tincidunt nulla vel eleifend. Integer eu ante nisi. Morbi at mollis neque. Donec hendrerit enim ut felis semper fringilla. Morbi scelerisque ligula non risus varius sit amet pharetra ante tristique. Etiam eu ligula lectus. Sed sed cursus diam. Fusce a fringilla purus. Fusce quis nunc nec est laoreet interdum sed ac est. Duis feugiat urna eu odio facilisis sit amet consectetur libero hendrerit. Sed enim elit, faucibus id tincidunt vel, accumsan a nisi. Duis sit amet nisl ullamcorper nulla sagittis tincidunt quis et augue. Etiam nibh ipsum, ullamcorper quis aliquet ut, posuere sed orci. Nulla gravida luctus sapien, in mollis nisl semper at. Nulla tincidunt faucibus metus eget interdum.
+iab puts-- puts '-' * 80
 
 " For faster window switching
 map <C-j> <C-w>j
@@ -195,8 +194,9 @@ map <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
-" For maximizing window vertically
+" For maximizing window
 nmap <c-z> <c-w>_
+" nmap <c-z> <c-w>_20<c-w>>
 
 " Minimum window height, to save space
 set wmw=0
@@ -204,10 +204,17 @@ set wmw=0
 " ragtag
 let g:ragtag_global_maps = 1
 
+" Ignore these type of files when expanding wildcards, dir/file names,
+" fuzzy finding (with ctrlp), etc.
 set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf,*.ico
 set wildignore+=vendor/*,*/node_modules/*,*/tmp/*
+" scala projects:
+set wildignore+=*/target/*,*/lib_managed/*,*/project/*
 
-nmap <leader>f :Ack<space>
+" nmap <c-]> :CtrlPBuffer<cr>
+" nmap <c-]> :CtrlPMixed<cr>
+
+nmap ,a :Ack<space>
 
 " Toggle invisibles
 nmap ,; :set list!<CR>
@@ -226,6 +233,10 @@ nmap ,m :set hls!<cr>
 
 " vim-slime configuration (<C-cc> to send to tmux)
 let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1.2"}
+let g:slime_paste_file = "$HOME/.slime_paste"
+nmap <leader>t :SlimeSend1 test<cr>
+nmap ,. :SlimeSend1
 
 " Add a TODO comment above current line
 nmap ,tt O<esc>0CTODO <esc>==\\\A
@@ -269,7 +280,7 @@ endif
 
 " nmap J 5j
 nmap K 5k
-xmap s S
+" xmap s S
 
 " Join lines without surrounding whitespace
 nnoremap gJ :call <SID>JoinWithoutSpaces(0)<cr>
@@ -403,7 +414,7 @@ endfunction
 nmap ,f :new<cr><c-w>L:sp<cr><c-w>H20<c-w><<c-w>l20<c-w>>:set wrap<cr>:set lbr<cr>
 
 let g:vimrubocop_keymap = 0
-nmap ,r :RuboCop<CR>
+" nmap ,r :RuboCop<CR>
 
 nmap ,j gqaj
 
