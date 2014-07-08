@@ -5,10 +5,12 @@ home = Dir.pwd
 Dir['*'].each do |dir|
   if File.directory? dir
     Dir.chdir dir
-    name = dir.split('/').last
-    puts "Updating #{name.blue}"
-    # system "git config git-up.bundler.check false"
-    system 'git up'
+    if File.exists?('.git')
+      name = dir.split('/').last
+      puts "Updating #{name.blue}"
+      # system "git config git-up.bundler.check false"
+      system 'git up'
+    end
     Dir.chdir home
     puts
   end
