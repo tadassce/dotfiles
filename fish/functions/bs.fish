@@ -1,3 +1,3 @@
 function bs
-  brew services
+  brew services $argv
 end
