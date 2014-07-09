@@ -1,3 +1,3 @@
 function tm
-  tmux attach; or tmux new
+  tmux -u attach; or tmux -u new
 end
