@@ -8,8 +8,9 @@ let b:switch_custom_definitions = [
 nnoremap <buffer> ! ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
 
 " nmap ,r :!rspec<cr>
-nmap ,r :Dispatch rspec<cr>
-nmap ,c :Copen<cr>
+nmap ,r :SlimeSend1 rspec<cr>
+" nmap ,r :Dispatch rspec<cr>
+" nmap ,c :Copen<cr>
 
 " Insert mode shortcuts
 imap <C-l> <space>=><space>
