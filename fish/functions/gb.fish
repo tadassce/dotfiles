@@ -1,3 +1,3 @@
 function gb
-  g b
+  g b $argv
 end
