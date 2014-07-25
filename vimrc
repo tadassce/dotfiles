@@ -219,7 +219,8 @@ set wildignore+=*/target/*,*/lib_managed/*,*/project/*
 
 nmap ,a :Ack<space>
 
-" Toggle invisibles
+" Invisible characters (not sure about the last two, keeping here for now)
+set listchars=tab:→\ ,eol:¬,trail:·,extends:…,precedes:…,nbsp:◦,conceal:☐
 nmap ,; :set list!<CR>
 
 " Indent guides
