@@ -62,7 +62,7 @@
 [mergetool]
   keepBackup = true
 [push]
-  default = tracking
+  default = current
 [pull]
   default = tracking
   rebase = true
