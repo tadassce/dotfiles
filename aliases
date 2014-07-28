@@ -45,7 +45,8 @@ alias be='bundle exec'
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO'
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
-alias brewup="brew update && echo \"$fg[blue]==>$reset_color\" && brew outdated"
+alias brewout="brew update && echo \"$fg[blue]==>$reset_color\" && brew outdated"
+alias brewup="brew upgrade && brew cleanup"
 
 # Fun
 alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
