@@ -190,6 +190,11 @@ iab puts-- puts '-' * 80
 iab elrs expect(last_response.status).to eq 200
 iab elrb expect(last_response.body).to
 iab elrt expect(last_response).to
+iab Im I’m
+iab dont don’t
+iab wont won’t
+iab wouldnt wouldn’t
+iab Id I’d
 
 " For faster window switching
 map <C-j> <C-w>j
