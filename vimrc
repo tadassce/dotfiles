@@ -129,7 +129,6 @@ set splitbelow
 set showbreak=↪\ " keep the space
 
 " Spell checking
-nmap <silent> ,s :set spell!<CR>
 set spelllang=en_us
 " word completion - <C-N> or <C-P>
 set complete+=kspell
@@ -220,23 +219,14 @@ set wildignore+=*/target/*,*/lib_managed/*,*/project/*
 " nmap <c-]> :CtrlPBuffer<cr>
 " nmap <c-]> :CtrlPMixed<cr>
 
-nmap ,a :Ack<space>
-
 " Invisible characters (not sure about the last two, keeping here for now)
 set listchars=tab:→\ ,eol:¬,trail:·,extends:…,precedes:…,nbsp:◦,conceal:☐
-nmap ,; :set list!<CR>
 
 " Indent guides
 let g:indent_guides_start_level=1
 let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors=0
 nmap ,i :IndentGuidesToggle<CR>
-
-" Toggle wrapping
-nmap ,w :set nowrap!<CR>
-
-" Toggle search highlighting
-nmap ,m :set hls!<cr>
 
 " vim-slime configuration (<C-cc> to send to tmux)
 let g:slime_target = "tmux"
@@ -415,15 +405,8 @@ function! ShowColors()
 endfunction
 " nnoremap ,C :call ShowColors()<cr>
 
-" Focus for writing.
-" Creates two empty windows on the sides (same buffer) and keeps the current
-" window in the center. Also enables word wrap and line break by word
-nmap ,f :new<cr><c-w>L:sp<cr><c-w>H20<c-w><<c-w>l20<c-w>>:set wrap<cr>:set lbr<cr>
-
 let g:vimrubocop_keymap = 0
 " nmap ,r :RuboCop<CR>
-
-nmap ,j gqaj
 
 " Airline
 let g:airline_powerline_fonts = 1
