@@ -87,8 +87,6 @@ set smarttab
 set smartindent
 set autoindent
 
-set number
-
 set undodir=~/.vim/undo
 set undofile
 set undolevels=1000 "maximum number of changes that can be undone
