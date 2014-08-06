@@ -14,3 +14,6 @@ nmap ,c :Copen<cr>
 
 " Insert mode shortcuts
 imap <C-l> <space>=><space>
+
+iab elrb expect(last_response.body).to
+iab elrs expect(last_response.status).to eq 200
