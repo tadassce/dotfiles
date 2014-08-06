@@ -365,6 +365,8 @@ let g:miniBufExplorerAutoStart = 0
 nmap ]w :tabn<cr>
 nmap [w :tabp<cr>
 
+vmap ,t :Tab/\w:\zs/l0l1<cr>
+
 " Rebuild tags database:
 command! RebuildTags call s:RebuildTags()
 function! s:RebuildTags()
