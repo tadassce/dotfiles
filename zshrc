@@ -20,8 +20,6 @@ export EDITOR=vim
 # Enable rbenv shims and autocompletion:
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-source ~/.aliases
-
 # History
 if [ -z $HISTFILE ]; then
   HISTFILE=$HOME/.zsh_history
@@ -108,3 +106,5 @@ zstyle ':completion:*' file-sort modification reverse
 zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 
 bindkey -M vicmd 'u' undo
+
+source ~/.aliases
