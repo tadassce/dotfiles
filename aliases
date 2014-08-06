@@ -33,7 +33,6 @@ alias prod='production'
 alias pow='powder'
 alias start_memcached='/usr/local/opt/memcached/bin/memcached'
 alias largefiles='find . -ls | sort -n -k 7 | tail -n 20'
-alias bs='brew services'
 alias pt='heroku addons:open papertrail'
 alias bd='bundle'
 alias bi='bundle install'
@@ -45,6 +44,8 @@ alias be='bundle exec'
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO'
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
+alias bs='brew services'
+alias bc='brew cask'
 alias brewout="brew update && echo \"$fg[blue]==>$reset_color\" && brew outdated"
 alias brewup="brew upgrade && brew cleanup"
 
