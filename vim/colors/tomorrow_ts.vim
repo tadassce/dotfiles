@@ -13,12 +13,13 @@ let s:line = "f4f4f4"
 let s:comment = "8e908c"
 let s:red = "c82829"
 " let s:orange = "f5871f"
-let s:orange = "5f6086" " purple really:)
+let s:orange = "5f6086" " dark purple really:)
 " let s:yellow = "eab700"
 let s:yellow = "c58400" " more like orange
 " let s:green = "718c00"
 let s:green = "427c37"
-let s:blue = "4271ae"
+" let s:blue = "4271ae"
+let s:blue = "5f6086" " dark purple really, again
 let s:purple = "8959a8"
 
 set background=light

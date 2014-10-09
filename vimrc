@@ -11,8 +11,8 @@ let g:ruby_path = system('echo $HOME/.rbenv/shims')
 syntax enable
 
 " The ones that are suffixed by 'ts' are my 'forks'..
-" colorscheme purplebee
-colorscheme tomorrow_ts "light
+colorscheme purplebee
+" colorscheme tomorrow_ts "light
 " colorscheme github_ts " light
 " colorscheme code_ts " dark
 " colorscheme tomorrow-night-ts
@@ -45,6 +45,7 @@ set ffs=unix
 "   au VimEnter,WinEnter,BufWinEnter,InsertLeave * setlocal cursorline
 "   au WinLeave,InsertEnter * setlocal nocursorline
 " augroup END
+
 " hi CursorLine ctermbg=255
 " " hi CursorLine ctermbg=234
 " " hi CursorLine cterm=NONE ctermbg=white guibg=white ctermfg=black guifg=black
