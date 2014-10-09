@@ -50,6 +50,7 @@
   discard = checkout -- .
   rmmissing = "!ruby -e 'x = `git st`;files = x.split(\"\n\").select{|x|x=~/deleted/ }.map{|x|x.split(\" \")[2]}.join(\" \"); files.each{|f| `git rm #{f}`}'"
   praise = blame
+  unstage = reset HEAD .
   uncommit = reset --soft HEAD^
   startover = reset --hard HEAD
   ready = rebase -i @{u}
