@@ -235,9 +235,9 @@ nmap <leader>t :SlimeSend1 test<cr>
 nmap ,. :SlimeSend1
 
 " Add a TODO comment above current line
-nmap ,tt O<esc>0CTODO <esc>==\\\A
+nmap ,td O<esc>0CTODO <esc>==\\\A
 " Add a TODO comment with date above current line
-nmap ,td O<esc>0CTODO <esc>==$"=strftime("(%Y-%m-%d) ")<cr>p\\\A
+" nmap ,td O<esc>0CTODO <esc>==$"=strftime("(%Y-%m-%d) ")<cr>p\\\A
 
 " Notes
 nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
