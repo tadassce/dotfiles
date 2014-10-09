@@ -9,3 +9,4 @@ coverage
 .bundle
 fish/fish_history
 fish/fishd.*
+.env
