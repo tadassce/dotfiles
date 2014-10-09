@@ -1,0 +1,6 @@
+#! /usr/bin/env ruby
+
+res = %x(~/Dropbox/Dotfiles/bin/battery Discharging).strip
+res = %x(~/Dropbox/Dotfiles/bin/battery Charging).strip if res.empty?
+
+puts "Bat #{res} | " unless res.empty?
