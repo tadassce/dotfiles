@@ -13,6 +13,9 @@ set guioptions-=L
 "Grow to maximum horizontal width on entering fullscreen mode
 set fuopt+=maxhorz
 
+" Don't always show the status line
+set laststatus=1
+
 " Maximize window
 nmap ,x :set columns=999 lines=99<CR>
 
@@ -31,7 +34,8 @@ map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>
 " set guifont=espresso_mono_for_powerline:h13
 " set guifont=source_code_pro:h13
 " set guifont=droid_sans_mono_for_powerline:h14
-set guifont=consolas_for_powerline:h16
+" set guifont=consolas_for_powerline:h16
+set guifont=Meslo_LG_M_DZ_Regular_for_Powerline:h14
 
 " line height
 set linespace=2
