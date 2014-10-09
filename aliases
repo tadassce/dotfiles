@@ -11,6 +11,7 @@ alias gpa='git push --all'
 alias grm='git rm $(git ls-files --deleted)'
 alias gs='git status -sb'
 alias gst='git status -sb'
+alias gl='git lg -n 10'
 alias glg='git lg'
 alias gd='git diff -b'
 alias gdc='git diff --cached'
@@ -39,12 +40,14 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias bo='bundle outdated'
 alias be='bundle exec'
+alias b2d='boot2docker'
+alias cn='cd ~/Dropbox/Notes'
+alias cpd='cap production deploy'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
 alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO'
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
-alias bs='brew services'
 alias bc='brew cask'
 alias brewout="brew update && echo \"$fg[blue]==>$reset_color\" && brew outdated"
 alias brewup="brew upgrade && brew cleanup"
@@ -78,4 +81,12 @@ trash () {
     fi
   done
   IFS=$temp_ifs
+}
+
+rspec() {
+  if [ -f Gemfile ]; then
+    bundle exec rspec $@
+  else
+    rspec $@
+  fi
 }
