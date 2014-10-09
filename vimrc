@@ -202,10 +202,6 @@ map <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
-" For maximizing window
-nmap <c-z> <c-w>_
-" nmap <c-z> <c-w>_20<c-w>>
-
 " Minimum window height, to save space
 set wmw=0
 
