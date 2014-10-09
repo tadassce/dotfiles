@@ -117,6 +117,8 @@ set ignorecase
 " Hide mouse when typing
 set mousehide
 
+set ttyfast
+
 set wildmenu
 set wildmode=list:longest,full
 set showcmd
