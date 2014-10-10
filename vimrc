@@ -322,8 +322,10 @@ EOF
 endfunction
 nnoremap <Leader>h :call HTMLEscape()<cr>
 
-nmap ,x A # =><esc>:%!xmpfilter<cr>
-nmap ,X 0f#hDA # =><esc>:%!xmpfilter<cr>
+autocmd FileType ruby nmap <buffer> ,m <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> ,m <Plug>(xmpfilter-mark)
+autocmd FileType ruby nmap <buffer> ,x <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> ,x <Plug>(xmpfilter-run)
 
 " Get rid of annoying register rewriting when pasting on visually selected
 " text.
