@@ -259,6 +259,7 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 set completefunc=syntaxcomplete#Complete
+imap <tab> <c-n>
 
 " Lazy shift
 if has("user_commands")
