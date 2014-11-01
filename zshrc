@@ -108,3 +108,6 @@ zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
 bindkey -M vicmd 'u' undo
 
 source ~/.aliases
+
+# Docker
+export DOCKER_HOST=tcp://192.168.59.103:2375
