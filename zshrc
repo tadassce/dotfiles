@@ -109,5 +109,9 @@ bindkey -M vicmd 'u' undo
 
 source ~/.aliases
 
+# Homebrew Cask default path, at least while the PR is open:
+# https://github.com/caskroom/homebrew-cask/issues/2534
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2375
