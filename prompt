@@ -1,0 +1,16 @@
+autoload -U colors && colors
+setopt promptsubst
+git_br() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  if [[ -n $(git status -s 2> /dev/null) ]]
+  then
+    echo "%{$fg[magenta]%}${ref#refs/heads/} "
+  else
+    echo "%{$fg[green]%}${ref#refs/heads/} "
+  fi
+}
+local gitbr='$(git_br)'
+local pwd='%{$fg[blue]%}%c%{$reset_color%} '
+local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})%%%{$reset_color%} '
+# local last_char='%{$fg[blue]%}%%%{$reset_color%} '
+PROMPT="${pwd}${gitbr}${last_cmd_status}"
