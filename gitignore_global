@@ -6,6 +6,4 @@ gems.tags
 coverage
 .powenv
 .bundle
-fish/fish_history
-fish/fishd.*
 .env
