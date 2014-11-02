@@ -6,8 +6,6 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-let g:ruby_path = system('echo $HOME/.rbenv/shims')
-
 syntax enable
 
 " The ones that are suffixed by 'ts' are my 'forks'..
