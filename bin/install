@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# Install script for a fresh OS X install.
+# More meant for copy-pasting rather than just running so far.
+
+git clone https://github.com/tadassce/dotfiles.git ~/Dot
+
+# - Install 1P and XCode from the MAS
+
+xcode-select --install
+
+# Install Homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew install vim git zsh tmux chruby ruby-install ctags \
+  reattach-to-user-namespace the_silver_searcher mysql redis mongodb wget
+
+# Homebrew Cask
+brew install caskroom/cask/brew-cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+brew cask install nvalt dropbox seil karabiner alfred
+brew cask alfred link
+
+# Set the default shell (and in Users' prefs)
+chsh -s /usr/local/bin/zsh
+
+# Aliases
+ln -s ~/Dot/aliases          ~/.aliases
+ln -s ~/Dot/completions      ~/.completions
+ln -s ~/Dot/gitconfig        ~/.gitconfig
+ln -s ~/Dot/gitignore_global ~/.gitignore_global
+ln -s ~/Dot/gvimrc           ~/.gvimrc
+ln -s ~/Dot/inputrc          ~/.inputrc
+ln -s ~/Dot/prompt           ~/.prompt
+ln -s ~/Dot/pryrc            ~/.pryrc
+ln -s ~/Dot/tmux             ~/.tmux
+ln -s ~/Dot/tmux.conf        ~/.tmux.conf
+ln -s ~/Dot/vim              ~/.vim
+ln -s ~/Dot/vimrc            ~/.vimrc
+ln -s ~/Dot/vimrc_mini       ~/.vimrc_mini
+ln -s ~/Dot/zshrc            ~/.zshrc
+
+# Vim - Install Pathogen
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# Vim Plugins
+cd ~/.vim/bundle
+git clone https://github.com/kien/ctrlp.vim.git
+git clone https://github.com/scrooloose/nerdtree.git
+git clone https://github.com/tpope/vim-commentary.git
+git clone https://github.com/tpope/vim-rails.git
+git clone https://github.com/tpope/vim-unimpaired.git
+git clone https://github.com/tpope/vim-endwise.git
+git clone https://github.com/tpope/vim-fugitive.git
+git clone https://github.com/tpope/vim-rake.git
+git clone https://github.com/tpope/vim-surround.git
+git clone https://github.com/vim-ruby/vim-ruby.git
+git clone https://github.com/AndrewRadev/switch.vim.git
+git clone https://github.com/szw/vim-ctrlspace.git
+git clone https://github.com/tpope/vim-jdaddy.git
+git clone https://github.com/tmhedberg/matchit.git
+git clone https://github.com/bling/vim-airline.git
+
+# Set some OS X defaults
+defaults write com.apple.Dock autohide-delay -float 0
+killall Dock
+
+ruby-install ruby 2.1.4
