@@ -339,3 +339,5 @@ hi gitDiffRemoved ctermfg=255 ctermbg=1
 hi DiffAdd        ctermfg=255 ctermbg=2
 hi diffAdded      ctermfg=255 ctermbg=2
 hi gitDiffAdded   ctermfg=255 ctermbg=2
+
+hi LineNr ctermfg=252
