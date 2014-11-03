@@ -60,6 +60,7 @@ git clone https://github.com/szw/vim-ctrlspace.git
 git clone https://github.com/tpope/vim-jdaddy.git
 git clone https://github.com/tmhedberg/matchit.git
 git clone https://github.com/bling/vim-airline.git
+git clone https://github.com/AndrewRadev/splitjoin.vim.git
 
 # Set some OS X defaults
 defaults write com.apple.Dock autohide-delay -float 0
