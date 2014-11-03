@@ -70,3 +70,6 @@ ruby-install ruby 2.1.4
 
 # Fix zsh env
 sudo mv /etc/zshenv /etc/zprofile
+
+# Bring back brew-services
+brew tap gapple/services
