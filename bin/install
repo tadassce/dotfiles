@@ -62,6 +62,7 @@ git clone https://github.com/tmhedberg/matchit.git
 git clone https://github.com/bling/vim-airline.git
 git clone https://github.com/AndrewRadev/splitjoin.vim.git
 git clone https://github.com/rking/ag.vim.git
+git clone https://github.com/tpope/vim-projectionist.git
 
 # Set some OS X defaults
 defaults write com.apple.Dock autohide-delay -float 0
