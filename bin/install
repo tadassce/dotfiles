@@ -75,3 +75,6 @@ sudo mv /etc/zshenv /etc/zprofile
 
 # Bring back brew-services
 brew tap gapple/services
+
+# Install Pow
+curl get.pow.cx | sh
