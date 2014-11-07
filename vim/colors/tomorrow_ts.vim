@@ -340,4 +340,6 @@ hi DiffAdd        ctermfg=255 ctermbg=2
 hi diffAdded      ctermfg=255 ctermbg=2
 hi gitDiffAdded   ctermfg=255 ctermbg=2
 
-hi LineNr ctermfg=252
+hi LineNr    ctermfg=252
+hi Folded    ctermfg=248 ctermbg=NONE
+hi VertSplit ctermfg=255 ctermbg=254
