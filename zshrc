@@ -48,9 +48,9 @@ alias time='time -p ' # -p for POSIX output
 
 bindkey -M vicmd 'u' undo
 
-source ~/.aliases
 source ~/.completions
 source ~/.prompt
+source ~/.aliases
 
 # chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh
