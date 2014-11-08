@@ -13,7 +13,8 @@ xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install vim git zsh tmux chruby ruby-install ctags \
-  reattach-to-user-namespace the_silver_searcher mysql redis mongodb wget
+  reattach-to-user-namespace the_silver_searcher mysql redis mongodb wget \
+  heroku-toolbelt
 
 # Homebrew Cask
 brew install caskroom/cask/brew-cask
