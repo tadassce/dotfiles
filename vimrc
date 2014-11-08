@@ -423,3 +423,6 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 " let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_detect_whitespace=0
+
+" Current date
+:inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
