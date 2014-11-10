@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-alias ll='ls -la' # -lahGt
+alias l='ls -1'
+alias ll='ls -lahG'
+alias lt='ls -lahGt'
 alias g='git'
 alias go='git checkout '
 alias gb='git branch'
