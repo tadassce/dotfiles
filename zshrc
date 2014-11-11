@@ -10,7 +10,7 @@ PATH=$PATH:/usr/local/heroku/bin
 PATH=$PATH:/usr/X11/bin:/opt/local/bin:/usr/local/mysql/bin
 PATH=$PATH:/opt/nginx/sbin
 PATH=$PATH:/usr/local/share/npm/bin
-PATH=$PATH:/Users/tadas/Dropbox/Dotfiles/bin
+PATH=$PATH:/Users/tadas/Dot/bin
 PATH=$PATH:./bin
 
 export PATH
