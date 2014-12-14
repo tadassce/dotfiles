@@ -178,7 +178,7 @@ nmap ,z :sh<cr>
 " autocmd bufwritepost .vimrc source $MYVIMRC
 map <leader>s :source $MYVIMRC<CR>:nohl<cr>:<esc>
 
-nmap ,ev :e $MYVIMRC<cr>
+" nmap ,ev :e $MYVIMRC<cr>
 
 let g:netrw_list_hide= '.*\.DS_Store$'
 
@@ -225,12 +225,12 @@ let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors=0
 nmap ,i :IndentGuidesToggle<CR>
 
-" vim-slime configuration (<C-cc> to send to tmux)
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1.2"}
-let g:slime_paste_file = "$HOME/.slime_paste"
-nmap <leader>t :SlimeSend1 test<cr>
-nmap ,. :SlimeSend1
+"" vim-slime configuration (<C-cc> to send to tmux)
+" let g:slime_target = "tmux"
+" let g:slime_default_config = {"socket_name": "default", "target_pane": "1.2"}
+" let g:slime_paste_file = "$HOME/.slime_paste"
+" nmap <leader>t :SlimeSend1 test<cr>
+" nmap ,. :SlimeSend1
 
 " Add a TODO comment above current line
 nmap ,td O<esc>0CTODO <esc>==\\\A
