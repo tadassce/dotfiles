@@ -4,6 +4,7 @@
 tags
 gems.tags
 coverage
+.powrc
 .powenv
 .bundle
 .env
