@@ -82,3 +82,7 @@ brew tap gapple/services
 
 # Install Pow
 curl get.pow.cx | sh
+
+# Some useful Quick Look plugins
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json \
+  quicklook-csv qlimagesize
