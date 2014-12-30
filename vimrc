@@ -432,9 +432,6 @@ let g:airline_detect_whitespace=0
 " Current date
 inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
-" close html tag
-inoremap ,/ </<c-x><c-o>
-
 " Syntastic
 let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop', 'rubylint']
 let g:syntastic_mode_map = { "mode": "passive" }
