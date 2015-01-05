@@ -43,6 +43,11 @@ bindkey -M vicmd 'j' history-beginning-search-forward
 bindkey -M vicmd "/" history-incremental-search-backward
 bindkey -M vicmd "?" history-incremental-search-forward
 
+# Edit line in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 disable -r time       # disable shell reserved word
 alias time='time -p ' # -p for POSIX output
 
