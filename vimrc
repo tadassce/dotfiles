@@ -96,9 +96,8 @@ set autoread
 " Better line wrapping
 set nowrap
 set textwidth=72
-set formatoptions+=t " auto-wrap using textwidth
+set formatoptions-=t " auto-wrap using textwidth
 set formatoptions+=r " auto-insert comment leader after enter
-set formatoptions+=q " comment formatting with gq
 set formatoptions+=n " recognize numbered lists
 set formatoptions+=1 " don't break a line before a 1-letter word
 set formatoptions+=j " remove comment leader when joining lines
