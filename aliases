@@ -86,11 +86,3 @@ trash () {
   done
   IFS=$temp_ifs
 }
-
-rspec() {
-  if [ -f Gemfile ]; then
-    bundle exec rspec $@
-  else
-    rspec $@
-  fi
-}
