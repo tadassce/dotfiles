@@ -67,6 +67,7 @@ git clone https://github.com/tpope/vim-projectionist.git
 git clone https://github.com/godlygeek/tabular.git
 git clone https://github.com/kchmck/vim-coffee-script.git
 git clone https://github.com/scrooloose/syntastic.git
+git clone https://github.com/sunaku/vim-ruby-minitest.git
 
 # Set some OS X defaults
 defaults write com.apple.Dock autohide-delay -float 0
