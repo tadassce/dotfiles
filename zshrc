@@ -55,7 +55,7 @@ source ~/.aliases
 # chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
-chruby ruby-2.1.5
+chruby ruby-2.2.0
 
 # Ruby
 export RUBY_GC_MALLOC_LIMIT=90000000
