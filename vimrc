@@ -437,3 +437,6 @@ let g:syntastic_mode_map = { "mode": "passive" }
 nnoremap ,s :SyntasticToggleMode<cr>
 nnoremap ,c :SyntasticCheck<cr>
 nnoremap ,e :Errors<cr>
+
+" Dispatch
+nnoremap <F9> :Dispatch<CR>
