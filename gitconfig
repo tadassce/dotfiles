@@ -56,6 +56,7 @@
   ready = rebase -i @{u}
   g = grep --break --heading --line-number
   delete-merged-branches = !git branch --merged | grep -v '*' | xargs -n 1 git branch -d
+  ctags = !.git/hooks/ctags
 [github]
   user = tadassce
 [difftool]
@@ -73,6 +74,8 @@
   extendRegexp = true
   lineNumber = true
 [filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[init]
+  templatedir = ~/.git_template
