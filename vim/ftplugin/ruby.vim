@@ -17,3 +17,8 @@ imap <C-l> <space>=><space>
 
 iab elrb expect(last_response.body).to
 iab elrs expect(last_response.status).to eq 200
+
+nmap <buffer> ,m <Plug>(xmpfilter-mark)
+xmap <buffer> ,m <Plug>(xmpfilter-mark)
+nmap <buffer> ,x <Plug>(xmpfilter-run)
+xmap <buffer> ,x <Plug>(xmpfilter-run)
