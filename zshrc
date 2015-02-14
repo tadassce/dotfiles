@@ -72,3 +72,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2375
+
+# added by travis gem
+[ -f /Users/tadas/.travis/travis.sh ] && source /Users/tadas/.travis/travis.sh
