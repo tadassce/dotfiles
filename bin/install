@@ -76,6 +76,9 @@ killall Dock
 
 ruby-install ruby 2.1.4
 
+# Some must-have gems
+gem install pry pry-doc reek rubocop ruby-lint
+
 # Fix zsh env
 sudo mv /etc/zshenv /etc/zprofile
 
