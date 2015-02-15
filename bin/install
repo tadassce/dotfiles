@@ -37,6 +37,7 @@ ln -s ~/Dot/gvimrc           ~/.gvimrc
 ln -s ~/Dot/inputrc          ~/.inputrc
 ln -s ~/Dot/prompt           ~/.prompt
 ln -s ~/Dot/pryrc            ~/.pryrc
+ln -s ~/Dot/rspec            ~/.rspec
 ln -s ~/Dot/tmux.conf        ~/.tmux.conf
 ln -s ~/Dot/vim              ~/.vim
 ln -s ~/Dot/vimrc            ~/.vimrc
