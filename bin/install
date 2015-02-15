@@ -28,6 +28,7 @@ chsh -s /usr/local/bin/zsh
 # Aliases
 ln -s ~/Dot/aliases          ~/.aliases
 ln -s ~/Dot/completions      ~/.completions
+ln -s ~/Dot/gemrc            ~/.gemrc
 ln -s ~/Dot/gitconfig        ~/.gitconfig
 ln -s ~/Dot/gitignore_global ~/.gitignore_global
 ln -s ~/Dot/git_template     ~/.git_template
