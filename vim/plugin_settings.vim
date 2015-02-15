@@ -23,3 +23,9 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop', 'rubylint']
 let g:syntastic_mode_map = { "mode": "passive" }
+
+let g:todo_switch_definition =
+  \ {
+  \    '- \[ \]\(.*\)$': '- [x]\1',
+  \    '- \[x\]\(.*\)$': '- [ ]\1',
+  \ }
