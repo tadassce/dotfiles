@@ -30,6 +30,7 @@ ln -s ~/Dot/aliases          ~/.aliases
 ln -s ~/Dot/completions      ~/.completions
 ln -s ~/Dot/gitconfig        ~/.gitconfig
 ln -s ~/Dot/gitignore_global ~/.gitignore_global
+ln -s ~/Dot/git_template     ~/.git_template
 ln -s ~/Dot/gvimrc           ~/.gvimrc
 ln -s ~/Dot/inputrc          ~/.inputrc
 ln -s ~/Dot/prompt           ~/.prompt
