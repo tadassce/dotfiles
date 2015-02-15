@@ -42,6 +42,7 @@ ln -s ~/Dot/tmux.conf        ~/.tmux.conf
 ln -s ~/Dot/vim              ~/.vim
 ln -s ~/Dot/vimrc            ~/.vimrc
 ln -s ~/Dot/vimrc_mini       ~/.vimrc_mini
+ln -s ~/Dot/zsh              ~/.zsh
 ln -s ~/Dot/zshrc            ~/.zshrc
 
 # Vim - Install Pathogen

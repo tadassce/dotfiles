@@ -1,7 +1,11 @@
+# Add custom completion functions
+fpath=(~/.zsh/completion $fpath)
+
 # Case insensitive completions
 autoload -U compinit
 autoload -U zstyle+
-compinit -C
+compinit
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' completer _complete _list _oldlist _expand _ignored _match _correct _approximate _prefix
 zstyle ':completion::complete:*' use-cache 1
