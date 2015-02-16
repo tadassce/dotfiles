@@ -9,8 +9,8 @@ nmap <C-l> <C-w>l
 nmap K 5k
 
 " Join lines without surrounding whitespace
-nnoremap gJ :call <SID>JoinWithoutSpaces(0)<cr>
-xnoremap gJ :<c-u>call <SID>JoinWithoutSpaces(1)<cr>
+nnoremap gJ :call JoinWithoutSpaces(0)<cr>
+xnoremap gJ :<c-u>call JoinWithoutSpaces(1)<cr>
 
 " Add a TODO comment above current line
 nmap ,td O<esc>0CTODO <esc>==\\\A

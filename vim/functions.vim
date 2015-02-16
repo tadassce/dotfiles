@@ -29,7 +29,7 @@ function! StripTrailingWhitespace()
 endfunction
 
 
-function! s:JoinWithoutSpaces(visual)
+function! JoinWithoutSpaces(visual)
   if a:visual
     let range = "'<,'>"
   else
