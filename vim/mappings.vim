@@ -27,7 +27,7 @@ nmap - :Switch<cr>
 
 nnoremap <Leader>h :call HTMLEscape()<cr>
 
-xnoremap <silent> <expr> p <SID>Repl()
+xnoremap <silent> <expr> p Repl()
 
 map <tab> :NERDTreeToggle<cr>
 nnoremap ` :NERDTreeFind<cr>

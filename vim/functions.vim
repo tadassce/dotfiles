@@ -62,7 +62,7 @@ function! RestoreRegister()
   let @* = s:restore_reg
   return ''
 endfunction
-function! s:Repl()
+function! Repl()
   let s:restore_reg = @*
   return "p@=RestoreRegister()\<cr>"
 endfunction
