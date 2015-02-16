@@ -57,6 +57,11 @@ source ~/.completions
 source ~/.prompt
 source ~/.aliases
 
+# load custom functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 # chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
