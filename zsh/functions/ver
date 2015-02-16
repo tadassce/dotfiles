@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+function ver() {
+  cat `find . -name "version*"` | grep VERSION
+}
