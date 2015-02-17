@@ -42,4 +42,4 @@ set guifont=consolas_for_powerline:h14
 " colorscheme purplebee
 colorscheme dusk
 
-highlight Cursor guifg=white guibg=black
+highlight Cursor guifg=black guibg=white
