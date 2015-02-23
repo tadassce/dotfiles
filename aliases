@@ -61,7 +61,6 @@ alias brewup="brew upgrade && brew cleanup"
 # Fun
 alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
 alias drumroll='afplay ~/Dropbox/Resources/Sounds/drumroll.mp3'
-alias drumrollplease='curl -Ls http://bit.ly/drumrollplease | bash'
 gsay(){ curl -A RG --silent translate\.google\.com/translate_tts -d "tl=en&q=$@" | mpg123 - }
 
 # dw specific
