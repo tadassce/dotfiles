@@ -131,14 +131,14 @@ hi cspecialcharacter           guifg=#c080d0 guibg=#404040 guisp=#404040 gui=NON
 hi doxygensmallspecial         guifg=#fdd090 guibg=NONE guisp=NONE gui=NONE ctermfg=222 ctermbg=NONE cterm=NONE
 "hi clear -- no settings --
 
-hi DiffChange     ctermfg=103 ctermbg=0
-hi DiffText       ctermfg=3 ctermbg=0
-hi DiffDelete     ctermfg=1 ctermbg=0
-hi diffRemoved    ctermfg=1 ctermbg=0
-hi gitDiffRemoved ctermfg=1 ctermbg=0
-hi DiffAdd        ctermfg=2 ctermbg=0
-hi diffAdded      ctermfg=2 ctermbg=0
-hi gitDiffAdded   ctermfg=2 ctermbg=0
+hi DiffChange     ctermfg=103 ctermbg=234
+hi DiffText       ctermfg=3 ctermbg=234
+hi DiffDelete     ctermfg=1 ctermbg=234
+hi diffRemoved    ctermfg=1 ctermbg=234
+hi gitDiffRemoved ctermfg=1 ctermbg=234
+hi DiffAdd        ctermfg=2 ctermbg=234
+hi diffAdded      ctermfg=2 ctermbg=234
+hi gitDiffAdded   ctermfg=2 ctermbg=234
 
 hi ColorColumn ctermbg=235 guibg=black
 hi Directory guifg=#7e8aa2 ctermfg=60
