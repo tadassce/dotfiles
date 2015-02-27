@@ -29,3 +29,6 @@ let g:todo_switch_definition =
   \    '- \[ \]\(.*\)$': '- [x]\1',
   \    '- \[x\]\(.*\)$': '- [ ]\1',
   \ }
+
+" GitGutter
+highlight SignColumn ctermbg=234
