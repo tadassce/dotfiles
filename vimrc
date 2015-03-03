@@ -80,9 +80,6 @@ set wildignore+=*/target/*,*/lib_managed/*,*/project/*
 set listchars=tab:→\ ,eol:¬,trail:·,extends:…,precedes:…,nbsp:◦,conceal:☐
 set fillchars=stl:\ ,stlnc:-,vert:\|,fold:-,diff:-
 
-set foldlevelstart=20
-let ruby_fold=1
-
 ru functions.vim
 ru mappings.vim
 ru plugin_settings.vim
