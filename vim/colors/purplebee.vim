@@ -186,3 +186,6 @@ let g:airline#themes#purplebee#palette.inactive = airline#themes#generate_color_
 let g:airline#themes#purplebee#palette.inactive_modified = g:airline#themes#purplebee#palette.normal_modified
 let g:airline#themes#purplebee#palette.accents = { 'red': [ '#ff0000' , '' , 1 , '' ] }
 let g:airline_theme='purplebee'
+
+" GitGutter
+highlight SignColumn ctermbg=234

@@ -8,13 +8,15 @@ call pathogen#helptags()
 
 syntax enable
 
-" The ones that are suffixed by 'ts' are my 'forks'..
-colorscheme purplebee
-" colorscheme tomorrow_ts "light
-" colorscheme github_ts " light
-" colorscheme code_ts " dark
-" colorscheme tomorrow-night-ts
-" colorscheme tomorrow-night-eighties-ts
+if $TBG == 'black'
+  colorscheme purplebee
+  " colorscheme code_ts " dark
+  " colorscheme tomorrow-night-ts
+  " colorscheme tomorrow-night-eighties-ts
+else
+  colorscheme tomorrow_ts "light
+  " colorscheme github_ts " light
+endif
 
 " Enable filetypes
 filetype on

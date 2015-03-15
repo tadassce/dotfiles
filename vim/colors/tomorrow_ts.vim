@@ -343,3 +343,6 @@ hi gitDiffAdded   ctermfg=255 ctermbg=2
 hi LineNr    ctermfg=252
 hi Folded    ctermfg=248 ctermbg=NONE
 hi VertSplit ctermfg=255 ctermbg=254
+
+" GitGutter
+highlight SignColumn ctermbg=15
