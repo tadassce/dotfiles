@@ -65,3 +65,5 @@ autocmd FileType ruby imap <buffer> <c-m> <Plug>(xmpfilter-mark)
 autocmd FileType ruby nmap <buffer> <c-r> <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <c-r> <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <c-r> <Plug>(xmpfilter-run)
+
+nmap ,s :SlimeSend1 be rspec<cr>

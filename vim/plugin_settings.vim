@@ -29,3 +29,5 @@ let g:todo_switch_definition =
   \    '- \[ \]\(.*\)$': '- [x]\1',
   \    '- \[x\]\(.*\)$': '- [ ]\1',
   \ }
+
+let g:slime_target = "tmux"
