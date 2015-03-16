@@ -74,7 +74,6 @@ git clone https://github.com/kchmck/vim-coffee-script.git
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/sunaku/vim-ruby-minitest.git
 git clone https://github.com/tpope/vim-dispatch.git
-git clone https://github.com/t9md/vim-ruby-xmpfilter.git
 git clone https://github.com/jpalardy/vim-slime.git
 
 # Set some OS X defaults
