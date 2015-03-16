@@ -57,3 +57,11 @@ if has("user_commands")
   command! -bang Qa qa<bang>
   command! -bang Bd bd<bang>
 endif
+
+" xmpfilter
+autocmd FileType ruby nmap <buffer> <c-m> <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <c-m> <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <c-m> <Plug>(xmpfilter-mark)
+autocmd FileType ruby nmap <buffer> <c-r> <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <c-r> <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <c-r> <Plug>(xmpfilter-run)
