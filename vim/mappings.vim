@@ -58,4 +58,4 @@ if has("user_commands")
   command! -bang Bd bd<bang>
 endif
 
-nmap ,s :SlimeSend1 be rspec<cr>
+nmap ,s :SlimeSend1 rspec<cr>
