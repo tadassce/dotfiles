@@ -31,3 +31,5 @@ let g:todo_switch_definition =
   \ }
 
 let g:slime_target = "tmux"
+
+let g:rspec_command = "Dispatch rspec {spec}"
