@@ -1,3 +1,5 @@
+let mapleader = ","
+
 nmap <space> :
 imap <tab> <c-n>
 
@@ -25,8 +27,6 @@ nmap sk :SplitjoinJoin<cr>
 
 nmap - :Switch<cr>
 
-nnoremap <Leader>h :call HTMLEscape()<cr>
-
 xnoremap <silent> <expr> p Repl()
 
 map <tab> :NERDTreeToggle<cr>
@@ -35,7 +35,7 @@ nnoremap ` :NERDTreeFind<cr>
 nmap ]w :tabn<cr>
 nmap [w :tabp<cr>
 
-vmap ,t :Tab/\w:\zs/l0l1<cr>  " aligns ruby 1.9 style hash on ":"
+vmap ,h :Tab/\w:\zs/l0l1<cr>  " aligns ruby 1.9 style hash on ":"
 
 nmap Q <nop> " Don't go into Ex mode!
 
