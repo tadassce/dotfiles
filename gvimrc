@@ -40,6 +40,7 @@ set guifont=consolas_for_powerline:h14
 " set guifont=Meslo_LG_M_DZ_Regular_for_Powerline:h14
 
 " colorscheme purplebee
-colorscheme dusk
+" colorscheme dusk
+colorscheme pencil
 
 highlight Cursor guifg=black guibg=white
