@@ -76,6 +76,8 @@ git clone https://github.com/sunaku/vim-ruby-minitest.git
 git clone https://github.com/tpope/vim-dispatch.git
 git clone https://github.com/jpalardy/vim-slime.git
 git clone https://github.com/thoughtbot/vim-rspec.git
+git clone https://github.com/reedes/vim-pencil
+git clone https://github.com/reedes/vim-colors-pencil.git
 
 # Set some OS X defaults
 defaults write com.apple.Dock autohide-delay -float 0
