@@ -49,35 +49,38 @@ ln -s ~/Dot/zshrc            ~/.zshrc
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
-# Vim Plugins
+vim_plugins=(
+  AndrewRadev/splitjoin.vim
+  AndrewRadev/switch.vim
+  bling/vim-airline
+  godlygeek/tabular
+  jpalardy/vim-slime
+  kchmck/vim-coffee-script
+  kien/ctrlp.vim
+  reedes/vim-colors-pencil
+  rking/ag.vim
+  scrooloose/nerdtree
+  scrooloose/syntastic
+  sunaku/vim-ruby-minitest
+  szw/vim-ctrlspace
+  thoughtbot/vim-rspec
+  tmhedberg/matchit
+  tpope/vim-commentary
+  tpope/vim-dispatch
+  tpope/vim-endwise
+  tpope/vim-fugitive
+  tpope/vim-jdaddy
+  tpope/vim-projectionist
+  tpope/vim-rails
+  tpope/vim-rake
+  tpope/vim-surround
+  tpope/vim-unimpaired
+  vim-ruby/vim-ruby
+)
 cd ~/.vim/bundle
-git clone https://github.com/kien/ctrlp.vim.git
-git clone https://github.com/scrooloose/nerdtree.git
-git clone https://github.com/tpope/vim-commentary.git
-git clone https://github.com/tpope/vim-rails.git
-git clone https://github.com/tpope/vim-unimpaired.git
-git clone https://github.com/tpope/vim-endwise.git
-git clone https://github.com/tpope/vim-fugitive.git
-git clone https://github.com/tpope/vim-rake.git
-git clone https://github.com/tpope/vim-surround.git
-git clone https://github.com/vim-ruby/vim-ruby.git
-git clone https://github.com/AndrewRadev/switch.vim.git
-git clone https://github.com/szw/vim-ctrlspace.git
-git clone https://github.com/tpope/vim-jdaddy.git
-git clone https://github.com/tmhedberg/matchit.git
-git clone https://github.com/bling/vim-airline.git
-git clone https://github.com/AndrewRadev/splitjoin.vim.git
-git clone https://github.com/rking/ag.vim.git
-git clone https://github.com/tpope/vim-projectionist.git
-git clone https://github.com/godlygeek/tabular.git
-git clone https://github.com/kchmck/vim-coffee-script.git
-git clone https://github.com/scrooloose/syntastic.git
-git clone https://github.com/sunaku/vim-ruby-minitest.git
-git clone https://github.com/tpope/vim-dispatch.git
-git clone https://github.com/jpalardy/vim-slime.git
-git clone https://github.com/thoughtbot/vim-rspec.git
-git clone https://github.com/reedes/vim-pencil
-git clone https://github.com/reedes/vim-colors-pencil.git
+for plugin in $vim_plugins; do
+  git clone https://github.com/$plugin.git
+done
 
 # Set some OS X defaults
 defaults write com.apple.Dock autohide-delay -float 0
