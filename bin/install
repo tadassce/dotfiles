@@ -53,6 +53,7 @@ vim_plugins=(
   AndrewRadev/splitjoin.vim
   AndrewRadev/switch.vim
   bling/vim-airline
+  derekwyatt/vim-scala
   godlygeek/tabular
   jpalardy/vim-slime
   kchmck/vim-coffee-script
