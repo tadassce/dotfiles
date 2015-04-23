@@ -88,6 +88,7 @@ function! s:TagsExclude(bang, ...)
 endfunction
 
 
+command! ShowColors call ShowColors()
 function! ShowColors()
   let num = 255
   while num >= 0
