@@ -9,12 +9,18 @@ call pathogen#helptags()
 syntax enable
 
 if $TBG == 'black'
-  colorscheme purplebee
+  set background=dark
+  " colorscheme purplebee
   " colorscheme code_ts " dark
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
+  colorscheme purplebee " to load airline purplebee
+  let g:airline_theme='purplebee'
+  colorscheme pencil
 else
-  colorscheme tomorrow_ts "light
+  set background=light
+  colorscheme pencil
+  " colorscheme tomorrow_ts "light
   " colorscheme github_ts " light
 endif
 
@@ -86,5 +92,6 @@ ru functions.vim
 ru mappings.vim
 ru plugin_settings.vim
 ru abbreviations.vim
+ru color_overrides.vim
 
 autocmd BufWritePre * :call StripTrailingWhitespace()
