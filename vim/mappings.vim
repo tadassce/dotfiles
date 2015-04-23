@@ -35,7 +35,8 @@ nnoremap ` :NERDTreeFind<cr>
 nmap ]w :tabn<cr>
 nmap [w :tabp<cr>
 
-vmap ,h :Tab/\w:\zs/l0l1<cr>  " aligns ruby 1.9 style hash on ":"
+" aligns ruby 1.9 style hash on ":"
+vmap ,h :Tab/\w:\zs/l0l1<cr>
 
 nmap Q <nop> " Don't go into Ex mode!
 
