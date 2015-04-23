@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+pair() {
+  command pair "$@"
+  if [[ -s "$HOME/.pair-up_export_authors" ]] ; then source "$HOME/.pair-up_export_authors" ; fi
+}
+
