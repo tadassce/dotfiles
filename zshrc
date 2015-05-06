@@ -5,13 +5,13 @@ export GIT_MERGE_AUTOEDIT
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/usr/local/heroku/bin
 PATH=$PATH:/usr/X11/bin:/opt/local/bin:/usr/local/mysql/bin
 PATH=$PATH:/opt/nginx/sbin
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:/Users/tadas/Dot/bin
-PATH=$PATH:./bin
 
 export PATH
 export GREP_OPTIONS='--color=auto'
