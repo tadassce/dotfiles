@@ -59,6 +59,7 @@ vim_plugins=(
   jpalardy/vim-slime
   kchmck/vim-coffee-script
   kien/ctrlp.vim
+  moll/vim-bbye
   reedes/vim-colors-pencil
   rking/ag.vim
   scrooloose/nerdtree
