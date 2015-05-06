@@ -51,36 +51,45 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 vim_plugins=(
-  AndrewRadev/splitjoin.vim
-  AndrewRadev/switch.vim
-  bling/vim-airline
+  # filetypes
+  vim-ruby/vim-ruby
   derekwyatt/vim-scala
-  godlygeek/tabular
-  jpalardy/vim-slime
   kchmck/vim-coffee-script
-  kien/ctrlp.vim
-  moll/vim-bbye
-  reedes/vim-colors-pencil
-  rking/ag.vim
-  scrooloose/nerdtree
-  scrooloose/syntastic
   slim-template/vim-slim.git
   sunaku/vim-ruby-minitest
-  szw/vim-ctrlspace
-  thoughtbot/vim-rspec
-  tmhedberg/matchit
+
+  # colors
+  bling/vim-airline
+  reedes/vim-colors-pencil
+
+  # text manipulation
+  AndrewRadev/splitjoin.vim
+  AndrewRadev/switch.vim
+  godlygeek/tabular
   tpope/vim-commentary
-  tpope/vim-dispatch
-  tpope/vim-endwise
+
+  # file search and navigation
+  rking/ag.vim
+  scrooloose/nerdtree
+  kien/ctrlp.vim
+  szw/vim-ctrlspace
+
+  thoughtbot/vim-rspec
   tpope/vim-fugitive
+  scrooloose/syntastic
+  jpalardy/vim-slime
+  tpope/vim-dispatch
+
+  tmhedberg/matchit
+  tpope/vim-surround
+  tpope/vim-endwise
   tpope/vim-jdaddy
-  tpope/vim-obsession
   tpope/vim-projectionist
   tpope/vim-rails
   tpope/vim-rake
-  tpope/vim-surround
   tpope/vim-unimpaired
-  vim-ruby/vim-ruby
+  tpope/vim-obsession
+  moll/vim-bbye
 )
 cd ~/.vim/bundle
 for plugin in $vim_plugins; do
