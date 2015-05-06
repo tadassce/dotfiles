@@ -63,6 +63,7 @@ vim_plugins=(
   rking/ag.vim
   scrooloose/nerdtree
   scrooloose/syntastic
+  slim-template/vim-slim.git
   sunaku/vim-ruby-minitest
   szw/vim-ctrlspace
   thoughtbot/vim-rspec
