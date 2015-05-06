@@ -11,6 +11,7 @@ nnoremap <buffer> ! ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
 " nmap ,s :SlimeSend1 rspec<cr>
 " nmap ,r :Dispatch rspec<cr>
 " nmap ,c :Copen<cr>
+nmap ,r :RuboCop<cr>
 
 " Insert mode shortcuts
 imap <C-l> <space>=><space>
