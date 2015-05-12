@@ -1,6 +1,31 @@
 #! /usr/bin/env ruby
 
 res = %x(~/Dot/bin/battery Discharging).strip
-res = %x(~/Dot/bin/battery Charging).strip if res.empty?
+plugged = false
 
-puts "Bat #{res} | " unless res.empty?
+if res.empty?
+  res = %x(~/Dot/bin/battery Charging).strip
+  plugged = true
+end
+
+percentage = res.to_i
+
+char = if plugged
+  if percentage == 0
+    '💯 '
+  elsif percentage > 95
+    '👌🏻 '
+  else
+    "#{percentage}% 🔌 "
+  end
+else # unplugged
+  case percentage
+    when 80..99 then '☕️ '
+    when 60..80 then '🍩 '
+    when 40..60 then '🍉 '
+    when 20..40 then '🍕 '
+    when 1..20  then '⚠️ '
+  end
+end
+
+puts "#{char} "
