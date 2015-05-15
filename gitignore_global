@@ -8,3 +8,4 @@ coverage
 .powenv
 .bundle
 .env
+Session.vim
