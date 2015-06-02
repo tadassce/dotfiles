@@ -29,7 +29,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set colorcolumn=80,120 " Vertical ruler
+set colorcolumn=80 " Vertical ruler
 set vb " disable beep
 set clipboard=unnamed
 set ffs=unix
