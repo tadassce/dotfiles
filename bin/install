@@ -74,11 +74,13 @@ vim_plugins=(
   kien/ctrlp.vim
   szw/vim-ctrlspace
 
+  # tools
   thoughtbot/vim-rspec
   tpope/vim-fugitive
   scrooloose/syntastic
   jpalardy/vim-slime
   tpope/vim-dispatch
+  diepm/vim-rest-console
 
   tmhedberg/matchit
   tpope/vim-surround
