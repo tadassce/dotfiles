@@ -19,7 +19,7 @@ brew install vim git zsh tmux chruby ruby-install ctags \
 # Homebrew Cask
 brew install caskroom/cask/brew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-brew cask install nvalt dropbox seil karabiner alfred
+brew cask install nvalt dropbox seil karabiner noejectdelay alfred
 brew cask alfred link
 
 # Set the default shell (and in Users' prefs)
