@@ -43,4 +43,4 @@ set guifont=source_code_pro:h16
 " colorscheme dusk
 colorscheme pencil
 
-highlight Cursor guifg=black guibg=white
+highlight Cursor guifg=white guibg=black
