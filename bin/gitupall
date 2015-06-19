@@ -1,17 +1,28 @@
 #! /usr/bin/env ruby
 require 'colorize'
 
-home = Dir.pwd
-Dir['*'].each do |dir|
-  if File.directory? dir
-    Dir.chdir dir
-    if File.exists?('.git')
-      name = dir.split('/').last
-      puts "Updating #{name.blue}"
-      # system "git config git-up.bundler.check false"
-      system 'git up'
-    end
-    Dir.chdir home
+def git_up(name)
+  # `git config git-up.bundler.check false`
+
+  output = `git up`
+
+  if output.include? 'fast-forwarding'
+    puts "\nUpdates from #{name.blue}"
+    puts `git log --pretty=format:'%Cgreen%cr %Cblue%an%Creset: %s' --max-count 10 ORIG_HEAD..`
     puts
+  else
+    print '.'
   end
 end
+
+home = Dir.pwd
+Dir['*'].each do |dir|
+  next unless File.directory? dir
+  Dir.chdir dir
+  if File.exists?('.git')
+    name = dir.split('/').last
+    git_up(name)
+  end
+  Dir.chdir home
+end
+puts
