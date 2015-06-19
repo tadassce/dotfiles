@@ -68,3 +68,5 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 map <leader>v :source ~/.vimrc<cr>
+
+nmap ,g :GitGutterToggle<cr>
