@@ -71,6 +71,9 @@ elseif $TBG == 'white'
   " hi Folded    ctermfg=248 ctermbg=NONE
   " hi VertSplit ctermfg=255 ctermbg=254
 
+  " let g:airline#themes#pencil#palette.insert = airline#themes#generate_color_map(['', '', 15, 4], ['','', 15, 245], ['','', 245, 254])
+  " let g:airline#themes#pencil#palette.visual = airline#themes#generate_color_map(['', '', 15, 5], ['','', 15, 245], ['','', 245, 254])
+
   " GitGutter
   highlight SignColumn            ctermbg=254 ctermfg=241
   highlight GitGutterAdd          ctermbg=254 ctermfg=2
@@ -81,11 +84,11 @@ elseif $TBG == 'white'
 " -----------------------------------------------------------------------------
 endif
 
-hi DiffAdd        ctermfg=2
-hi diffAdded      ctermfg=2
-hi gitDiffAdded   ctermfg=2
-hi DiffDelete     ctermfg=1
-hi diffRemoved    ctermfg=1
-hi gitDiffRemoved ctermfg=1
-hi DiffText       ctermfg=3
-hi DiffChange     ctermfg=3
+" hi DiffAdd        ctermfg=2
+" hi diffAdded      ctermfg=2
+" hi gitDiffAdded   ctermfg=2
+" hi DiffDelete     ctermfg=1
+" hi diffRemoved    ctermfg=1
+" hi gitDiffRemoved ctermfg=1
+" hi DiffText       ctermfg=3
+" hi DiffChange     ctermfg=3
