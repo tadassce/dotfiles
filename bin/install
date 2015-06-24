@@ -71,6 +71,7 @@ vim_plugins=(
   # file search and navigation
   rking/ag.vim
   scrooloose/nerdtree
+  ivalkeen/nerdtree-execute
   kien/ctrlp.vim
   szw/vim-ctrlspace
 
