@@ -32,6 +32,7 @@ setopt hist_reduce_blanks
 setopt hist_verify
 setopt inc_append_history
 setopt share_history # share command history data
+setopt interactivecomments
 
 # search up/down by taking the current line content into account
 bindkey -M viins '^[[A' history-beginning-search-backward
