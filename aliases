@@ -69,6 +69,6 @@ alias drumroll='afplay ~/Dropbox/Resources/Sounds/drumroll.mp3'
 gsay(){ curl -A RG --silent translate\.google\.com/translate_tts -d "tl=en&q=$@" | mpg123 - }
 
 # dw specific
-alias daw='cd ~/code/dawanda_main'
+alias daw='cd ~/code/dawanda/legacy'
 alias lo='loveos-cli'
 alias cl='cd ~/code/loveos'
