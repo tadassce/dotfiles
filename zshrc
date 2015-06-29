@@ -43,6 +43,8 @@ bindkey -M vicmd 'j' history-beginning-search-forward
 # Incremental search
 bindkey -M vicmd "/" history-incremental-search-backward
 bindkey -M vicmd "?" history-incremental-search-forward
+bindkey -M viins '^p' history-incremental-pattern-search-backward
+bindkey -M viins '^n' history-incremental-pattern-search-forward
 
 # Edit line in vim
 autoload -U edit-command-line
