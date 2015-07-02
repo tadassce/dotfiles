@@ -35,11 +35,13 @@ ln -s ~/Dot/gitconfig        ~/.gitconfig
 ln -s ~/Dot/gitignore_global ~/.gitignore_global
 ln -s ~/Dot/gvimrc           ~/.gvimrc
 ln -s ~/Dot/inputrc          ~/.inputrc
+ln -s ~/Dot/nvim             ~/.nvim
+ln -s ~/Dot/nvimrc           ~/.nvimrc
 ln -s ~/Dot/prompt           ~/.prompt
 ln -s ~/Dot/pryrc            ~/.pryrc
 ln -s ~/Dot/rspec            ~/.rspec
-ln -s ~/Dot/tmux.conf        ~/.tmux.conf
 ln -s ~/Dot/tmux             ~/.tmux
+ln -s ~/Dot/tmux.conf        ~/.tmux.conf
 ln -s ~/Dot/vim              ~/.vim
 ln -s ~/Dot/vimrc            ~/.vimrc
 ln -s ~/Dot/vimrc_mini       ~/.vimrc_mini
