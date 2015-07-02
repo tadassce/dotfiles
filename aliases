@@ -71,5 +71,6 @@ gsay(){ curl -A RG --silent translate\.google\.com/translate_tts -d "tl=en&q=$@"
 
 # dw specific
 alias daw='cd ~/code/dawanda/legacy'
-alias lo='loveos-cli'
+alias dw='cd ~/code/dawanda'
 alias cl='cd ~/code/loveos'
+alias lo='loveos-cli'
