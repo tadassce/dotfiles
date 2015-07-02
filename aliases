@@ -62,6 +62,7 @@ alias bs='brew services'
 alias bc='brew cask'
 alias brewout="brew update && echo \"$fg[blue]==>$reset_color\" && brew outdated"
 alias brewup="brew upgrade && brew cleanup"
+alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc"
 
 # Fun
 alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
