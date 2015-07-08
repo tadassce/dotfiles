@@ -14,7 +14,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 brew install vim git zsh tmux chruby ruby-install ctags \
   reattach-to-user-namespace the_silver_searcher mysql redis mongodb wget \
-  heroku-toolbelt
+  heroku-toolbelt jrnl fpp
 
 # Homebrew Cask
 brew install caskroom/cask/brew-cask
