@@ -61,6 +61,8 @@
 	user = tadassce
 [difftool]
 	prompt = false
+[diff "spaceman-diff"]
+	command = ~/Dot/bin/spaceman-diff
 [mergetool]
 	keepBackup = true
 [push]
