@@ -59,6 +59,7 @@ bindkey -M vicmd 'u' undo
 source ~/.completions
 source ~/.prompt
 source ~/.aliases
+source ~/.functions
 
 # load custom functions
 for function in ~/.zsh/functions/*; do
