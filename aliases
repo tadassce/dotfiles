@@ -5,7 +5,6 @@ alias ll='ls -lahG'
 alias lt='ls -lahGt'
 
 alias g='git'
-alias go='git checkout '
 alias gb='git branch'
 alias gup='git up'
 alias gpp='git up && git push'
