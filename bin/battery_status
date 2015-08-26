@@ -12,11 +12,11 @@ percentage = res.to_i
 
 char = if plugged
   if percentage == 0
-    '💯 '
+    # '💯 '
   elsif percentage > 95
     '👌🏻 '
   else
-    "#{percentage}% 🔌 "
+    "#{percentage}% ⚡️ "
   end
 else # unplugged
   case percentage

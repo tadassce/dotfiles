@@ -15,13 +15,12 @@ if $TBG == 'black'
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
   colorscheme purplebee " to load airline purplebee
-  " let g:airline_theme='purplebee'
   " colorscheme pencil
 else
   set background=light
-  " colorscheme pencil
+  colorscheme pencil
   " colorscheme PaperColor
-  colorscheme tomorrow_ts
+  " colorscheme tomorrow_ts
   " colorscheme github_ts
 endif
 
