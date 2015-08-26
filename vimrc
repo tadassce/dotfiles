@@ -38,7 +38,7 @@ set backspace=indent,eol,start " Make backspace work properly
 set enc=utf-8
 set autowrite     " Write the file out when switching between files.
 set ruler         " Display current cursor position in lower right corner.
-set nohidden      " Don't keep empty buffers
+set hidden        " Ok to keep empty buffers
 set noswapfile
 set tabstop=2     " Number of space chars that will be inserted when the tab key is pressed
 set shiftwidth=2  " Number of space characters inserted for indentation
