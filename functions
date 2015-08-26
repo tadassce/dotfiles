@@ -4,3 +4,9 @@ function mcdir() {
   mkdir -p $1
   cd $1
 }
+
+function name() {
+  dir=$2
+  [[ -d $dir ]] || dir=.
+  find $dir -name "*$1*"
+}
