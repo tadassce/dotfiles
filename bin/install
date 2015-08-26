@@ -37,7 +37,6 @@ ln -s ~/Dot/gitignore_global ~/.gitignore_global
 ln -s ~/Dot/gitmessage       ~/.gitmessage
 ln -s ~/Dot/gvimrc           ~/.gvimrc
 ln -s ~/Dot/inputrc          ~/.inputrc
-ln -s ~/Dot/nvim             ~/.nvim
 ln -s ~/Dot/nvimrc           ~/.nvimrc
 ln -s ~/Dot/prompt           ~/.prompt
 ln -s ~/Dot/pryrc            ~/.pryrc
