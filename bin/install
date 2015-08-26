@@ -32,6 +32,7 @@ ln -s ~/Dot/completions      ~/.completions
 ln -s ~/Dot/gemrc            ~/.gemrc
 ln -s ~/Dot/git_template     ~/.git_template
 ln -s ~/Dot/gitconfig        ~/.gitconfig
+ln -s ~/Dot/gitmessage       ~/.gitmessage
 ln -s ~/Dot/gitignore_global ~/.gitignore_global
 ln -s ~/Dot/gvimrc           ~/.gvimrc
 ln -s ~/Dot/inputrc          ~/.inputrc
