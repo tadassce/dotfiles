@@ -21,6 +21,15 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 " let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
+let g:ctrlp_abbrev = {
+  \   'abbrevs': [
+  \     {
+  \       'pattern': '\ ',
+  \       'expanded': '',
+  \     },
+  \   ]
+  \ }
+
 let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop', 'rubylint']
 let g:syntastic_mode_map = { "mode": "passive" }
 
