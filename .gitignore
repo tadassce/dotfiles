@@ -5,8 +5,7 @@ powerline
 tmux/powerline
 vim/.netrwhist
 vim/autoload
-vim/bundle
-vim/bundlenot/
+vim/plugged
 vim/cache
 vim/doc/
 vim/plugin/

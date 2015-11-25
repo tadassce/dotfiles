@@ -1,9 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 # Install script for a fresh OS X install.
 # More meant for copy-pasting rather than just running so far.
-
-git clone https://github.com/tadassce/dotfiles.git ~/Dot
 
 # - Install 1P and XCode from the MAS
 
@@ -16,93 +14,25 @@ brew install vim git zsh tmux chruby ruby-install ctags \
   reattach-to-user-namespace the_silver_searcher mysql redis mongodb wget \
   heroku-toolbelt jrnl fpp
 
+# Set up dotfiles
+brew tap thoughtbot/formulae
+brew install rcm
+git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
+rcup
+
 # Homebrew Cask
 brew install caskroom/cask/brew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-brew cask install nvalt dropbox seil karabiner noejectdelay alfred
+brew cask install dropbox seil karabiner noejectdelay alfred
 brew cask alfred link
 
 # Set the default shell (and in Users' prefs)
 chsh -s /usr/local/bin/zsh
 
-# Aliases
-ln -s ~/Dot/agignore         ~/.agignore
-ln -s ~/Dot/aliases          ~/.aliases
-ln -s ~/Dot/completions      ~/.completions
-ln -s ~/Dot/functions        ~/.functions
-ln -s ~/Dot/gemrc            ~/.gemrc
-ln -s ~/Dot/git_template     ~/.git_template
-ln -s ~/Dot/gitconfig        ~/.gitconfig
-ln -s ~/Dot/gitignore_global ~/.gitignore_global
-ln -s ~/Dot/gitmessage       ~/.gitmessage
-ln -s ~/Dot/gvimrc           ~/.gvimrc
-ln -s ~/Dot/inputrc          ~/.inputrc
-ln -s ~/Dot/nvimrc           ~/.nvimrc
-ln -s ~/Dot/prompt           ~/.prompt
-ln -s ~/Dot/pryrc            ~/.pryrc
-ln -s ~/Dot/rspec            ~/.rspec
-ln -s ~/Dot/tmux             ~/.tmux
-ln -s ~/Dot/tmux.conf        ~/.tmux.conf
-ln -s ~/Dot/vim              ~/.vim
-ln -s ~/Dot/vimrc            ~/.vimrc
-ln -s ~/Dot/vimrc_mini       ~/.vimrc_mini
-ln -s ~/Dot/zsh              ~/.zsh
-ln -s ~/Dot/zshrc            ~/.zshrc
-
-# Vim - Install Pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-vim_plugins=(
-  # filetypes
-  vim-ruby/vim-ruby
-  derekwyatt/vim-scala
-  kchmck/vim-coffee-script
-  slim-template/vim-slim.git
-  sunaku/vim-ruby-minitest
-
-  # colors
-  bling/vim-airline
-  reedes/vim-colors-pencil
-
-  # text manipulation
-  AndrewRadev/splitjoin.vim
-  AndrewRadev/switch.vim
-  godlygeek/tabular
-  tpope/vim-commentary
-
-  # file search and navigation
-  rking/ag.vim
-  scrooloose/nerdtree
-  ivalkeen/nerdtree-execute
-  kien/ctrlp.vim
-  szw/vim-ctrlspace
-
-  # tools
-  thoughtbot/vim-rspec
-  tpope/vim-fugitive
-  scrooloose/syntastic
-  jpalardy/vim-slime
-  tpope/vim-dispatch
-  diepm/vim-rest-console
-
-  tmhedberg/matchit
-  kana/vim-textobj-user
-  nelstrom/vim-textobj-rubyblock
-  tpope/vim-surround
-  tpope/vim-endwise
-  tpope/vim-jdaddy
-  tpope/vim-projectionist
-  tpope/vim-rails
-  tpope/vim-rake
-  tpope/vim-unimpaired
-  tpope/vim-obsession
-  moll/vim-bbye
-)
-cd ~/.vim/bundle
-for plugin in $vim_plugins; do
-  git clone https://github.com/$plugin.git
-done
+# Vim Plugins
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# :PlugInstall
 
 # Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -111,9 +41,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 defaults write com.apple.Dock autohide-delay -float 0
 killall Dock
 
-ruby-install ruby 2.1.4
+ruby-install ruby 2.2.3
 
-# Some must-have gems
 gem install pry pry-doc reek rubocop ruby-lint
 
 # Fix zsh env

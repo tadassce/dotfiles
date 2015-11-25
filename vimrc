@@ -3,8 +3,7 @@
 " tadas@sce.lt
 " http://tadas.me
 
-call pathogen#infect()
-call pathogen#helptags()
+ru plugins.vim
 
 syntax enable
 
