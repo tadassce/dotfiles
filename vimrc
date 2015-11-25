@@ -66,6 +66,7 @@ set ignorecase
 set mousehide
 set ttyfast
 set showcmd
+set showmatch
 set shortmess+=I " don't show startup message when opening Vim without a file
 set splitbelow
 set showbreak=↪\ " keep the space
