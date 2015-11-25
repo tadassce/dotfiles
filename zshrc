@@ -81,7 +81,7 @@ export RUBY_GC_HEAP_FREE_SLOTS=500000
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Docker
-export DOCKER_HOST=tcp://192.168.59.103:2375
+eval "$(docker-machine env dev)"
 
 # added by travis gem
 [ -f /Users/tadas/.travis/travis.sh ] && source /Users/tadas/.travis/travis.sh
