@@ -1,5 +1,0 @@
-#! /usr/bin/env ruby
-
-require '~/code/todo/cli/todo'
-
-Todo::Cli.exec(ARGV)
