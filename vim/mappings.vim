@@ -70,3 +70,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 map <leader>v :source ~/.vimrc<cr>
 
 nmap ,g :GitGutterToggle<cr>
+
+nmap ,qq :Syntastic
+nmap ,qc :SyntasticCheck<cr>
+nmap ,qr :SyntasticReset<cr>
