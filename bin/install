@@ -43,7 +43,7 @@ killall Dock
 
 ruby-install ruby 2.2.3
 
-gem install pry pry-doc reek rubocop ruby-lint
+gem install pry pry-doc reek rubocop ruby-lint coderay
 
 # Fix zsh env
 sudo mv /etc/zshenv /etc/zprofile
