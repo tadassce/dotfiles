@@ -67,9 +67,3 @@ alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/R
 alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
 alias drumroll='afplay ~/Dropbox/Resources/Sounds/drumroll.mp3'
 gsay(){ curl -A RG --silent translate\.google\.com/translate_tts -d "tl=en&q=$@" | mpg123 - }
-
-# dw specific
-alias daw='cd ~/code/dawanda/legacy'
-alias dw='cd ~/code/dawanda'
-alias cl='cd ~/code/loveos'
-alias lo='loveos-cli'
