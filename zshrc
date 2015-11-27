@@ -80,8 +80,5 @@ export RUBY_GC_HEAP_FREE_SLOTS=500000
 # https://github.com/caskroom/homebrew-cask/issues/2534
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# Docker
-eval "$(docker-machine env dev)"
-
 # added by travis gem
 [ -f /Users/tadas/.travis/travis.sh ] && source /Users/tadas/.travis/travis.sh
