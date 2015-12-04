@@ -5,8 +5,9 @@ let g:ragtag_global_maps = 1
 let g:splitjoin_split_mapping = ''
 let g:splitjoin_join_mapping = ''
 
-let NERDTreeDirArrows = 0
-let NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrowExpandable='+'
+let g:NERDTreeDirArrowCollapsible='~'
 
 let g:gist_clip_command = 'pbcopy'
 
