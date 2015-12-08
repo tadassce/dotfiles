@@ -27,6 +27,7 @@ Plug 'szw/vim-ctrlspace'
 " tools
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-dispatch'
