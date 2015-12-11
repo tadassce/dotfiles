@@ -51,6 +51,7 @@ alias be='bundle exec'
 alias cn='cd ~/Dropbox/Notes'
 alias vin='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox && vim'
 alias cpd='cap production deploy'
+alias csd='cap staging deploy'
 alias pj='underscore print --color'
 
 # OS X
