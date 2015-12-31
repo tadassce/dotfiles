@@ -41,7 +41,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 defaults write com.apple.Dock autohide-delay -float 0
 killall Dock
 
-ruby-install ruby 2.2.3
+ruby-install ruby --latest
 
 gem install pry pry-doc reek rubocop ruby-lint coderay
 
