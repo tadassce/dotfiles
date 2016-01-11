@@ -62,7 +62,7 @@
 [difftool]
 	prompt = false
 [diff "spaceman-diff"]
-	command = ~/Dot/bin/spaceman-diff
+	command = ~/.dotfiles/bin/spaceman-diff
 [mergetool]
 	keepBackup = true
 [push]
