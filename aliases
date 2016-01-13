@@ -32,7 +32,6 @@ alias less='less -R '
 alias ..='cd ..'
 alias :q='exit'
 alias ttr='mkdir -p tmp && touch tmp/restart.txt'
-alias tailx='tail -f /opt/nginx/logs/access.log'
 alias rec_pull_bash='for i in `ls`; do cd $i; git pull; cd ..; done'
 function grp() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null }
 function greps() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null | sed -E 's/[[:space:]]+//' | grep $1 }
