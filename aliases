@@ -10,6 +10,7 @@ alias gup='git up'
 alias gpp='git up && git push'
 alias gp='git push'
 alias gph='git push && hub browse'
+alias gphm='git push heroku master'
 alias gpa='git push --all'
 alias grm='git rm $(git ls-files --deleted)'
 alias gs='git status -sb'
@@ -52,6 +53,8 @@ alias vin='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/D
 alias cpd='cap production deploy'
 alias csd='cap staging deploy'
 alias pj='underscore print --color'
+alias cdc='cd ~/code/chic-web'
+alias cdw='cd ~/code/chic-wiki'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
