@@ -9,9 +9,14 @@ nnoremap <buffer> ! ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
 
 " nmap ,r :!rspec<cr>
 " nmap ,s :SlimeSend1 rspec<cr>
-" nmap ,r :Dispatch rspec<cr>
+nmap ,r :Dispatch rspec<cr>
 " nmap ,c :Copen<cr>
-nmap ,r :RuboCop<cr>
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Insert mode shortcuts
 imap <C-l> <space>=><space>
