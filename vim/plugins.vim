@@ -6,6 +6,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'sunaku/vim-ruby-minitest'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " colors
 Plug 'bling/vim-airline'
