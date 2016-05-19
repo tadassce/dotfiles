@@ -1,6 +1,7 @@
 [user]
 	name = Tadas Sce
 	email = tadas@sce.lt
+	signingkey = D5E89DE3
 [color]
 	ui = auto
 [color "branch"]
@@ -30,9 +31,10 @@
 	co = checkout
 	b = branch
 	br = branch
-	c = commit -v
 	ci = commit -v
 	cia = commit -av
+	cis = commit -S -v
+	cias = commit -S -av
 	ap = add -p
 	m = merge
 	sp = stash pop
