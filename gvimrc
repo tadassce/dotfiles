@@ -34,10 +34,11 @@ map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>
 " set guifont=menlo_for_powerline:h13
 " set guifont=espresso_mono:h13
 " set guifont=espresso_mono_for_powerline:h13
-set guifont=source_code_pro:h16
+" set guifont=source_code_pro:h14
 " set guifont=droid_sans_mono_for_powerline:h14
 " set guifont=consolas_for_powerline:h14
 " set guifont=Meslo_LG_M_DZ_Regular_for_Powerline:h14
+set guifont=Operator:h13
 
 " colorscheme purplebee
 " colorscheme dusk
