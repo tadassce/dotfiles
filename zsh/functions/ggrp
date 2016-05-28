@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+ggrp() {
+  git rev-list --all | xargs git grep "$@"
+}
