@@ -9,3 +9,4 @@ coverage
 .bundle
 .env
 Session.vim
+config/initializers/tadas.rb
