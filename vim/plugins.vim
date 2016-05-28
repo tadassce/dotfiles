@@ -9,8 +9,10 @@ Plug 'sunaku/vim-ruby-minitest'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " colors
-Plug 'bling/vim-airline'
 Plug 'reedes/vim-colors-pencil'
+
+" other visual stuff
+Plug 'bling/vim-airline'
 
 " text manipulation
 Plug 'AndrewRadev/splitjoin.vim'
