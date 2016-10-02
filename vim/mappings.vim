@@ -68,3 +68,7 @@ nmap ,g :GitGutterToggle<cr>
 nmap ,qq :Syntastic
 nmap ,qc :SyntasticCheck<cr>
 nmap ,qr :SyntasticReset<cr>
+
+" A start of a dynamic mapping for running rspec.
+" should be finished with the path for the spec and <cr>
+nmap ,rs :nmap rs :SlimeSend1 be rspec
