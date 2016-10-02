@@ -10,6 +10,7 @@ Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
+Plug 'jacoborus/tender'
 
 " other visual stuff
 Plug 'bling/vim-airline'

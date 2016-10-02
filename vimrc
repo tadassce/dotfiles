@@ -7,20 +7,21 @@ ru plugins.vim
 
 syntax enable
 
-if $TBG == 'black'
-  set background=dark
-  " colorscheme purplebee
-  " colorscheme code_ts " dark
-  " colorscheme tomorrow-night-ts
-  " colorscheme tomorrow-night-eighties-ts
-  colorscheme purplebee " to load airline purplebee
-  " colorscheme pencil
-else
+if $TBG == 'white'
   set background=light
   colorscheme pencil
   " colorscheme PaperColor
   " colorscheme tomorrow_ts
   " colorscheme github_ts
+else
+  set background=dark
+  " colorscheme purplebee
+  " colorscheme code_ts " dark
+  " colorscheme tomorrow-night-ts
+  " colorscheme tomorrow-night-eighties-ts
+  " colorscheme purplebee " to load airline purplebee
+  " colorscheme pencil
+  colorscheme tender
 endif
 
 " Enable filetypes

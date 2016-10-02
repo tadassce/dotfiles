@@ -11,6 +11,13 @@ let g:NERDTreeDirArrowCollapsible='~'
 
 let g:gist_clip_command = 'pbcopy'
 
+" Airline -------------------------------------------------------------
+"
+" enable tender airline theme
+let g:tender_airline = 1
+" set airline theme
+let g:airline_theme = 'tender'
+
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -22,6 +29,7 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 " let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#hunks#enabled = 0
+" ---------------------------------------------------------------------
 
 let g:ctrlp_abbrev = {
   \   'abbrevs': [
