@@ -44,6 +44,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
+Plug 'airblade/vim-localorie' " Rails I18n
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-obsession'
