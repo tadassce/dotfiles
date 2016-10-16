@@ -9,8 +9,7 @@ syntax enable
 
 if $TBG == 'white'
   set background=light
-  colorscheme pencil
-  " colorscheme PaperColor
+  " colorscheme pencil
   " colorscheme tomorrow_ts
   " colorscheme github_ts
 else
