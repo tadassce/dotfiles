@@ -7,6 +7,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
+Plug 'pearofducks/ansible-vim'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
