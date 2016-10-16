@@ -57,6 +57,8 @@ if $TBG == 'black'
 
 " -----------------------------------------------------------------------------
 elseif $TBG == 'white'
+  hi Search ctermbg=NONE cterm=underline,bold
+
   " " diffs
   " hi DiffText       ctermfg=3   ctermbg=255
   " hi DiffChange     ctermfg=255 ctermbg=3
