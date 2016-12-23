@@ -69,10 +69,11 @@ nmap ,qq :Syntastic
 nmap ,qc :SyntasticCheck<cr>
 nmap ,qr :SyntasticReset<cr>
 
-" A start of a dynamic mapping for running rspec.
-" should be finished with the path for the spec and <cr>
-nmap ,rs :nmap rs :SlimeSend1 be rspec
+" A start of a dynamic mapping for running something on the side.
+" should be finished with the command and <cr>.
+" i.e. rspec spec/models/user_spec.rb<cr>
+nmap ,rs :nmap rs :SlimeSend1
 
 " Rails I18n
-nnoremap <silent> <leader>lt :call localorie#translate()<CR>
-nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
+nnoremap <silent> <leader>lt :call localorie#translate()<cr>
+nnoremap <silent> <leader>le :call localorie#expand_key()<cr>
