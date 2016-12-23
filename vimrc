@@ -9,18 +9,18 @@ syntax enable
 
 if $TBG == 'white'
   set background=light
-  " colorscheme pencil
+  colorscheme pencil
   " colorscheme tomorrow_ts
   " colorscheme github_ts
 else
   set background=dark
-  " colorscheme purplebee
+  colorscheme purplebee
   " colorscheme code_ts " dark
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
   " colorscheme purplebee " to load airline purplebee
   " colorscheme pencil
-  colorscheme tender
+  " colorscheme tender
 endif
 
 " Enable filetypes
