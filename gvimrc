@@ -44,9 +44,3 @@ set guifont=SF_Mono:h13
 " colorscheme purplebee
 " colorscheme dusk
 colorscheme pencil
-
-if $TBG == 'white'
-  highlight Cursor guifg=white guibg=black
-else
-  highlight Cursor guifg=black guibg=white
-endif
