@@ -40,6 +40,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Set some OS X defaults
 defaults write com.apple.Dock autohide-delay -float 0
 killall Dock
+defaults write com.apple.screencapture disable-shadow -bool true
+killall SystemUIServer
 
 ruby-install ruby --latest
 
