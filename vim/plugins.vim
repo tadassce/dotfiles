@@ -24,7 +24,9 @@ Plug 'tpope/vim-commentary'
 
 " file search and navigation
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
+Plug 'AndrewRadev/nerdtree', { 'branch': 'sort-by-atime' }
+Plug 'AndrewRadev/andrews_nerdtree.vim'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'kien/ctrlp.vim'
 Plug 'szw/vim-ctrlspace'

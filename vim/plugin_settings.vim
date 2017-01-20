@@ -9,6 +9,8 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='~'
 
+let g:andrews_nerdtree_git_filter = 1
+
 let g:gist_clip_command = 'pbcopy'
 
 " Airline -------------------------------------------------------------
