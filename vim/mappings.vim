@@ -31,7 +31,7 @@ xnoremap <silent> <expr> p Repl()
 
 nnoremap <tab> :NERDTreeToggle<cr>
 nnoremap ` :NERDTreeFind<cr>
-nnoremap ~ :NERDTreeSortByAtimeToggle<cr>
+nnoremap ! :NERDTreeSortByAtimeToggle<cr>
 
 nmap ]w :tabn<cr>
 nmap [w :tabp<cr>
