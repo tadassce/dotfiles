@@ -1,29 +1,19 @@
 # encoding: utf-8
+# vim: ft=ruby
 
-Pry.config.editor = "vim"
+Pry.config.editor = 'vim'
 Pry.config.color  = true
 
 begin
-  gem 'awesome_print'
-rescue Gem::LoadError
+  require 'awesome_print' unless ENV['SKIP_AP']
+rescue LoadError
 end
 
 Pry.plugins['doc'].activate! if Pry.plugins.keys.include?('doc')
 
 # Launch Pry with access to the entire Rails stack.
 rails = File.join Dir.getwd, 'config', 'environment.rb'
-
-if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
-  require rails
-
-  if Rails.version[0..0] == "2"
-    require 'console_app'
-    require 'console_with_helpers'
-  elsif Rails.version[0..0] == "3"
-    require 'rails/console/app'
-    require 'rails/console/helpers'
-  end
-end
+require rails if File.exist?(rails) && !ENV['SKIP_RAILS']
 
 Gem.path.each do |gemset|
   $:.concat(Dir.glob("#{gemset}/gems/pry-*/lib"))
