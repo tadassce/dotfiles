@@ -25,6 +25,7 @@ nmap ,td O<esc>0CTODO <esc>==\\\A
 nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
 nmap ,ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
 nmap ,dtd :e ~/Dropbox/Notes/dawanda-todo.txt<CR>
+nmap ,let :cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox<cr><tab>
 
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
@@ -48,6 +49,9 @@ nmap Q <nop> " Don't go into Ex mode!
 " Current date
 inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
+nnoremap ,rd :redraw!<cr>
+nnoremap <F5> :redraw!<cr>
+
 nnoremap <F9> :Dispatch<CR>
 
 " Lazy shift
@@ -64,15 +68,13 @@ if has("user_commands")
   command! -bang Bd bd<bang>
 endif
 
-nmap ,s :SlimeSend1 rspec<cr>
-
 map <leader>v :source ~/.vimrc<cr>
 
 nmap ,g :GitGutterToggle<cr>
 
-nmap ,qq :Syntastic
-nmap ,qc :SyntasticCheck<cr>
-nmap ,qr :SyntasticReset<cr>
+nmap ,st :SyntasticToggleMode<cr>
+nmap ,sc :SyntasticCheck<cr>
+nmap ,sr :SyntasticReset<cr>
 
 " A start of a dynamic mapping for running something on the side.
 " should be finished with the command and <cr>.
