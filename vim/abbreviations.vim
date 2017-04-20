@@ -4,3 +4,7 @@ iab putse puts "#{e.class} - #{e.message}\n#{e.backtrace.take(2).join("\n")}"
 iab elrs expect(last_response.status).to eq 200
 iab elrb expect(last_response.body).to
 iab elrt expect(last_response).to
+iab :bball: 🏀
+iab putsbb puts ' 🏀 '
+iab putspa puts ' 🍍 '
+iab putskw puts ' 🥝 '
