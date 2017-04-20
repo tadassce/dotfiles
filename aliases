@@ -48,12 +48,14 @@ alias bout='bundle outdated'
 alias bo='bundle open'
 alias be='bundle exec'
 alias cn='cd ~/Documents/CodeNotes'
+alias cl='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox'
 alias vin='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox && vim'
 alias cpd='cap production deploy'
 alias csd='cap staging deploy'
 alias pj='underscore print --color'
 alias tailp='tail -f ~/Library/Logs/puma-dev.log'
 alias tailapp='tail -f log/development.log ~/Library/Logs/puma-dev.log'
+alias s3=s3cmd
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
