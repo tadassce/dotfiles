@@ -10,3 +10,7 @@ function name() {
   [[ -d $dir ]] || dir=.
   find $dir -name "*$1*"
 }
+
+function tn() {
+  terminal-notifier -message "$1"
+}
