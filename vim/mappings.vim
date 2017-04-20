@@ -10,6 +10,10 @@ nmap <C-l> <C-w>l
 
 nmap K 5k
 
+" Toggle status line
+nmap [ts :set laststatus=2<cr>
+nmap ]ts :set laststatus=0<cr>
+
 " Join lines without surrounding whitespace
 nnoremap gJ :call JoinWithoutSpaces(0)<cr>
 xnoremap gJ :<c-u>call JoinWithoutSpaces(1)<cr>
