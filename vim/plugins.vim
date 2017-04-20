@@ -8,13 +8,17 @@ Plug 'slim-template/vim-slim'
 Plug 'sunaku/vim-ruby-minitest'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'pearofducks/ansible-vim'
+Plug 'lambdatoast/elm.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'keith/swift.vim'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
 Plug 'jacoborus/tender'
 
 " other visual stuff
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " text manipulation
 Plug 'AndrewRadev/splitjoin.vim'
@@ -26,7 +30,6 @@ Plug 'tpope/vim-commentary'
 Plug 'rking/ag.vim'
 " Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/nerdtree', { 'branch': 'sort-by-atime' }
-Plug 'AndrewRadev/andrews_nerdtree.vim'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'kien/ctrlp.vim'
 Plug 'szw/vim-ctrlspace'
