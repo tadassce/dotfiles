@@ -28,7 +28,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-set colorcolumn=80,100 " Vertical ruler
+" set colorcolumn=80,100 " Vertical ruler
 set vb " disable beep
 set clipboard=unnamed
 set ffs=unix
@@ -44,6 +44,7 @@ set shiftwidth=2  " Number of space characters inserted for indentation
 set softtabstop=2 " Makes the spaces feel like real tabs
 set expandtab     " To insert space characters whenever the tab key is pressed
 set smarttab
+set nonumber        " Show line numbers. Or not.
 set smartindent
 set autoindent
 set undodir=~/.vim/undo
@@ -60,7 +61,7 @@ set formatoptions+=1 " don't break a line before a 1-letter word
 set formatoptions+=j " remove comment leader when joining lines
 set lbr              " Wrap full words
 set incsearch
-set lazyredraw
+" set lazyredraw
 set hlsearch
 set ignorecase
 set mousehide
@@ -87,6 +88,9 @@ set wildignore+=*/target/*,*/lib_managed/*,*/project/*
 " Invisible characters (not sure about the last two, keeping here for now)
 set listchars=tab:→\ ,eol:¬,trail:·,extends:…,precedes:…,nbsp:◦,conceal:☐
 set fillchars=stl:\ ,stlnc:-,vert:\|,fold:-,diff:-
+
+" To fix Dispatch - https://github.com/tpope/vim-dispatch/issues/192
+set shellpipe+=\ " with trailing whitespace
 
 ru functions.vim
 ru mappings.vim

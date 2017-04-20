@@ -9,8 +9,6 @@ let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='~'
 
-let g:andrews_nerdtree_git_filter = 1
-
 let g:gist_clip_command = 'pbcopy'
 
 " Airline -------------------------------------------------------------
@@ -18,7 +16,10 @@ let g:gist_clip_command = 'pbcopy'
 " enable tender airline theme
 let g:tender_airline = 1
 " set airline theme
-let g:airline_theme = 'tender'
+" while loading tender doesn't properly load..
+let g:airline_theme='bubblegum'
+" let g:airline_theme='tender'
+" :AirlineTheme tender
 
 let g:airline_powerline_fonts = 0
 let g:airline_left_sep=''
@@ -43,12 +44,17 @@ let g:ctrlp_abbrev = {
   \ }
 
 let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop', 'rubylint']
-let g:syntastic_mode_map = { "mode": "passive" }
+let g:syntastic_javascript_checkers=['standard']
+let g:syntastic_javascript_standard_exec = 'semistandard'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+let g:syntastic_mode_map = { "mode": "passive" }
+" let g:syntastic_mode_map = {
+"     \ "mode": "passive",
+"     \ "active_filetypes": ["ruby", "php"],
+"     \ "passive_filetypes": ["puppet"] }
 
 let g:todo_switch_definition =
   \ {
