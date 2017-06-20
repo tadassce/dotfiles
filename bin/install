@@ -23,7 +23,7 @@ rcup
 # Homebrew Cask
 brew install caskroom/cask/brew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-brew cask install dropbox seil karabiner noejectdelay alfred
+brew cask install dropbox alfred
 brew cask alfred link
 
 # Set the default shell (and in Users' prefs)
