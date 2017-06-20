@@ -23,6 +23,7 @@ alias gw^="git show HEAD^"
 alias gw^^="git show HEAD^^"
 alias gd='git diff -b'
 alias gdc='git diff --cached'
+alias ga='git add'
 alias gap='git add -p'
 alias gm='git merge'
 alias gpr='hub pull-request'
