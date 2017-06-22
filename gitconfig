@@ -13,12 +13,11 @@
 	frag = magenta
 	old = red
 	new = green
+	whitespace = red reverse
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = cyan
-[color "diff"]
-	whitespace = red reverse
 [core]
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = /Users/tadas/.gitignore_global
@@ -59,12 +58,13 @@
 	g = grep --break --heading --line-number
 	delete-merged-branches = !git branch --merged | grep -v '*' | xargs -n 1 git branch -d
 	ctags = !.git/hooks/ctags
+  prune = fetch --prune
+  stash-all = stash save --include-untracked
+  sta       = stash save --include-untracked
 [github]
 	user = tadassce
 [difftool]
 	prompt = false
-[diff "spaceman-diff"]
-	command = ~/.dotfiles/bin/spaceman-diff
 [mergetool]
 	keepBackup = true
 [push]
@@ -91,6 +91,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [credential]
 	helper = osxkeychain
 [commit]
