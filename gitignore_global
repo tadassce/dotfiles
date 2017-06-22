@@ -10,3 +10,4 @@ coverage
 .env
 Session.vim
 config/initializers/tadas.rb
+tmp/restart.txt
