@@ -43,6 +43,8 @@ let g:ctrlp_abbrev = {
   \   ]
   \ }
 
+let g:CtrlSpaceSetDefaultMapping = 0
+
 let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop', 'rubylint']
 let g:syntastic_javascript_checkers=['standard']
 let g:syntastic_javascript_standard_exec = 'semistandard'
@@ -65,6 +67,8 @@ let g:todo_switch_definition =
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1.2"}
 let g:slime_dont_ask_default = 1
+
+let g:vroom_use_vimux = 1
 
 let g:rspec_command = "Dispatch rspec {spec}"
 

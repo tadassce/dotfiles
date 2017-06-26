@@ -79,8 +79,20 @@ nmap ,sr :SyntasticReset<cr>
 " A start of a dynamic mapping for running something on the side.
 " should be finished with the command and <cr>.
 " i.e. rspec spec/models/user_spec.rb<cr>
-nmap ,rs :nmap rs :SlimeSend1
+" nmap ,rs :nmap rs :SlimeSend1
+
+map <Leader>vp :VimuxPromptCommand<cr>
+map <Leader>vl :VimuxRunLastCommand<cr>
+map <Leader>vi :VimuxInspectRunner<cr>
+map <Leader>vz :VimuxZoomRunner<cr>
+
+map ,rs :VroomRunNearestTest<cr>
 
 " Rails I18n
 nnoremap <silent> <leader>lt :call localorie#translate()<cr>
 nnoremap <silent> <leader>le :call localorie#expand_key()<cr>
+
+" ,w ,b ,e for camelCase motion
+call camelcasemotion#CreateMotionMappings('<leader>')
+
+nmap <c-n> :CtrlSpace<cr>
