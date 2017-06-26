@@ -13,6 +13,7 @@ PATH=$PATH:/opt/nginx/sbin
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:/Users/tadas/.bin
 PATH=$PATH:/Users/tadas/Dropbox/Bin
+PATH=$PATH:/Users/tadas/go/bin
 
 export PATH
 export GREP_OPTIONS='--color=auto'
