@@ -1,7 +1,8 @@
 macmenu &File.Print key=<nop>
 map <D-p> :CommandT<CR>
 macmenu Edit.Find.Find\.\.\. key=<nop>
-map <D-f> :Ack<space>
+map <D-f> /
+map <D-F> :Ag<space>
 
 " Hide MacVim toolbar by default
 set go-=T
