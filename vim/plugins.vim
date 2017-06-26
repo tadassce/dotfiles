@@ -23,6 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 " text manipulation
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/deleft.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 
@@ -33,15 +34,20 @@ Plug 'AndrewRadev/nerdtree', { 'branch': 'sort-by-atime' }
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'kien/ctrlp.vim'
 Plug 'szw/vim-ctrlspace'
+Plug 'christoomey/vim-tmux-navigator'
 
 " tools
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
 Plug 'jpalardy/vim-slime'
+Plug 'benmills/vimux'
+Plug 'skalnik/vim-vroom'
 Plug 'tpope/vim-dispatch'
 Plug 'diepm/vim-rest-console'
+Plug 'rizzatti/dash.vim'
 
 Plug 'tmhedberg/matchit'
 Plug 'kana/vim-textobj-user'
@@ -56,5 +62,6 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-obsession'
 Plug 'moll/vim-bbye'
+Plug 'bkad/CamelCaseMotion'
 
 call plug#end()
