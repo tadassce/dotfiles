@@ -1,2 +1,2 @@
-autocmd bufwritepost *.js silent !semistandard % --fix
-set autoread
+" autocmd bufwritepost *.js silent !semistandard % --fix
+" set autoread

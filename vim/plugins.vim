@@ -9,8 +9,10 @@ Plug 'sunaku/vim-ruby-minitest'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'pearofducks/ansible-vim'
 Plug 'lambdatoast/elm.vim'
-Plug 'pangloss/vim-javascript'
+" Plug 'pangloss/vim-javascript'
 Plug 'keith/swift.vim'
+Plug 'posva/vim-vue'
+Plug 'mustache/vim-mustache-handlebars'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
