@@ -55,7 +55,7 @@ set undolevels=1000  "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 set autoread
 set nowrap
-set textwidth=72
+set textwidth=80
 set formatoptions-=t " auto-wrap using textwidth
 set formatoptions+=r " auto-insert comment leader after enter
 set formatoptions+=n " recognize numbered lists
