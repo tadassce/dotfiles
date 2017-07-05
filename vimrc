@@ -12,6 +12,7 @@ if $TBG == 'white'
   colorscheme pencil
   " colorscheme tomorrow_ts
   " colorscheme github_ts
+  " colorscheme default
 else
   set background=dark
   colorscheme purplebee
@@ -45,6 +46,7 @@ set softtabstop=2 " Makes the spaces feel like real tabs
 set expandtab     " To insert space characters whenever the tab key is pressed
 set smarttab
 set nonumber        " Show line numbers. Or not.
+set nocursorline    " Don't highlight the current line
 set smartindent
 set autoindent
 set undodir=~/.vim/undo
