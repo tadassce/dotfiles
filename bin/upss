@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Uploads last taken screenshot (that should be on the desktop) to S3
+# Uploads last taken screenshot to S3
 # and copies the URL to clipboard
 
 # This is supposed to export AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
