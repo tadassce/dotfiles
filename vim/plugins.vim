@@ -13,6 +13,8 @@ Plug 'lambdatoast/elm.vim'
 Plug 'keith/swift.vim'
 Plug 'posva/vim-vue'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
