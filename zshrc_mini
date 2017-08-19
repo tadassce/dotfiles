@@ -1,0 +1,129 @@
+#!/bin/zsh
+
+##########################################################
+# History
+if [ -z $HISTFILE ]; then
+  HISTFILE=$HOME/.zsh_history
+fi
+HISTSIZE=10000
+SAVEHIST=10000
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
+setopt interactivecomments
+
+
+##########################################################
+# Be like vim
+
+# search up/down by taking the current line content into account
+bindkey -M viins '^[[A' history-beginning-search-backward
+bindkey -M viins '^[[B' history-beginning-search-forward
+bindkey -M vicmd 'k' history-beginning-search-backward
+bindkey -M vicmd 'j' history-beginning-search-forward
+
+# Incremental search
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
+bindkey -M viins '^p' history-incremental-pattern-search-backward
+bindkey -M viins '^n' history-incremental-pattern-search-forward
+
+# Edit line in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+bindkey -M vicmd 'u' undo
+
+
+##########################################################
+# Completions
+
+# Case insensitive completions
+autoload -U compinit
+autoload -U zstyle+
+compinit
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' completer _complete _list _oldlist _expand _ignored _match _correct _approximate _prefix
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*:warnings' format 'No matches for: %d'
+zstyle ':completion:*' group-name ''
+
+# generate descriptions with magic.
+zstyle ':completion:*' auto-description 'specify: %d'
+
+# Don't prompt for a huge list, page it!
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+
+# Have the newer files last so I see them first
+zstyle ':completion:*' file-sort modification reverse
+
+# color code completion
+zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
+
+
+##########################################################
+# Prompt
+
+autoload -U colors && colors
+setopt promptsubst
+git_br() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  if [[ -n $(git status -s 2> /dev/null) ]]
+  then
+    echo "%{$fg[magenta]%}${ref#refs/heads/} "
+  else
+    echo "%{$fg[green]%}${ref#refs/heads/} "
+  fi
+}
+local gitbr='$(git_br)'
+local pwd='%{$fg[blue]%}%c%{$reset_color%} '
+local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})%%%{$reset_color%} '
+# local last_char='%{$fg[blue]%}%%%{$reset_color%} '
+local user='%{$fg[green]%}%n%{$reset_color%}'
+local host='%{$fg[green]%}%M%{$reset_color%}'
+PROMPT="${user}@${host}:${pwd}${gitbr}${last_cmd_status}"
+
+
+##########################################################
+# Aliases
+
+alias l='ls -1'
+alias ll='ls -lahG'
+alias lt='ls -lahGt'
+alias g='git'
+alias gb='git branch'
+alias gup='git up'
+alias gpp='git up && git push'
+alias gp='git push'
+alias gphm='git push heroku master'
+alias gs='git status -sb'
+alias gl='git lg -n 10'
+alias glg='git lg'
+alias gw="git show"
+alias gw^="git show HEAD^"
+alias gw^^="git show HEAD^^"
+alias gd='git diff -b'
+alias gdc='git diff --cached'
+alias ga='git add'
+alias gap='git add -p'
+alias gm='git merge'
+alias tm='tmux -u attach || tmux -u new'
+alias bi='bundle install'
+alias bu='bundle update'
+alias be='bundle exec'
+alias cpd='cap production deploy'
+alias csd='cap staging deploy'
+
+
+##########################################################
+
