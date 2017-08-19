@@ -21,6 +21,8 @@ setopt interactivecomments
 ##########################################################
 # Be like vim
 
+bindkey -v
+
 # search up/down by taking the current line content into account
 bindkey -M viins '^[[A' history-beginning-search-backward
 bindkey -M viins '^[[B' history-beginning-search-forward
