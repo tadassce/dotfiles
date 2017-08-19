@@ -17,6 +17,7 @@ Plug 'mustache/vim-mustache-handlebars'
 " colors
 Plug 'reedes/vim-colors-pencil'
 Plug 'jacoborus/tender'
+Plug 'trevordmiller/nova-vim'
 
 " other visual stuff
 Plug 'vim-airline/vim-airline'

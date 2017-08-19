@@ -22,6 +22,7 @@ else
   " colorscheme purplebee " to load airline purplebee
   " colorscheme pencil
   " colorscheme tender
+  " colorscheme nova
 endif
 
 " Enable filetypes
