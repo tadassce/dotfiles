@@ -42,6 +42,8 @@ bindkey -M vicmd v edit-command-line
 
 bindkey -M vicmd 'u' undo
 
+export EDITOR=vim
+
 
 ##########################################################
 # Completions
