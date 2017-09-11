@@ -74,4 +74,3 @@ alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
 alias drumroll='afplay ~/Dropbox/Resources/Sounds/drumroll.mp3'
 gsay(){ curl -A RG --silent translate\.google\.com/translate_tts -d "tl=en&q=$@" | mpg123 - }
 
-alias swift4="/Applications/Xcode-9.0-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift"
