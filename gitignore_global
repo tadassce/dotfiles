@@ -11,3 +11,6 @@ coverage
 Session.vim
 config/initializers/tadas.rb
 tmp/restart.txt
+Dockerfile.ts.dev
+docker-compose-ts-dev.yml
+bundle
