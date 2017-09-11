@@ -26,6 +26,7 @@ alias gdc='git diff --cached'
 alias ga='git add'
 alias gap='git add -p'
 alias gm='git merge'
+alias ge='git-edit-new'
 alias gpr='hub pull-request'
 alias gh='hub browse'
 
