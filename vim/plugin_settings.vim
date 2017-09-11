@@ -73,3 +73,5 @@ let g:vroom_use_vimux = 1
 let g:rspec_command = "Dispatch rspec {spec}"
 
 let g:vrc_trigger = '<c-g>'
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.html.erb'
