@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+all_notes  = Dir['*.{txt,md}']
+notes_to_check = all_notes
+
+puts "#{all_notes.count} notes in total.\n\n"
+
+all_notes.each do |f1|
+  notes_to_check -= [f1]
+  note1 = File.read(f1).strip
+
+  matches = notes_to_check.select do |f2|
+    note2 = File.read(f2).strip
+    note1.include?(note2) || note2.include?(note1)
+  end
+  notes_to_check -= matches
+
+  puts (matches << f1).join(' ~ ') unless matches.empty?
+end
