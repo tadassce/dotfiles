@@ -1,0 +1,62 @@
+#!/usr/bin/env ruby
+
+# Just change notes like "Foo Bar & BAZ!.txt" to "foo-bar-baz.txt"
+
+notes = Dir['*.{txt,md}']
+count = notes.count
+prompt = true
+
+notes.each_with_index do |fn,idx|
+  ext = File.extname(fn)
+  new_name = File.basename(fn, ext).
+    gsub(' ', '-').            # spaces to dashes
+    gsub(/[^a-zA-Z0-9-]/, ''). # strip non-alphanum, except for dashes
+    gsub(/^-/, '').            # no leading dashes
+    gsub(/-$/, '').            # no trailing dashes
+    squeeze('-').              # no double dashes
+    downcase
+  next if "#{new_name}#{ext}" == fn
+  new_name += '-1' while File.exists?("#{new_name}#{ext}") && "#{new_name}#{ext}" != fn.downcase
+  new_name += ext
+
+  loop do
+    if prompt
+      print "(#{idx + 1}/#{count}) Rename \"#{fn}\" -> \"#{new_name}\"? y/n/c/d/a/q/? "
+      answer = gets.chomp
+    else
+      answer = 'a'
+    end
+
+    case answer
+    when 'y'
+      File.rename(fn, new_name)
+      puts 'Ok, done.'
+      break
+    when 'a'
+      print "(#{idx + 1}/#{count}) #{fn.ljust(30)} -> #{new_name}"
+      File.rename(fn, new_name)
+      prompt = false
+      puts
+      break
+    when 'n'
+      puts 'Skipping.'
+      break
+    when 'q'
+      exit
+    when 'c'
+      puts IO.read(fn)
+    when 'd'
+      File.rename(fn, File.expand_path("~/.Trash/#{fn}"))
+      puts 'Deleted (trashed).'
+      break
+    else
+      puts 'y - yes'
+      puts 'n - no, skip'
+      puts 'c - cat/output/show the full file'
+      puts 'd - delete the file'
+      puts 'a - yes to all'
+      puts 'q - quit'
+      puts '? - help (this)'
+    end
+  end
+end

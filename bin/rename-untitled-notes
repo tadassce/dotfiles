@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+# Letterspace.app sometimes creates notes titled something like
+# "Untitled Note 2017-09-13 at 12-50-11 WEST.txt"
+# Not sure exactly why sometimes it takes the title from the beginning of the
+# note and sometimes it doesn't, but we can fix that easily.
+
+untitled_notes = Dir['Untitled Note 20*.txt']
+
+untitled_notes.each do |fn|
+  new_name = IO.read(fn, 30).
+    gsub(/\n.*/, '').          # take the first line
+    gsub(' ', '-').            # spaces to dashes
+    gsub(/[^a-zA-Z0-9-]/, ''). # strip non-alphanum, except for dashes
+    gsub(/^-/, '').            # no leading dashes
+    gsub(/-$/, '').            # no trailing dashes
+    squeeze('-').              # no double dashes
+    downcase
+  new_name += '-1' while File.exists?("#{new_name}.txt")
+  new_name += '.txt'
+
+  loop do
+    print "Rename \"#{fn}\" -> \"#{new_name}\"? [y]/n/c/d/q/h "
+
+    case gets.chomp
+    when 'h'
+      puts 'y - yes (default)'
+      puts 'n - no, skip'
+      puts 'c - cat/output/show the full file'
+      puts 'd - delete the file'
+      puts 'q - quit'
+      puts 'h - help (this)'
+    when 'c'
+      puts IO.read(fn)
+    when 'y', ''
+      File.rename(fn, new_name)
+      puts 'Ok, done.'
+      break
+    when 'n'
+      puts 'Skipping.'
+      break
+    when 'd'
+      File.rename(fn, File.expand_path("~/.Trash/#{fn}"))
+      puts 'Deleted (trashed).'
+      break
+    when 'q'
+      exit
+    end
+  end
+end
