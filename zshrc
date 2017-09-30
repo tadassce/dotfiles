@@ -8,12 +8,8 @@ export LANG=en_US.UTF-8
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/usr/local/heroku/bin
-PATH=$PATH:/usr/X11/bin:/opt/local/bin:/usr/local/mysql/bin
-PATH=$PATH:/opt/nginx/sbin
-PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:/Users/tadas/.dotfiles/bin
 PATH=$PATH:/Users/tadas/Dropbox/Bin
-PATH=$PATH:/Users/tadas/go/bin
 
 export PATH
 export GREP_OPTIONS='--color=auto'
@@ -67,19 +63,3 @@ source ~/.functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
-
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-chruby ruby-2.2.0
-
-# Ruby
-export RUBY_GC_MALLOC_LIMIT=90000000
-export RUBY_GC_HEAP_FREE_SLOTS=500000
-
-# Homebrew Cask default path, at least while the PR is open:
-# https://github.com/caskroom/homebrew-cask/issues/2534
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# added by travis gem
-[ -f /Users/tadas/.travis/travis.sh ] && source /Users/tadas/.travis/travis.sh
