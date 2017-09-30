@@ -9,13 +9,13 @@ syntax enable
 
 if $TBG == 'white'
   set background=light
-  colorscheme pencil
+  " colorscheme pencil
   " colorscheme tomorrow_ts
   " colorscheme github_ts
   " colorscheme default
 else
-  set background=dark
-  colorscheme purplebee
+  " set background=dark
+  " colorscheme purplebee
   " colorscheme code_ts " dark
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
