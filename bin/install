@@ -8,11 +8,19 @@
 xcode-select --install
 
 # Install Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install vim git zsh tmux chruby ruby-install ctags \
-  reattach-to-user-namespace the_silver_searcher mysql redis mongodb wget \
-  heroku-toolbelt jrnl fpp htop
+brew install \
+  vim \
+  git \
+  zsh \
+  tmux \
+  ctags \
+  the_silver_searcher \
+  htop \
+  reattach-to-user-namespace \
+  openssh \
+  heroku/brew/heroku
 
 # Set up dotfiles
 brew tap thoughtbot/formulae
@@ -21,10 +29,11 @@ git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
 rcup
 
 # Homebrew Cask
-brew install caskroom/cask/brew-cask
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-brew cask install dropbox alfred
-brew cask alfred link
+brew tap caskroom/cask
+brew cask install \
+  dropbox \
+  alfred \
+  docker
 
 # Set the default shell (and in Users' prefs)
 chsh -s /usr/local/bin/zsh
@@ -38,26 +47,18 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Set some OS X defaults
-defaults write com.apple.Dock autohide-delay -float 0
-killall Dock
 defaults write com.apple.screencapture disable-shadow -bool true
 killall SystemUIServer
 defaults write com.apple.screencapture location ~/Dropbox/Screenshots
 killall SystemUIServer
 
-ruby-install ruby --latest
-
 gem install pry pry-doc reek rubocop ruby-lint coderay git-up
 
-# Fix zsh env
-sudo mv /etc/zshenv /etc/zprofile
-
-# Bring back brew-services
-brew tap gapple/services
-
-# Install Pow
-curl get.pow.cx | sh
-
-# Some useful Quick Look plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json \
-  quicklook-csv qlimagesize
+# # Some useful Quick Look plugins
+# brew cask install \
+#   qlcolorcode \
+#   qlstephen \
+#   qlmarkdown \
+#   quicklook-json \
+#   quicklook-csv \
+#   qlimagesize
