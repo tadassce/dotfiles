@@ -14,3 +14,4 @@ tmp/restart.txt
 Dockerfile.ts.dev
 docker-compose-ts-dev.yml
 bundle
+wiki
