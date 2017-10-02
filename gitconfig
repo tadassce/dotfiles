@@ -96,3 +96,5 @@
 	helper = osxkeychain
 [commit]
 	template = ~/.gitmessage
+[rebase]
+	autoStash = true
