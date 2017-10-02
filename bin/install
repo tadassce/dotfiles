@@ -52,7 +52,7 @@ killall SystemUIServer
 defaults write com.apple.screencapture location ~/Dropbox/Screenshots
 killall SystemUIServer
 
-gem install pry pry-doc reek rubocop ruby-lint coderay git-up
+gem install pry pry-doc reek rubocop ruby-lint coderay
 
 # # Some useful Quick Look plugins
 # brew cask install \

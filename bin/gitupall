@@ -2,9 +2,7 @@
 require 'colorize'
 
 def git_up(name)
-  # `git config git-up.bundler.check false`
-
-  output = `git up`
+  output = `git pull`
 
   if output.include? 'fast-forwarding'
     puts "\nUpdates from #{name.blue}"

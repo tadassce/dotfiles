@@ -72,8 +72,6 @@
 [pull]
 	default = tracking
 	rebase = true
-[git-up "bundler"]
-	check = true
 [grep]
 	extendRegexp = true
 	lineNumber = true
