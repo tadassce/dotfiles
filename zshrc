@@ -8,8 +8,7 @@ export LANG=en_US.UTF-8
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/usr/local/heroku/bin
-PATH=$PATH:/Users/tadas/.dotfiles/bin
-PATH=$PATH:/Users/tadas/Dropbox/Bin
+PATH=$PATH:~/.dotfiles/bin
 
 export PATH
 export GREP_OPTIONS='--color=auto'
