@@ -3,6 +3,10 @@
 alias l='ls -1'
 alias ll='ls -lahG'
 alias lt='ls -lahGt'
+alias ltt='ls -1tr'
+alias ltn='ls -1tr | tail -n '
+alias lt1='ls -1tr | tail -n 10'
+alias lt2='ls -1tr | tail -n 20'
 
 alias g='git'
 alias gb='git branch'
