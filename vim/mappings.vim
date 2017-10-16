@@ -26,6 +26,7 @@ nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
 nmap ,ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
 nmap ,dtd :e ~/Dropbox/Notes/dawanda-todo.txt<CR>
 nmap ,let :cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox<cr>
+nmap ,nia :e ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/A-temp.md<cr>Go
 
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
