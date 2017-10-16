@@ -55,11 +55,11 @@ killall SystemUIServer
 
 gem install pry pry-doc reek rubocop ruby-lint coderay
 
-# # Some useful Quick Look plugins
-# brew cask install \
-#   qlcolorcode \
-#   qlstephen \
-#   qlmarkdown \
-#   quicklook-json \
-#   quicklook-csv \
-#   qlimagesize
+# Some useful Quick Look plugins
+brew cask install \
+  qlstephen \
+  qlmarkdown \
+  quicklook-json \
+  quicklook-csv \
+  qlcolorcode \
+  qlimagesize
