@@ -14,13 +14,13 @@ if $TBG == 'white'
   " colorscheme github_ts
   " colorscheme default
 else
-  " set background=dark
-  colorscheme purplebee
+  set background=dark
+  " colorscheme purplebee
   " colorscheme code_ts " dark
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
   " colorscheme purplebee " to load airline purplebee
-  " colorscheme pencil
+  colorscheme pencil
   " colorscheme tender
   " colorscheme nova
 endif
