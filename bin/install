@@ -20,7 +20,8 @@ brew install \
   htop \
   reattach-to-user-namespace \
   openssh \
-  heroku/brew/heroku
+  heroku/brew/heroku \
+  karabiner-elements
 
 # Set up dotfiles
 brew tap thoughtbot/formulae
@@ -63,3 +64,7 @@ brew cask install \
   quicklook-csv \
   qlcolorcode \
   qlimagesize
+
+# Sync Karabiner settings (make sure Dropbox sync is done)
+ln -s ~/Dropbox/Apps/karabiner ~/.config/
+launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
