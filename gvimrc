@@ -40,7 +40,7 @@ map <s-d-left>  :execute "tabmove" tabpagenr() - 2<cr>
 " set guifont=monaco:h13
 " set guifont=monaco_for_powerline:h13
 " set guifont=source_code_pro:h14
-" set guifont=SF_Mono:h15
+set guifont=SF_Mono:h15
 
 " colorscheme purplebee
 " colorscheme dusk
