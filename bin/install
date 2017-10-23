@@ -21,6 +21,7 @@ brew install \
   reattach-to-user-namespace \
   openssh \
   heroku/brew/heroku \
+  node \
   karabiner-elements
 
 # Set up dotfiles
