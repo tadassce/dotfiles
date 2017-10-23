@@ -45,19 +45,6 @@ let g:ctrlp_abbrev = {
 
 let g:CtrlSpaceSetDefaultMapping = 0
 
-let g:syntastic_ruby_checkers = ['mri', 'reek', 'rubocop', 'rubylint']
-let g:syntastic_javascript_checkers=['standard']
-let g:syntastic_javascript_standard_exec = 'semistandard'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { "mode": "passive" }
-" let g:syntastic_mode_map = {
-"     \ "mode": "passive",
-"     \ "active_filetypes": ["ruby", "php"],
-"     \ "passive_filetypes": ["puppet"] }
-
 let g:todo_switch_definition =
   \ {
   \    '- \[ \]\(.*\)$': '- [x]\1',
@@ -75,3 +62,13 @@ let g:rspec_command = "Dispatch rspec {spec}"
 let g:vrc_trigger = '<c-g>'
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.html.erb'
+
+" ALE - Asynchronous Lint Engine
+let g:ale_sign_error = '! '
+let g:ale_sign_warning = '. '
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+" let g:airline#extensions#ale#enabled = 1

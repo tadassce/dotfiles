@@ -73,10 +73,6 @@ map <leader>v :source ~/.vimrc<cr>
 
 nmap ,g :GitGutterToggle<cr>
 
-nmap ,st :SyntasticToggleMode<cr>
-nmap ,sc :SyntasticCheck<cr>
-nmap ,sr :SyntasticReset<cr>
-
 " A start of a dynamic mapping for running something on the side.
 " should be finished with the command and <cr>.
 " i.e. rspec spec/models/user_spec.rb<cr>
