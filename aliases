@@ -65,6 +65,7 @@ alias tailp='tail -f ~/Library/Logs/puma-dev.log'
 alias tailapp='tail -f log/development.log ~/Library/Logs/puma-dev.log'
 alias s3=s3cmd
 alias doc=docker-compose
+alias ctagsr='ctags --languages=-javascript -R'
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
