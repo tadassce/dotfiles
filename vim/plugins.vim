@@ -20,6 +20,10 @@ Plug 'alvan/vim-closetag'
 Plug 'reedes/vim-colors-pencil'
 Plug 'jacoborus/tender'
 Plug 'trevordmiller/nova-vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'rakr/vim-one'
+Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
 
 " other visual stuff
 Plug 'vim-airline/vim-airline'

@@ -20,9 +20,13 @@ else
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
   " colorscheme purplebee " to load airline purplebee
-  colorscheme pencil
+  " colorscheme pencil
   " colorscheme tender
   " colorscheme nova
+  colorscheme jellybeans
+  " colorscheme one
+  " colorscheme iceberg
+  " colorscheme nord
 endif
 
 " Enable filetypes
