@@ -92,8 +92,6 @@ nnoremap <silent> <leader>le :call localorie#expand_key()<cr>
 " ,w ,b ,e for camelCase motion
 call camelcasemotion#CreateMotionMappings('<leader>')
 
-nmap <c-n> :CtrlSpace<cr>
-
 nnoremap ]a :ALENext<cr>
 nnoremap [a :ALEPrevious<cr>
 nnoremap coa :ALEToggle<cr>

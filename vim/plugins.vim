@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 " filetypes
 Plug 'tadassce/vim-ruby', { 'branch': 'no_hanging_indent' }
-Plug 'derekwyatt/vim-scala'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'sunaku/vim-ruby-minitest'
@@ -29,7 +28,6 @@ Plug 'vim-airline/vim-airline-themes'
 " text manipulation
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
-Plug 'AndrewRadev/deleft.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 
@@ -38,22 +36,14 @@ Plug 'rking/ag.vim'
 " Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/nerdtree', { 'branch': 'sort-by-atime' }
 Plug 'ivalkeen/nerdtree-execute'
-Plug 'kien/ctrlp.vim'
-Plug 'szw/vim-ctrlspace'
 Plug 'christoomey/vim-tmux-navigator'
 
 " tools
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
-Plug 'jpalardy/vim-slime'
 Plug 'benmills/vimux'
-Plug 'skalnik/vim-vroom'
-Plug 'tpope/vim-dispatch'
-Plug 'diepm/vim-rest-console'
-Plug 'rizzatti/dash.vim'
 
 Plug 'tmhedberg/matchit'
 Plug 'kana/vim-textobj-user'
