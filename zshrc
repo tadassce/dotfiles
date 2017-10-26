@@ -57,8 +57,11 @@ source ~/.completions
 source ~/.prompt
 source ~/.aliases
 source ~/.functions
+source ~/.fzfrc
 
 # load custom functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -17,12 +17,16 @@ brew install \
   tmux \
   ctags \
   the_silver_searcher \
+  fzf \
   htop \
   reattach-to-user-namespace \
   openssh \
   heroku/brew/heroku \
   node \
   karabiner-elements
+
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
 
 # Set up dotfiles
 brew tap thoughtbot/formulae

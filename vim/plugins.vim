@@ -37,6 +37,8 @@ Plug 'rking/ag.vim'
 Plug 'AndrewRadev/nerdtree', { 'branch': 'sort-by-atime' }
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'christoomey/vim-tmux-navigator'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 
 " tools
 Plug 'tpope/vim-fugitive'
