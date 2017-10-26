@@ -94,6 +94,6 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 
 nmap <c-n> :CtrlSpace<cr>
 
-nmap ]a :ALENext<cr>
-nmap [a :ALEPrevious<cr>
-nmap coa :ALEToggle<cr>
+nnoremap ]a :ALENext<cr>
+nnoremap [a :ALEPrevious<cr>
+nnoremap coa :ALEToggle<cr>
