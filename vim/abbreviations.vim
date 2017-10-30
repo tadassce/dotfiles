@@ -8,4 +8,3 @@ iab :bball: 🏀
 iab putsbb puts ' 🏀 '
 iab putspa puts ' 🍍 '
 iab putskw puts ' 🥝 '
-iab fsl # frozen_string_literal: true

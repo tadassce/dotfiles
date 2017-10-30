@@ -10,6 +10,8 @@ nmap <C-l> <C-w>l
 
 nmap K 5k
 
+nmap ,fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
+
 " Toggle status line
 nmap [ts :set laststatus=2<cr>
 nmap ]ts :set laststatus=0<cr>
