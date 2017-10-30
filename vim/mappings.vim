@@ -73,7 +73,7 @@ endif
 
 map <leader>v :source ~/.vimrc<cr>
 
-nmap ,g :GitGutterToggle<cr>
+nmap cog :GitGutterToggle<cr>
 
 " A start of a dynamic mapping for running something on the side.
 " should be finished with the command and <cr>.
