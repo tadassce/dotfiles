@@ -46,6 +46,9 @@ let g:ale_sign_warning = '. '
 " let g:ale_echo_msg_error_str = 'E'
 " let g:ale_echo_msg_warning_str = 'W'
 " let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_pattern_options = {
+\   'db/schema\.rb$': { 'ale_enabled': 0 },
+\ }
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
