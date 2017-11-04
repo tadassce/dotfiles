@@ -26,7 +26,6 @@ nmap ,td O<esc>0CTODO <esc>==\\\A
 " Notes
 nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
 nmap ,ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
-nmap ,dtd :e ~/Dropbox/Notes/dawanda-todo.txt<CR>
 nmap ,let :cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox<cr>
 nmap ,nia :e ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/A-temp.md<cr>Go
 
@@ -102,3 +101,5 @@ nmap ; :Buffers<cr>
 nmap <leader>t :Files<cr>
 nmap <c-t> :Files<cr>
 nmap <leader>r :Tags<cr>
+
+nmap ,d :Dash<cr>

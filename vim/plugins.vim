@@ -64,5 +64,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-obsession'
 Plug 'moll/vim-bbye'
 Plug 'bkad/CamelCaseMotion'
+Plug 'rizzatti/dash.vim'
 
 call plug#end()
