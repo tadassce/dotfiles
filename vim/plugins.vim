@@ -42,6 +42,7 @@ Plug 'ivalkeen/nerdtree-execute'
 Plug 'christoomey/vim-tmux-navigator'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " tools
 Plug 'tpope/vim-fugitive'

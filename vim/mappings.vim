@@ -97,9 +97,8 @@ nnoremap ]a :ALENext<cr>
 nnoremap [a :ALEPrevious<cr>
 nnoremap coa :ALEToggle<cr>
 
-nmap ; :Buffers<cr>
-nmap <leader>t :Files<cr>
-nmap <c-t> :Files<cr>
 nmap <leader>r :Tags<cr>
+nmap <c-n> :CtrlSpace<cr>
+nmap <c-t> :Files<cr>
 
 nmap ,d :Dash<cr>
