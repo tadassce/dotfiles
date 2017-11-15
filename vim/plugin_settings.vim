@@ -11,15 +11,6 @@ let g:NERDTreeDirArrowCollapsible='~'
 
 let g:gist_clip_command = 'pbcopy'
 
-let g:ctrlp_abbrev = {
-  \   'abbrevs': [
-  \     {
-  \       'pattern': '\ ',
-  \       'expanded': '',
-  \     },
-  \   ]
-  \ }
-
 let g:CtrlSpaceSetDefaultMapping = 0
 
 let g:todo_switch_definition =
