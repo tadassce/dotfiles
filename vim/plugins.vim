@@ -50,20 +50,21 @@ Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'benmills/vimux'
 
-Plug 'tmhedberg/matchit'
+Plug 'airblade/vim-localorie' " Rails I18n
+Plug 'bkad/CamelCaseMotion'
 Plug 'kana/vim-textobj-user'
+Plug 'moll/vim-bbye'
 Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'tpope/vim-surround'
+Plug 'rizzatti/dash.vim'
+Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
-Plug 'airblade/vim-localorie' " Rails I18n
 Plug 'tpope/vim-rake'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-obsession'
-Plug 'moll/vim-bbye'
-Plug 'bkad/CamelCaseMotion'
-Plug 'rizzatti/dash.vim'
 
 call plug#end()
