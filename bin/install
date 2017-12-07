@@ -22,8 +22,7 @@ brew install \
   reattach-to-user-namespace \
   openssh \
   heroku/brew/heroku \
-  node \
-  karabiner-elements
+  node
 
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
