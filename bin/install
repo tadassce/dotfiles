@@ -39,7 +39,8 @@ brew cask install \
   dropbox \
   alfred \
   docker \
-  appcleaner
+  appcleaner \
+  karabiner-elements
 
 # Set the default shell (and in Users' prefs)
 chsh -s /usr/local/bin/zsh
