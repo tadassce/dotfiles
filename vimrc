@@ -9,7 +9,7 @@ syntax enable
 
 if $TBG == 'white'
   set background=light
-  " colorscheme pencil
+  colorscheme pencil
   " colorscheme tomorrow_ts
   " colorscheme github_ts
   " colorscheme default
@@ -22,9 +22,9 @@ else
   " colorscheme pencil
   " colorscheme tender
   " colorscheme nova
-  colorscheme jellybeans
+  " colorscheme jellybeans
   " colorscheme one
-  " colorscheme iceberg
+  colorscheme iceberg
   " colorscheme nord
 endif
 
