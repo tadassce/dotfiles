@@ -34,6 +34,7 @@
 	cia = commit -av
 	cis = commit -S -v
 	cias = commit -S -av
+	fu = commit --fixup
 	ap = add -p
 	m = merge
 	sp = stash pop
