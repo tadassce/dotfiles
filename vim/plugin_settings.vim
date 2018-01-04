@@ -94,3 +94,9 @@ function! s:MaybeUpdateLightline()
 endfunction
 " / Lightline
 " -----------------------------------------------
+
+let g:jsx_ext_required = 0
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
