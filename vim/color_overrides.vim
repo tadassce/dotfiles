@@ -22,6 +22,9 @@ if $TBG == 'black'
   " " GitGutter
   " highlight SignColumn ctermbg=234
 
+  hi SpellBad ctermbg=96
+  hi SpellCap ctermbg=236
+
 " -----------------------------------------------------------------------------
 elseif $TBG == 'white'
   hi Search ctermbg=NONE cterm=underline,bold
