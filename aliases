@@ -58,6 +58,7 @@ alias cl='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Do
 alias vin='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox && vim'
 alias cdia='cd ~/Library/Mobile\ Documents/27N4MQEA55\~pro\~writer/Documents'
 alias cdi='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
+alias cdp='cd ~/Code/bertha-carl/pumpngo'
 alias cpd='cap production deploy'
 alias csd='cap staging deploy'
 alias pj='underscore print --color'
