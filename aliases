@@ -67,6 +67,7 @@ alias tailapp='tail -f log/development.log ~/Library/Logs/puma-dev.log'
 alias s3=s3cmd
 alias doc=docker-compose
 alias ctagsr='ctags --languages=-javascript -R'
+alias k=kubectl
 
 # OS X
 alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
@@ -83,4 +84,3 @@ alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && 
 alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
 alias drumroll='afplay ~/Dropbox/Resources/Sounds/drumroll.mp3'
 gsay(){ curl -A RG --silent translate\.google\.com/translate_tts -d "tl=en&q=$@" | mpg123 - }
-
