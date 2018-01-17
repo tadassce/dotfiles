@@ -59,9 +59,10 @@
 	g = grep --break --heading --line-number
 	delete-merged-branches = !git branch --merged | grep -v '*' | xargs -n 1 git branch -d
 	ctags = !.git/hooks/ctags
-  prune = fetch --prune
-  stash-all = stash save --include-untracked
-  sta       = stash save --include-untracked
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	prune = fetch --prune
+	stash-all = stash save --include-untracked
+	sta       = stash save --include-untracked
 [github]
 	user = tadassce
 [difftool]
