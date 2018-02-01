@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Install script for a fresh OS X install.
-# More meant for copy-pasting rather than just running so far.
+# Install script for a fresh macOS install.
+# Meant for copy-pasting rather than just running so far.
 
 # - Install 1P and XCode from the MAS
 
@@ -27,12 +27,6 @@ brew install \
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 
-# Set up dotfiles
-brew tap thoughtbot/formulae
-brew install rcm
-git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
-rcup
-
 # Homebrew Cask
 brew tap caskroom/cask
 brew cask install \
@@ -41,6 +35,14 @@ brew cask install \
   docker \
   appcleaner \
   karabiner-elements
+
+# Wait for Dropbox to sync
+
+# Set up dotfiles
+brew tap thoughtbot/formulae
+brew install rcm
+git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
+rcup
 
 # Set the default shell (and in Users' prefs)
 chsh -s /usr/local/bin/zsh
