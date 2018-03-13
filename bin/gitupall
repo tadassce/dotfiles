@@ -1,26 +1,17 @@
 #! /usr/bin/env ruby
-require 'colorize'
-
-def git_up(name)
-  output = `git pull`
-
-  if output.include? 'fast-forwarding'
-    puts "\nUpdates from #{name.blue}"
-    puts `git log --pretty=format:'%Cgreen%cr %Cblue%an%Creset: %s' --max-count 10 ORIG_HEAD..`
-    puts
-  else
-    print '.'
-  end
-end
 
 home = Dir.pwd
-Dir['*'].each do |dir|
-  next unless File.directory? dir
+
+Dir['*']
+  .select { |d| File.exist?("#{d}/.git") }
+  .each do |dir|
+
   Dir.chdir dir
-  if File.exists?('.git')
-    name = dir.split('/').last
-    git_up(name)
-  end
+
+  name = dir.split('/').last
+  emoji = '🔸'
+  puts "#{emoji} Fetching #{name}"
+  system 'git fetch'
+
   Dir.chdir home
 end
-puts
