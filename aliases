@@ -65,7 +65,7 @@ alias pj='underscore print --color'
 alias tailp='tail -f ~/Library/Logs/puma-dev.log'
 alias tailapp='tail -f log/development.log ~/Library/Logs/puma-dev.log'
 alias s3=s3cmd
-alias doc=docker-compose
+alias drb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest /bin/bash'
 alias ctagsr='ctags --languages=-javascript -R'
 alias k=kubectl
 
