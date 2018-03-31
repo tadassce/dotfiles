@@ -26,8 +26,9 @@ git_br() {
 local emoji='🐨'
 local user='%{$fg[green]%}%n%{$reset_color%}'
 # local host='%{$fg[green]%}%m%{$reset_color%}'
-hn=$(hostname)
-local hostname=$hn[0,3]
+# hn=$(hostname)
+hn=$(scutil --get ComputerName)
+local hostname=$hn[0,2]
 local host='%{$fg[green]%}${hostname}%{$reset_color%}'
 local gitbr='$(git_br)'
 local pwd='%{$fg[blue]%}%c%{$reset_color%}'
