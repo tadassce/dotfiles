@@ -22,4 +22,6 @@ if _has fzf && _has ag; then
   '
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # vim: ft=zsh
