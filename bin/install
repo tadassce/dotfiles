@@ -24,7 +24,8 @@ brew install \
   reattach-to-user-namespace \
   openssh \
   heroku/brew/heroku \
-  node
+  node \
+  watch
 
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
