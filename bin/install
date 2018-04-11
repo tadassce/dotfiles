@@ -63,12 +63,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Set some macOS defaults
 #
-# Locale
-defaults write NSGlobalDomain AppleLocale -string "en_US"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
-# 24-Hour Time
-defaults write NSGlobalDomain AppleICUForce12HourTime -bool false
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Check for software updates daily, not just once per week
