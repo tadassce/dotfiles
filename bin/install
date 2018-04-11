@@ -61,11 +61,27 @@ mkdir ~/.vim/undo
 # Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Set some OS X defaults
+# Set some macOS defaults
+#
+# Locale
+defaults write NSGlobalDomain AppleLocale -string "en_US"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+# 24-Hour Time
+defaults write NSGlobalDomain AppleICUForce12HourTime -bool false
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+# Empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool false
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+# Screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
-killall SystemUIServer
 defaults write com.apple.screencapture location ~/Dropbox/Screenshots
-killall SystemUIServer
+# Kill affected applications
+for app in Finder Mail Dock SystemUIServer; do killall "$$app" >/dev/null 2>&1; done
 
 # Tools I always want to have
 gem install pry pry-doc
