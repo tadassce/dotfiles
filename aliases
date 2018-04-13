@@ -8,6 +8,7 @@ alias ltn='ls -1tr | tail -n '
 alias lt1='ls -1tr | tail -n 10'
 alias lt2='ls -1tr | tail -n 20'
 
+# Git
 alias g='git'
 alias gb='git branch'
 alias gu='git pull --prune'
@@ -15,13 +16,12 @@ alias gp='git push'
 alias gpp='gu && gp'
 alias gph='gp && hub browse'
 alias gphm='git push heroku master'
-alias gpa='git push --all'
 alias grm='git rm $(git ls-files --deleted)'
 alias gs='git status -sb'
 alias gst='git st'
 alias gl='git lg -n 10'
 alias glg='git lg'
-alias glm='git lg --committer=GitHub'
+alias glgh='git lg --committer=GitHub'
 alias gw="git show"
 alias gw^="git show HEAD^"
 alias gw^^="git show HEAD^^"
@@ -38,42 +38,28 @@ alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
 alias tm='tmux -u attach || tmux -u new'
 alias less='less -R '
 alias ..='cd ..'
-alias :q='exit'
-alias ttr='mkdir -p tmp && touch tmp/restart.txt'
-alias rttr='rm tmp/pids/server.pid && ttr'
-alias rec_pull_bash='for i in `ls`; do cd $i; git pull; cd ..; done'
+
 function grp() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null }
 function greps() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null | sed -E 's/[[:space:]]+//' | grep $1 }
-alias prod='production'
-alias pow='powder'
-alias start_memcached='/usr/local/opt/memcached/bin/memcached'
 alias largefiles='find . -ls | sort -n -k 7 | tail -n 20'
-alias pt='heroku addons:open papertrail'
+
+# Dev
+alias ttr='mkdir -p tmp && touch tmp/restart.txt'
+alias rttr='rm tmp/pids/server.pid && ttr'
 alias bi='bundle install'
 alias bu='bundle update'
 alias bout='bundle outdated'
 alias bo='bundle open'
 alias be='bundle exec'
-alias cn='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Documents/CodeNotes'
-alias cl='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox'
-alias vin='cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox && vim'
-alias cdia='cd ~/Library/Mobile\ Documents/27N4MQEA55\~pro\~writer/Documents'
-alias cdi='cd ~/Library/Mobile\ Documents/com\~apple\~CloudDocs'
-alias cdp='cd ~/Code/bertha-carl/pumpngo'
+alias pt='heroku addons:open papertrail'
 alias cpd='cap production deploy'
 alias csd='cap staging deploy'
-alias pj='underscore print --color'
-alias tailp='tail -f ~/Library/Logs/puma-dev.log'
-alias tailapp='tail -f log/development.log ~/Library/Logs/puma-dev.log'
-alias s3=s3cmd
 alias drb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest /bin/bash'
 alias ctagsr='ctags --languages=-javascript -R'
+alias s3=s3cmd
 alias k=kubectl
-alias s='~/.dotfiles/tools/SpotifyControl/SpotifyControl'
 
-# OS X
-alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES'
-alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO'
+# macOS
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
 alias bs='brew services'
 alias bc='brew cask'

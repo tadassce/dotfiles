@@ -56,6 +56,7 @@ bindkey -M vicmd 'u' undo
 source ~/.completions
 source ~/.prompt
 source ~/.aliases
+source ~/.private_aliases
 source ~/.functions
 source ~/.fzfrc
 
