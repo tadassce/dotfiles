@@ -53,6 +53,7 @@ set nonumber        " Show line numbers. Or not.
 set nocursorline    " Don't highlight the current line
 set smartindent
 set autoindent
+set breakindent     " respect indentation when wrapping lines
 set undodir=~/.vim/undo
 set undofile
 set undolevels=1000  "maximum number of changes that can be undone
