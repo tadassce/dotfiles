@@ -19,7 +19,7 @@ alias gphm='git push heroku master'
 alias grm='git rm $(git ls-files --deleted)'
 alias gs='git status -sb'
 alias gst='git st'
-alias gl='git lg -n 10'
+alias gl='git l'
 alias glg='git lg'
 alias glgh='git lg --committer=GitHub'
 alias gw="git show"
