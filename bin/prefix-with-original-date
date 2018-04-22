@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+for f in *.jpg
+do
+  date=$(identify -verbose "$f" |
+    grep exif:DateTimeOriginal |
+    sed 's/exif:DateTimeOriginal://' |
+    sed 's/\ //g' |
+    sed 's/:/-/g')
+
+  [[ -n $date ]] &&
+    mv "$f" "${date:0:10}-$f"
+
+done
