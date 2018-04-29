@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+# Given a long-running process in the terminal:
+#
+# - Ctrl+Z to suspend it
+# - Run `tell-me-when-done`
+# - Output resumes, when done will show a notification
+#
+# NOTE: Depends on terminal-notifier (brew install terminal-notifier)
+
+function tell-me-when-done() {
+  last_command=$(history | tail -1 | cut -d' ' -f3-)
+
+  fg && terminal-notifier -title 'Finished' -message "$last_command"
+}
