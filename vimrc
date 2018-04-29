@@ -24,8 +24,8 @@ else
   " colorscheme nova
   " colorscheme jellybeans
   " colorscheme one
-  colorscheme iceberg
-  " colorscheme nord
+  " colorscheme iceberg
+  colorscheme nord
 endif
 
 " Enable filetypes
