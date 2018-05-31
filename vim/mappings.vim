@@ -105,4 +105,4 @@ nmap <c-t> :Files<cr>
 nmap ,d :Dash<cr>
 
 " Bring back old vim-unimpaired mapping
-nmap co =o
+nmap co yo
