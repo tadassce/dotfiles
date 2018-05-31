@@ -58,6 +58,8 @@ alias drb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest 
 alias ctagsr='ctags --languages=-javascript -R'
 alias s3=s3cmd
 alias k=kubectl
+alias d=docker
+alias doc=docker-compose
 
 # macOS
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
