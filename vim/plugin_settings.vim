@@ -54,8 +54,13 @@ highlight clear ALEWarningSign
 
 " -----------------------------------------------
 " Lightline
+if $TBG == 'black'
+  let lightlinetheme = 'wombat'
+elseif $TBG == 'white'
+  let lightlinetheme = 'PaperColor'
+endif
 let g:lightline = {
-\ 'colorscheme': 'wombat',
+\ 'colorscheme': lightlinetheme,
 \ 'active': {
 \   'left': [['mode', 'paste'], ['filename', 'modified']],
 \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
@@ -103,12 +108,6 @@ function! s:MaybeUpdateLightline()
 endfunction
 " / Lightline
 " -----------------------------------------------
-
-let g:jsx_ext_required = 0
-
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
