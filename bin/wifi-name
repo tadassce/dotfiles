@@ -5,5 +5,5 @@ name_maybe="$(networksetup -getairportnetwork en0)"
 if echo "$name_maybe" | grep 'Wi-Fi power is currently off'; then
   echo 'off'
 else
-  echo "$name_maybe" | cut -c 24-44
+  echo "$name_maybe" | cut -c 24-50
 fi
