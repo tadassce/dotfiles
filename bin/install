@@ -82,9 +82,28 @@ gem install pry pry-doc
 npm i -g tldr
 
 # Linters
-gem install reek rubocop ruby-lint coderay brakeman rails_best_practices
-brew install shellcheck hadolint
-npm i -g eslint jshint jsonlint prettier swaglint
+gem install \
+  reek \
+  rubocop \
+  ruby-lint \
+  coderay \
+  brakeman \
+  rails_best_practices
+brew install \
+  shellcheck \
+  hadolint
+npm i -g \
+  eslint-plugin-react \
+  eslint@^4.1.1 \
+  eslint-plugin-jsx-a11y@^5.1.1 \
+  babel-eslint@^7.2.3 \
+  eslint-config-react-app \
+  eslint-plugin-import \
+  eslint-plugin-flowtype \
+  jshint \
+  jsonlint \
+  prettier \
+  swaglint
 
 # Some useful Quick Look plugins
 brew cask install \
