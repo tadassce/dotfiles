@@ -73,13 +73,12 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 defaults write com.apple.finder EmptyTrashSecurely -bool false
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
+# Dock no-delay
+defaults write com.apple.dock autohide-delay -int 0
 # Screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture location ~/Dropbox/Screenshots
 # defaults write com.apple.screencapture name 'Screenshot'
-# Dock no-delay
-defaults write com.apple.dock autohide-time-modifier -int 0
-defaults write com.apple.dock autohide-delay -int 0
 # Kill affected applications
 for app in Finder Mail Dock SystemUIServer; do killall "$$app" >/dev/null 2>&1; done
 
