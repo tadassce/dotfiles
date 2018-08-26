@@ -80,7 +80,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture location ~/Dropbox/Screenshots
 # defaults write com.apple.screencapture name 'Screenshot'
 # Kill affected applications
-for app in Finder Mail Dock SystemUIServer; do killall "$$app" >/dev/null 2>&1; done
+for app in Finder Mail Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done
 
 # Tools I always want to have
 gem install pry pry-doc
