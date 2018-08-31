@@ -79,6 +79,8 @@ defaults write com.apple.dock autohide-delay -int 0
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture location ~/Dropbox/Screenshots
 # defaults write com.apple.screencapture name 'Screenshot'
+# Disable system UI sound effects like the screen shot sound among others
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 # Kill affected applications
 for app in Finder Mail Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done
 
