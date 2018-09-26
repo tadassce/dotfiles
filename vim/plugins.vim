@@ -51,6 +51,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'benmills/vimux'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'airblade/vim-localorie' " Rails I18n
 Plug 'bkad/CamelCaseMotion'
