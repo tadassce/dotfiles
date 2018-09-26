@@ -79,7 +79,7 @@ nmap cog :GitGutterToggle<cr>
 " i.e. rspec spec/models/user_spec.rb<cr>
 " nmap ,rs :nmap rs :SlimeSend1
 
-nnoremap gh :VimuxRunLastCommand<cr>
+nnoremap gh :w<cr>:VimuxRunLastCommand<cr>
 map <Leader>vp :VimuxPromptCommand<cr>
 map <Leader>vl :VimuxRunLastCommand<cr>
 map <Leader>vi :VimuxInspectRunner<cr>
