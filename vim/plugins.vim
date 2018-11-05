@@ -25,6 +25,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-one'
 Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'cormacrelf/vim-colors-github'
 
 " other visual stuff
 Plug 'itchyny/lightline.vim'
