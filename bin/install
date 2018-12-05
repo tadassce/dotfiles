@@ -22,6 +22,7 @@ brew install \
   fzf \
   htop \
   reattach-to-user-namespace \
+  ncdu \
   openssh \
   heroku/brew/heroku \
   node \
