@@ -40,9 +40,6 @@ nnoremap <tab> :NERDTreeToggle<cr>
 nnoremap ` :NERDTreeFind<cr>
 nnoremap ! :NERDTreeSortByAtimeToggle<cr>
 
-nmap ]w :tabn<cr>
-nmap [w :tabp<cr>
-
 " aligns ruby 1.9 style hash on ":"
 vmap ,h :Tab/\w:\zs/l0l1<cr>
 
@@ -94,8 +91,8 @@ nnoremap <silent> <leader>le :call localorie#expand_key()<cr>
 " ,w ,b ,e for camelCase motion
 call camelcasemotion#CreateMotionMappings('<leader>')
 
-nmap ]a :ALENext<cr>
-nmap [a :ALEPrevious<cr>
+nmap ]w :ALENext<cr>
+nmap [w :ALEPrevious<cr>
 nmap coa :ALEToggle<cr>
 nmap ,af :ALEFix<cr>
 
