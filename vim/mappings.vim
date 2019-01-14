@@ -96,7 +96,7 @@ nmap [w :ALEPrevious<cr>
 nmap coa :ALEToggle<cr>
 nmap <leader>af :ALEFix<cr>
 
-nmap <leader>r :Tags<cr>
+nmap <leader>rt :Tags<cr>
 nmap <c-n> :CtrlSpace<cr>
 nmap <c-t> :Files<cr>
 
