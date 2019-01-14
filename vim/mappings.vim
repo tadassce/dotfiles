@@ -10,7 +10,7 @@ nmap <C-l> <C-w>l
 
 nmap K 5k
 
-nmap ,fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
+nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
 
 " Toggle status line
 nmap [ts :set laststatus=2<cr>
@@ -21,13 +21,13 @@ nnoremap gJ :call JoinWithoutSpaces(0)<cr>
 xnoremap gJ :<c-u>call JoinWithoutSpaces(1)<cr>
 
 " Add a TODO comment above current line
-nmap ,td O<esc>0CTODO <esc>==\\\A
+nmap <leader>td O<esc>0CTODO <esc>==\\\A
 
 " Notes
-nmap ,ntd :e ~/Dropbox/Notes/TODO.txt<CR>
-nmap ,ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
-nmap ,let :cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox<cr>
-nmap ,nia :e ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/A-temp.md<cr>Go
+nmap <leader>ntd :e ~/Dropbox/Notes/TODO.txt<CR>
+nmap <leader>ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
+nmap <leader>let :cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox<cr>
+nmap <leader>nia :e ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/A-temp.md<cr>Go
 
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
@@ -41,14 +41,14 @@ nnoremap ` :NERDTreeFind<cr>
 nnoremap ! :NERDTreeSortByAtimeToggle<cr>
 
 " aligns ruby 1.9 style hash on ":"
-vmap ,h :Tab/\w:\zs/l0l1<cr>
+vmap <leader>h :Tab/\w:\zs/l0l1<cr>
 
 nmap Q <nop> " Don't go into Ex mode!
 
 " Current date
 inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
-nnoremap ,rd :redraw!<cr>
+nnoremap <leader>rd :redraw!<cr>
 nnoremap <F5> :redraw!<cr>
 
 nnoremap <F9> :Dispatch<CR>
@@ -82,7 +82,7 @@ map <Leader>vl :VimuxRunLastCommand<cr>
 map <Leader>vi :VimuxInspectRunner<cr>
 map <Leader>vz :VimuxZoomRunner<cr>
 
-map ,rs :VroomRunNearestTest<cr>
+map <leader>rs :VroomRunNearestTest<cr>
 
 " Rails I18n
 nnoremap <silent> <leader>lt :call localorie#translate()<cr>
@@ -94,13 +94,13 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 nmap ]w :ALENext<cr>
 nmap [w :ALEPrevious<cr>
 nmap coa :ALEToggle<cr>
-nmap ,af :ALEFix<cr>
+nmap <leader>af :ALEFix<cr>
 
 nmap <leader>r :Tags<cr>
 nmap <c-n> :CtrlSpace<cr>
 nmap <c-t> :Files<cr>
 
-nmap ,d :Dash<cr>
+nmap <leader>d :Dash<cr>
 
 " Bring back old vim-unimpaired mapping
 nmap co yo
