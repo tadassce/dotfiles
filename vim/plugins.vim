@@ -50,7 +50,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'on': 'ALEToggle' }
 Plug 'benmills/vimux'
 Plug 'editorconfig/editorconfig-vim'
 
