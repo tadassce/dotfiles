@@ -57,6 +57,7 @@ source ~/.completions
 source ~/.prompt
 source ~/.aliases
 source ~/.private_aliases
+source ~/.private_profile
 source ~/.functions
 source ~/.fzfrc
 
