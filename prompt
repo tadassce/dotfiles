@@ -25,7 +25,7 @@ git_br() {
 # local emoji='🌮'
 local emoji='🐨'
 # local user='%{$fg[green]%}%n%{$reset_color%}'
-local username=$USER[0,3]
+local username=$USER[0,5]
 local user='%{$fg[green]%}${username}%{$reset_color%}'
 # local host='%{$fg[green]%}%m%{$reset_color%}'
 # hn=$(hostname)
