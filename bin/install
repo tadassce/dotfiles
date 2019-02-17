@@ -40,6 +40,15 @@ brew cask install \
   appcleaner \
   karabiner-elements
 
+# asdf - version manager
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+cd ~/.asdf
+git checkout "$(git describe --abbrev=0 --tags)"
+# asdf recommended plugin deps
+brew install \
+  coreutils automake autoconf openssl \
+  libyaml readline libxslt libtool unixodbc
+
 # Wait for Dropbox to sync
 
 # Set up dotfiles
