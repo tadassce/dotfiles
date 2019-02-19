@@ -8,6 +8,7 @@ coverage
 .powenv
 .bundle
 .env
+.ts.env
 Session.vim
 config/initializers/tadas.rb
 tmp/restart.txt
@@ -16,3 +17,6 @@ docker-compose-ts-dev.yml
 bundle
 wiki
 .ignore
+.tool-versions
+gitig.*
+*.gitig
