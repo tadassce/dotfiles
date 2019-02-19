@@ -8,7 +8,7 @@ coverage
 .powenv
 .bundle
 .env
-.ts.env
+ts.env
 Session.vim
 config/initializers/tadas.rb
 tmp/restart.txt
