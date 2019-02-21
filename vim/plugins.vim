@@ -49,6 +49,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 " tools
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale', { 'on': 'ALEToggle' }
 Plug 'benmills/vimux'
