@@ -51,7 +51,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'w0rp/ale', { 'on': 'ALEToggle' }
+Plug 'w0rp/ale'
 Plug 'benmills/vimux'
 Plug 'editorconfig/editorconfig-vim'
 
