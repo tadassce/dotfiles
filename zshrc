@@ -1,9 +1,8 @@
 #!/bin/zsh
 
-GIT_MERGE_AUTOEDIT=no
-export GIT_MERGE_AUTOEDIT
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export GIT_MERGE_AUTOEDIT=no
 
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:/usr/local/git/bin
@@ -66,8 +65,8 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-# asdf
-if [ -d $HOME/.asdf ]; then
-  source $HOME/.asdf/asdf.sh
-  source $HOME/.asdf/completions/asdf.bash
+# chruby
+if [ -d /usr/local/opt/chruby ]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
 fi

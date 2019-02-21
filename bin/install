@@ -28,6 +28,9 @@ brew install \
   node \
   watch
 
+# Ruby
+brew install chruby ruby-install
+
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 
@@ -39,15 +42,6 @@ brew cask install \
   docker \
   appcleaner \
   karabiner-elements
-
-# asdf - version manager
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf
-cd ~/.asdf
-git checkout "$(git describe --abbrev=0 --tags)"
-# asdf recommended plugin deps
-brew install \
-  coreutils automake autoconf openssl \
-  libyaml readline libxslt libtool unixodbc
 
 # Wait for Dropbox to sync
 
