@@ -102,6 +102,7 @@ set shellpipe+=\ " with trailing whitespace
 ru functions.vim
 ru mappings.vim
 ru plugin_settings.vim
+ru private_settings.vim
 ru abbreviations.vim
 ru color_overrides.vim
 
