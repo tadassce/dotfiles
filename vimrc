@@ -49,7 +49,7 @@ set shiftwidth=2  " Number of space characters inserted for indentation
 set softtabstop=2 " Makes the spaces feel like real tabs
 set expandtab     " To insert space characters whenever the tab key is pressed
 set smarttab
-set nonumber        " Show line numbers. Or not.
+set number          " Show line numbers. Or not.
 set nocursorline    " Don't highlight the current line
 set smartindent
 set autoindent
