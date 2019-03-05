@@ -127,6 +127,11 @@ brew cask install \
   qlcolorcode \
   qlimagesize
 
+# Screen Savers
+brew cask install \
+  aerial \
+  brooklyn
+
 # Sync Karabiner settings (make sure Dropbox sync is done)
 ln -s ~/Dropbox/Apps/karabiner ~/.config/
 launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
