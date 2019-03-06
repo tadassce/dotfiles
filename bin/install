@@ -19,6 +19,7 @@ brew install \
   tmux \
   ctags \
   the_silver_searcher \
+  fd \
   fzf \
   htop \
   reattach-to-user-namespace \
