@@ -16,6 +16,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'vito-c/jq.vim'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
