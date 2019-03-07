@@ -36,9 +36,9 @@ nmap - :Switch<cr>
 
 xnoremap <silent> <expr> p Repl()
 
-nmap coq :NERDTreeToggle<cr>
+nmap ! :NERDTreeToggle<cr>
 nnoremap ` :NERDTreeFind<cr>
-nnoremap !~ :NERDTreeSortByAtimeToggle<cr>
+" nnoremap !~ :NERDTreeSortByAtimeToggle<cr>
 
 " aligns ruby 1.9 style hash on ":"
 vmap <leader>h :Tab/\w:\zs/l0l1<cr>

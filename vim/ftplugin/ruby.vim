@@ -5,7 +5,7 @@ let b:switch_custom_definitions = [
       \ }]
 
 " Rspec focus toggle
-nnoremap <buffer> ! ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
+" nnoremap <buffer> ! ma?^\s*it<space><cr>/it<cr>:Switch<cr>`a:nohl<cr>
 
 " Insert mode shortcuts
 iab elrb expect(last_response.body).to
