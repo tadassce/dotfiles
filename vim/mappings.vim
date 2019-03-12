@@ -37,6 +37,8 @@ nmap - :Switch<cr>
 xnoremap <silent> <expr> p Repl()
 
 nmap ! :NERDTreeToggle<cr>
+nmap ,m :NERDTreeToggle<cr>
+nmap <c-b> :NERDTreeToggle<cr>
 nnoremap ` :NERDTreeFind<cr>
 " nnoremap !~ :NERDTreeSortByAtimeToggle<cr>
 
