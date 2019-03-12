@@ -52,6 +52,8 @@ brew install rcm
 git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
 rcup
 
+touch ~/.private_aliases ~/.private_profile
+
 # Set the default shell (and in Users' prefs)
 chsh -s /usr/local/bin/zsh
 
