@@ -19,3 +19,7 @@ function tn() {
 _has() {
   return $( whence $1 >/dev/null )
 }
+
+function opp() {
+  op get item $1 | jq -r '.details.fields | map(select(.name == "password"))[0].value'
+}
