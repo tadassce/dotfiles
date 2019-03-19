@@ -20,3 +20,4 @@ wiki
 .tool-versions
 gitig.*
 *.gitig
+.projections.json
