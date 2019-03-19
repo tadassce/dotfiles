@@ -11,6 +11,7 @@ alias lt2='ls -1tr | tail -n 20'
 # Git
 alias g='git'
 alias gb='git branch'
+alias gf='git fetch --all'
 alias gu='git pull --prune'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
