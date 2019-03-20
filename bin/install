@@ -88,6 +88,7 @@ defaults write com.apple.dock autohide-delay -int 0
 defaults write com.apple.screencapture disable-shadow -bool true
 defaults write com.apple.screencapture location ~/Dropbox/Screenshots
 defaults write com.apple.screencapture name 'Screenshot'
+defaults write com.apple.screencapture show-thumbnail -bool FALSE
 # Disable system UI sound effects like the screen shot sound among others
 defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 # Kill affected applications
