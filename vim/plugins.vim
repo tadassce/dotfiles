@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tadassce/vim-ruby', { 'branch': 'no_hanging_indent' }
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
-" Plug 'sunaku/vim-ruby-minitest'
+Plug 'sunaku/vim-ruby-minitest'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 " Plug 'pearofducks/ansible-vim'
 " Plug 'lambdatoast/elm.vim'
@@ -16,7 +16,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'vito-c/jq.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'parkr/vim-jekyll'
 
 " colors
 Plug 'reedes/vim-colors-pencil'

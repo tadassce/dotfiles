@@ -33,6 +33,8 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.html.erb'
 
 let g:jsx_ext_required = 0
 
+let g:vim_markdown_folding_disabled = 1
+
 " -----------------------------------------------
 " ALE - Asynchronous Lint Engine
 
