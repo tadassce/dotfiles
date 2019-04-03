@@ -44,7 +44,7 @@
 	d = diff -b
 	dc = diff --cached
 	lg = "!source ~/.githelpers && pretty_git_log"
-	l = !git lg -20
+	l = !git lg -10
 	ls = ls-files
 	ignored = ls-files -o -i --exclude-standard
 	discard = checkout -- .
