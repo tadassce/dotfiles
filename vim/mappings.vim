@@ -96,8 +96,8 @@ call camelcasemotion#CreateMotionMappings('<leader>')
 nmap ]w :tabn<cr>
 nmap [w :tabp<cr>
 
-nmap ]z :ALENext<cr>
-nmap [z :ALEPrevious<cr>
+nmap ]z :ALENextWrap<cr>
+nmap [z :ALEPreviousWrap<cr>
 nmap coa :ALEToggle<cr>
 nmap <leader>af :ALEFix<cr>
 
