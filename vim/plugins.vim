@@ -22,7 +22,6 @@ Plug 'parkr/vim-jekyll'
 " colors
 Plug 'reedes/vim-colors-pencil'
 Plug 'jacoborus/tender'
-Plug 'trevordmiller/nova-vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-one'
 Plug 'cocopon/iceberg.vim'

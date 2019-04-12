@@ -21,7 +21,6 @@ else
   " colorscheme tomorrow-night-eighties-ts
   " colorscheme pencil
   " colorscheme tender
-  " colorscheme nova
   " colorscheme jellybeans
   " colorscheme one
   " colorscheme iceberg
