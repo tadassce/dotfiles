@@ -7,6 +7,8 @@ if $TBG == 'black'
   " hi DiffAdd        ctermfg=2 ctermbg=234
   " hi diffAdded      ctermfg=2 ctermbg=234
   " hi gitDiffAdded   ctermfg=2 ctermbg=234
+  hi DiffText       ctermfg=3
+  hi DiffChange     ctermfg=233 ctermbg=3
 
   " hi ColorColumn ctermbg=235 guibg=black
   " hi Directory guifg=#7e8aa2 ctermfg=60
@@ -62,6 +64,3 @@ hi diffRemoved    ctermfg=1
 "
 " hi gitDiffAdded   ctermfg=2
 " hi gitDiffRemoved ctermfg=1
-"
-" hi DiffText       ctermfg=3
-" hi DiffChange     ctermfg=3
