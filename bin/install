@@ -12,22 +12,22 @@ xcode-select --install
 brew analytics off
 
 brew install \
-  mas \
-  vim \
-  git \
-  zsh \
-  tmux \
   ctags \
-  the_silver_searcher \
   fd \
   fzf \
-  htop \
-  reattach-to-user-namespace \
-  ncdu \
-  openssh \
+  git \
   heroku/brew/heroku \
+  htop \
+  mas \
+  ncdu \
   node \
-  watch
+  openssh \
+  reattach-to-user-namespace \
+  the_silver_searcher \
+  tmux \
+  vim \
+  watch \
+  zsh
 
 # Ruby
 brew install chruby ruby-install
