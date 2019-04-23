@@ -23,6 +23,7 @@ brew install \
   node \
   openssh \
   reattach-to-user-namespace \
+  terminal-notifier \
   the_silver_searcher \
   tmux \
   vim \
