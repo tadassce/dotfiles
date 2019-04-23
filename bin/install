@@ -28,7 +28,8 @@ brew install \
   tmux \
   vim \
   watch \
-  zsh
+  zsh \
+  zsh-autosuggestions
 
 # Ruby
 brew install chruby ruby-install
