@@ -64,6 +64,7 @@ alias s3=s3cmd
 alias k=kubectl
 alias d=docker
 alias doc=docker-compose
+alias opa='eval $(op signin my)'
 
 # macOS
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
