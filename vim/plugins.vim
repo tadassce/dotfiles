@@ -34,6 +34,7 @@ Plug 'itchyny/lightline.vim'
 " text manipulation
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/tagalong.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 
