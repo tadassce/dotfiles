@@ -7,6 +7,7 @@ export GIT_MERGE_AUTOEDIT=no
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/usr/local/heroku/bin
+PATH=$PATH:~/Library/Python/3.7/bin
 PATH=$PATH:~/.dotfiles/bin
 
 export PATH
