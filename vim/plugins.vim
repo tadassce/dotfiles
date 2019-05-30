@@ -27,6 +27,7 @@ Plug 'rakr/vim-one'
 Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cormacrelf/vim-colors-github'
+Plug 'trevordmiller/nova-vim'
 
 " other visual stuff
 Plug 'itchyny/lightline.vim'
