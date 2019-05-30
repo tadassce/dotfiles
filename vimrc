@@ -15,7 +15,7 @@ if $TBG == 'white'
   " colorscheme default
 else
   set background=dark
-  " colorscheme purplebee
+  colorscheme purplebee
   " colorscheme code_ts " dark
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
@@ -24,7 +24,7 @@ else
   " colorscheme jellybeans
   " colorscheme one
   " colorscheme iceberg
-  colorscheme nord
+  " colorscheme nord
 endif
 
 " Enable filetypes
