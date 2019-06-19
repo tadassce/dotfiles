@@ -27,6 +27,7 @@ if $TBG == 'black'
   hi SpellBad ctermbg=96
   hi SpellCap ctermbg=236
   hi Search ctermbg=NONE ctermfg=3 cterm=underline,bold
+  hi LineNr ctermfg=240
 
 " -----------------------------------------------------------------------------
 elseif $TBG == 'white'
