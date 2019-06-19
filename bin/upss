@@ -7,7 +7,7 @@
 # and optionally AWS_DEFAULT_REGION
 source ~/.env-s3
 
-path=$(ls -t ~/Dropbox/Screenshots/Screen\ Shot* | head -n 1)
+path=$(ls -t ~/.icloud/Screenshots/Screen\ Shot* | head -n 1)
 name=${path##*/}
 host='i.sce.lt'
 url=$(echo "http://$host/$name" | tr ' ' '+')

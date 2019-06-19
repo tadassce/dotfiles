@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ls ~/Desktop/Screen\ Shot* | sed -e 's/ /\\ /g' | sed -e 'p;s/Screen\\ Shot/Screenshot/' -e 's/\\ at//' -e 's/Desktop/Dropbox\/Screenshots/' | xargs -n2 mv
+ls ~/Desktop/Screen\ Shot* | sed -e 's/ /\\ /g' | sed -e 'p;s/Screen\\ Shot/Screenshot/' -e 's/\\ at//' -e 's/Desktop/.icloud\/Screenshots/' | xargs -n2 mv

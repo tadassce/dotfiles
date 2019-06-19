@@ -40,13 +40,10 @@ $(brew --prefix)/opt/fzf/install
 # Homebrew Cask
 brew tap caskroom/cask
 brew cask install \
-  dropbox \
   alfred \
   docker \
   appcleaner \
   karabiner-elements
-
-# Wait for Dropbox to sync
 
 # Set up dotfiles
 brew tap thoughtbot/formulae
@@ -54,6 +51,7 @@ brew install rcm
 git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
 rcup
 
+ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
 touch ~/.private_aliases ~/.private_profile
 
 # Set the default shell (and in Users' prefs)
@@ -140,6 +138,6 @@ brew cask install \
   aerial \
   brooklyn
 
-# Sync Karabiner settings (make sure Dropbox sync is done)
-ln -s ~/Dropbox/Apps/karabiner ~/.config/
+# Sync Karabiner settings
+ln -s ~/.icloud/Config/karabiner ~/.config/
 launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
