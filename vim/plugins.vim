@@ -40,7 +40,6 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 
 " file search and navigation
-Plug 'rking/ag.vim'
 " Plug 'scrooloose/nerdtree'
 Plug 'AndrewRadev/nerdtree', { 'branch': 'sort-by-atime' }
 Plug 'ivalkeen/nerdtree-execute'
