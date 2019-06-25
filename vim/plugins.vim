@@ -40,8 +40,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 
 " file search and navigation
-" Plug 'scrooloose/nerdtree'
-Plug 'AndrewRadev/nerdtree', { 'branch': 'sort-by-atime' }
+Plug 'scrooloose/nerdtree'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'christoomey/vim-tmux-navigator'
 Plug '/usr/local/opt/fzf'
