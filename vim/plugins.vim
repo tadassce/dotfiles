@@ -59,6 +59,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-localorie' " Rails I18n
 Plug 'bkad/CamelCaseMotion'
 Plug 'kana/vim-textobj-user'
+Plug 'mbbill/undotree'
 Plug 'moll/vim-bbye'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'rizzatti/dash.vim'
