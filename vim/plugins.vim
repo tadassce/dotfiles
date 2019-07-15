@@ -40,6 +40,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 
 " file search and navigation
+Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'christoomey/vim-tmux-navigator'
