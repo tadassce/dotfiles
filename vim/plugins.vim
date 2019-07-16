@@ -18,6 +18,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'plasticboy/vim-markdown'
 Plug 'parkr/vim-jekyll'
+Plug 'vito-c/jq.vim'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
