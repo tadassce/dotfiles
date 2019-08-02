@@ -3,7 +3,8 @@
 # Open git repo in Browser
 ob() {
     if [ -d .git ]; then
-        url=$(git remote -v | grep push | awk '{ print $2 }' | sed 's/\.git//')
+        remote=${1:-origin}
+        url=$(git remote -v | grep "$remote" | grep push | awk '{ print $2 }' | sed 's/\.git//')
 
         if [[ $url =~ ^https?: ]]; then
             open "$url"
