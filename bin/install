@@ -13,6 +13,7 @@ brew analytics off
 
 brew install \
   ctags \
+  docker-compose \
   fd \
   fzf \
   git \
