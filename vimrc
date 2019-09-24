@@ -98,6 +98,8 @@ set fillchars=stl:\ ,stlnc:-,vert:\|,fold:-,diff:-
 " To fix Dispatch - https://github.com/tpope/vim-dispatch/issues/192
 set shellpipe+=\ " with trailing whitespace
 
+set tags^=./.git/tags;
+
 ru functions.vim
 ru mappings.vim
 ru plugin_settings.vim
