@@ -98,3 +98,5 @@
 	autoStash = true
 [includeIf "gitdir:/Users/tadass/Code/ttl/"]
 	path = ~/.tl_gitconfig
+[diff]
+	noprefix = true
