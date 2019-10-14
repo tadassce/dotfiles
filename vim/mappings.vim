@@ -47,9 +47,6 @@ vmap <leader>h :Tab/\w:\zs/l0l1<cr>
 
 nmap Q <nop> " Don't go into Ex mode!
 
-" Current date
-inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
-
 nnoremap <leader>rd :redraw!<cr>
 nnoremap <F5> :redraw!<cr>
 
@@ -109,3 +106,9 @@ nmap <leader>d :Dash<cr>
 
 " Bring back old vim-unimpaired mapping
 nmap co yo
+
+" -- Insert --
+" Current date
+inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
+" erb
+imap <c-e> <%=  %><esc>hhi
