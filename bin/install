@@ -11,49 +11,20 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew analytics off
 
-brew install \
-  ctags \
-  docker-compose \
-  fd \
-  fzf \
-  git \
-  heroku/brew/heroku \
-  htop \
-  mas \
-  ncdu \
-  node \
-  openssh \
-  reattach-to-user-namespace \
-  terminal-notifier \
-  the_silver_searcher \
-  tmux \
-  vim \
-  watch \
-  zsh \
-  zsh-autosuggestions
+# Set up dotfiles
+git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
 
-# Ruby
-brew install chruby ruby-install
+brew bundle --file ~/.dotfiles/extras/Brewfile
 
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 
-# Homebrew Cask
-brew tap caskroom/cask
-brew cask install \
-  alfred \
-  docker \
-  appcleaner \
-  karabiner-elements
-
-# Set up dotfiles
-brew tap thoughtbot/formulae
-brew install rcm
-git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
+# symlink dotfiles
 rcup
 
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
-touch ~/.private_aliases ~/.private_profile
+touch ~/.private_aliases
+touch ~/.private_profile
 
 # Set the default shell (and in Users' prefs)
 chsh -s /usr/local/bin/zsh
@@ -74,7 +45,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Other tools
 gem install pry pry-doc
-npm i -g tldr
 
 # Linters
 gem install \
@@ -85,9 +55,6 @@ gem install \
   coderay \
   brakeman \
   rails_best_practices
-brew install \
-  shellcheck \
-  hadolint
 npm i -g \
   standard \
   eslint-plugin-react \
@@ -101,20 +68,6 @@ npm i -g \
   jsonlint \
   prettier \
   swaglint
-
-# Some useful Quick Look plugins
-brew cask install \
-  qlstephen \
-  qlmarkdown \
-  quicklook-json \
-  quicklook-csv \
-  qlcolorcode \
-  qlimagesize
-
-# Screen Savers
-brew cask install \
-  aerial \
-  brooklyn
 
 # Sync Karabiner settings
 ln -s ~/.icloud/Config/karabiner ~/.config/
