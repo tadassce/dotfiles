@@ -70,30 +70,9 @@ mkdir ~/.vim/undo
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Set some macOS defaults
-#
-# Disable the warning when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-# Prefer plain text in Mail
-defaults write com.apple.mail PreferPlainText -bool TRUE
-# Check for software updates daily, not just once per week
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-# Empty Trash securely by default
-defaults write com.apple.finder EmptyTrashSecurely -bool false
-# Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
-# Dock no-delay
-defaults write com.apple.dock autohide-delay -int 0
-# Screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
-defaults write com.apple.screencapture location ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Screenshots
-defaults write com.apple.screencapture name 'Screenshot'
-defaults write com.apple.screencapture show-thumbnail -bool FALSE
-# Disable system UI sound effects like the screen shot sound among others
-defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
-# Kill affected applications
-for app in Finder Mail Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done
+~/.dotfiles/macos-defaults
 
-# Tools I always want to have
+# Other tools
 gem install pry pry-doc
 npm i -g tldr
 
