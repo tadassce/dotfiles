@@ -73,7 +73,7 @@ alias bc='brew cask'
 alias brewupd="brew update && echo \"$fg[blue]==>$reset_color Outdated\" && brew outdated && echo \"$fg[blue]==>$reset_color Cask Outdated\" && brew cask outdated"
 alias brewupg="brew upgrade && brew cask upgrade && brew cleanup"
 alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc"
-alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && mas outdated && echo "==>" && brew update && echo "==>" && brew outdated'
+alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && mas outdated && echo "==>" && brew update && echo "==>" && brew outdated && echo "==>" && brew cask outdated'
 
 # Fun
 alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
