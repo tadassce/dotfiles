@@ -89,7 +89,7 @@ mas "Lungo", id: 1263070803
 mas "Noizio", id: 928871589
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Pixelmator", id: 407963104
+mas "Pixelmator Pro", id: 1289583905
 mas "Sip", id: 507257563
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
