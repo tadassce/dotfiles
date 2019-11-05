@@ -3,10 +3,6 @@
 alias l='ls -1'
 alias ll='ls -lahG'
 alias lt='ls -lahGt'
-alias ltt='ls -1tr'
-alias ltn='ls -1tr | tail -n '
-alias lt1='ls -1tr | tail -n 10'
-alias lt2='ls -1tr | tail -n 20'
 
 # Git
 alias g='git'
@@ -42,8 +38,9 @@ alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
 alias tm='tmux -u attach || tmux -u new'
 alias less='less -R '
 alias ..='cd ..'
+alias q='exit'
 
-function grp() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null }
+function grp()   { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null }
 function greps() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null | sed -E 's/[[:space:]]+//' | grep $1 }
 alias largefiles='find . -ls | sort -n -k 7 | tail -n 20'
 
@@ -56,14 +53,9 @@ alias bout='bundle outdated'
 alias bo='bundle open'
 alias be='bundle exec'
 alias pt='heroku addons:open papertrail'
-alias cpd='cap production deploy'
-alias csd='cap staging deploy'
 alias drb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest /bin/bash'
 alias ctagsr='ctags --languages=-javascript -R'
-alias s3=s3cmd
 alias k=kubectl
-alias d=docker
-alias doc=docker-compose
 alias opa='eval $(op signin my)'
 
 # macOS
@@ -74,8 +66,3 @@ alias brewupd="brew update && echo \"$fg[blue]==>$reset_color Outdated\" && brew
 alias brewupg="brew upgrade && brew cask upgrade && brew cleanup"
 alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc"
 alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && mas outdated && echo "==>" && brew update && echo "==>" && brew outdated && echo "==>" && brew cask outdated'
-
-# Fun
-alias fact="elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|"
-alias drumroll='afplay ~/Dropbox/Resources/Sounds/drumroll.mp3'
-gsay(){ curl -A RG --silent translate\.google\.com/translate_tts -d "tl=en&q=$@" | mpg123 - }
