@@ -10,8 +10,8 @@ Dir['*']
 
   name = dir.split('/').last
   emoji = '🐙'
-  puts "#{emoji} Fetching #{name}"
-  system 'git fetch'
+  puts "#{emoji} Pulling #{name}"
+  system 'git pull'
 
   Dir.chdir home
 end
