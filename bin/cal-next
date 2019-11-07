@@ -2,10 +2,23 @@
 
 # Shows the next event in the calendar
 
-cal_personal_tmb=4D3E2132-5ED3-45E9-84FD-B990E95E0AE8.caldav/D0CECE14-9CB5-444A-95ED-C4C683D8E75A
-cal_work=19223199-2435-464A-A060-C1AE01254282.exchange/2C1C2481-A5D8-43BC-8BB9-1E3A6B9D51A3
+cal_ts_prs=4D3E2132-5ED3-45E9-84FD-B990E95E0AE8.caldav/D0CECE14-9CB5-444A-95ED-C4C683D8E75A
+cal_ts_wrk=4D3E2132-5ED3-45E9-84FD-B990E95E0AE8.caldav/E639707A-7826-4216-AB9D-13586497785F
+cal_tl_wrk=19223199-2435-464A-A060-C1AE01254282.exchange/2C1C2481-A5D8-43BC-8BB9-1E3A6B9D51A3
 
-calendar=$cal_work
+if [ "$(hostname)" = "tmbp.local" ]; then
+  calendar=$cal_ts_prs
+else
+  calendar=$cal_tl_wrk
+fi
+
+cal_folder=~/Library/Calendars/$calendar.calendar
+
+if [ ! -d "$cal_folder" ]; then
+  echo "Cal n/a"
+  return 1
+fi
+
 timestamp=$(date +%Y%m%d)
 
 # To find the calendar, create an event in it called "findme", then:
@@ -15,7 +28,7 @@ timestamp=$(date +%Y%m%d)
 #   grep "Library/Calendars"
 
 
-find ~/Library/Calendars/$calendar.calendar -name "*.ics" |
+find $cal_folder -name "*.ics" |
   xargs grep -sh -C20 -e "^DTSTART.*:$timestamp" |
   ruby -r 'time' -ne '
     puts $stdin.readlines.map(&:chomp).
