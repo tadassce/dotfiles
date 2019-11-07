@@ -1,7 +1,20 @@
 #!/bin/zsh
 
-calendar=4D3E2132-5ED3-45E9-84FD-B990E95E0AE8.caldav/D0CECE14-9CB5-444A-95ED-C4C683D8E75A
+# Shows the next event in the calendar
+
+cal_personal_tmb=4D3E2132-5ED3-45E9-84FD-B990E95E0AE8.caldav/D0CECE14-9CB5-444A-95ED-C4C683D8E75A
+cal_work=19223199-2435-464A-A060-C1AE01254282.exchange/2C1C2481-A5D8-43BC-8BB9-1E3A6B9D51A3
+
+calendar=$cal_work
 timestamp=$(date +%Y%m%d)
+
+# To find the calendar, create an event in it called "findme", then:
+# find ~/Library/Calendars -name "*.ics" |
+#   xargs grep -sH -C20 -e "^DTSTART.*:$timestamp" |
+#   grep findme |
+#   grep "Library/Calendars"
+
+
 find ~/Library/Calendars/$calendar.calendar -name "*.ics" |
   xargs grep -sh -C20 -e "^DTSTART.*:$timestamp" |
   ruby -r 'time' -ne '
