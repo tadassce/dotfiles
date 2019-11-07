@@ -72,7 +72,7 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
