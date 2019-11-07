@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+calendar=4D3E2132-5ED3-45E9-84FD-B990E95E0AE8.caldav/D0CECE14-9CB5-444A-95ED-C4C683D8E75A
+timestamp=$(date +%Y%m%d)
+find ~/Library/Calendars/$calendar.calendar -name "*.ics" |
+  xargs grep -sh -C20 -e "^DTSTART.*:$timestamp" |
+  ruby -r 'time' -ne '
+    puts $stdin.readlines.map(&:chomp).
+      select { |l| l =~ /^DTSTART|^SUMMARY/ }.
+      each_slice(2).to_a.
+      map(&:sort).
+      map { |t,s| [t.sub(/DTSTART.*:/,""), s.sub("SUMMARY:", "")] }.
+      map { |t,s| [Time.parse(t), s] }.
+      sort_by { |t,s| t }.
+      select { |t,s| t >= Time.now }.
+      map { |t,s| [((t - Time.now) / 60).to_i, s] }.
+      map { |m,s| [[(m / 60).floor, (m % 60)], s] }.
+      map { |(h,m),s|
+        if h < 0 && m < 1
+          "#{s} now"
+        elsif h < 1
+          "#{s} in #{m}m"
+        else
+          "#{s} in #{h}h"
+        end
+      }.
+      first
+'
