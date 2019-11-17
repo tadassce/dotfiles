@@ -27,8 +27,6 @@ brew "imagemagick"
 brew "jrnl"
 brew "kubernetes-cli"
 brew "libzip"
-brew "llvm"
-brew "macvim", link: false
 brew "mas"
 brew "mosh"
 brew "ncdu"
@@ -71,26 +69,19 @@ cask "imageoptim"
 cask "karabiner-elements"
 cask "licecap"
 cask "little-snitch"
-cask "qlcolorcode"
-cask "qlmarkdown"
-cask "qlstephen"
-cask "quicklook-csv"
-cask "quicklook-json"
+cask "macvim"
 cask "spotify"
 cask "sqlectron"
 cask "sqlitebrowser"
 cask "vlc"
 
 mas "1Password 7", id: 1333542190
-mas "Better", id: 1121192229
-mas "Instapaper", id: 1481302432
 mas "Keynote", id: 409183694
 mas "Lungo", id: 1263070803
 mas "Noizio", id: 928871589
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
-mas "Sip", id: 507257563
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
