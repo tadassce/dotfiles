@@ -60,16 +60,10 @@ source ~/.private_aliases
 source ~/.private_profile
 source ~/.functions
 source ~/.fzfrc
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/opt/asdf/asdf.sh
 
 # load custom functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
-
-# chruby
-if [ -d /usr/local/opt/chruby ]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
-fi
-
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

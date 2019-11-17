@@ -16,6 +16,11 @@ git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
 
 brew bundle --file ~/.dotfiles/extras/Brewfile
 
+asdf plugin-add ruby
+latest_ruby=$(asdf list-all ruby | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
+asdf install ruby "$latest_ruby"
+asdf global ruby "$latest_ruby"
+
 # To install useful key bindings and fuzzy completion:
 $(brew --prefix)/opt/fzf/install
 
