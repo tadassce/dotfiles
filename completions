@@ -1,6 +1,11 @@
 # Add custom completion functions
 fpath=(~/.zsh/completion $fpath)
 
+# Homebrew completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # Case insensitive completions
 autoload -U compinit
 autoload -U zstyle+
