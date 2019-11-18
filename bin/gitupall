@@ -1,5 +1,13 @@
 #! /usr/bin/env ruby
 
+def emoji
+  case `git remote -v`
+  when /github/ then '🐙'
+  when /gitlab/ then '😸'
+  else               '🤖'
+  end
+end
+
 home = Dir.pwd
 
 Dir['*']
@@ -9,8 +17,7 @@ Dir['*']
   Dir.chdir dir
 
   name = dir.split('/').last
-  emoji = '🐙'
-  puts "#{emoji} Pulling #{name}"
+  puts "\n#{emoji} Pulling #{name}"
   system 'git pull'
 
   Dir.chdir home
