@@ -22,7 +22,7 @@ asdf install ruby "$latest_ruby"
 asdf global ruby "$latest_ruby"
 
 # To install useful key bindings and fuzzy completion:
-$(brew --prefix)/opt/fzf/install
+/usr/local/opt/fzf/install
 
 # symlink dotfiles
 rcup

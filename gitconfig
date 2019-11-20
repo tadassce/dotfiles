@@ -23,7 +23,7 @@
 	excludesfile = ~/.gitignore_global
 	editor = /usr/local/bin/vim
 	warnambiguousrefs = false
-	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+	pager = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
 [alias]
 	st = status
 	s = status -sb
