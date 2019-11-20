@@ -34,8 +34,3 @@ zstyle ':completion:*' file-sort modification reverse
 
 # color code completion
 zstyle ':completion:*' list-colors "=(#b) #([0-9]#)*=36=31"
-
-# homebrew
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
