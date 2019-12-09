@@ -56,10 +56,10 @@ highlight clear ALEWarningSign
 
 " -----------------------------------------------
 " Lightline
-if $TBG == 'black'
-  let lightlinetheme = 'wombat'
-elseif $TBG == 'white'
+if $TBG == 'white'
   let lightlinetheme = 'PaperColor'
+else
+  let lightlinetheme = 'wombat'
 endif
 let g:lightline = {
 \ 'colorscheme': lightlinetheme,
