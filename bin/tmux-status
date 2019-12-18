@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 time_now=`date +%H:%M`
-cal_next=`cal-next`
+# cal_next=`cal-next`
 # wifi_name=`wifi-name`
 # battery=`battery`
 
