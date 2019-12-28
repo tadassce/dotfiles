@@ -3,10 +3,10 @@
 time_now=`date +%H:%M`
 # cal_next=`cal-next`
 # wifi_name=`wifi-name`
-# battery=`battery`
+battery=`battery`
 
-if [ -z "$cal_next" ]; then
+if [ -z "$battery" ]; then
   echo $time_now
 else
-  echo "$cal_next | $time_now"
+  echo "$battery | $time_now"
 fi
