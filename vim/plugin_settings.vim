@@ -8,6 +8,7 @@ let g:splitjoin_join_mapping = ''
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrowExpandable='+'
 let g:NERDTreeDirArrowCollapsible='~'
+let g:andrews_nerdtree_all = 1
 
 let g:gist_clip_command = 'pbcopy'
 
