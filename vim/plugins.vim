@@ -42,9 +42,9 @@ Plug 'tpope/vim-commentary'
 
 " file search and navigation
 Plug 'rking/ag.vim'
+Plug 'ivalkeen/nerdtree-execute'
 Plug 'AndrewRadev/andrews_nerdtree.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'ivalkeen/nerdtree-execute'
 Plug 'christoomey/vim-tmux-navigator'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
