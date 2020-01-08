@@ -3,6 +3,7 @@
 alias l='ls -1'
 alias ll='ls -lahG'
 alias lt='ls -lahGt'
+alias lth='ls -lahGt | head'
 
 # Git
 alias g='git'
