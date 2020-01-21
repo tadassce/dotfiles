@@ -57,7 +57,7 @@ highlight clear ALEWarningSign
 
 " -----------------------------------------------
 " Lightline
-if $TBG == 'white'
+if system("dark-or-light") == "light"
   let lightlinetheme = 'PaperColor'
 else
   let lightlinetheme = 'wombat'

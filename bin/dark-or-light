@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ $(defaults read -g AppleInterfaceStyle 2>&1) =~ ^Dark$ ]]; then
+  echo -n "dark"
+else
+  echo -n "light"
+fi

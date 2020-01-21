@@ -1,13 +1,13 @@
 " My .vimrc File
 " Maintained by: Tadas Scerbinskas
 " tadas@sce.lt
-" http://tadas.me
+" https://tadas.me
 
 ru plugins.vim
 
 syntax enable
 
-if $TBG == 'white'
+if system("dark-or-light") == "light"
   set background=light
   colorscheme pencil
   " colorscheme tomorrow_ts

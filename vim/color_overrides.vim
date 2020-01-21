@@ -1,4 +1,4 @@
-if $TBG == 'black'
+if system("dark-or-light") == "dark"
   " hi DiffChange     ctermfg=103 ctermbg=234
   " hi DiffText       ctermfg=3 ctermbg=234
   " hi DiffDelete     ctermfg=1 ctermbg=234
@@ -30,7 +30,7 @@ if $TBG == 'black'
   hi LineNr ctermfg=240
 
 " -----------------------------------------------------------------------------
-elseif $TBG == 'white'
+elseif system("dark-or-light") == "light"
   hi Search ctermbg=NONE cterm=underline,bold
 
   " " diffs
