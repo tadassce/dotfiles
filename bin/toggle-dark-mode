@@ -8,4 +8,4 @@ osascript <<APPLESCRIPT
   end tell
 APPLESCRIPT
 
-refresh-dark-mode
+# refresh-dark-mode
