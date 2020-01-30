@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [[ $(defaults read -g AppleInterfaceStyle 2>&1) =~ ^Dark$ ]]; then
+  bg="black"
+  fg="white"
+else
+  bg="white"
+  fg="black"
+fi
+
+tmux set -g status-style "fg=$fg,bg=$bg"
+tmux set -g status-left-style "fg=$fg,bg=$bg"

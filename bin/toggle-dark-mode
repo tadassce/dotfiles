@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ $(defaults read -g AppleInterfaceStyle 2>&1) =~ ^Dark$ ]]; then
-  bg="white"
-  fg="black"
-else
-  bg="black"
-  fg="white"
-fi
-
 osascript <<APPLESCRIPT
   tell application "System Events"
     tell appearance preferences
@@ -16,5 +8,4 @@ osascript <<APPLESCRIPT
   end tell
 APPLESCRIPT
 
-tmux set -g status-style "fg=$fg,bg=$bg"
-tmux set -g status-left-style "fg=$fg,bg=$bg"
+refresh-dark-mode
