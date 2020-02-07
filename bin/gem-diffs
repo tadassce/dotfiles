@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+# Usage example:
+#
+# bundle update
+# gem-diffs
+
+puts
+puts `git diff Gemfile.lock`.lines.
+  select { |line| line.match?(/^[+-]    \w/) }.
+  map { |line| line.match(/([\w-]+) \((.+?)\)/).captures }.
+  group_by(&:first).transform_values { |v| v.map(&:last) }.
+  map { |gem_name, (old_v, new_v)| "https://diff.coditsu.io/gems/#{gem_name}/#{old_v}/#{new_v}" }
+puts
