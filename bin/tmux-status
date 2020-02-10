@@ -1,12 +1,16 @@
 #!/bin/zsh
 
 time_now=`date +%H:%M`
-# cal_next=`cal-next`
+cal_next=`cal-next`
 # wifi_name=`wifi-name`
 battery=`battery`
 
 if [ -z "$battery" ]; then
   echo $time_now
 else
-  echo "$battery | $time_now"
+  if [ -z "$cal_next" ]; then
+    echo "$battery | $time_now"
+  else
+    echo "$cal_next | $time_now"
+  fi
 fi
