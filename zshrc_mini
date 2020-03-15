@@ -124,8 +124,6 @@ alias tm='tmux -u attach || tmux -u new'
 alias bi='bundle install'
 alias bu='bundle update'
 alias be='bundle exec'
-alias cpd='cap production deploy'
-alias csd='cap staging deploy'
 
 
 ##########################################################
