@@ -13,18 +13,9 @@ set -g pane-base-index 1
 
 # Status bar styling and content
 set -g status-left '#S '
-# set -g window-status-current-bg colour4  # blue
-set -g window-status-current-bg colour60 # purple
-set -g window-status-current-fg colour231
-
-# Set the dark/light scheme here
-tbg=white
-tfg=black
-
-set -g status-bg $tbg
-set -g status-fg $tfg
-set -g status-left-bg $tbg
-set -g status-left-fg $tfg
+set -g window-status-current-bg colour63 # purple
+set -g status-style      "fg=default,bg=colour237"
+set -g status-left-style "fg=default,bg=colour237"
 
 # Status Bar Right
 set -g status-right "#H | %Y-%m-%d %H:%M"
@@ -68,9 +59,9 @@ bind - resize-pane -D 4
 bind + resize-pane -U 4
 
 # Setup 'v' to begin selection as in Vim
-bind-key -t vi-copy v begin-selection
-bind-key -t vi-copy V begin-selection
-# bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -Tcopy-mode-vi v send -X begin-selection
+bind-key -Tcopy-mode-vi V send -X begin-selection
+# bind-key -Tcopy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 
 # set-option -g default-command "reattach-to-user-namespace -l zsh"
 
