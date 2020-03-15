@@ -110,5 +110,3 @@ nmap co yo
 " -- Insert --
 " Current date
 inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
-" erb
-imap <c-e> <%=  %><esc>hhi
