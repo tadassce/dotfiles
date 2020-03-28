@@ -68,14 +68,14 @@ Plug 'moll/vim-bbye'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'rizzatti/dash.vim'
 Plug 'tmhedberg/matchit'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-jdaddy'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-endwise' " Add `end`s
+Plug 'tpope/vim-jdaddy' " JSON formatting
+Plug 'tpope/vim-obsession' " session management (window positions, open folds)
+Plug 'tpope/vim-projectionist' " Alternate files
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-" Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth' " Adjusts `shiftwidth`, `expandtab` based on current file
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired' " Some good mappings with `[`, `]`
 
 call plug#end()
