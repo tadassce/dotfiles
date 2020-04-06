@@ -42,6 +42,8 @@ find $cal_folder -name "*.ics" |
       map { |t,s| [((t - Time.now) / 60).to_i, s] }.
       map { |m,s| [[(m / 60).floor, (m % 60)], s] }.
       map { |(h,m),s|
+        title_char_limit = 22
+        s = s[0..title_char_limit] + "…" if s.length > title_char_limit
         if h < 0 && m < 1
           "#{s} now"
         elsif h < 1
