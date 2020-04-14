@@ -84,6 +84,7 @@ set laststatus=0 " Don't Always show the status line
 set completefunc=syntaxcomplete#Complete
 set wildmenu
 set wildmode=list:longest,full
+set maxmempattern=1000000 " default is 1000
 
 " Ignore these files when expanding wildcards
 set wildignore+=*.ttf,*.eot,*.svg,*.woff,*.jpg,*.png,*.gif,*.pdf,*.ico
