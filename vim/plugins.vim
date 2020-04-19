@@ -68,6 +68,8 @@ Plug 'moll/vim-bbye'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'rizzatti/dash.vim'
 Plug 'tmhedberg/matchit'
+Plug 'tpope/vim-dadbod' " DB Database
+Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'tpope/vim-endwise' " Add `end`s
 Plug 'tpope/vim-jdaddy' " JSON formatting
 Plug 'tpope/vim-obsession' " session management (window positions, open folds)

@@ -36,6 +36,11 @@ let g:jsx_ext_required = 0
 
 let g:vim_markdown_folding_disabled = 1
 
+let g:dbs = {
+\ 'dev':    'postgres://postgres:@localhost:5432/',
+\ 'docker': 'postgres://postgres:@postgres:5432/',
+\ }
+
 " -----------------------------------------------
 " ALE - Asynchronous Lint Engine
 
