@@ -9,8 +9,8 @@ syntax enable
 
 if system("dark-or-light") == "light"
   set background=light
-  colorscheme pencil
-  " colorscheme tomorrow_ts
+  " colorscheme pencil
+  colorscheme tomorrow_ts
   " colorscheme github_ts
   " colorscheme default
 else
