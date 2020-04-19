@@ -108,4 +108,6 @@ ru private_settings.vim
 ru abbreviations.vim
 ru color_overrides.vim
 
+silent! so .vimlocal
+
 autocmd BufWritePre * :call StripTrailingWhitespace()
