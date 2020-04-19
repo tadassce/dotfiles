@@ -66,7 +66,7 @@ if has("user_commands")
   command! -bang Bd bd<bang>
 endif
 
-map <leader>v :source ~/.vimrc<cr>
+map <leader>vv :source ~/.vimrc<cr>
 
 nmap cog :GitGutterToggle<cr>
 
