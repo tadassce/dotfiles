@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+find . -name '.ruby-version' -exec echo {} \; | \
+  ruby -ne '
+    filename = $_.split("/")[1..-1].join("/").strip
+    project = filename.split("/")[0..-2].join("/")
+    v = File.read(File.join(Dir.pwd, filename)).strip.sub(/\Aruby-/, "")
+    puts "#{v} - #{project}"
+  ' | sort
