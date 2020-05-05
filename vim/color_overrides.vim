@@ -57,11 +57,9 @@ elseif system("dark-or-light") == "light"
 " -----------------------------------------------------------------------------
 endif
 
-hi diffAdded      ctermfg=2
-hi diffRemoved    ctermfg=1
-
+" hi diffAdded      ctermfg=2
+" hi diffRemoved    ctermfg=1
 " hi DiffAdd        ctermfg=2
 " hi DiffDelete     ctermfg=1
-"
 " hi gitDiffAdded   ctermfg=2
 " hi gitDiffRemoved ctermfg=1
