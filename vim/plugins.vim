@@ -20,6 +20,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'parkr/vim-jekyll'
 Plug 'vito-c/jq.vim'
 Plug 'fatih/vim-go'
+Plug 'hashivim/vim-terraform'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
