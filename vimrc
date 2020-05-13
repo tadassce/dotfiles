@@ -66,6 +66,7 @@ set formatoptions+=n " recognize numbered lists
 set formatoptions+=1 " don't break a line before a 1-letter word
 set formatoptions+=j " remove comment leader when joining lines
 set lbr              " Wrap full words
+set sidescroll=1     " Scroll horizontally by 1 char (default 0 scrolls by half screen)
 set incsearch
 " set lazyredraw
 set hlsearch
