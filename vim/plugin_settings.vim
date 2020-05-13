@@ -52,7 +52,10 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_pattern_options = {
 \   'db/schema\.rb$': { 'ale_enabled': 0 },
 \ }
-let g:ale_linters = {'ruby': ['brakeman', 'reek', 'rubocop', 'ruby'], 'javascript': ['standard']}
+let g:ale_linters = {
+\   'ruby': ['brakeman', 'reek', 'rubocop', 'ruby'],
+\   'javascript': ['standard']
+\ }
 " let g:ale_fixers = {'ruby': ['standardrb'], 'javascript': ['standard']}
 " let g:ale_fix_on_save = 1
 
