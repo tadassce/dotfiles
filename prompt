@@ -22,12 +22,12 @@ git_br() {
     echo "%{$fg[green]%}${ref#refs/heads/} "
   fi
 }
-# local emoji='🐨'
+local emoji='🐨'
 # local emoji='⛄️'
 # local emoji='🗻'
 # local emoji='🌮'
 # local emoji='🍔'
-local emoji='🍊'
+# local emoji='🍊'
 # local user='%{$fg[green]%}%n%{$reset_color%}'
 local username=$USER[0,5]
 local user='%{$fg[green]%}${username}%{$reset_color%}'
