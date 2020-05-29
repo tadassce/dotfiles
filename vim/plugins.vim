@@ -21,6 +21,7 @@ Plug 'parkr/vim-jekyll'
 Plug 'vito-c/jq.vim'
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
+Plug 'mustache/vim-mustache-handlebars'
 
 " colors
 Plug 'reedes/vim-colors-pencil'
