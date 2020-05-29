@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SECONDS="$1"
+MSG="$1s"
+
+for i in $(seq "$SECONDS" -1 1) ; do echo -ne "\r$i " ; sleep 1 ; done
+
+terminal-notifier -title "Time is up" -message "$MSG"
