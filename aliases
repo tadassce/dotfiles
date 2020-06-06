@@ -60,6 +60,9 @@ alias ctagsr='ctags --languages=-javascript -R'
 alias k=kubectl
 alias opa='eval $(op signin my)'
 
+# Fun
+alias tetris='autoload -Uz tetriscurses; tetriscurses'
+
 # macOS
 alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
 alias bs='brew services'
