@@ -74,6 +74,7 @@ Plug 'tpope/vim-dadbod' " DB Database
 Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'tpope/vim-endwise' " Add `end`s
 Plug 'tpope/vim-jdaddy' " JSON formatting
+Plug 'mogelbrod/vim-jsonpath'
 Plug 'tpope/vim-obsession' " session management (window positions, open folds)
 Plug 'tpope/vim-projectionist' " Alternate files
 Plug 'tpope/vim-rails'
