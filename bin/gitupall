@@ -17,8 +17,14 @@ Dir['*']
   Dir.chdir dir
 
   name = dir.split('/').last
-  puts "\n#{emoji} Pulling #{name}"
-  system 'git pull'
+  puts "\n#{emoji} Updating #{name}"
+
+  system 'git fetch --all'
+
+  current_branch = `git symbolic-ref HEAD | sed 's#^refs/heads/##'`.strip
+  if %w{ master dev }.include? current_branch
+    system "git rebase origin/#{current_branch}"
+  end
 
   Dir.chdir home
 end
