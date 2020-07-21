@@ -54,10 +54,10 @@ alias time='time -p ' # -p for POSIX output
 bindkey -M vicmd 'u' undo
 
 source ~/.completions
-source ~/.prompt
 source ~/.aliases
 source ~/.private_aliases
 source ~/.private_profile
+source ~/.prompt
 source ~/.functions
 source ~/.fzfrc
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
