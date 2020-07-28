@@ -105,7 +105,7 @@ nmap <c-t> :Files<cr>
 nmap <leader>d :Dash<cr>
 
 " Format XML
-nmap <leader>x :%!xmllint --format -
+nmap <leader>x :%!xmllint --format -<cr>
 
 " Bring back old vim-unimpaired mapping
 nmap co yo
