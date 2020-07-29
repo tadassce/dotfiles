@@ -8,6 +8,7 @@ tap "heroku/brew"
 
 brew "asdf"
 brew "autojump"
+brew "awscli"
 brew "clojure"
 brew "ctags"
 brew "doctl"
