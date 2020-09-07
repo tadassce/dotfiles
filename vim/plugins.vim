@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " filetypes
 Plug 'alvan/vim-closetag'
+Plug 'darfink/vim-plist'
 Plug 'fatih/vim-go'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'hashivim/vim-terraform'
