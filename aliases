@@ -2,8 +2,8 @@
 
 alias l='ls -1'
 alias ll='ls -lahG'
-alias lt='ls -lahGt'
-alias lth='ls -lahGt | head'
+alias lt='ls -lahGt | head'
+alias lta='ls -lahGt'
 
 # Git
 alias g='git'
