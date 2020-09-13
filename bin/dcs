@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+# Docker Compose Services
+
+require 'yaml'
+
+puts YAML.load_file('./docker-compose.yml').dig('services').keys
