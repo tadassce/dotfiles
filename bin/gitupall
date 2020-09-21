@@ -17,13 +17,37 @@ Dir['*']
   Dir.chdir dir
 
   name = dir.split('/').last
-  puts "\n#{emoji} Updating #{name}"
+  print "#{emoji} Updating #{name}... ".ljust(50)
 
-  system 'git fetch --all'
+  fetch_output =
+    `git fetch --all 2>&1`.
+    split("\n").
+    select { |x| !x.nil? }.
+    select { |x| x !~ /Your access is logged/ }.
+    select { |x| x !~ /\AFetching / }
+
+
+  if !fetch_output.empty?
+    puts '✴️'
+    puts fetch_output
+  end
 
   current_branch = `git symbolic-ref HEAD | sed 's#^refs/heads/##'`.strip
   if %w{ master dev }.include? current_branch
-    system "git rebase origin/#{current_branch}"
+    rebase_output =
+      `git rebase origin/#{current_branch} 2>&1`.
+      split("\n").
+      select { |x| x !~ /Current branch .* is up to date./ }.
+      select { |x| x !~ /Applied autostash/ }
+
+    if !rebase_output.empty?
+      puts '✴️'
+      puts rebase_output
+    else
+      puts '✅'
+    end
+  else
+    puts '✅'
   end
 
   Dir.chdir home
