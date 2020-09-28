@@ -1,13 +1,5 @@
 #! /usr/bin/env ruby
 
-def emoji
-  case `git remote -v`
-  when /github/ then '🐙'
-  when /gitlab/ then '😸'
-  else               '🤖'
-  end
-end
-
 home = Dir.pwd
 
 Dir['*']
@@ -17,7 +9,7 @@ Dir['*']
   Dir.chdir dir
 
   name = dir.split('/').last
-  print "#{emoji} Updating #{name}... ".ljust(50)
+  print "Updating #{name}... ".ljust(50)
 
   fetch_output =
     `git fetch --all 2>&1`.
@@ -28,7 +20,7 @@ Dir['*']
 
 
   if !fetch_output.empty?
-    puts '✴️'
+    puts
     puts fetch_output
   end
 
@@ -41,13 +33,13 @@ Dir['*']
       select { |x| x !~ /Applied autostash/ }
 
     if !rebase_output.empty?
-      puts '✴️'
+      puts
       puts rebase_output
     else
-      puts '✅'
+      puts 'OK'
     end
   else
-    puts '✅'
+    puts 'OK'
   end
 
   Dir.chdir home
