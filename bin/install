@@ -28,6 +28,7 @@ asdf global ruby "$latest_ruby"
 rcup
 
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
+ln -s ~/.icloud/Config/hammerspoon ~/.hammerspoon
 touch ~/.private_aliases
 touch ~/.private_profile
 
