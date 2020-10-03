@@ -30,6 +30,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-one'
 Plug 'reedes/vim-colors-pencil'
 Plug 'trevordmiller/nova-vim'
+Plug 'swalladge/paper.vim'
 
 " file search and navigation
 Plug 'AndrewRadev/andrews_nerdtree.vim'

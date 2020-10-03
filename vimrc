@@ -13,6 +13,7 @@ if system("dark-or-light") == "light"
   colorscheme tomorrow_ts
   " colorscheme github_ts
   " colorscheme default
+  " colorscheme paper
 else
   set background=dark
   colorscheme purplebee
