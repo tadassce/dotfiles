@@ -39,4 +39,5 @@ local pwd='%{$fg[blue]%}%c%{$reset_color%}'
 local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})%%%{$reset_color%}'
 # local last_char='%{$fg[blue]%}%%%{$reset_color%} '
 # local divider="$fg[blue]$(repeat $COLUMNS printf '-')$reset_color"
-PROMPT="${emoji} ${user}@${host}:${pwd} ${gitbr}${last_cmd_status} "
+# PROMPT="${emoji} ${user}@${host}:${pwd} ${gitbr}${last_cmd_status} "
+PROMPT="${emoji} ${pwd} ${gitbr}${last_cmd_status} "
