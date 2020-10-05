@@ -48,11 +48,11 @@ elseif system("dark-or-light") == "light"
   " hi VertSplit ctermfg=255 ctermbg=254
 
   " GitGutter
-  highlight SignColumn            ctermbg=254 ctermfg=241
-  highlight GitGutterAdd          ctermbg=254 ctermfg=2
-  highlight GitGutterChange       ctermbg=254 ctermfg=3
-  highlight GitGutterDelete       ctermbg=254 ctermfg=1
-  highlight GitGutterChangeDelete ctermbg=254 ctermfg=3
+  highlight SignColumn            ctermbg=none ctermfg=241
+  highlight GitGutterAdd          ctermbg=none ctermfg=2
+  highlight GitGutterChange       ctermbg=none ctermfg=3
+  highlight GitGutterDelete       ctermbg=none ctermfg=1
+  highlight GitGutterChangeDelete ctermbg=none ctermfg=3
 
 " -----------------------------------------------------------------------------
 endif

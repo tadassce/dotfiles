@@ -14,10 +14,9 @@ if system("dark-or-light") == "light"
   " colorscheme github_ts
   " colorscheme default
   " colorscheme paper
-  colorscheme tsl
 else
   set background=dark
-  colorscheme purplebee
+  " colorscheme purplebee
   " colorscheme code_ts " dark
   " colorscheme tomorrow-night-ts
   " colorscheme tomorrow-night-eighties-ts
@@ -28,6 +27,8 @@ else
   " colorscheme iceberg
   " colorscheme nord
 endif
+colorscheme pluto
+" ru color_overrides.vim
 
 " Enable filetypes
 filetype on
@@ -109,7 +110,6 @@ ru mappings.vim
 ru plugin_settings.vim
 ru private_settings.vim
 ru abbreviations.vim
-ru color_overrides.vim
 
 silent! so .vimlocal
 
