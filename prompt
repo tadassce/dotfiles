@@ -37,6 +37,6 @@ local host='%{$fg[green]%}${hostname}%{$reset_color%}'
 local gitbr='$(git_br)'
 local pwd='%{$fg[blue]%}%c%{$reset_color%}'
 # local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})%%%{$reset_color%}'
-local last_cmd_status='%(?.%{$fg[blue]○%}.%{$fg[red]●%})%{$reset_color%}'
+local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})○%{$reset_color%}'
 
 PROMPT="${emoji} ${pwd} ${gitbr}${last_cmd_status} "
