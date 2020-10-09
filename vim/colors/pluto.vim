@@ -15,6 +15,7 @@ hi Statement ctermfg=yellow
 
 hi CursorLine cterm=none
 hi Search     ctermfg=yellow ctermbg=none cterm=underline,bold
+hi Statement  ctermfg=blue
 
 if system("dark-or-light") == "light"
   " hi Statement ctermfg=darkgray
