@@ -1,39 +1,48 @@
 #!/bin/bash
 
 # Install script for a fresh macOS install.
-# Meant for copy-pasting rather than just running so far.
-
+# Before:
 # - Install 1P and XCode from the MAS
+# - Wait for iCloud Drive to sync
 
-xcode-select --install
-
-# Install Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew analytics off
+# Verify XCode installed
+if ! command -v xcodebuild &> /dev/null; then
+  echo "Please install XCode from the App Store"
+  exit 1
+fi
 
 # Set up dotfiles
-git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
+if [ ! -d ~/.dotfiles ]; then
+  git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
+fi
 
-brew bundle --file ~/.dotfiles/extras/Brewfile
+# Install Homebrew
+if command -v brew &> /dev/null; then
+  brew update
+else
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  brew analytics off
+fi
+
+brew bundle --file ~/.dotfiles/Brewfile
 
 asdf plugin-add ruby
 latest_ruby=$(asdf list-all ruby | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
 asdf install ruby "$latest_ruby"
 asdf global ruby "$latest_ruby"
 
-# To install useful key bindings and fuzzy completion:
-/usr/local/opt/fzf/install
-
 # symlink dotfiles
 rcup
 
-ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
-ln -s ~/.icloud/Config/hammerspoon ~/.hammerspoon
+[ ! -L ~/.icloud ] && ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
+[ ! -L ~/.hammerspoon ] && ln -s ~/.icloud/Config/hammerspoon ~/.hammerspoon
+[ ! -L ~/.config/karabiner ] && ln -s ~/.icloud/Config/karabiner ~/.config/
 touch ~/.private_aliases
 touch ~/.private_profile
 
 # Set the default shell (and in Users' prefs)
-chsh -s /usr/local/bin/zsh
+# TODO: check if $SHELL ends with /zsh
+# chsh -s /usr/local/bin/zsh
 
 # Vim Plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -41,16 +50,15 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # :PlugInstall
 
 # Vim undo (gitignored)
-mkdir ~/.vim/undo
+mkdir -p ~/.vim/undo
 
 # Tmux Plugin Manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 
 # Set some macOS defaults
 ~/.dotfiles/macos-defaults
-
-# Other tools
-gem install pry pry-doc
 
 # Linters
 gem install \
@@ -75,6 +83,4 @@ npm i -g \
   prettier \
   swaglint
 
-# Sync Karabiner settings
-ln -s ~/.icloud/Config/karabiner ~/.config/
-launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
+echo Done.

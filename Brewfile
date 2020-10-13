@@ -7,7 +7,6 @@ tap "homebrew/services"
 tap "heroku/brew"
 
 brew "asdf"
-brew "autojump"
 brew "awscli"
 brew "clojure"
 brew "ctags"
@@ -24,6 +23,7 @@ brew "heroku/brew/heroku"
 brew "htop"
 brew "hub"
 brew "imagemagick"
+brew "jq"
 brew "jrnl"
 brew "libzip"
 brew "mas"
@@ -34,13 +34,13 @@ brew "openssh"
 brew "openssl"
 brew "postgresql"
 brew "python"
+brew "rcm"
 brew "readline"
 brew "reattach-to-user-namespace"
 brew "redis"
 brew "shellcheck"
 brew "terminal-notifier"
 brew "the_silver_searcher"
-brew "thoughtbot/formulae/rcm"
 brew "tig"
 brew "tldr"
 brew "tmux"
@@ -60,22 +60,19 @@ cask "docker"
 cask "hammerspoon"
 cask "imageoptim"
 cask "karabiner-elements"
-cask "licecap"
 cask "little-snitch"
-cask "macvim"
 cask "spotify"
-cask "vlc"
 
-mas "1Password 7", id: 1333542190
+mas "Instapaper Save", id: 1481302432
 mas "Keynote", id: 409183694
 mas "Lungo", id: 1263070803
-mas "Noizio", id: 928871589
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
+mas "Transmit 5", id: 1436522307
 mas "Tweetbot", id: 1384080005
 mas "Xcode", id: 497799835
 mas "iA Writer", id: 775737590
