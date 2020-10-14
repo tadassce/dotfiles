@@ -2,19 +2,19 @@
   "entries": {
     "tap": {
       "homebrew/core": {
-        "revision": "8868f14a8ac03a67ba5f8557123af6c89241d478"
+        "revision": "578f6754f3174cc2dec3f9357b8ed075c05e104a"
       },
       "homebrew/bundle": {
         "revision": "78513292658ff002a6a816bdeb9d286150ee1a16"
       },
       "homebrew/cask": {
-        "revision": "acec04197a2633d1f0b034a302fece354f08c1de"
+        "revision": "0272f0d33f98b012be05de4ac911aa18cde93878"
       },
       "homebrew/services": {
         "revision": "0448884d8213af19280ee8fab30af89cca20f630"
       },
       "heroku/brew": {
-        "revision": "b9e6a95ddf88c7aadb710432e81eab1ab9a4192c"
+        "revision": "68e6a267800a75bbfd1efc171aadb4c3939d1918"
       }
     },
     "brew": {
@@ -1130,6 +1130,12 @@
         "options": {
           "full_name": "hammerspoon"
         }
+      },
+      "spectacle": {
+        "version": "1.2",
+        "options": {
+          "full_name": "spectacle"
+        }
       }
     },
     "mas": {
@@ -1194,7 +1200,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.5.6",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "8868f14a8ac03a67ba5f8557123af6c89241d478",
+        "Homebrew/homebrew-core": "578f6754f3174cc2dec3f9357b8ed075c05e104a",
         "CLT": "12.0.0.0.1.1599194153",
         "Xcode": "12.0.1",
         "macOS": "10.15.7"

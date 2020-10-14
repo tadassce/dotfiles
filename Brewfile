@@ -61,6 +61,7 @@ cask "hammerspoon"
 cask "imageoptim"
 cask "karabiner-elements"
 cask "little-snitch"
+cask "spectacle"
 cask "spotify"
 
 mas "Instapaper Save", id: 1481302432
