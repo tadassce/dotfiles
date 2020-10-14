@@ -24,7 +24,7 @@ else
   brew analytics off
 fi
 
-brew bundle --file ~/.dotfiles/Brewfile
+brew bundle check --file ~/.dotfiles/Brewfile || brew bundle --file ~/.dotfiles/Brewfile
 
 asdf plugin-add ruby
 latest_ruby=$(asdf list-all ruby | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
