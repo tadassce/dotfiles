@@ -66,6 +66,7 @@ cask "little-snitch"
 cask "signal"
 cask "spectacle"
 cask "spotify"
+cask "transmit"
 
 mas "Instapaper Save", id: 1481302432
 mas "Keynote", id: 409183694
@@ -76,7 +77,6 @@ mas "Pixelmator Pro", id: 1289583905
 mas "Telegram", id: 747648890
 mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
-mas "Transmit 5", id: 1436522307
 mas "Tweetbot", id: 1384080005
 mas "Xcode", id: 497799835
 mas "iA Writer", id: 775737590
