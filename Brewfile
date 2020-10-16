@@ -57,11 +57,13 @@ brew "zsh-autosuggestions"
 
 cask "alfred"
 cask "appcleaner"
+cask "discord"
 cask "docker"
 cask "hammerspoon"
 cask "imageoptim"
 cask "karabiner-elements"
 cask "little-snitch"
+cask "signal"
 cask "spectacle"
 cask "spotify"
 
