@@ -57,6 +57,7 @@ brew "zsh-autosuggestions"
 
 cask "alfred"
 cask "appcleaner"
+cask "bitbar"
 cask "discord"
 cask "docker"
 cask "firefox-developer-edition"
