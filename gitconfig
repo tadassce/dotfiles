@@ -24,6 +24,7 @@
 	editor = /usr/local/bin/vim
 	warnambiguousrefs = false
 	pager = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+	attributesfile = ~/.gitattributes
 [alias]
 	st = status
 	s = status -sb
