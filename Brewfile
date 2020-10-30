@@ -56,6 +56,7 @@ brew "youtube-dl"
 brew "zsh"
 brew "zsh-autosuggestions"
 
+cask "1password-cli"
 cask "alfred"
 cask "appcleaner"
 cask "bitbar"
