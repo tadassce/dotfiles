@@ -87,7 +87,6 @@ let g:lightline = {
 \   'linter_errors': 'error'
 \ },
 \ }
-call lightline#enable()
 
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))
