@@ -42,7 +42,9 @@ def colorize_line(line)
             \z                      # End of string (not just end of line)
         )?                          # End of large optional block
     }x
-    graph, hash, time, name, refs, message = re.match(line).captures
+    match = re.match(line)
+    return line unless match
+    graph, hash, time, name, refs, message = match.captures
     [
         ANSI_RESET, graph,
         ANSI_YELLOW, hash,
