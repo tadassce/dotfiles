@@ -16,11 +16,12 @@ hi Statement ctermfg=yellow
 hi CursorLine cterm=none
 hi Search     ctermfg=yellow ctermbg=none cterm=underline,bold
 hi Statement  ctermfg=blue
+hi Visual     ctermbg=222 " peach yellow
 
 if system("dark-or-light") == "light"
   " hi Statement ctermfg=darkgray
-  hi LineNr    ctermfg=253 " light gray
-  hi Comment   ctermfg=253 " light gray
+  hi LineNr    ctermfg=250 " light gray
+  hi Comment   ctermfg=250 " light gray
   hi VertSplit ctermfg=white ctermbg=white
 else
   " hi Statement ctermfg=yellow
