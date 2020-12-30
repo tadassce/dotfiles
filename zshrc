@@ -4,6 +4,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GIT_MERGE_AUTOEDIT=no
 
+export GOROOT=~/.asdf/installs/golang/1.15.5/go
+
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/usr/local/heroku/bin
