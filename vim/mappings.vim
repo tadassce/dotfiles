@@ -113,3 +113,5 @@ nmap co yo
 " -- Insert --
 " Current date
 inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
+
+inoremap <c-e> <%=  %><esc>hhi
