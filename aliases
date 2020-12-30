@@ -55,6 +55,7 @@ alias bo='bundle open'
 alias be='bundle exec'
 alias pt='heroku addons:open papertrail'
 alias drb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest /bin/bash'
+alias dirb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest irb'
 alias ctagsr='ctags --languages=-javascript -R'
 alias k=kubectl
 alias opa='eval $(op signin my)'
