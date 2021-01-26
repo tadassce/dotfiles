@@ -93,3 +93,5 @@
 	path = ~/.tl_gitconfig
 [diff]
 	noprefix = true
+[init]
+	defaultBranch = main
