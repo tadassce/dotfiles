@@ -35,6 +35,9 @@ defaults write com.apple.screencapture show-thumbnail -bool FALSE
 echo "Disable system UI sound effects like the screen shot sound among others."
 defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
+echo "Disable font smoothing"
+defaults -currentHost write -g AppleFontSmoothing -int 0
+
 echo "Restart affected apps..."
 for app in Finder Mail Dock SystemUIServer; do killall "$app" >/dev/null 2>&1; done
 
