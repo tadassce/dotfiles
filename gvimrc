@@ -20,7 +20,7 @@ nmap ,e :set columns=84<cr>
 " set guifont=menlo:h15
 " set guifont=monaco:h13
 " set guifont=source_code_pro:h14
-set guifont=SF_Mono:h16
+set guifont=SF_Mono:h18
 
 " colorscheme purplebee
 " colorscheme dusk
