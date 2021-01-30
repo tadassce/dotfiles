@@ -35,8 +35,8 @@ asdf global ruby "$latest_ruby"
 rcup
 
 [ ! -L ~/.icloud ] && ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
+[ ! -L ~/.config ] && ln -s ~/.icloud/Config ~/.config
 [ ! -L ~/.hammerspoon ] && ln -s ~/.icloud/Config/hammerspoon ~/.hammerspoon
-[ ! -L ~/.config/karabiner ] && ln -s ~/.icloud/Config/karabiner ~/.config/
 touch ~/.private_aliases
 touch ~/.private_profile
 
