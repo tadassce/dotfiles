@@ -35,6 +35,9 @@ map <leader>vv :source ~/.vimrc<cr>
 nmap ]w :tabn<cr>
 nmap [w :tabp<cr>
 
+" Copy current filename to clipboard
+nmap cp :let @+ = expand("%")<CR>
+
 " Format XML
 nmap <leader>x :%!xmllint --format -<cr>
 
