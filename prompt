@@ -13,13 +13,14 @@ zle -N zle-keymap-select
 
 autoload -U colors && colors
 setopt promptsubst
+
 git_br() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(git rev-parse --short HEAD 2> /dev/null) || return
   if [[ -n $(git status -s 2> /dev/null) ]]
   then
-    echo "%{$fg[magenta]%}${ref#refs/heads/} "
+    echo "%{$fg[magenta]%}${ref#refs/heads/}%{$reset_color%} "
   else
-    echo "%{$fg[green]%}${ref#refs/heads/} "
+    echo "%{$fg[green]%}${ref#refs/heads/}%{$reset_color%} "
   fi
 }
 
