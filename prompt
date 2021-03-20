@@ -24,8 +24,8 @@ git_br() {
   fi
 }
 
-local default_emoji='🐨'
-local emoji=${PROMPT_EMOJI:-$default_emoji}
+# local default_emoji='🐨'
+# local emoji=${PROMPT_EMOJI:-$default_emoji}
 
 # local user='%{$fg[green]%}%n%{$reset_color%}'
 local username=$USER[0,5]
@@ -40,4 +40,5 @@ local pwd='%{$fg[blue]%}%c%{$reset_color%}'
 # local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})%%%{$reset_color%}'
 local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})○%{$reset_color%}'
 
-PROMPT="${emoji} ${pwd} ${gitbr}${last_cmd_status} "
+# PROMPT="${emoji} ${pwd} ${gitbr}${last_cmd_status} "
+PROMPT="${pwd} ${gitbr}${last_cmd_status} "
