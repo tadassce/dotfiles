@@ -93,5 +93,6 @@
 	path = ~/.tl_gitconfig
 [diff]
 	noprefix = true
+	tool = vimdiff
 [init]
 	defaultBranch = main
