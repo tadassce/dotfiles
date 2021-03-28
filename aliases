@@ -29,6 +29,7 @@ alias gw^="git show HEAD^"
 alias gw^^="git show HEAD^^"
 alias gd='git diff -b'
 alias gdc='git diff --cached'
+alias gdt='git difftool'
 alias ga='git add'
 alias gap='git add --intent-to-add . && git add -p'  # Like "git add -p" but also ask about any newly added files.
 alias gm='git merge'
