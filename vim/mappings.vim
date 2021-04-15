@@ -41,6 +41,9 @@ nmap cp :let @+ = expand("%")<CR>
 " Format XML
 nmap <leader>x :%!xmllint --format -<cr>
 
+" Quicklook
+nmap <leader>ql :!qlmanage -p %<cr>
+
 " Notes
 nmap <leader>ntd :e ~/Dropbox/Notes/TODO.txt<CR>
 nmap <leader>ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
