@@ -8,6 +8,9 @@ nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
+" Remap number increment
+nmap <c-s> <c-a>
+
 nmap K 5k
 
 " Toggle status line
