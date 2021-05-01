@@ -21,9 +21,9 @@
 [core]
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore_global
-	editor = /usr/local/bin/vim
+	editor = vim
 	warnambiguousrefs = false
-	pager = /usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+	pager = $BREW_PREFIX/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
 	attributesfile = ~/.gitattributes
 [alias]
 	st = status

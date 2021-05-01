@@ -6,9 +6,16 @@ export GIT_MERGE_AUTOEDIT=no
 
 export GOROOT=~/.asdf/installs/golang/1.15.5/go
 
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
-PATH=$PATH:/usr/local/git/bin
-PATH=$PATH:/usr/local/heroku/bin
+if [[ `uname -m` == 'arm64' ]]; then
+  export BREW_PREFIX=/opt/homebrew
+else
+  export BREW_PREFIX=/usr/local
+fi
+
+PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin
+PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+PATH=$PATH:$BREW_PREFIX/git/bin
+PATH=$PATH:$BREW_PREFIX/heroku/bin
 PATH=$PATH:~/Library/Python/3.7/bin
 PATH=$PATH:~/.dotfiles/bin
 
@@ -62,8 +69,8 @@ source ~/.private_profile
 source ~/.prompt
 source ~/.functions
 source ~/.fzfrc
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/opt/asdf/asdf.sh
+source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $BREW_PREFIX/opt/asdf/asdf.sh
 
 # load custom functions
 for function in ~/.zsh/functions/*; do
