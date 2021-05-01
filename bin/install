@@ -20,7 +20,7 @@ fi
 if command -v brew &> /dev/null; then
   brew update
 else
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   brew analytics off
 fi
 
@@ -42,7 +42,7 @@ touch ~/.private_profile
 
 # Set the default shell (and in Users' prefs)
 # TODO: check if $SHELL ends with /zsh
-# chsh -s /usr/local/bin/zsh
+# chsh -s $(brew --prefix)/bin/zsh
 
 # Vim Plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -71,13 +71,6 @@ gem install \
   rails_best_practices
 npm i -g \
   standard \
-  eslint-plugin-react \
-  eslint@^4.1.1 \
-  eslint-plugin-jsx-a11y@^5.1.1 \
-  babel-eslint@^7.2.3 \
-  eslint-config-react-app \
-  eslint-plugin-import \
-  eslint-plugin-flowtype \
   jshint \
   jsonlint \
   prettier \
