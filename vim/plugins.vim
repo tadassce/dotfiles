@@ -36,7 +36,7 @@ Plug 'trevordmiller/nova-vim'
 Plug 'AndrewRadev/andrews_nerdtree.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ivalkeen/nerdtree-execute'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 Plug 'preservim/nerdtree'
