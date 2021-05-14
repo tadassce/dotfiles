@@ -7,7 +7,7 @@ alias lta='ls -lahGt'
 
 # Git
 alias g='git'
-alias gb='git branch'
+alias gb='git br'
 alias gf='git fetch --all'
 alias gu='git pull --prune'
 alias gp='git push'

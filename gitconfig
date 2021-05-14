@@ -30,7 +30,7 @@
 	s = status -sb
 	co = checkout
 	b = branch
-	br = branch
+	br = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
 	ci = commit -v
 	cia = commit -av
 	cis = commit -S -v
