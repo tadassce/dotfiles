@@ -64,18 +64,18 @@ alias time='time -p ' # -p for POSIX output
 
 bindkey -M vicmd 'u' undo
 
+# load custom functions
+source ~/.functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 source ~/.completions
 source ~/.aliases
 source ~/.private_aliases
 source ~/.private_profile
 source ~/.prompt
 source ~/.fzfrc
-
-# load custom functions
-source ~/.functions
-for function in ~/.zsh/functions/*; do
-  source $function
-done
 
 if [[ `uname -s` == 'Darwin' ]]; then
   source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
