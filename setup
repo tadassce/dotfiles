@@ -1,0 +1,69 @@
+#!/bin/zsh
+
+if [ ! -d ~/dotfiles ]; then
+  echo 'This script excpects dotfiles to be cloned in the home dir'
+  exit 1
+fi
+
+# -------------------------------------------------------------------
+# Symlink dotfiles
+
+dots=(
+  agignore
+  aliases
+  bin
+  completions
+  functions
+  fzfrc
+  gemrc
+  gitattributes
+  gitconfig
+  githelpers
+  gitignore_global
+  gitmessage
+  inputrc
+  prompt
+  pryrc
+  rspec
+  tmux.conf
+  vim
+  vimrc
+  zsh
+  zshrc
+)
+
+for dot in "${dots[@]}"
+do
+  ln -sf "$HOME/dotfiles/$dot" "$HOME/.$dot"
+done
+
+touch ~/.private_aliases
+touch ~/.private_profile
+
+
+# -------------------------------------------------------------------
+# Install some packages
+
+packages=(
+  fzf
+)
+
+if command -v apt-get &> /dev/null; then
+  if ! command -v fzf &> /dev/null; then
+    for pkg in "${packages[@]}"
+    do
+      sudo apt-get install -y $pkg
+    done
+  fi
+fi
+
+
+# -------------------------------------------------------------------
+
+# Vim Undo
+mkdir -p ~/.vim/undo
+
+# Tmux Plugin Manager
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
