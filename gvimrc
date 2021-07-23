@@ -24,5 +24,5 @@ set guifont=SF_Mono:h18
 
 " colorscheme purplebee
 " colorscheme dusk
-" colorscheme pencil
-colorscheme nova
+colorscheme pencil
+" colorscheme nova
