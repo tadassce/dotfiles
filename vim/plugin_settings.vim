@@ -53,7 +53,7 @@ let g:ale_pattern_options = {
 \   'db/schema\.rb$': { 'ale_enabled': 0 },
 \ }
 let g:ale_linters = {
-\   'ruby': ['brakeman', 'reek', 'rubocop', 'ruby'],
+\   'ruby': ['brakeman', 'reek', 'rubocop', 'ruby', 'sorbet'],
 \   'javascript': ['standard']
 \ }
 " let g:ale_fixers = {'ruby': ['standardrb'], 'javascript': ['standard']}
