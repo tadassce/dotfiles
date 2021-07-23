@@ -28,6 +28,8 @@ echo "Disable Screenshot shadow."
 defaults write com.apple.screencapture disable-shadow -bool true
 echo "Store Screenshots in iCloud."
 defaults write com.apple.screencapture location ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Screenshots
+# echo "Store Screenshots in Home"
+# defaults write com.apple.screencapture location ~/Screenshots
 defaults write com.apple.screencapture name "Screenshot"
 echo "Disable Screenshot preview in the corner."
 defaults write com.apple.screencapture show-thumbnail -bool FALSE
