@@ -4,8 +4,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GIT_MERGE_AUTOEDIT=no
 
-export GOROOT=~/.asdf/installs/golang/1.15.5/go
-
 if [[ `uname -m` == 'arm64' ]]; then
   export BREW_PREFIX=/opt/homebrew
 else
@@ -70,7 +68,6 @@ source ~/.prompt
 source ~/.functions
 source ~/.fzfrc
 source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $BREW_PREFIX/opt/asdf/asdf.sh
 
 # load custom functions
 for function in ~/.zsh/functions/*; do
