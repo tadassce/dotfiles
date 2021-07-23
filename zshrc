@@ -4,18 +4,22 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GIT_MERGE_AUTOEDIT=no
 
-if [[ `uname -m` == 'arm64' ]]; then
-  export BREW_PREFIX=/opt/homebrew
-else
-  export BREW_PREFIX=/usr/local
-fi
+if [[ `uname -s` == 'Darwin' ]]; then
+  if [[ `uname -m` == 'arm64' ]]; then
+    export BREW_PREFIX=/opt/homebrew
+  else
+    export BREW_PREFIX=/usr/local
+  fi
 
-PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin
-PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
-PATH=$PATH:$BREW_PREFIX/git/bin
-PATH=$PATH:$BREW_PREFIX/heroku/bin
-PATH=$PATH:~/Library/Python/3.7/bin
-PATH=$PATH:~/.dotfiles/bin
+  PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin
+  PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+  PATH=$PATH:$BREW_PREFIX/git/bin
+  PATH=$PATH:$BREW_PREFIX/heroku/bin
+  PATH=$PATH:~/Library/Python/3.7/bin
+  PATH=$PATH:~/.dotfiles/bin
+else
+  PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+fi
 
 export PATH
 export GREP_OPTIONS='--color=auto'
@@ -65,11 +69,14 @@ source ~/.aliases
 source ~/.private_aliases
 source ~/.private_profile
 source ~/.prompt
-source ~/.functions
 source ~/.fzfrc
-source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # load custom functions
+source ~/.functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
+
+if [[ `uname -s` == 'Darwin' ]]; then
+  source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi

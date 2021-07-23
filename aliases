@@ -61,15 +61,14 @@ alias ctagsr='ctags --languages=-javascript -R'
 alias k=kubectl
 alias opa='eval $(op signin my)'
 
-# Fun
-alias tetris='autoload -Uz tetriscurses; tetriscurses'
-
 # macOS
-alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
-alias bs='brew services'
-alias bc='brew cask'
-alias brewupd="brew update && echo \"$fg[blue]==>$reset_color Outdated\" && brew outdated"
-alias brewupg="brew upgrade && brew cleanup"
-alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc"
-alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && mas outdated && echo "==>" && brew update && echo "==>" && brew outdated && echo "==>" && brew cask outdated'
-alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
+if [[ `uname -s` == 'Darwin' ]]; then
+  alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
+  alias bs='brew services'
+  alias bc='brew cask'
+  alias brewupd="brew update && echo \"$fg[blue]==>$reset_color Outdated\" && brew outdated"
+  alias brewupg="brew upgrade && brew cleanup"
+  alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc"
+  alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && mas outdated && echo "==>" && brew update && echo "==>" && brew outdated && echo "==>" && brew cask outdated'
+  alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
+fi
