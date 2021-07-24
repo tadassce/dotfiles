@@ -16,9 +16,10 @@ if [[ `uname -s` == 'Darwin' ]]; then
   PATH=$PATH:$BREW_PREFIX/git/bin
   PATH=$PATH:$BREW_PREFIX/heroku/bin
   PATH=$PATH:~/Library/Python/3.7/bin
-  PATH=$PATH:~/.dotfiles/bin
+  PATH=$PATH:~/.bin
 else
   PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
+  PATH=$PATH:~/.bin
 fi
 
 export PATH
