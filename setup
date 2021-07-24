@@ -45,7 +45,9 @@ touch ~/.private_profile
 # Install some packages
 
 packages=(
+  ctags
   fzf
+  silversearcher-ag
 )
 
 if command -v apt-get &> /dev/null; then
