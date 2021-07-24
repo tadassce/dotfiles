@@ -9,5 +9,5 @@ time_now=`date +%H:%M`
 if [[ "${host:(-5):5}" == 'local' ]]; then
   echo $time_now
 else
-  echo "$hostname | $time_now"
+  echo "$host | $time_now"
 fi
