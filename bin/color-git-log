@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby --disable-gems
+#!/usr/bin/env ruby
 
 ANSI_BLACK="\033[0;30m"
 ANSI_BLACK_BOLD="\033[0;30;1m"

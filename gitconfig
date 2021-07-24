@@ -41,7 +41,7 @@
 	dump = cat-file -p
 	d = diff -b
 	dc = diff --cached
-	lg = "!source ~/.githelpers && pretty_git_log"
+	lg = "!bash -c '. ~/.githelpers && pretty_git_log'"
 	l = !git lg -10
 	ls = ls-files
 	ignored = ls-files -o -i --exclude-standard
