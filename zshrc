@@ -58,6 +58,7 @@ bindkey -M viins '^n' history-incremental-pattern-search-forward
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+bindkey -v
 
 disable -r time       # disable shell reserved word
 alias time='time -p ' # -p for POSIX output
