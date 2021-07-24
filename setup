@@ -39,6 +39,7 @@ done
 
 touch ~/.private_aliases
 touch ~/.private_profile
+touch ~/.tmux_private.conf
 
 
 # -------------------------------------------------------------------
