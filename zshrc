@@ -23,8 +23,6 @@ else
 fi
 
 export PATH
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR=35
 export EDITOR=vim
 
 # History
