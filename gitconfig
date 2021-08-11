@@ -80,8 +80,6 @@
 	smudge = git-lfs smudge -- %f
 	required = true
 	process = git-lfs filter-process
-[credential]
-	helper = osxkeychain
 [commit]
 	template = ~/.gitmessage
 [rebase]
