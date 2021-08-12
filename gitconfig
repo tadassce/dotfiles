@@ -41,7 +41,7 @@
 	dump = cat-file -p
 	d = diff -b
 	dc = diff --cached
-	lg = "!bash -c '. ~/.githelpers && pretty_git_log'"
+	lg = log --graph --pretty=format:'%C(yellow)%h%Creset%C(red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	l = !git lg -10
 	ls = ls-files
 	ignored = ls-files -o -i --exclude-standard
