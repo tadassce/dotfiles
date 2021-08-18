@@ -66,6 +66,11 @@ fi
 # Vim Undo
 mkdir -p ~/.vim/undo
 
+# Vim Plugins
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim -es -u vimrc -i NONE -c "PlugInstall" -c "qa"
+
 # Tmux Plugin Manager
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
