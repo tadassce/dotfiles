@@ -54,7 +54,8 @@ let g:ale_pattern_options = {
 \ }
 let g:ale_linters = {
 \   'ruby': ['brakeman', 'reek', 'rubocop', 'ruby', 'sorbet'],
-\   'javascript': ['standard']
+\   'javascript': ['standard'],
+\   'markdown': ['proselint']
 \ }
 " let g:ale_fixers = {'ruby': ['standardrb'], 'javascript': ['standard']}
 " let g:ale_fix_on_save = 1
