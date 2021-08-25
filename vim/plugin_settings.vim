@@ -72,22 +72,45 @@ else
   let lightlinetheme = 'wombat'
 endif
 let g:lightline = {
-\ 'colorscheme': lightlinetheme,
-\ 'active': {
-\   'left': [['mode', 'paste'], ['filename', 'modified']],
-\   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
-\ },
-\ 'component_expand': {
-\   'linter_warnings': 'LightlineLinterWarnings',
-\   'linter_errors': 'LightlineLinterErrors',
-\   'linter_ok': 'LightlineLinterOK'
-\ },
-\ 'component_type': {
-\   'readonly': 'error',
-\   'linter_warnings': 'warning',
-\   'linter_errors': 'error'
-\ },
+  \ 'colorscheme': lightlinetheme,
+  \ 'active': {
+  \   'left': [['mode', 'paste', 'gitbranch'], ['filename', 'modified']],
+  \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+  \ },
+  \ 'mode_map': {
+  \   'n' : 'N',
+  \   'i' : 'I',
+  \   'R' : 'R',
+  \   'v' : 'V',
+  \   'V' : 'VL',
+  \   "\<C-v>": 'VB',
+  \   'c' : 'C',
+  \   's' : 'S',
+  \   'S' : 'SL',
+  \   "\<C-s>": 'SB',
+  \   't': 'T',
+  \ },
+  \ 'component_expand': {
+  \   'linter_warnings': 'LightlineLinterWarnings',
+  \   'linter_errors': 'LightlineLinterErrors',
+  \   'linter_ok': 'LightlineLinterOK'
+  \ },
+  \ 'component_type': {
+  \   'readonly': 'error',
+  \   'linter_warnings': 'warning',
+  \   'linter_errors': 'error'
+  \ },
+  \ 'component_function': {
+  \   'filename': 'LightlineFilename',
+  \ },
 \ }
+
+" This is here to override the `filename` component for lightline in order to:
+" - Show the relative path instead of just the filename
+" - Show a shorter New instead of [No Name]
+function! LightlineFilename()
+  return expand('%:t') !=# '' ? expand('%:.') : 'New'
+endfunction
 
 function! LightlineLinterWarnings() abort
   let l:counts = ale#statusline#Count(bufnr(''))

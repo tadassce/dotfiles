@@ -84,7 +84,8 @@ set showbreak=↪\ " keep the space
 set spelllang=en_us
 set complete+=kspell
 set wmw=0 " Minimum window height, to save space
-set laststatus=0 " Don't Always show the status line
+" set laststatus=0 " Don't show the status line
+set laststatus=1 " Show the status line if there are multiple windows
 set completefunc=syntaxcomplete#Complete
 set wildmenu
 set wildmode=list:longest,full
