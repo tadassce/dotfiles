@@ -26,7 +26,7 @@ Dir['*']
   end
 
   current_branch = `git symbolic-ref HEAD | sed 's#^refs/heads/##'`.strip
-  if %w{ master dev }.include? current_branch
+  if %w{ master main dev }.include? current_branch
     rebase_output =
       `git rebase origin/#{current_branch} 2>&1`.
       split("\n").
