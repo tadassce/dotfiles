@@ -23,14 +23,10 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vito-c/jq.vim'
 
 " colors
-Plug 'arcticicestudio/nord-vim'
-Plug 'cocopon/iceberg.vim'
 Plug 'cormacrelf/vim-colors-github'
 Plug 'jacoborus/tender'
-Plug 'nanotech/jellybeans.vim'
 Plug 'rakr/vim-one'
 Plug 'reedes/vim-colors-pencil'
-Plug 'swalladge/paper.vim'
 Plug 'trevordmiller/nova-vim'
 
 " file search and navigation
