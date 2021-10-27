@@ -91,6 +91,10 @@ nmap <leader>rt :Tags<cr>
 nmap <c-n> :CtrlSpace<cr>
 nmap <c-t> :Files<cr>
 
+" Search for word under cursor
+nnoremap <leader>sw :execute ":Ag " . expand("<cword>")<cr>
+nnoremap <leader>sW :execute ":Ag " . expand("<cWORD>")<cr>
+
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
