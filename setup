@@ -52,12 +52,14 @@ packages=(
 )
 
 if command -v apt-get &> /dev/null; then
-  if ! command -v fzf &> /dev/null; then
-    for pkg in "${packages[@]}"
-    do
+  for pkg in "${packages[@]}"
+  do
+    # yep, this won't actually work when package name differs from the
+    # executable (like ag) but oh well
+    if ! command -v $pkg &> /dev/null; then
       sudo apt-get install -y $pkg
-    done
-  fi
+    fi
+  done
 fi
 
 
