@@ -62,6 +62,9 @@ fi
 # Set some macOS defaults
 ~/.dotfiles/macos-defaults
 
+# Enable key repeat in VS Code
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
 # Linters
 gem install \
   standard \
