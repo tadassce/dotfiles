@@ -35,6 +35,7 @@ alias gap='git add --intent-to-add . && git add -p'  # Like "git add -p" but als
 alias gm='git merge'
 alias ge='git-edit-new'
 alias gpr='hub pull-request'
+alias groot="cd \$(git rev-parse --show-toplevel)"
 
 alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
 alias tm='tmux -u attach || tmux -u new'
