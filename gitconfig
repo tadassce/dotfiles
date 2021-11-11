@@ -1,3 +1,5 @@
+[user]
+	name = Tadas Scerbinskas
 [color]
 	ui = auto
 [color "branch"]
@@ -82,6 +84,7 @@
 	process = git-lfs filter-process
 [commit]
 	template = ~/.gitmessage
+	gpgsign = true
 [rebase]
 	autoStash = true
 [diff]
