@@ -26,3 +26,5 @@
 *.rs    diff=rust
 *.ts    diff=javascript
 *.xhtml diff=html
+sorbet/rbi/gems/**/*.rbi linguist-generated
+manifest.yaml.lock text diff=yaml linguist-language=yaml linguist-generated
