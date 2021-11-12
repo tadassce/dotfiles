@@ -63,7 +63,7 @@ nmap <leader>nia :e ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/
 inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
 " Add a TODO comment above current line
-nmap <leader>td OTODO <esc>gccA
+nmap <leader>td OTODO(on: date('<c-r>=strftime("%Y-%m-%d")<cr>'), to: 'tadas.scerbinskas@shopify.com')<esc>gcco
 
 " Ruby
 nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
