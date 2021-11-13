@@ -21,6 +21,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'plasticboy/vim-markdown'
 Plug 'slim-template/vim-slim'
 Plug 'sunaku/vim-ruby-minitest'
+Plug 'tpope/vim-liquid'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vito-c/jq.vim'
 
