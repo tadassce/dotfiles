@@ -1,15 +1,14 @@
 #! /usr/bin/env ruby
 
-home = Dir.pwd
+home  = Dir.pwd
+repos = Dir['*'].select { |d| File.exist?("#{d}/.git") }
+width = repos.map(&:length).max
 
-Dir['*']
-  .select { |d| File.exist?("#{d}/.git") }
-  .each do |dir|
-
+repos.each do |dir|
   Dir.chdir dir
 
   name = dir.split('/').last
-  print "Updating #{name}... ".ljust(50)
+  print "Updating #{name}... ".ljust(width + 13)
 
   fetch_output =
     `git fetch --all 2>&1`.
