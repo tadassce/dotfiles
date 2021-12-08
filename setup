@@ -70,6 +70,9 @@ fi
 
 # -------------------------------------------------------------------
 
+# Vim
+[[ -x /usr/bin/vim.basic ]] && alias vim=/usr/bin/vim.basic
+
 # Vim Undo
 mkdir -p ~/.vim/undo
 
