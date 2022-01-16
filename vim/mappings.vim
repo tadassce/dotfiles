@@ -14,8 +14,6 @@ map gf :edit <cfile><cr>
 " Remap number increment
 nmap <c-s> <c-a>
 
-nmap K 5k
-
 " Toggle status line
 nmap [ts :set laststatus=2<cr>
 nmap ]ts :set laststatus=0<cr>
