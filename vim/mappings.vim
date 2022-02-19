@@ -8,8 +8,8 @@ nmap <C-k> <C-w>k
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
 
-" Allow gf to open non-existent files
-map gf :edit <cfile><cr>
+" open or create files
+map gF :edit <cfile><cr>
 
 " Remap number increment
 nmap <c-s> <c-a>
