@@ -52,10 +52,8 @@ nmap <leader>ql :!qlmanage -p %<cr>
 nmap <leader>xo :!open %<cr>
 
 " Notes
-nmap <leader>ntd :e ~/Dropbox/Notes/TODO.txt<CR>
-nmap <leader>ptd :e ~/Dropbox/Notes/picpack-todo.txt<CR>
-nmap <leader>let :cd ~/Library/Mobile\ Documents/7E73H4T2VB~com~x10studio~Letterspace/Documents/Inbox<cr>
-nmap <leader>nia :e ~/Library/Mobile\ Documents/27N4MQEA55~pro~writer/Documents/A-temp.md<cr>Go
+nmap <leader>nn :cd ~/Notes<cr>
+nmap <leader>nj :cd ~/Notes<cr>:e journal.md<cr>Go# <c-d><cr>-<space>
 
 
 " -- Insert / Snippets --------------------------
