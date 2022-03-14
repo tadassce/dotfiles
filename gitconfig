@@ -21,7 +21,6 @@
 	excludesfile = ~/.gitignore_global
 	editor = vim
 	warnambiguousrefs = false
-	; pager = $BREW_PREFIX/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
 	attributesfile = ~/.gitattributes
 	commitGraph = true
 [alias]
