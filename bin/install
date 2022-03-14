@@ -32,7 +32,35 @@ asdf install ruby "$latest_ruby"
 asdf global ruby "$latest_ruby"
 
 # symlink dotfiles
-rcup
+dots=(
+  agignore
+  aliases
+  bin
+  completions
+  functions
+  fzfrc
+  gemrc
+  gitattributes
+  gitconfig
+  githelpers
+  gitignore_global
+  gitmessage
+  gvimrc
+  inputrc
+  prompt
+  pryrc
+  rspec
+  tmux.conf
+  vim
+  vimrc
+  zsh
+  zshrc
+)
+
+for dot in "${dots[@]}"
+do
+  ln -sf "$HOME/.dotfiles/$dot" "$HOME/.$dot"
+done
 
 [ ! -L ~/.icloud ] && ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
 [ ! -L ~/.config ] && ln -s ~/.icloud/Config ~/.config
