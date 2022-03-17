@@ -51,6 +51,11 @@ nmap <leader>ql :!qlmanage -p %<cr>
 " Open with default app
 nmap <leader>xo :!open %<cr>
 
+" Open URL under cursor in a browser
+nmap <leader>xs :!open <cWORD> -a Safari<cr>
+nmap <leader>xf :!open <cWORD> -a Firefox<cr>
+nmap <leader>xc :!open <cWORD> -a Google\ Chrome<cr>
+
 " Notes
 nmap <leader>nn :cd ~/Notes<cr>
 nmap <leader>nj :cd ~/Notes<cr>:e journal.md<cr>Go# <c-d><cr>-<space>
