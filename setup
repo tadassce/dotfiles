@@ -43,7 +43,8 @@ touch ~/.tmux_private.conf
 
 if [ $SPIN ]; then
   git config --global user.email "tadas.scerbinskas@shopify.com"
-  git config --global commit.gpgsign false
+  git config --global user.signingkey 15039BD59A5E6A5E48040923F95286C21AB66AF8
+  git config --global commit.gpgsign true
 fi
 
 # -------------------------------------------------------------------
