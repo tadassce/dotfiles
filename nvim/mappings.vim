@@ -55,6 +55,7 @@ nmap <leader>xo :!open %<cr>
 nmap <leader>xs :!open <cWORD> -a Safari<cr>
 nmap <leader>xf :!open <cWORD> -a Firefox<cr>
 nmap <leader>xc :!open <cWORD> -a Google\ Chrome<cr>
+nmap <leader>xC yi):!open <c-r>" -a Google\ Chrome<cr>
 
 " Notes
 nmap <leader>nn :cd ~/Notes<cr>
