@@ -11,6 +11,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'EdenEast/nightfox.nvim'
 
 " extras
+Plug 'AndrewRadev/switch.vim'
 Plug 'benmills/vimux'
 Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'

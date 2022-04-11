@@ -13,8 +13,10 @@ let g:CtrlSpaceSetDefaultMapping = 0
 let g:todo_switch_definition =
   \ {
   \    '- \[ \]\(.*\)$': '- [x]\1',
-  \    '- \[x\]\(.*\)$': '- [ ]\1',
+  \    '- \[x\]\(.*\)$': '- [-]\1',
+  \    '- \[-\]\(.*\)$': '- [ ]\1',
   \ }
+let g:switch_custom_definitions = [g:todo_switch_definition]
 
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1.2"}
