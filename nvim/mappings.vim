@@ -67,8 +67,11 @@ nmap <leader>nj :cd ~/Notes<cr>:e journal.md<cr>Go# <c-d><cr>-<space>
 " Current date
 inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
 
-" Add a TODO comment above current line
-nmap <leader>td OTODO(on: date('<c-r>=strftime("%Y-%m-%d")<cr>'), to: 'tadas.scerbinskas@shopify.com')<esc>gcco
+" Add a [Smart TODO](https://github.com/Shopify/smart_todo) comment above current line
+nmap <leader>std OTODO(on: date('<c-r>=strftime("%Y-%m-%d")<cr>'), to: 'tadas.scerbinskas@shopify.com')<esc>gcco
+
+" Add a markdown TODO
+nmap <leader>td o- [ ]<space>
 
 " Ruby
 nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
