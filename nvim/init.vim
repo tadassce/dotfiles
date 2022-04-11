@@ -21,6 +21,9 @@ set laststatus=1
 set wildmode=longest:full,full
 set listchars=tab:→\ ,eol:¬,trail:·,extends:…,precedes:…,nbsp:◦,conceal:☐
 set shortmess+=I " don't show startup message when opening Vim without a file
+set lbr          " Wrap full words
+set showbreak=↪\ " keep the space
+
 " set tags^=./.git/tags;
 
 " set path+=** " search down in subfolders
