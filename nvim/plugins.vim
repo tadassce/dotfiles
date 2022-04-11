@@ -7,6 +7,9 @@ Plug 'preservim/nerdtree'
 Plug 'rking/ag.vim'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
+" colorschemes
+Plug 'EdenEast/nightfox.nvim'
+
 " extras
 Plug 'benmills/vimux'
 Plug 'github/copilot.vim'

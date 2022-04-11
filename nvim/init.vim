@@ -46,6 +46,7 @@ set showbreak=↪\ " keep the space
 " set statusline=%f " show full filename
 " set numberwidth=5
 
-colorscheme slate
+colorscheme nightfox
+
 
 syntax enable
