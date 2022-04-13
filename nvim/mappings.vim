@@ -49,13 +49,15 @@ nmap <leader>x :%!xmllint --format -<cr>
 nmap <leader>ql :!qlmanage -p %<cr>
 
 " Open with default app
-nmap <leader>xo :!open %<cr>
+nmap cxx :!open %<cr>
 
-" Open URL under cursor in a browser
-nmap <leader>xs :!open <cWORD> -a Safari<cr>
-nmap <leader>xf :!open <cWORD> -a Firefox<cr>
-nmap <leader>xc :!open <cWORD> -a Google\ Chrome<cr>
-nmap <leader>xC yi):!open <c-r>" -a Google\ Chrome<cr>
+" Open word/URL under cursor in a browser
+nmap cxs :!open <cWORD> -a Safari<cr>
+nmap cxf :!open <cWORD> -a Firefox<cr>
+nmap cxc :!open <cWORD> -a Google\ Chrome<cr>
+nmap cxC Bf(yi):!open <c-r>" -a Google\ Chrome<cr>B
+nmap cxo :!open <cWORD><cr>
+nmap cxf :!open <cWORD> -a Finder<cr>
 
 " Notes
 nmap <leader>nn :cd ~/Notes<cr>
@@ -98,6 +100,7 @@ vmap <leader>h :Tab/\w:\zs/l0l1<cr>
 nmap <leader>rt :Tags<cr>
 nmap <c-n> :CtrlSpace<cr>
 nmap <c-t> :Files<cr>
+nmap <m-h> :History<cr>
 
 " Search for word under cursor
 nnoremap <leader>sw :execute ":Ag " . expand("<cword>")<cr>
