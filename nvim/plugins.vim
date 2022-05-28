@@ -9,6 +9,10 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " colorschemes
 Plug 'EdenEast/nightfox.nvim'
+Plug 'folke/tokyonight.nvim'
+Plug 'jacoborus/tender.vim'
+Plug 'savq/melange'
+Plug 'cormacrelf/vim-colors-github'
 
 " extras
 Plug 'AndrewRadev/switch.vim'

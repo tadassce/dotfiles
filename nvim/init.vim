@@ -46,7 +46,15 @@ set showbreak=↪\ " keep the space
 " set statusline=%f " show full filename
 " set numberwidth=5
 
-colorscheme nightfox
+if system("dark-or-light") == "light"
+  colorscheme dawnfox
+else
+  colorscheme nightfox
+endif
 
+" colorscheme github
+" colorscheme tokyonight
+" colorscheme tender
+" colorscheme melange
 
 syntax enable
