@@ -11,7 +11,8 @@ nmap <C-l> <C-w>l
 " open or create files
 map gF :edit <cfile><cr>
 
-nmap <leader>vv :e ~/.config/nvim/init.vim<cr>
+nmap <leader>ve :e ~/.config/nvim/init.vim<cr>
+nmap <leader>vv :source ~/.config/nvim/init.vim<cr>
 
 " Remap number increment
 nmap <c-s> <c-a>
