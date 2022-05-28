@@ -33,5 +33,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'           " Some good mappings with `[`, `]`
 Plug 'w0rp/ale'
+Plug 'KabbAmine/lazyList.vim'
 
 call plug#end()

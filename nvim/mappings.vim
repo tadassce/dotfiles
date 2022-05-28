@@ -129,3 +129,8 @@ nmap ,m :NERDTreeToggle<cr>
 nmap <c-b> :NERDTreeToggle<cr>
 nnoremap ` :NERDTreeFind<cr>
 " nnoremap !~ :NERDTreeSortByAtimeToggle<cr>
+
+nnoremap gll :LazyList '- '<cr>
+vnoremap gll :LazyList '- '<cr>
+nnoremap glt :LazyList '- [ ] '<cr>
+vnoremap glt :LazyList '- [ ] '<cr>
