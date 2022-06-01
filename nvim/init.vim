@@ -57,5 +57,13 @@ endif
 " colorscheme tokyonight
 " colorscheme tender
 " colorscheme melange
+" colorscheme nightfox
+" colorscheme duskfox
+" colorscheme iceberg
+" colorscheme hybrid
+" colorscheme one
+colorscheme pencil
+
+hi Search ctermbg=NONE cterm=underline,bold
 
 syntax enable

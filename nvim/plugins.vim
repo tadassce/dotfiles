@@ -7,12 +7,22 @@ Plug 'preservim/nerdtree'
 Plug 'rking/ag.vim'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
+" filetypes
+Plug 'plasticboy/vim-markdown'
+Plug 'mtdl9/vim-log-highlighting'
+
 " colorschemes
 Plug 'EdenEast/nightfox.nvim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'cormacrelf/vim-colors-github'
 Plug 'folke/tokyonight.nvim'
 Plug 'jacoborus/tender.vim'
+Plug 'rakr/vim-one'
+Plug 'reedes/vim-colors-pencil'
 Plug 'savq/melange'
-Plug 'cormacrelf/vim-colors-github'
+Plug 'w0ng/vim-hybrid'
 
 " extras
 Plug 'AndrewRadev/switch.vim'
