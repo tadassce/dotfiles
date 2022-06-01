@@ -23,6 +23,7 @@ set listchars=tab:→\ ,eol:¬,trail:·,extends:…,precedes:…,nbsp:◦,concea
 set shortmess+=I " don't show startup message when opening Vim without a file
 set lbr          " Wrap full words
 set showbreak=↪\ " keep the space
+set breakindent " indent the line after a break when wrapping
 
 " set tags^=./.git/tags;
 
