@@ -24,7 +24,9 @@ nmap ,bd :set background=dark<cr>
 " set guifont=menlo:h15
 " set guifont=monaco:h13
 " set guifont=source_code_pro:h14
-set guifont=SF_Mono:h18
+" set guifont=SF_Mono:h18
+" set guifont=JetBrains_Mono_NL:h18
+set guifont=iA_Writer_Mono_S:h18
 
 " colorscheme purplebee
 " colorscheme dusk
