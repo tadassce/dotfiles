@@ -13,9 +13,13 @@ let g:CtrlSpaceSetDefaultMapping = 0
 let g:todo_switch_definition =
   \ {
   \    '- \[ \]\(.*\)$': '- [x]\1',
-  \    '- \[x\]\(.*\)$': '- [-]\1',
-  \    '- \[-\]\(.*\)$': '- [ ]\1',
+  \    '- \[x\]\(.*\)$': '- [ ]\1',
   \ }
+  " \ {
+  " \    '- \[ \]\(.*\)$': '- [x]\1',
+  " \    '- \[x\]\(.*\)$': '- [-]\1',
+  " \    '- \[-\]\(.*\)$': '- [ ]\1',
+  " \ }
 let g:switch_custom_definitions = [g:todo_switch_definition]
 
 let g:slime_target = "tmux"
@@ -29,6 +33,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.html.erb'
 let g:jsx_ext_required = 0
 
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 0
 
 " -----------------------------------------------
 " ALE - Asynchronous Lint Engine

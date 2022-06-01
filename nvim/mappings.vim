@@ -50,15 +50,13 @@ nmap <leader>x :%!xmllint --format -<cr>
 nmap <leader>ql :!qlmanage -p %<cr>
 
 " Open with default app
-nmap cxx :!open %<cr>
+nmap <leader>xx :!open %<cr>
 
 " Open word/URL under cursor in a browser
-nmap cxs :!open <cWORD> -a Safari<cr>
-nmap cxf :!open <cWORD> -a Firefox<cr>
-nmap cxc :!open <cWORD> -a Google\ Chrome<cr>
-nmap cxC Bf(yi):!open <c-r>" -a Google\ Chrome<cr>B
-nmap cxo :!open <cWORD><cr>
-nmap cxf :!open <cWORD> -a Finder<cr>
+nmap <leader>xo :!open <cWORD><cr>
+
+" Open with iA Writer
+nmap <leader>ia :!open % -a "iA Writer"<cr>
 
 " Notes
 nmap <leader>nn :cd ~/Notes<cr>
@@ -74,7 +72,8 @@ inoremap <c-d> <C-R>=strftime("%Y-%m-%d")<CR>
 nmap <leader>std OTODO(on: date('<c-r>=strftime("%Y-%m-%d")<cr>'), to: 'tadas.scerbinskas@shopify.com')<esc>gcco
 
 " Add a markdown TODO
-nmap <leader>td o- [ ]<space>
+nmap <leader>td o<esc>I- [ ]<space>
+nmap <leader>tD O<esc>I- [ ]<space>
 
 " Ruby
 nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
@@ -101,6 +100,7 @@ vmap <leader>h :Tab/\w:\zs/l0l1<cr>
 nmap <leader>rt :Tags<cr>
 nmap <c-n> :CtrlSpace<cr>
 nmap <c-t> :Files<cr>
+nmap <c-p> :Files<cr>
 nmap <m-h> :History<cr>
 
 " Search for word under cursor
