@@ -54,7 +54,7 @@ fi
 # Install some packages
 
 packages=(
-  ctags
+  exuberant-ctags
   fzf
   silversearcher-ag
 )
