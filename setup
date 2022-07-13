@@ -38,7 +38,7 @@ do
 done
 
 mkdir -p "$HOME/.config"
-ln -sf "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
+ln -sf "$HOME/dotfiles/nvim" "$HOME/.config/nvim"
 
 touch ~/.private_aliases
 touch ~/.private_profile
