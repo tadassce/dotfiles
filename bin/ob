@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Open git repo in Browser
+
+if [ -d .git ]; then
+    remote=${1:-origin}
+    url=$(git remote -v | grep "$remote" | grep push | awk '{ print $2 }' | sed 's/\.git//')
+    branch_name=$(git symbolic-ref -q HEAD)
+    branch_name=${branch_name##refs/heads/}
+
+    if [[ -n $branch_name && $branch_name != "main" && $branch_name != "master" ]]; then
+      url="$url/tree/$branch_name"
+    fi
+
+    if [[ $url =~ ^https?: ]]; then
+        open "$url"
+    else
+        if [[ $url =~ ^git@ ]]; then
+            url=$(echo "$url" | sed 's#:#/#' | sed 's#git@#https://#')
+            open "$url"
+        else
+            echo "Remote URL not supported: $url"
+            exit 1
+        fi
+    fi
+else
+    echo "ob opens the current repo in the browser. Your current directory doesn't seem to be a git repo."
+    exit 1
+fi
