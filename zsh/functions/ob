@@ -5,6 +5,12 @@ ob() {
     if [ -d .git ]; then
         remote=${1:-origin}
         url=$(git remote -v | grep "$remote" | grep push | awk '{ print $2 }' | sed 's/\.git//')
+        branch_name=$(git symbolic-ref -q HEAD)
+        branch_name=${branch_name##refs/heads/}
+
+        if [[ -n $branch_name && $branch_name != "main" && $branch_name != "master" ]]; then
+          url="$url/tree/$branch_name"
+        fi
 
         if [[ $url =~ ^https?: ]]; then
             open "$url"
