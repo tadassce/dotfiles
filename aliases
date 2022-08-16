@@ -36,6 +36,7 @@ alias gm='git merge'
 alias ge='git-edit-new'
 alias gpr='hub pull-request'
 alias groot="cd \$(git rev-parse --show-toplevel)"
+alias ghpr="gh pr view $(git symbolic-ref HEAD | sed 's/refs\/heads\///') --web"
 
 alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
 alias tm='tmux -u attach || tmux -u new'
