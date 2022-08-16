@@ -1,6 +1,5 @@
 let mapleader = ","
 
-nmap <space> :
 imap <tab> <c-n>
 
 nmap <C-j> <C-w>j

@@ -3,6 +3,12 @@ source ~/.config/nvim/plugin_settings.vim
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/functions.vim
 
+if exists('g:vscode')
+  " VSCode extension
+else
+  nmap <space> :
+endif
+
 set clipboard=unnamedplus
 set hidden
 set noswapfile
