@@ -10,6 +10,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 " filetypes
 Plug 'plasticboy/vim-markdown'
 Plug 'mtdl9/vim-log-highlighting'
+Plug 'jparise/vim-graphql'
 
 " colorschemes
 Plug 'EdenEast/nightfox.nvim'
