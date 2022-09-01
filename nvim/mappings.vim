@@ -78,7 +78,7 @@ nmap <leader>th o<esc>I# <c-r>=strftime("%Y-%m-%d")<cr>
 
 " Ruby
 nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
-inoremap <c-e> <%=  %><esc>hhi
+" inoremap <c-e> <%=  %><esc>hhi
 
 
 " -- Plugins ------------------------------------
