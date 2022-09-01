@@ -6,6 +6,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'rking/ag.vim'
 Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 
 " filetypes
 Plug 'plasticboy/vim-markdown'
