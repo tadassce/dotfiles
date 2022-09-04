@@ -68,7 +68,6 @@ alias sc=systemctl
 if [[ `uname -s` == 'Darwin' ]]; then
   alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
   alias bs='brew services'
-  alias bc='brew cask'
   alias brewupd="brew update && echo \"$fg[blue]==>$reset_color Outdated\" && brew outdated"
   alias brewupg="brew upgrade && brew cleanup"
   alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc"
