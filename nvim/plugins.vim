@@ -29,6 +29,7 @@ Plug 'w0ng/vim-hybrid'
 
 " extras
 Plug 'AndrewRadev/switch.vim'
+Plug 'KabbAmine/lazyList.vim'
 Plug 'benmills/vimux'
 Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'
@@ -46,6 +47,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'           " Some good mappings with `[`, `]`
 Plug 'w0rp/ale'
-Plug 'KabbAmine/lazyList.vim'
+Plug 'will133/vim-dirdiff'
 
 call plug#end()
