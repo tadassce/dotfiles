@@ -55,7 +55,7 @@ nmap <leader>xx :!open %<cr>
 nmap <leader>xo :!open <cWORD><cr>
 
 " Open with iA Writer
-nmap <leader>ia :!open % -a "iA Writer"<cr>
+nmap <leader>ia :!open "%" -a "iA Writer"<cr>
 
 " Notes
 nmap <leader>nn :cd ~/Notes<cr>
