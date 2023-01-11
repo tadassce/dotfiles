@@ -65,16 +65,20 @@ nmap <leader>nj :cd ~/Notes<cr>:e journal.md<cr>Go# <c-d><cr>-<space>
 " -- Insert / Snippets --------------------------
 
 " Current date
-inoremap <c-d> <c-r>=strftime("%Y-%m-%d")<cr>
+inoremap <c-d> <c-r>=strftime('%Y-%m-%d')<cr>
 
 " Add a [Smart TODO](https://github.com/Shopify/smart_todo) comment above current line
-nmap <leader>std OTODO(on: date('<c-r>=strftime("%Y-%m-%d")<cr>'), to: 'tadas.scerbinskas@shopify.com')<esc>gcco
+nmap <leader>std OTODO(on: date('<c-r>=strftime('%Y-%m-%d')<cr>'), to: 'tadas.scerbinskas@shopify.com')<esc>gcco
 
 " Markdown shortcuts
 nmap <leader>td o<esc>I- [ ]<space>
 nmap <leader>tD O<esc>I- [ ]<space>
 nmap <leader>tt o<esc>I- <space>
-nmap <leader>th o<esc>I# <c-r>=strftime("%Y-%m-%d")<cr>
+nmap <leader>tN O<esc>I# Next<esc>0j
+nmap <leader>tn o<esc>I# Next<esc>0
+nmap <leader>th o<esc>I# <c-r>=strftime('%Y-%m-%d')<cr>
+nmap <leader>gh :e ~/Notes/journal-daily.md<cr>Go<cr># <c-r>=strftime('%Y-%m-%d')<cr><cr>
+nmap <leader>gd :e ~/Notes/daily/<c-r>=strftime('%Y-%m-%d')<cr>.md<cr>I# <c-r>=strftime('%Y-%m-%d')<cr><cr>
 
 " Ruby
 nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
@@ -115,7 +119,7 @@ nmap - :Switch<cr>
 
 nmap cog :GitGutterToggle<cr>
 
-nnoremap gh :w<cr>:VimuxRunLastCommand<cr>
+" nnoremap gh :w<cr>:VimuxRunLastCommand<cr>
 map <Leader>vp :VimuxPromptCommand<cr>
 map <Leader>vl :VimuxRunLastCommand<cr>
 map <Leader>vi :VimuxInspectRunner<cr>
