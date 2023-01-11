@@ -24,7 +24,8 @@ set ignorecase
 set hlsearch
 set showmatch
 set splitbelow
-set laststatus=1
+set laststatus=2
+set noshowmode " disable -- INSERT -- because that's covered by Lightline
 set wildmode=longest:full,full
 set listchars=tab:→\ ,eol:¬,trail:·,extends:…,precedes:…,nbsp:◦,conceal:☐
 set shortmess+=I " don't show startup message when opening Vim without a file
