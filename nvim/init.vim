@@ -5,6 +5,7 @@ source ~/.config/nvim/functions.vim
 
 if exists('g:vscode')
   " VSCode extension
+  nmap <space> :
 else
   nmap <space> :
 endif
