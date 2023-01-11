@@ -70,8 +70,11 @@ endif
 " colorscheme iceberg
 " colorscheme hybrid
 " colorscheme one
+" colorscheme nord
 colorscheme pencil
 
 hi Search ctermbg=NONE cterm=underline,bold
 
 syntax enable
+
+au FileType markdown set shiftwidth=4 tabstop=4
