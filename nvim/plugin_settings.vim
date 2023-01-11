@@ -59,8 +59,12 @@ highlight clear ALEWarningSign
 " -----------------------------------------------
 " Lightline
 if system("dark-or-light") == "light"
-  let lightlinetheme = 'PaperColor'
+  " let lightlinetheme = 'PaperColor'
+  " let lightlinetheme = 'one'
+  " let lightlinetheme = 'rosepine'
+  let lightlinetheme = 'Tomorrow'
 else
+  " let lightlinetheme = 'nord'
   let lightlinetheme = 'wombat'
 endif
 let g:lightline = {

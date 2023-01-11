@@ -32,6 +32,8 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'KabbAmine/lazyList.vim'
 Plug 'benmills/vimux'
 Plug 'github/copilot.vim'
+Plug 'godlygeek/tabular'
+Plug 'henrik/vim-indexed-search'      " Show e.g. 'match 1 of 3' in searches.
 Plug 'itchyny/lightline.vim'
 Plug 'mbbill/undotree'
 Plug 'tpope/vim-commentary'
@@ -48,6 +50,5 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'           " Some good mappings with `[`, `]`
 Plug 'w0rp/ale'
 Plug 'will133/vim-dirdiff'
-Plug 'henrik/vim-indexed-search'      " Show e.g. 'match 1 of 3' in searches.
 
 call plug#end()
