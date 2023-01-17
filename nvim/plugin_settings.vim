@@ -157,3 +157,6 @@ let g:fzf_colors =
 
 let g:vimwiki_list = [{'path': '~/Notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+" Disable Copilot by default
+let g:copilot_enabled = v:false
