@@ -10,9 +10,10 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 
 " filetypes
-Plug 'plasticboy/vim-markdown'
-Plug 'mtdl9/vim-log-highlighting'
 Plug 'jparise/vim-graphql'
+Plug 'mtdl9/vim-log-highlighting'
+Plug 'plasticboy/vim-markdown'
+Plug 'vimwiki/vimwiki'
 
 " colorschemes
 Plug 'EdenEast/nightfox.nvim'

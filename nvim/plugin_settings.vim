@@ -154,3 +154,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Normal'] }
+
+let g:vimwiki_list = [{'path': '~/Notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
