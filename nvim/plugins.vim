@@ -49,7 +49,7 @@ Plug 'tpope/vim-repeat'               " Lets you use '.' to repeat vim-surround 
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'           " Some good mappings with `[`, `]`
-Plug 'w0rp/ale'
+Plug 'w0rp/ale', { 'on':  'ALEToggle' }
 Plug 'will133/vim-dirdiff'
 
 call plug#end()
