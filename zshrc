@@ -85,5 +85,4 @@ fi
 if [ $SPIN ]; then
   spin_zshrc='/etc/zsh/zshrc.default.inc.zsh'
   [[ -e "$spin_zshrc" ]] && source "$spin_zshrc"
-  [[ -x /usr/bin/vim.basic ]] && alias vim=/usr/bin/vim.basic
 fi
