@@ -55,12 +55,13 @@ set breakindent " indent the line after a break when wrapping
 " set statusline=%f " show full filename
 " set numberwidth=5
 
-if system("dark-or-light") == "light"
-  colorscheme dawnfox
-else
-  colorscheme nightfox
-endif
+" if system("dark-or-light") == "light"
+"   colorscheme dawnfox
+" else
+"   colorscheme nightfox
+" endif
 
+" set background=dark
 " colorscheme github
 " colorscheme tokyonight
 " colorscheme tender
@@ -71,7 +72,10 @@ endif
 " colorscheme hybrid
 " colorscheme one
 " colorscheme nord
-colorscheme pencil
+
+set background=light
+" colorscheme pencil
+colorscheme github
 
 hi Search ctermbg=NONE cterm=underline,bold
 
