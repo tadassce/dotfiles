@@ -73,12 +73,17 @@ nmap <leader>std OTODO(on: date('<c-r>=strftime('%Y-%m-%d')<cr>'), to: 'tadas.sc
 " Markdown shortcuts
 nmap <leader>td o<esc>I- [ ]<space>
 nmap <leader>tD O<esc>I- [ ]<space>
-nmap <leader>tt o<esc>I- <space>
+" nmap <leader>tt o<esc>I- <space>
+nmap <leader>tt :Switch<cr>
 nmap <leader>tN O<esc>I# Next<esc>0j
 nmap <leader>tn o<esc>I# Next<esc>0
 nmap <leader>th o<esc>I# <c-r>=strftime('%Y-%m-%d')<cr>
-nmap <leader>gh :e ~/Notes/journal-daily.md<cr>Go<cr># <c-r>=strftime('%Y-%m-%d')<cr><cr>
+" nmap <leader>gh :e ~/Notes/journal-daily.md<cr>Go<cr># <c-r>=strftime('%Y-%m-%d')<cr><cr>
+nmap <leader>gh :e ~/Notes/journal-daily.md<cr>
+nmap <leader>gw :e ~/Notes/weeklog.md<cr>
 nmap <leader>gd :e ~/Notes/daily/<c-r>=strftime('%Y-%m-%d')<cr>.md<cr>I# <c-r>=strftime('%Y-%m-%d')<cr><cr>
+nmap <leader>fw :set filetype=vimwiki<cr>
+nmap <leader>fm :set filetype=markdown<cr>
 
 " Ruby
 nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
@@ -115,11 +120,14 @@ nnoremap <leader>sW :execute ":Ag " . expand("<cWORD>")<cr>
 nmap sj :SplitjoinSplit<cr>
 nmap sk :SplitjoinJoin<cr>
 
-nmap - :Switch<cr>
+nnoremap - :Switch<cr>
+
+" fugitive / git
+nmap <leader>gb :GBrowse<cr>
 
 nmap cog :GitGutterToggle<cr>
 
-" nnoremap gh :w<cr>:VimuxRunLastCommand<cr>
+nnoremap gh :w<cr>:VimuxRunLastCommand<cr>
 map <Leader>vp :VimuxPromptCommand<cr>
 map <Leader>vl :VimuxRunLastCommand<cr>
 map <Leader>vi :VimuxInspectRunner<cr>
