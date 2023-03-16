@@ -23,6 +23,11 @@ else
   PATH=$PATH:~/.bin
 fi
 
+if [ $SPIN ]; then
+  spin_zshrc='/etc/zsh/zshrc.default.inc.zsh'
+  [[ -e "$spin_zshrc" ]] && source "$spin_zshrc"
+fi
+
 export PATH
 export EDITOR=vim
 
@@ -80,9 +85,4 @@ source ~/.fzfrc
 
 if [[ `uname -s` == 'Darwin' ]]; then
   source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-
-if [ $SPIN ]; then
-  spin_zshrc='/etc/zsh/zshrc.default.inc.zsh'
-  [[ -e "$spin_zshrc" ]] && source "$spin_zshrc"
 fi
