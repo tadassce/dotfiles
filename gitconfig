@@ -66,6 +66,7 @@
 	keepBackup = true
 [push]
 	default = current
+	autoSetupRemote = true
 [pull]
 	default = tracking
 	rebase = true
