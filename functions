@@ -23,3 +23,7 @@ _has() {
 function opp() {
   op get item $1 | jq -r '.details.fields | map(select(.name == "password"))[0].value'
 }
+
+function whatsmyip() {
+  dig +short myip.opendns.com @resolver1.opendns.com
+}
