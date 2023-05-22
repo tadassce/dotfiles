@@ -30,9 +30,8 @@
 	b = branch
 	br = branch --sort=-committerdate --format="%(committerdate:relative)%09%(refname:short)"
 	ci = commit -v
+	cins = -c commit.gpgsign=false commit -v
 	cia = commit -av
-	cis = commit -S -v
-	cias = commit -S -av
 	fu = commit --fixup
 	ap = add -p
 	m = merge
