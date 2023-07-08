@@ -58,15 +58,14 @@ highlight clear ALEWarningSign
 
 " -----------------------------------------------
 " Lightline
-if system("dark-or-light") == "light"
-  " let lightlinetheme = 'PaperColor'
-  " let lightlinetheme = 'one'
-  " let lightlinetheme = 'rosepine'
-  let lightlinetheme = 'Tomorrow'
+
+if IsDarkMode()
+  " let lightlinetheme = 'wombat'
+  let lightlinetheme = 'nord'
 else
-  " let lightlinetheme = 'nord'
-  let lightlinetheme = 'wombat'
+  let lightlinetheme = 'Tomorrow'
 endif
+
 let g:lightline = {
   \ 'colorscheme': lightlinetheme,
   \ 'active': {

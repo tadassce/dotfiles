@@ -41,3 +41,10 @@ nnoremap <silent>         <C-i> :<C-u>call AddSubtract("\<C-a>", '')<CR>
 nnoremap <silent> <Leader><C-i> :<C-u>call AddSubtract("\<C-a>", 'b')<CR>
 " nnoremap <silent>         <C-x> :<C-u>call AddSubtract("\<C-x>", '')<CR>
 " nnoremap <silent> <Leader><C-x> :<C-u>call AddSubtract("\<C-x>", 'b')<CR>
+
+" -----------------------------------------------------------------
+" Get macOS theme (dark/light)
+function! IsDarkMode()
+  let theme = system("defaults read -g AppleInterfaceStyle 2>/dev/null")
+  return theme == "Dark\n"
+endfunction

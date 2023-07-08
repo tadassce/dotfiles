@@ -31,6 +31,7 @@ Plug 'w0ng/vim-hybrid'
 " extras
 Plug 'AndrewRadev/switch.vim'
 Plug 'KabbAmine/lazyList.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
 Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
