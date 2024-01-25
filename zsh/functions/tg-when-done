@@ -6,7 +6,7 @@
 # - Run `tg-when-done`
 # - Output resumes, when done will show a notification
 
-function tell-me-when-done() {
+function tg-when-done() {
   last_command=$(history | tail -1 | cut -d' ' -f3-)
 
   fg && echo "✔︎ $last_command" | tg
