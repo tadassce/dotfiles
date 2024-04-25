@@ -9,5 +9,6 @@
 function push-when-done() {
   last_command=$(history | tail -1 | cut -d' ' -f3-)
 
-  fg && echo "✔︎ $last_command" | pushover
+  fg && message="✔︎ $last_command" || message="✘ $last_command"
+  echo $message | pushover
 }
