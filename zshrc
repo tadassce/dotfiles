@@ -12,6 +12,7 @@ if [[ `uname -s` == 'Darwin' ]]; then
   fi
 
   PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin
+  PATH=$PATH:/usr/local/bin
   PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
   PATH=$PATH:$BREW_PREFIX/git/bin
   PATH=$PATH:$BREW_PREFIX/heroku/bin
