@@ -26,10 +26,20 @@ fi
 
 brew bundle check --file ~/.dotfiles/Brewfile || brew bundle --file ~/.dotfiles/Brewfile
 
-asdf plugin-add ruby
+asdf plugin add ruby
 latest_ruby=$(asdf list-all ruby | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
 asdf install ruby "$latest_ruby"
 asdf global ruby "$latest_ruby"
+
+asdf plugin add nodejs
+latest_node=$(asdf list-all nodejs | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
+asdf install nodejs "$latest_node"
+asdf global nodejs "$latest_node"
+
+asdf plugin add python
+latest_python=$(asdf list-all python | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
+asdf install python "$latest_python"
+asdf global python "$latest_python"
 
 # symlink dotfiles
 dots=(
