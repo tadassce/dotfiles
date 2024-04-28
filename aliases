@@ -39,6 +39,8 @@ alias gpr='hub pull-request'
 alias groot="cd \$(git rev-parse --show-toplevel)"
 
 alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
+alias vim='/opt/homebrew/bin/nvim'
+alias vimo='/opt/homebrew/bin/vim'
 alias tm='tmux -u attach || tmux -u new'
 alias less='less -R '
 alias ..='cd ..'
