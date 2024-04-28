@@ -79,7 +79,6 @@ done
 
 source ~/.completions
 source ~/.aliases
-source ~/.private_aliases
 source ~/.private_profile
 source ~/.prompt
 source ~/.fzfrc
