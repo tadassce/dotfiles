@@ -30,6 +30,7 @@ Plug 'savq/melange'
 Plug 'w0ng/vim-hybrid'
 
 " extras
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'KabbAmine/lazyList.vim'
 Plug 'airblade/vim-gitgutter'
