@@ -1,46 +1,33 @@
 # vim: ft=ruby
 
-tap "homebrew/core"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/services"
-tap "heroku/brew"
-tap "saulpw/vd"
-
 brew "asdf"
-brew "awscli"
-brew "clojure"
 brew "ctags"
 brew "doctl"
 brew "fd"
 brew "fzf"
+brew "gawk"
 brew "gcc"
 brew "gh"
 brew "git"
-brew "git-lfs"
 brew "gnupg"
 brew "hadolint"
-brew "heroku/brew/heroku"
 brew "htop"
-brew "hub"
 brew "imagemagick"
 brew "jq"
 brew "libzip"
 brew "mas"
 brew "mosh"
 brew "ncdu"
-brew "node"
 brew "nvim"
 brew "openssh"
 brew "openssl"
-brew "postgresql"
+brew "postgresql@14"
 brew "python"
 brew "readline"
 brew "reattach-to-user-namespace"
 brew "redis"
 brew "shellcheck"
 brew "switchaudio-osx"
-brew "terminal-notifier"
 brew "the_silver_searcher"
 brew "tig"
 brew "tldr"
@@ -48,35 +35,21 @@ brew "tmux"
 brew "tree"
 brew "vim"
 brew "vips"
-brew "visidata"
 brew "watch"
 brew "wget"
-brew "yarn"
 brew "youtube-dl"
 brew "zsh"
 brew "zsh-autosuggestions"
 
-cask "1password-cli"
-cask "alfred"
 cask "appcleaner"
 cask "docker"
-cask "firefox"
-cask "hammerspoon"
-cask "imageoptim"
-cask "postico"
+cask "raycast"
 cask "signal"
 cask "swiftbar"
 cask "transmit"
 
-mas "Instapaper Save", id: 1481302432
-mas "Keynote", id: 409183694
 mas "Lungo", id: 1263070803
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
 mas "Telegram", id: 747648890
-mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
-mas "Tweetbot", id: 1384080005
-mas "Xcode", id: 497799835
 mas "iA Writer", id: 775737590
