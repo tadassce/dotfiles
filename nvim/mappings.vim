@@ -149,3 +149,5 @@ nnoremap glt :LazyList '- [ ] '<cr>
 vnoremap glt :LazyList '- [ ] '<cr>
 
 nmap gitr /https:..github<cr>ctggit@<esc>f/r:B
+
+nmap <leader>ct :!ctags -R .<cr>
