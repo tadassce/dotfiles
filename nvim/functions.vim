@@ -35,3 +35,16 @@ function! IsDarkMode()
   let theme = system("defaults read -g AppleInterfaceStyle 2>/dev/null")
   return theme == "Dark\n"
 endfunction
+
+" -----------------------------------------------------------------
+" Show color codes
+command! ShowColors call ShowColors()
+function! ShowColors()
+  let num = 255
+  while num >= 0
+    exec 'hi col_'.num.' ctermbg='.num.' ctermfg=white'
+    exec 'syn match col_'.num.' "ctermbg='.num.':...." containedIn=ALL'
+    call append(0, 'ctermbg='.num.':....')
+    let num = num - 1
+  endwhile
+endfunction
