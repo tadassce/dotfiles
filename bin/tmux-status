@@ -1,13 +1,9 @@
 #!/bin/zsh
 
-host=`hostname`
+host=$(hostname | sed -E 's/(.lan)|(.local)|(TS-)//g' | tr '[:upper:]' '[:lower:]')
 time_now=`date +%H:%M`
+battery=`battery`
 # cal_next=`cal-next`
 # wifi_name=`wifi-name`
-# battery=`battery`
 
-if [[ "${host:(-5):5}" == 'local' ]]; then
-  echo $time_now
-else
-  echo "$host | $time_now"
-fi
+echo "$battery $host | $time_now"
