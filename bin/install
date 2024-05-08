@@ -47,6 +47,7 @@ dots=(
   aliases
   bin
   completions
+  digrc
   functions
   fzfrc
   gemrc
