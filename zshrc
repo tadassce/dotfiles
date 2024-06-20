@@ -11,7 +11,7 @@ if [[ `uname -s` == 'Darwin' ]]; then
     export BREW_PREFIX=/usr/local
   fi
 
-  PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin
+  PATH=$PATH:$BREW_PREFIX/bin:$BREW_PREFIX/sbin
   PATH=$PATH:/usr/local/bin
   PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
   PATH=$PATH:$BREW_PREFIX/git/bin
