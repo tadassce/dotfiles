@@ -1,5 +1,8 @@
 set background=dark
 colorscheme nord
+  hi link CtrlSpaceSelected Search
+  hi link CtrlSpaceStatus Search
+  hi Visual ctermbg=60 ctermfg=7
 let lightlinetheme = 'nord'
 
 " if IsDarkMode()
@@ -16,6 +19,9 @@ let lightlinetheme = 'nord'
 "   " colorscheme one
 "   " colorscheme dawnfox
 "   colorscheme nord
+"     hi link CtrlSpaceSelected Search
+"     hi link CtrlSpaceStatus Search
+"     hi Visual ctermbg=60 ctermfg=7
 
 "   " let lightlinetheme = 'wombat'
 "   let lightlinetheme = 'nord'
