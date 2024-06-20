@@ -59,13 +59,6 @@ highlight clear ALEWarningSign
 " -----------------------------------------------
 " Lightline
 
-if IsDarkMode()
-  " let lightlinetheme = 'wombat'
-  let lightlinetheme = 'nord'
-else
-  let lightlinetheme = 'Tomorrow'
-endif
-
 let g:lightline = {
   \ 'colorscheme': lightlinetheme,
   \ 'active': {

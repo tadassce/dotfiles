@@ -1,23 +1,30 @@
-if IsDarkMode()
-  set background=dark
+set background=dark
+colorscheme nord
+let lightlinetheme = 'nord'
 
-  " colorscheme github
-  " colorscheme tokyonight
-  " colorscheme tender
-  " colorscheme melange
-  " colorscheme nightfox
-  " colorscheme duskfox
-  " colorscheme iceberg
-  " colorscheme hybrid
-  " colorscheme one
-  " colorscheme dawnfox
-  colorscheme nord
+" if IsDarkMode()
+"   set background=dark
 
-else
-  set background=light
+"   " colorscheme github
+"   " colorscheme tokyonight
+"   " colorscheme tender
+"   " colorscheme melange
+"   " colorscheme nightfox
+"   " colorscheme duskfox
+"   " colorscheme iceberg
+"   " colorscheme hybrid
+"   " colorscheme one
+"   " colorscheme dawnfox
+"   colorscheme nord
 
-  " colorscheme pencil
-  " colorscheme github
-  colorscheme iceberg
+"   " let lightlinetheme = 'wombat'
+"   let lightlinetheme = 'nord'
+" else
+"   set background=light
 
-endif
+"   " colorscheme pencil
+"   " colorscheme github
+"   colorscheme iceberg
+
+"   let lightlinetheme = 'Tomorrow'
+" endif

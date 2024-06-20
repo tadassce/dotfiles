@@ -1,7 +1,7 @@
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/functions.vim
-source ~/.config/nvim/plugin_settings.vim
 source ~/.config/nvim/colorscheme.vim
+source ~/.config/nvim/plugin_settings.vim
 source ~/.config/nvim/mappings.vim
 
 if exists('g:vscode')
@@ -36,4 +36,4 @@ set breakindent " indent the line after a break when wrapping
 
 syntax enable
 
-au FileType markdown set shiftwidth=4 tabstop=4
+" au FileType markdown set shiftwidth=4 tabstop=4
