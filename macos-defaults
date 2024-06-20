@@ -1,13 +1,13 @@
 # vim: ft=sh
 
-echo "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)."
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# echo "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)."
+# defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 echo "Disable the warning when changing a file extension."
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-echo "Empty Trash securely by default."
-defaults write com.apple.finder EmptyTrashSecurely -bool false
+# echo "Empty Trash securely by default."
+# defaults write com.apple.finder EmptyTrashSecurely -bool false
 
 echo "Use current directory as default search scope in Finder."
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -15,11 +15,11 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # echo "Prefer plain text in Mail."
 # defaults write com.apple.mail PreferPlainText -bool TRUE
 
-echo "Check for software updates daily, not just once per week."
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+# echo "Check for software updates daily, not just once per week."
+# defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-echo "Automatically hide and show the Dock."
-defaults write com.apple.dock autohide -bool true
+# echo "Automatically hide and show the Dock."
+# defaults write com.apple.dock autohide -bool true
 
 echo "Disable Dock show-hide delay."
 defaults write com.apple.dock autohide-delay -int 0
@@ -27,10 +27,10 @@ defaults write com.apple.dock autohide-delay -int 0
 # echo "Disable Screenshot shadow."
 # defaults write com.apple.screencapture disable-shadow -bool true
 
-echo "Store Screenshots in iCloud."
-defaults write com.apple.screencapture location ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Screenshots
-# echo "Store Screenshots in Home"
-# defaults write com.apple.screencapture location ~/Screenshots
+# echo "Store Screenshots in iCloud."
+# defaults write com.apple.screencapture location ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Screenshots
+echo "Store Screenshots in Home"
+defaults write com.apple.screencapture location ~/Screenshots
 
 defaults write com.apple.screencapture name "Screenshot"
 echo "Disable Screenshot preview in the corner."
