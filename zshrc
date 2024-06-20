@@ -5,12 +5,7 @@ export LANG=en_US.UTF-8
 export GIT_MERGE_AUTOEDIT=no
 
 if [[ `uname -s` == 'Darwin' ]]; then
-  if [[ `uname -m` == 'arm64' ]]; then
-    export BREW_PREFIX=/opt/homebrew
-  else
-    export BREW_PREFIX=/usr/local
-  fi
-
+  export BREW_PREFIX=/opt/homebrew
   PATH=$PATH:$BREW_PREFIX/bin:$BREW_PREFIX/sbin
   PATH=$PATH:/usr/local/bin
   PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
