@@ -55,4 +55,8 @@ Plug 'tpope/vim-unimpaired'           " Some good mappings with `[`, `]`
 Plug 'w0rp/ale', { 'on':  'ALEToggle' }
 Plug 'will133/vim-dirdiff'
 
+" Shopify
+Plug 'nvim-lua/plenary.nvim' " dependency of spin-nvim
+Plug 'Shopify/spin-nvim'
+
 call plug#end()
