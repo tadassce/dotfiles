@@ -22,7 +22,6 @@
 	editor = vim
 	warnambiguousrefs = false
 	attributesfile = ~/.gitattributes
-	commitGraph = true
 [alias]
 	st = status
 	s = status -sb
@@ -92,9 +91,5 @@
 	algorithm = patience
 [init]
 	defaultBranch = main
-[gc]
-	writeCommitGraph = true
-[protocol]
-	version = 2
 [include]
 	path = ~/.gitconfig_private
