@@ -45,5 +45,8 @@ else
   local last_cmd_status='%(?.%{$fg[green]%}.%{$fg[red]%})○%{$reset_color%}'
 fi
 
+# # With current time
+# PROMPT="${pwd} ${gitbr}%{$fg[blue]%}%*%{$reset_color%} ${last_cmd_status} "
+
 # PROMPT="${emoji} ${pwd} ${gitbr}${last_cmd_status} "
 PROMPT="${pwd} ${gitbr}${last_cmd_status} "
