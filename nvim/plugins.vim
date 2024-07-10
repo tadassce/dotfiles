@@ -1,3 +1,7 @@
+" Plugins are stored in:
+" stdpath('data') . '/plugged'
+" => ~/.local/share/nvim/plugged
+
 call plug#begin()
 
 " navigation
