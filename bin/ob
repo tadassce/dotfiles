@@ -11,10 +11,10 @@ remote=${1:-origin}
 url=$(git remote -v | grep "$remote" | grep push | awk '{ print $2 }' | sed 's/\.git//')
 branch_name=$(git symbolic-ref -q HEAD)
 branch_name=${branch_name##refs/heads/}
-folder=$(git rev-parse --show-prefix)
+dir=$(git rev-parse --show-prefix)
 
-if [[ -n $folder ]]; then
-  url="$url/tree/$branch_name/$folder"
+if [[ -n $dir ]]; then
+  url="$url/tree/$branch_name/$dir"
 elif [[ $branch_name != "main" ]]; then
   url="$url/tree/$branch_name"
 fi
