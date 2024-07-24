@@ -3,7 +3,7 @@
 # Open git repo in Browser
 
 if ! git branch &>/dev/null; then
-  echo "ob opens the current repo in the browser. Your current directory doesn't seem to be a git repo."
+  echo "ob opens the current repo in the browser. It respects the current branch and directory."
   exit 1
 fi
 
