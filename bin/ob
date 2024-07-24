@@ -11,17 +11,14 @@ remote=${1:-origin}
 url=$(git remote -v | grep "$remote" | grep push | awk '{ print $2 }' | sed 's/\.git//')
 branch_name=$(git symbolic-ref -q HEAD)
 branch_name=${branch_name##refs/heads/}
-
-# if [[ -n $branch_name && $branch_name != "main" && $branch_name != "master" ]]; then
-#   url="$url/tree/$branch_name"
-# fi
-
-# add branch name
-url="$url/tree/$branch_name"
-
-# add folder
 folder=$(git rev-parse --show-prefix)
-url="$url/$folder"
+
+if [[ -n $folder ]]; then
+  url="$url/tree/$branch_name/$folder"
+elif [[ $branch_name != "main" ]]; then
+  url="$url/tree/$branch_name"
+fi
+
 
 if [[ $url =~ ^https?: ]]; then
     open "$url"
