@@ -21,13 +21,11 @@ fi
 
 
 if [[ $url =~ ^https?: ]]; then
-    open "$url"
+  open "$url"
+elif [[ $url =~ ^git@ ]]; then
+  url=$(echo "$url" | sed 's#:#/#' | sed 's#git@#https://#')
+  open "$url"
 else
-    if [[ $url =~ ^git@ ]]; then
-        url=$(echo "$url" | sed 's#:#/#' | sed 's#git@#https://#')
-        open "$url"
-    else
-        echo "Remote URL not supported: $url"
-        exit 1
-    fi
+  echo "Remote URL not supported: $url"
+  exit 1
 fi
