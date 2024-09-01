@@ -6,17 +6,7 @@ export GIT_MERGE_AUTOEDIT=no
 
 if [[ `uname -s` == 'Darwin' ]]; then
   export BREW_PREFIX=/opt/homebrew
-  PATH=$PATH:$BREW_PREFIX/bin:$BREW_PREFIX/sbin
-  PATH=$PATH:/usr/local/bin
-  PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
-  PATH=$PATH:$BREW_PREFIX/git/bin
-  PATH=$PATH:$BREW_PREFIX/heroku/bin
-  PATH=$PATH:~/Library/Python/3.7/bin
-  PATH=$PATH:/Applications/Docker.app/Contents/Resources/bin
-  PATH=$PATH:~/.bin
-else
-  PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin
-  PATH=$PATH:~/.bin
+  PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin:$PATH
 fi
 
 if [ $SPIN ]; then
