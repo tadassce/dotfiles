@@ -17,7 +17,6 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'jparise/vim-graphql'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'plasticboy/vim-markdown'
-Plug 'vimwiki/vimwiki'
 Plug 'dearrrfish/vim-applescript'
 
 " colorschemes

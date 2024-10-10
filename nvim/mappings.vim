@@ -82,8 +82,6 @@ nmap <leader>th o<esc>I# <c-r>=strftime('%Y-%m-%d')<cr>
 nmap <leader>gh :e ~/Notes/journal-daily.md<cr>
 nmap <leader>gw :e ~/Notes/weeklog.md<cr>
 nmap <leader>gd :e ~/Notes/daily/<c-r>=strftime('%Y-%m-%d')<cr>.md<cr>I# <c-r>=strftime('%Y-%m-%d')<cr><cr>
-nmap <leader>fw :set filetype=vimwiki<cr>
-nmap <leader>fm :set filetype=markdown<cr>
 
 " Ruby
 nmap <leader>fsl ggO<esc>O# frozen_string_literal: true<esc><c-o>
