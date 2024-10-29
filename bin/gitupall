@@ -11,7 +11,7 @@ repos.each do |dir|
   print "Updating #{name}... ".ljust(width + 13)
 
   fetch_output =
-    `git fetch --all 2>&1`.
+    `git fetch --all --prune 2>&1`.
     split("\n").
     select { |x| !x.nil? }.
     select { |x| x !~ /Your access is logged/ }.
