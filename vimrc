@@ -7,28 +7,7 @@ ru plugins.vim
 
 syntax enable
 
-if system("dark-or-light") == "light"
-  set background=light
-  " colorscheme pencil
-  " colorscheme tomorrow_ts
-  " colorscheme github_ts
-  " colorscheme default
-  " colorscheme paper
-  colorscheme pluto
-else
-  set background=dark
-  colorscheme purplebee
-  " colorscheme code_ts " dark
-  " colorscheme tomorrow-night-ts
-  " colorscheme tomorrow-night-eighties-ts
-  " colorscheme pencil
-  " colorscheme tender
-  " colorscheme jellybeans
-  " colorscheme one
-  " colorscheme iceberg
-  " colorscheme nord
-  ru color_overrides.vim
-endif
+colorscheme default
 
 " Enable filetypes
 filetype on
