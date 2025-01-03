@@ -1,20 +1,3 @@
-" Open the current file (or selection or provided as arg) in the default app
-command! -count=0 -nargs=* -complete=file Open :call s:Open(<count>, <f-args>)
-function! s:Open(visual, ...)
-  if a:visual
-    normal! gv"zy
-    let filename = @z
-  elseif a:0 > 0
-    let filename = a:1
-  else
-    let filename = expand('%')
-  endif
-
-  silent exe '!open '.filename
-  redraw!
-endfunction
-
-
 " Strip trailing whitespace
 function! StripTrailingWhitespace()
   " Preparation: save last search, and cursor position.
