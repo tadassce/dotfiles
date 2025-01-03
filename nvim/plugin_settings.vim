@@ -147,3 +147,34 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Normal'] }
 
+
+" -----------------------------------------------
+" Copilot
+
+" Change mapping
+" imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
+" Disable copilot
+autocmd VimEnter * Copilot disable
+
+
+" -----------------------------------------------
+" Supermaven
+
+lua << EOF
+require("supermaven-nvim").setup({
+keymaps = {
+    accept_suggestion = "<C-j>",
+    clear_suggestion = "<C-]>",
+    accept_word = "<C-k>",
+  },
+  ignore_filetypes = { cpp = true }, -- or { "cpp", }
+  color = {
+    suggestion_color = "#ffffff",
+    cterm = 244,
+  }
+})
+EOF
+
+" -----------------------------------------------

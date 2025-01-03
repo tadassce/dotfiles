@@ -149,6 +149,3 @@ vnoremap glt :LazyList '- [ ] '<cr>
 nmap gitr /https:..github<cr>ctggit@<esc>f/r:B
 
 nmap <leader>ct :!ctags -R .<cr>
-
-" Accept Copilot suggestion with ctrl-j
-imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")

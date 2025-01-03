@@ -38,7 +38,6 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'KabbAmine/lazyList.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'benmills/vimux'
-Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'      " Show e.g. 'match 1 of 3' in searches.
 Plug 'itchyny/lightline.vim'
@@ -58,8 +57,8 @@ Plug 'tpope/vim-unimpaired'           " Some good mappings with `[`, `]`
 Plug 'w0rp/ale', { 'on':  'ALEToggle' }
 Plug 'will133/vim-dirdiff'
 
-" Shopify
-Plug 'nvim-lua/plenary.nvim' " dependency of spin-nvim
-Plug 'Shopify/spin-nvim'
+" AI
+Plug 'github/copilot.vim'
+Plug 'supermaven-inc/supermaven-nvim'
 
 call plug#end()
