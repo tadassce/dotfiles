@@ -6,7 +6,8 @@ export GIT_MERGE_AUTOEDIT=no
 
 if [[ `uname -s` == 'Darwin' ]]; then
   export BREW_PREFIX=/opt/homebrew
-  PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin:$PATH
+  PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin:$PATH:~/.bin
+  source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 if [ $SPIN ]; then
@@ -67,7 +68,3 @@ source ~/.aliases
 source ~/.private_profile
 source ~/.prompt
 source ~/.fzfrc
-
-if [[ `uname -s` == 'Darwin' ]]; then
-  source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
