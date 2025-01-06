@@ -2,6 +2,7 @@ Brewfile.lock.json
 backups
 home_*
 nvim/bundle
+nvim/spell
 tmux/*
 vim/.netrwhist
 vim/autoload
