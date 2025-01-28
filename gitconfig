@@ -46,6 +46,7 @@
 	ignored = ls-files -o -i --exclude-standard
 	discard = checkout -- .
 	rmmissing = "!ruby -e 'x = `git st`;files = x.split(\"\n\").select{|x|x=~/deleted/ }.map{|x|x.split(\" \")[2]}.join(\" \"); files.each{|f| `git rm #{f}`}'"
+	rmb = !"git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
 	praise = blame
 	unstage = reset HEAD .
 	uncommit = reset HEAD^
