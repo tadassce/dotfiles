@@ -90,7 +90,7 @@ function _G.join_without_spaces(visual)
   
   if join_pos then
     -- Substitute the two spaces with one
-    vim.cmd("normal! ^:.,.s/  / /e\<CR>")
+    vim.cmd([[normal! ^:.,.s/  / /e<CR>]])
     -- Restore cursor position (adjusted for the removed space)
     if pos > join_pos then
       vim.fn.cursor(vim.fn.line('.'), pos - 1)
