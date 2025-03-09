@@ -6,7 +6,7 @@ export GIT_MERGE_AUTOEDIT=no
 
 if [[ `uname -s` == 'Darwin' ]]; then
   export BREW_PREFIX=/opt/homebrew
-  PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin:$PATH:~/.bin
+  PATH=$BREW_PREFIX/bin:$BREW_PREFIX/sbin:$PATH:~/.local/bin:~/.bin
   source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
