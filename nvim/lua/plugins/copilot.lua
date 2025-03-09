@@ -1,0 +1,16 @@
+return {
+  "github/copilot.vim", cmd = "Copilot",
+  build = ":Copilot auth",
+  event = "BufWinEnter",
+  init = function()
+    vim.g.copilot_no_maps = true
+    vim.g.copilot_no_tab_map = true
+    vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept("<CR>")', {expr = true, silent = true, script = true})
+
+    -- Uncomment to disable copilot on startup
+    -- vim.api.nvim_create_autocmd('VimEnter', {
+    --   pattern = '*',
+    --   command = 'Copilot disable'
+    -- })
+  end,
+}
