@@ -19,6 +19,7 @@ nmap ,e :set columns=84<cr>
 nmap ,bl :set background=light<cr>
 nmap ,bd :set background=dark<cr>
 
+set background=dark
 " set guifont=menlo:h15
 " set guifont=monaco:h13
 " set guifont=source_code_pro:h14
