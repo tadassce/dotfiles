@@ -21,3 +21,5 @@ wiki
 gitig.*
 *.gitig
 .projections.json
+.worktrees
+.wt
