@@ -86,11 +86,8 @@ nmap('<leader>fsl', 'ggO<esc>O# frozen_string_literal: true<esc><c-o>')
 -- ALE mappings
 nmap(']z', ':ALENextWrap<cr>')
 nmap('[z', ':ALEPreviousWrap<cr>')
-nmap('coa', ':ALEToggle<cr>')
+nmap('yoa', ':ALEToggle<cr>')
 nmap('<leader>af', ':ALEFix<cr>')
-
--- Bring back old vim-unimpaired mapping
-nmap('co', 'yo')
 
 -- Aligns ruby 1.9 style hash on ":"
 vim.keymap.set('v', '<leader>h', ':Tab/\\w:\\zs/l0l1<cr>')
@@ -115,7 +112,7 @@ nmap('-', ':Switch<cr>')
 
 -- Fugitive/Git
 nmap('<leader>gb', ':GBrowse<cr>')
-nmap('cog', ':GitGutterToggle<cr>')
+nmap('yog', ':GitGutterToggle<cr>')
 
 -- Vimux
 nmap('gh', ':w<cr>:VimuxRunLastCommand<cr>')
