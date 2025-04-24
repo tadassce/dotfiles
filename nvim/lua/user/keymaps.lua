@@ -12,9 +12,6 @@ end
 
 nmap('<space>', ':')
 
--- Basic mappings
-imap('<tab>', '<c-n>')
-
 -- Window navigation
 nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
@@ -148,9 +145,6 @@ nmap('gitr', '/https:..github<cr>ctggit@<esc>f/r:B')
 
 -- Generate ctags
 nmap('<leader>ct', ':!ctags -R .<cr>')
-
--- Copilot
-vim.keymap.set('i', '<C-J>', 'copilot#Accept("\\<CR>")', { silent = true, expr = true, script = true })
 
 -- Ag search
 nmap('<c-g>', ':Ag --ignore "*_test.rb"')
