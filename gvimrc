@@ -25,7 +25,7 @@ set background=dark
 " set guifont=source_code_pro:h14
 " set guifont=SF_Mono:h16
 " set guifont=JetBrains_Mono_NL:h18
-set guifont=iA_Writer_Mono_S:h18
+set guifont=iA_Writer_Mono_S:h15
 
 " colorscheme purplebee
 " colorscheme dusk
