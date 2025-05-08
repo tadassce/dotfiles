@@ -22,6 +22,9 @@
 	editor = vim
 	warnambiguousrefs = false
 	attributesfile = ~/.gitattributes
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
 [alias]
 	st = status
 	s = status -sb
@@ -57,10 +60,13 @@
 	prune = fetch --prune
 	stash-all = stash save --include-untracked
 	sta       = stash save --include-untracked
+	wt = worktree
 [github]
 	user = tadassce
 [difftool]
 	prompt = false
+[merge]
+	conflictstyle = zdiff3
 [mergetool]
 	keepBackup = true
 [push]
@@ -76,11 +82,6 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	required = true
-	process = git-lfs filter-process
 [commit]
 	template = ~/.gitmessage
 	gpgsign = true
@@ -94,3 +95,14 @@
 	defaultBranch = main
 [include]
 	path = ~/.gitconfig_private
+[maintenance]
+	repo = /Users/tadas/world/trees/root/src
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = ansi
