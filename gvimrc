@@ -9,8 +9,10 @@ set linespace=0
 
 set cc=
 
+nmap ,ve :e ~/.gvimrc<cr>
+
 " Maximize window
-nmap ,x :set columns=999 lines=99<CR>
+nmap ,x :set columns=999 lines=99<cr>
 
 " Make the window 80 col (+4 for line numbers)
 nmap ,e :set columns=84<cr>
