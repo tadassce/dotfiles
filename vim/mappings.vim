@@ -83,11 +83,8 @@ xnoremap gJ :<c-u>call JoinWithoutSpaces(1)<cr>
 
 nmap ]z :ALENextWrap<cr>
 nmap [z :ALEPreviousWrap<cr>
-nmap coa :ALEToggle<cr>
+nmap yoa :ALEToggle<cr>
 nmap <leader>af :ALEFix<cr>
-
-" Bring back old vim-unimpaired mapping
-nmap co yo
 
 " aligns ruby 1.9 style hash on ":"
 vmap <leader>h :Tab/\w:\zs/l0l1<cr>
@@ -105,7 +102,7 @@ nmap sk :SplitjoinJoin<cr>
 
 nmap - :Switch<cr>
 
-nmap cog :GitGutterToggle<cr>
+nmap yog :GitGutterToggle<cr>
 
 nnoremap gh :w<cr>:VimuxRunLastCommand<cr>
 map <Leader>vp :VimuxPromptCommand<cr>
