@@ -22,6 +22,10 @@ if _has fzf && _has ag; then
   '
 fi
 
+export FZF_DEFAULT_OPTS="--ignore-case"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source <(fzf --zsh)
 
 # vim: ft=zsh
