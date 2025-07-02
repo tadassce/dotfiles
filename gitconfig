@@ -22,9 +22,6 @@
 	editor = vim
 	warnambiguousrefs = false
 	attributesfile = ~/.gitattributes
-	pager = delta
-[interactive]
-	diffFilter = delta --color-only
 [alias]
 	st = status
 	s = status -sb
@@ -95,14 +92,8 @@
 	defaultBranch = main
 [include]
 	path = ~/.gitconfig_private
-[maintenance]
-	repo = /Users/tadas/world/trees/root/src
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[delta]
-	navigate = true
-	line-numbers = true
-	syntax-theme = ansi
