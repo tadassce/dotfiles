@@ -37,7 +37,7 @@ local hostname=$hn[0,3]
 # local host='%{$fg[green]%}${hostname}%{$reset_color%}'
 local gitbr='$(git_br)'
 
-if [[ "${hn:(-5):5}" == 'local' || "${hn:(-3)}" == 'lan' || "${hn:(-5)}" == 'mynet' ]]; then
+if [[ "${hn:(-5):5}" == 'local' || "${hn:(-3)}" == 'lan' || "${hn:(-5)}" == 'mynet' || "${hn:(-11)}" == 'localdomain' ]]; then
   local pwd='%{$fg[blue]%}%c%{$reset_color%}'
   local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})○%{$reset_color%}'
 else
