@@ -19,7 +19,6 @@ return {
   'sainnhe/gruvbox-material',
 
   -- Ungrouped
-  'rking/ag.vim',
   'AndrewRadev/splitjoin.vim',
   'KabbAmine/lazyList.vim',
   'airblade/vim-gitgutter',
@@ -27,6 +26,7 @@ return {
   'godlygeek/tabular',
   'henrik/vim-indexed-search',  -- Show e.g. 'match 1 of 3' in searches.
   'mbbill/undotree',
+  'rking/ag.vim',
   'tpope/vim-commentary',
   'tpope/vim-endwise',          -- Add `end`s
   'tpope/vim-fugitive',
