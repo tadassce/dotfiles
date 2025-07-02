@@ -21,13 +21,21 @@ nmap ,e :set columns=84<cr>
 nmap ,bl :set background=light<cr>
 nmap ,bd :set background=dark<cr>
 
-set background=dark
 " set guifont=menlo:h15
 " set guifont=monaco:h13
 " set guifont=source_code_pro:h14
 " set guifont=SF_Mono:h16
 " set guifont=JetBrains_Mono_NL:h18
 set guifont=iA_Writer_Mono_S:h15
+
+let theme = system("~/.bin/dark-or-light")
+
+if theme == "dark"
+  set background=dark
+elseif theme == "light"
+  set background=light
+endif
+
 
 " colorscheme purplebee
 " colorscheme dusk
