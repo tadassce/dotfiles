@@ -151,6 +151,7 @@ nmap('<leader>af', ':ALEFix<cr>')
 vim.keymap.set('v', '<leader>h', ':Tab/\\w:\\zs/l0l1<cr>')
 
 -- FZF/CtrlSpace
+nmap('<leader>c', ':Colors<cr>')
 nmap('<leader>rt', ':Tags<cr>')
 nmap('<c-n>', ':CtrlSpace<cr>')
 nmap('<c-t>', ':Files<cr>')
