@@ -66,6 +66,52 @@ nmap('<leader>xx', ':!open %<cr>')
 -- Open word/URL under cursor in a browser
 nmap('<leader>xo', ':!open <cWORD><cr>')
 
+-- gx to open URL/file under cursor (replaces netrw's gx and vim-markdown's gx)
+local function open_under_cursor()
+  local word = vim.fn.expand('<cfile>')
+  vim.ui.open(word)
+end
+
+local function open_markdown_link()
+  local syn = vim.fn.synIDattr(vim.fn.synID(vim.fn.line('.'), vim.fn.col('.'), 1), 'name')
+  -- Check if cursor is on a markdown link element
+  if syn:match('^mkd') then
+    -- Extract URL from markdown link: [text](url) or <url>
+    local line = vim.fn.getline('.')
+    local col = vim.fn.col('.')
+    -- Try to find URL in parentheses [text](url)
+    local url = line:match('%]%(([^)]+)%)')
+    -- Try angle bracket URL <url>
+    if not url then
+      url = line:match('<(https?://[^>]+)>')
+    end
+    -- Try bare URL
+    if not url then
+      url = line:match('(https?://[%w%%/_#%.%-]+)')
+    end
+    if url then
+      -- Handle relative paths
+      if not url:match('^https?://') then
+        url = vim.fn.expand('%:h') .. '/' .. url
+      end
+      vim.ui.open(url)
+      return
+    end
+  end
+  -- Fallback to <cfile>
+  open_under_cursor()
+end
+
+vim.keymap.set('n', 'gx', open_under_cursor, { desc = 'Open file/URL under cursor' })
+
+-- Override vim-markdown's gx mapping for markdown files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    vim.keymap.set('n', 'gx', open_markdown_link, { buffer = true, desc = 'Open markdown link under cursor' })
+  end,
+})
+
 -- Open with iA Writer
 nmap('<leader>ia', ':!open "%" -a "iA Writer"<cr>')
 
