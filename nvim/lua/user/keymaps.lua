@@ -1,3 +1,5 @@
+local keymap = vim.keymap
+
 function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
@@ -17,6 +19,16 @@ nmap('<C-j>', '<C-w>j')
 nmap('<C-k>', '<C-w>k')
 nmap('<C-h>', '<C-w>h')
 nmap('<C-l>', '<C-w>l')
+
+keymap.set('i', 'jj', '<esc>:w<CR>', { desc = "Exit insert mode and save" })
+keymap.set('t', 'jj', '<C-\\><C-n>', { desc = "Exit terminal mode" })
+
+-- Navigate windows from terminal mode with Ctrl+hjkl
+keymap.set('t', '<C-h>', '<Cmd>wincmd h<CR>', { desc = "Go to left window" })
+keymap.set('t', '<C-j>', '<Cmd>wincmd j<CR>', { desc = "Go to down window" })
+keymap.set('t', '<C-k>', '<Cmd>wincmd k<CR>', { desc = "Go to up window" })
+keymap.set('t', '<C-l>', '<Cmd>wincmd l<CR>', { desc = "Go to right window" })
+keymap.set('n', '<leader>vt', ':vert terminal<CR>', { silent = true, desc = "Open terminal in vertical split" })
 
 -- Open or create files
 nmap('gF', ':edit <cfile><cr>')
