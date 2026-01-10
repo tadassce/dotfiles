@@ -25,6 +25,9 @@ o.linebreak = true -- Wrap full words
 o.showbreak = '↪ ' -- keep the space
 o.breakindent = true -- indent the line after a break when wrapping
 
+vim.opt.foldmethod = "manual"
+vim.opt.foldexpr = ""
+
 o.listchars = {
   tab = '→ ',
   eol = '¬',
@@ -36,10 +39,6 @@ o.listchars = {
 }
 
 vim.cmd('syntax enable')
--- vim.cmd('colorscheme nord')
--- vim.cmd('hi link CtrlSpaceSelected Search')
--- vim.cmd('hi link CtrlSpaceStatus Search')
--- vim.cmd('hi Visual ctermbg=60 ctermfg=7')
 
 -- Markdown
 vim.g.vim_markdown_folding_disabled = 1

@@ -8,6 +8,7 @@
 
 function tell-me-when-done() {
   last_command=$(history | tail -1 | cut -d' ' -f3-)
+  sound=/System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/EncoreInfinitum/Handoff-EncoreInfinitum.caf
 
-  fg && osascript -e "display notification \"$last_command\" with title \"Done\""
+  fg && osascript -e "display notification \"$last_command\" with title \"Done\"" && afplay $sound
 }

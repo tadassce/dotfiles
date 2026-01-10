@@ -24,31 +24,11 @@ git_br() {
   fi
 }
 
-# local default_emoji='🐨'
-# local emoji=${PROMPT_EMOJI:-$default_emoji}
-
-# local user='%{$fg[green]%}%n%{$reset_color%}'
-local username=$USER[0,5]
-local user='%{$fg[green]%}${username}%{$reset_color%}'
-# local host='%{$fg[green]%}%m%{$reset_color%}'
-hn=$(hostname)
-# hn=$(scutil --get ComputerName | tr '[:upper:]' '[:lower:]')
-local hostname=$hn[0,3]
-# local host='%{$fg[green]%}${hostname}%{$reset_color%}'
+hn=$(scutil --get ComputerName | tr '[:upper:]' '[:lower:]' | sed 's/ts //g')
+local host='%{$fg[yellow]%}${hn}%{$reset_color%}'
 local gitbr='$(git_br)'
-# local final_char='○'
 local final_char='%%'
+local pwd='%{$fg[green]%}%c%{$reset_color%}'
+local last_cmd_status='%(?.%{$fg[green]%}.%{$fg[red]%})$final_char%{$reset_color%}'
 
-if [[ "${hn:(-5):5}" == 'local' || "${hn:(-3)}" == 'lan' || "${hn:(-5)}" == 'mynet' || "${hn:(-11)}" == 'localdomain' ]]; then
-  local pwd='%{$fg[blue]%}%c%{$reset_color%}'
-  local last_cmd_status='%(?.%{$fg[blue]%}.%{$fg[red]%})$final_char%{$reset_color%}'
-else
-  local pwd='%{$fg[green]%}%c%{$reset_color%}'
-  local last_cmd_status='%(?.%{$fg[green]%}.%{$fg[red]%})$final_char%{$reset_color%}'
-fi
-
-# # With current time
-# PROMPT="${pwd} ${gitbr}%{$fg[blue]%}%*%{$reset_color%} ${last_cmd_status} "
-
-# PROMPT="${emoji} ${pwd} ${gitbr}${last_cmd_status} "
-PROMPT="${pwd} ${gitbr}${last_cmd_status} "
+PROMPT="${host}:${pwd} ${gitbr}${last_cmd_status} "
