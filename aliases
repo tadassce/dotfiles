@@ -76,4 +76,5 @@ if [[ `uname -s` == 'Darwin' ]]; then
   alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc"
   alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && mas outdated && echo "==>" && brew update && echo "==>" && brew outdated && echo "==>" && brew cask outdated'
   alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
+  alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 fi
