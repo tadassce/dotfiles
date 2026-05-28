@@ -6,4 +6,5 @@ battery=`battery`
 # cal_next=`cal-next`
 # wifi_name=`wifi-name`
 
-echo "$battery $host | $time_now "
+# echo "$battery $host | $time_now"
+echo "$battery"

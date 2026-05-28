@@ -114,6 +114,6 @@ battery_status()
     cutinate $BATTERY_STATUS
   else
     if [ $BATTERY_STATUS -lt 98 ]; then
-      echo "${BATTERY_STATUS}% |"
+      echo "${BATTERY_STATUS}%"
     fi
   fi
