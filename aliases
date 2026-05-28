@@ -2,7 +2,7 @@
 
 alias l='ls -1'
 alias ll='ls -lahG'
-alias lt='ls -lahGt | head'
+alias lt='ls -lahG -snew | tail'
 alias lta='ls -lahGt'
 
 # Git
