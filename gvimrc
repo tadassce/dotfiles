@@ -10,6 +10,7 @@ set linespace=0
 set cc=
 
 nmap ,ve :e ~/.gvimrc<cr>
+nmap ,vv :so ~/.gvimrc<cr>
 
 " Maximize window
 nmap ,x :set columns=999 lines=99<cr>
@@ -26,7 +27,7 @@ nmap ,bd :set background=dark<cr>
 " set guifont=source_code_pro:h14
 " set guifont=SF_Mono:h16
 " set guifont=JetBrains_Mono_NL:h18
-set guifont=iA_Writer_Mono_S:h15
+set guifont=iA_Writer_Mono_S:h16
 
 let theme = system("~/.bin/dark-or-light")
 
@@ -36,6 +37,7 @@ elseif theme == "light"
   set background=light
 endif
 
+nmap ,cc :Colors<cr>
 
 " colorscheme purplebee
 " colorscheme dusk
