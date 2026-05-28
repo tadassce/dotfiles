@@ -126,6 +126,8 @@ imap('<c-d>', '<c-r>=strftime("%Y-%m-%d")<cr>')
 -- Add a Smart TODO comment above current line
 nmap('<leader>std', 'OTODO(on: date("<c-r>=strftime("%Y-%m-%d")<cr>"), to: "tadas.scerbinskas@shopify.com")<esc>gcco')
 
+nmap('<leader>cp', ':colorscheme pencil<cr>')
+
 -- Markdown shortcuts
 nmap('<leader>td', 'o<esc>I- [ ]<space>')
 nmap('<leader>tD', 'O<esc>I- [ ]<space>')
@@ -136,6 +138,7 @@ nmap('<leader>th', 'o<esc>I# <c-r>=strftime("%Y-%m-%d")<cr>')
 nmap('<leader>gh', ':e ~/Notes/journal-daily.md<cr>')
 nmap('<leader>gw', ':e ~/Notes/weeklog.md<cr>')
 nmap('<leader>gd', ':e ~/Notes/daily/<c-r>=strftime("%Y-%m-%d")<cr>.md<cr>I# <c-r>=strftime("%Y-%m-%d")<cr><cr>')
+nmap('<leader>tf', ':TableFormat<cr>')
 
 -- Ruby
 nmap('<leader>fsl', 'ggO<esc>O# frozen_string_literal: true<esc><c-o>')
@@ -168,6 +171,9 @@ nmap('sk', ':SplitjoinJoin<cr>')
 
 -- Switch
 nmap('-', ':Switch<cr>')
+
+-- llm text cleanup
+nmap('<leader>em', ":%s/—/-/ge<cr>:%s/[’“”]/'/ge<cr>:%s/;/,/ge<cr>")
 
 -- Fugitive/Git
 nmap('<leader>gb', ':GBrowse<cr>')
@@ -230,3 +236,17 @@ end
 -- We can remap them, but the actual function implementation should be in the functions.lua file
 nmap('gJ', ':call JoinWithoutSpaces(0)<cr>')
 map('x', 'gJ', ':<c-u>call JoinWithoutSpaces(1)<cr>')
+
+if vim.g.vscode then
+  -- jump around VSCode splits
+  local opts = { noremap = true, silent = true }
+
+  map("", "<C-h>", '<Cmd>lua WinMove("Left")<CR>', opts)
+  map("", "<C-j>", '<Cmd>lua WinMove("Down")<CR>', opts)
+  map("", "<C-k>", '<Cmd>lua WinMove("Up")<CR>', opts)
+  map("", "<C-l>", '<Cmd>lua WinMove("Right")<CR>', opts)
+
+  function WinMove(direction)
+    vim.fn.VSCodeCall("workbench.action.focus" .. direction .. "Group")
+  end
+end

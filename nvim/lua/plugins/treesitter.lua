@@ -4,7 +4,6 @@ return {}
 --   event = "BufReadPre",
 --   dependencies = {
 --     { 'nvim-treesitter/nvim-treesitter-textobjects' },
---     { 'sle-c/nvim-hidesig' },
 --     { 'nvim-treesitter/nvim-treesitter-context' },
 --     { 'andymass/vim-matchup' },
 --   },
@@ -75,7 +74,7 @@ return {}
 --       'kotlin',
 --     },
 --     hidesig = {
---       enable = true,
+--       enable = false, -- Temporarily disabled due to has_error compatibility issue
 --       opacity = 0.75,
 --       delay = 200,
 --     }

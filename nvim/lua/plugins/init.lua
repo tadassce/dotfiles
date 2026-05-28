@@ -3,10 +3,11 @@ return {
   'preservim/nerdtree',
 
   -- Filetypes
+  'dearrrfish/vim-applescript',
   'jparise/vim-graphql',
   'mtdl9/vim-log-highlighting',
   'plasticboy/vim-markdown',
-  'dearrrfish/vim-applescript',
+  'zackhsi/sorbet.vim',
 
   -- Colorschemes
   'arcticicestudio/nord-vim',
