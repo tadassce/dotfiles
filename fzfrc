@@ -11,6 +11,9 @@ if [ -e ~/.fzf ]; then
   source ~/.fzf/shell/completion.zsh
 fi
 
+export FZF_DEFAULT_OPTS="--ignore-case --tmux 80%"
+
+
 # fzf + ag configuration
 if _has fzf && _has ag; then
   export FZF_DEFAULT_COMMAND='ag --nocolor -g ""'
@@ -19,10 +22,10 @@ if _has fzf && _has ag; then
   export FZF_DEFAULT_OPTS='
   --color fg:242,bg:236,hl:65,fg+:15,bg+:239,hl+:108
   --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+  --ignore-case
+  --tmux 80%
   '
 fi
-
-export FZF_DEFAULT_OPTS="--ignore-case"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
