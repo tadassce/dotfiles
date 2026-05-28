@@ -7,8 +7,37 @@
 # - Output resumes, when done will show a notification
 
 function tell-me-when-done() {
+  local last_command start_time exit_status elapsed hours minutes seconds duration
+
   last_command=$(history | tail -1 | cut -d' ' -f3-)
   sound=/System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/Resources/AlertTones/EncoreInfinitum/Handoff-EncoreInfinitum.caf
 
-  fg && osascript -e "display notification \"$last_command\" with title \"Done\"" && afplay $sound
+  jobs %% >/dev/null 2>&1 || return $?
+  start_time=$SECONDS
+
+  fg
+  exit_status=$?
+
+  elapsed=$((SECONDS - start_time))
+  hours=$((elapsed / 3600))
+  minutes=$(((elapsed % 3600) / 60))
+  seconds=$((elapsed % 60))
+
+  if (( hours > 0 )); then
+    duration="${hours}h ${minutes}m ${seconds}s"
+  elif (( minutes > 0 )); then
+    duration="${minutes}m ${seconds}s"
+  else
+    duration="${seconds}s"
+  fi
+
+  osascript \
+    -e 'on run argv' \
+    -e 'display notification (item 1 of argv) with title (item 2 of argv)' \
+    -e 'end run' \
+    -- "$last_command" "Done in $duration"
+
+  afplay "$sound"
+
+  return $exit_status
 }
