@@ -140,6 +140,11 @@ nmap('<leader>gw', ':e ~/Notes/weeklog.md<cr>')
 nmap('<leader>gd', ':e ~/Notes/daily/<c-r>=strftime("%Y-%m-%d")<cr>.md<cr>I# <c-r>=strftime("%Y-%m-%d")<cr><cr>')
 nmap('<leader>tf', ':TableFormat<cr>')
 
+-- Wrap selection (visual) or word under cursor (normal) in a wiki-link [[...]]
+-- In normal mode "-" counts as part of the word (e.g. my-page-name).
+vim.keymap.set('n', '<leader>w', _G.wrap_wikilink_word, { silent = true, desc = 'Wrap word under cursor in [[wiki-link]]' })
+vim.keymap.set('x', '<leader>w', 'c[[<C-r><C-o>"]]<Esc>', { silent = true, desc = 'Wrap selection in [[wiki-link]]' })
+
 -- Ruby
 nmap('<leader>fsl', 'ggO<esc>O# frozen_string_literal: true<esc><c-o>')
 

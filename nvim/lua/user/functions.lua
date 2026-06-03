@@ -107,11 +107,44 @@ function! JoinWithoutSpaces(visual)
 endfunction
 ]])
 
+-- Wrap the word under the cursor in a wiki-link ([[...]]).
+-- Hyphens ("-") are treated as part of the word, e.g. "my-page-name".
+function _G.wrap_wikilink_word()
+  local line = vim.fn.getline('.')
+  local col = vim.fn.col('.') -- 1-indexed byte column of the cursor
+
+  local function is_word(c)
+    return c ~= '' and c:match('[%w_-]') ~= nil
+  end
+
+  -- Nothing useful under the cursor (whitespace/punctuation) -> bail.
+  if not is_word(line:sub(col, col)) then
+    return
+  end
+
+  -- Expand left and right to the word boundaries.
+  local s = col
+  while s > 1 and is_word(line:sub(s - 1, s - 1)) do
+    s = s - 1
+  end
+  local e = col
+  while e < #line and is_word(line:sub(e + 1, e + 1)) do
+    e = e + 1
+  end
+
+  local word = line:sub(s, e)
+  local new_line = line:sub(1, s - 1) .. '[[' .. word .. ']]' .. line:sub(e + 1)
+  vim.fn.setline('.', new_line)
+  -- Keep the cursor on the same character (shifted right by the opening "[[").
+  vim.fn.cursor(vim.fn.line('.'), col + 2)
+end
+
 -- Export functions that need to be used in other modules
 return {
   is_dark_mode = _G.is_dark_mode,
   strip_trailing_whitespace = strip_trailing_whitespace,
   get_alternate = get_alternate,
   show_colors = show_colors,
-  join_without_spaces = _G.join_without_spaces
+  join_without_spaces = _G.join_without_spaces,
+  wrap_wikilink_word = _G.wrap_wikilink_word
 }
