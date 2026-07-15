@@ -40,6 +40,9 @@ done
 mkdir -p "$HOME/.config"
 ln -sf "$HOME/dotfiles/nvim" "$HOME/.config/nvim"
 
+mkdir -p "$HOME/.pi/agent/extensions"
+ln -sf "$HOME/dotfiles/pi/extensions/tmux-window-status.ts" "$HOME/.pi/agent/extensions/tmux-window-status.ts"
+
 touch ~/.private_aliases
 touch ~/.private_profile
 touch ~/.tmux_private.conf
