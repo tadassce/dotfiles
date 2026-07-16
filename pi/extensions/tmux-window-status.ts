@@ -14,12 +14,25 @@ export default function (pi: ExtensionAPI) {
 	const paneId = process.env.TMUX_PANE;
 	if (!process.env.TMUX || !paneId) return;
 
+	const paneNumber = Number.parseInt(paneId.replace(/^%/, ""), 10);
+	if (!Number.isInteger(paneNumber)) return;
+
+	const focusHooks = [
+		"after-select-pane",
+		"session-window-changed",
+		"client-session-changed",
+		"client-attached",
+	] as const;
+	const hookIndex = 1_000_000 + paneNumber;
+	const baseNameOption = `@pi_window_status_base_${paneNumber}`;
+
 	let windowId: string | undefined;
 	let baseName: string | undefined;
 	let waitingForInput = false;
+	let windowState: WindowState | undefined;
 	let renameQueue: Promise<void> = Promise.resolve();
 
-	async function updateWindow(state: WindowState): Promise<void> {
+	async function updateWindow(state?: WindowState): Promise<void> {
 		renameQueue = renameQueue
 			.then(async () => {
 				if (!windowId || !baseName) {
@@ -44,7 +57,7 @@ export default function (pi: ExtensionAPI) {
 					"rename-window",
 					"-t",
 					windowId,
-					`${prefixes[state]}${baseName}`,
+					`${state ? prefixes[state] : ""}${baseName}`,
 				]);
 			})
 			.catch(() => undefined);
@@ -52,22 +65,87 @@ export default function (pi: ExtensionAPI) {
 		return renameQueue;
 	}
 
+	async function installFocusHooks(): Promise<void> {
+		if (!windowId || !baseName) return;
+
+		const optionResult = await pi.exec("tmux", [
+			"set-option",
+			"-w",
+			"-t",
+			windowId,
+			baseNameOption,
+			baseName,
+		]);
+		if (optionResult.code !== 0) return;
+
+		const condition = `#{&&:#{==:#{pane_id},${paneId}},#{m/r:^(✋|✅):,#{window_name}}}`;
+		const command = `if-shell -F '${condition}' 'rename-window -t ${windowId} "#{${baseNameOption}}"'`;
+
+		for (const hook of focusHooks) {
+			await pi.exec("tmux", ["set-hook", "-g", `${hook}[${hookIndex}]`, command]);
+		}
+	}
+
+	async function removeFocusHooks(): Promise<void> {
+		for (const hook of focusHooks) {
+			await pi.exec("tmux", ["set-hook", "-gu", `${hook}[${hookIndex}]`]);
+		}
+
+		if (windowId) {
+			await pi.exec("tmux", ["set-option", "-uw", "-t", windowId, baseNameOption]);
+		}
+	}
+
+	async function clearAttentionIfFocused(attentionState: WindowState): Promise<void> {
+		const result = await pi.exec("tmux", [
+			"display-message",
+			"-p",
+			"-t",
+			paneId,
+			"#{pane_active}\t#{window_active_clients}",
+		]);
+		if (result.code !== 0) return;
+
+		const [paneActive, activeClients] = result.stdout.trimEnd().split("\t");
+		if (
+			paneActive !== "1" ||
+			Number(activeClients) < 1 ||
+			windowState !== attentionState
+		) {
+			return;
+		}
+
+		windowState = undefined;
+		await updateWindow();
+	}
+
+	async function setWindowState(state?: WindowState): Promise<void> {
+		windowState = state;
+		await updateWindow(state);
+
+		if ((state === "waiting" || state === "done") && windowState === state) {
+			await clearAttentionIfFocused(state);
+		}
+	}
+
 	pi.on("session_start", async () => {
-		waitingForInput = true;
-		await updateWindow("waiting");
+		waitingForInput = false;
+		await setWindowState();
+		await installFocusHooks();
 	});
 
 	pi.on("agent_start", async () => {
 		waitingForInput = false;
-		await updateWindow("working");
+		await setWindowState("working");
 	});
 
 	pi.on("agent_settled", async () => {
-		await updateWindow(waitingForInput ? "waiting" : "done");
+		if (!waitingForInput) await setWindowState("done");
 	});
 
 	pi.on("session_shutdown", async () => {
-		await updateWindow("done");
+		await removeFocusHooks();
+		await setWindowState();
 	});
 
 	pi.registerTool({
@@ -81,7 +159,7 @@ export default function (pi: ExtensionAPI) {
 		parameters: Type.Object({}),
 		async execute() {
 			waitingForInput = true;
-			await updateWindow("waiting");
+			await setWindowState("waiting");
 			return {
 				content: [{ type: "text", text: "The tmux window is marked as waiting for user input." }],
 				details: {},
