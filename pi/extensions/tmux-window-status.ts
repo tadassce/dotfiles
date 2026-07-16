@@ -96,6 +96,20 @@ export default function (pi: ExtensionAPI) {
 		}
 	}
 
+	async function restoreAutomaticRename(): Promise<void> {
+		if (!windowId) return;
+
+		// rename-window creates a per-window "off" override. Remove it so the
+		// window inherits the user's global automatic-rename setting again.
+		await pi.exec("tmux", [
+			"set-option",
+			"-uw",
+			"-t",
+			windowId,
+			"automatic-rename",
+		]);
+	}
+
 	async function clearAttentionIfFocused(attentionState: WindowState): Promise<void> {
 		const result = await pi.exec("tmux", [
 			"display-message",
@@ -146,6 +160,7 @@ export default function (pi: ExtensionAPI) {
 	pi.on("session_shutdown", async () => {
 		await removeFocusHooks();
 		await setWindowState();
+		await restoreAutomaticRename();
 	});
 
 	pi.registerTool({
