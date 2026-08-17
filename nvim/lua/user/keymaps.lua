@@ -35,12 +35,12 @@ nmap('gF', ':edit <cfile><cr>')
 
 -- Config editing shortcuts
 nmap('<leader>ve', ':e ~/.config/nvim/init.lua<cr>')
-nmap('<leader>vv', ':source ~/.config/nvim/init.lua<cr>')
+nmap('<leader>vv', ':ReloadConfig<cr>')
 
 -- Remap number increment
 nmap('<c-s>', '<c-a>')
 
--- Toggle status line
+-- Toggle status line (affects lualine)
 nmap('[ts', ':set laststatus=2<cr>')
 nmap(']ts', ':set laststatus=0<cr>')
 
@@ -106,6 +106,7 @@ vim.keymap.set('n', 'gx', open_under_cursor, { desc = 'Open file/URL under curso
 
 -- Override vim-markdown's gx mapping for markdown files
 vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('user_keymaps', { clear = true }),
   pattern = 'markdown',
   callback = function()
     vim.keymap.set('n', 'gx', open_markdown_link, { buffer = true, desc = 'Open markdown link under cursor' })

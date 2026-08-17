@@ -50,6 +50,7 @@ end
 
 -- Auto-strip whitespace before save
 vim.api.nvim_create_autocmd('BufWritePre', {
+  group = vim.api.nvim_create_augroup('user_functions', { clear = true }),
   pattern = '*',
   callback = strip_trailing_whitespace
 })
@@ -60,11 +61,42 @@ function _G.is_dark_mode()
   return theme == "Dark\n"
 end
 
+-- Convert an xterm-256 color index to RGB for 'termguicolors'.
+local function xterm_color(index)
+  local base_colors = {
+    '#000000', '#800000', '#008000', '#808000',
+    '#000080', '#800080', '#008080', '#c0c0c0',
+    '#808080', '#ff0000', '#00ff00', '#ffff00',
+    '#0000ff', '#ff00ff', '#00ffff', '#ffffff',
+  }
+
+  if index < 16 then
+    return base_colors[index + 1]
+  end
+
+  if index < 232 then
+    local levels = { 0, 95, 135, 175, 215, 255 }
+    local color = index - 16
+    local red = levels[math.floor(color / 36) + 1]
+    local green = levels[math.floor(color / 6) % 6 + 1]
+    local blue = levels[color % 6 + 1]
+    return string.format('#%02x%02x%02x', red, green, blue)
+  end
+
+  local gray = 8 + (index - 232) * 10
+  return string.format('#%02x%02x%02x', gray, gray, gray)
+end
+
 -- Show color codes
 local function show_colors()
   local num = 255
   while num >= 0 do
-    vim.cmd('hi col_' .. num .. ' ctermbg=' .. num .. ' ctermfg=white')
+    vim.api.nvim_set_hl(0, 'col_' .. num, {
+      bg = xterm_color(num),
+      fg = '#ffffff',
+      ctermbg = num,
+      ctermfg = 15,
+    })
     vim.cmd('syn match col_' .. num .. ' "ctermbg=' .. num .. ':...." containedIn=ALL')
     vim.fn.append(0, 'ctermbg=' .. num .. ':....')
     num = num - 1
@@ -138,6 +170,23 @@ function _G.wrap_wikilink_word()
   -- Keep the cursor on the same character (shifted right by the opening "[[").
   vim.fn.cursor(vim.fn.line('.'), col + 2)
 end
+
+-- Reload the config (<leader>vv)
+-- Sourcing init.lua alone does nothing, because `require` caches modules. So drop
+-- the cached user modules first, then re-source init.lua to require them again.
+-- 'user.plugins' is deliberately kept cached: re-running lazy.setup() is not safe.
+local function reload_config()
+  for name, _ in pairs(package.loaded) do
+    if name:match('^user%.') and name ~= 'user.plugins' then
+      package.loaded[name] = nil
+    end
+  end
+
+  dofile(vim.env.MYVIMRC)
+  vim.notify('Config reloaded')
+end
+
+vim.api.nvim_create_user_command('ReloadConfig', reload_config, { desc = 'Reload nvim config' })
 
 -- Export functions that need to be used in other modules
 return {
