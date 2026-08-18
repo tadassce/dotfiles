@@ -3,78 +3,40 @@
 alias l='ls -1'
 alias ll='ls -lahG'
 alias lt='ls -lahG -snew | tail'
-alias lta='ls -lahGt'
 
 # Git
 alias g='git'
 alias gb='git br'
-alias gf='git fetch --all'
 alias gu='git pull'
-alias gup='git pull --prune'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gpp='gu && gp'
-alias gph='gp && ob'
-alias ghb='gh browse'
-alias gfod='gf && g rebase origin/dev'
-alias gfom='gf && g rebase origin/master'
-alias gphm='git push heroku main'
-alias grm='git rm $(git ls-files --deleted)'
 alias gs='git status -sb'
-alias gst='git st'
 alias gr='git remote -v'
 alias gl='git l'
 alias glg='git lg'
-alias glgh='git lg --committer=GitHub'
 alias gw="git show"
-alias gw^="git show HEAD^"
-alias gw^^="git show HEAD^^"
 alias gd='git diff -b'
 alias gdc='git diff --cached'
-alias gdt='git difftool'
-alias ga='git add'
 alias gap='git add --intent-to-add . && git add -p'  # Like "git add -p" but also ask about any newly added files.
 alias gm='git merge'
-alias ge='git-edit-new'
-alias gpr='hub pull-request'
-alias groot="cd \$(git rev-parse --show-toplevel)"
-# alias gw='git worktree'
 
-alias vi='vim -u NONE -N' # plain vim with no vimrc, but not vi compatible
+alias vim='nvim'
 alias tm='tmux -u attach || tmux -u new'
-alias less='less -R '
 alias ..='cd ..'
-alias q='exit'
-
-function grp()   { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null }
-function greps() { grep -rn --exclude=\*.swp --exclude=\*.log --exclude=tags --exclude=gems.tags --exclude-dir=.git --exclude-dir=tmp $1 . 2>/dev/null | sed -E 's/[[:space:]]+//' | grep $1 }
-alias largefiles='find . -ls | sort -n -k 7 | tail -n 20'
 
 # Dev
-alias ttr='mkdir -p tmp && touch tmp/restart.txt'
-alias rttr='rm tmp/pids/server.pid && ttr'
 alias bi='bundle install'
 alias bu='bundle update'
-alias bout='bundle outdated'
-alias bo='bundle open'
 alias be='bundle exec'
-alias pt='heroku addons:open papertrail'
-alias drb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest /bin/bash'
-alias dirb='docker run -it --rm -v "$(pwd)":/workspace -w /workspace ruby:latest irb'
-alias ctagsr='ctags --languages=-javascript -R'
-alias k=kubectl
-alias opa='eval $(op signin my)' # 1Password
-alias jc=journalctl
-alias sc=systemctl
+alias h='herdr'
 
 # macOS
 if [[ `uname -s` == 'Darwin' ]]; then
-  alias rmdsstores="find . -name '*.DS_Store' -type f -delete"
   alias bs='brew services'
   alias brewupd="brew update && echo \"$fg[blue]==>$reset_color Outdated\" && brew outdated"
   alias brewupg="brew upgrade && brew cleanup"
-  alias js="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc"
-  alias updates='softwareupdate -l && echo "==> Now checking MAS apps updates" && mas outdated && echo "==>" && brew update && echo "==>" && brew outdated && echo "==>" && brew cask outdated'
-  alias mvim='/Applications/MacVim.app/Contents/bin/mvim'
+  # Must be an alias, not a symlink: the binary needs its bundle context.
   alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+  alias updates='softwareupdate -l && echo "==> Homebrew" && brew update && brew outdated --greedy'
 fi
