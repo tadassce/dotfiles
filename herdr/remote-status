@@ -66,7 +66,7 @@ if not agents and not spaces:
     raise SystemExit(1)
 
 # Only the states worth a glance; idle and unknown are the quiet ones.
-glyphs = [("blocked", "!"), ("working", "◔"), ("done", "✔︎"), ("idle", "·")]
+glyphs = [("blocked", "!"), ("working", "◔"), ("done", "✓"), ("idle", "·")]
 counts = {}
 for agent in agents:
     state = agent.get("state") or agent.get("agent_status") or "unknown"
