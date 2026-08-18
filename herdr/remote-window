@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#
+# Open a herdr remote client in its own Ghostty window, themed per host.
+#
+# herdr renders with the local client's config, so a remote session looks
+# identical to a local one. Ghostty takes any config key as a CLI flag, so the
+# window itself carries the tell instead.
+#
+#   herdr/remote-window mini
+#
+# Themes are given as light:/dark: pairs so they still follow the system
+# appearance, the way the default Ghostty config does. Add a host by adding a
+# case below.
+#
+# On macOS, Ghostty cannot be launched directly from the CLI, hence `open -na`.
+
+set -euo pipefail
+
+host="${1:-mini}"
+
+case "$host" in
+  mini) theme="light:Gruvbox Light,dark:Gruvbox Dark" ;;
+  *)    theme="light:Kanagawa Lotus,dark:Kanagawa Dragon" ;;
+esac
+
+exec open -na Ghostty.app --args \
+  --theme="$theme" \
+  --title="herdr@$host" \
+  -e herdr --remote "$host"

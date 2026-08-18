@@ -25,6 +25,8 @@ HOST="${HERDR_REMOTE_HOST:-mini}"
 # herdr is not on PATH for a non-interactive ssh shell, so address it directly.
 REMOTE_BIN="${HERDR_REMOTE_BIN:-\$HOME/.local/bin/herdr}"
 TOKEN="${HERDR_REMOTE_TOKEN:-mini}"
+# Local space this host reports into. One space per remote, named after it.
+SPACE="${HERDR_REMOTE_SPACE:-$HOST}"
 INTERVAL=0
 
 LOCAL_BIN="${HERDR_BIN_PATH:-}"
@@ -84,18 +86,21 @@ print("%s %s" % (label, " ".join(parts)))
 
 report() {
   local value="$1" ttl="$2" workspace
-  for workspace in $("$LOCAL_BIN" workspace list 2>/dev/null | python3 -c '
+  workspace=$("$LOCAL_BIN" workspace list 2>/dev/null | python3 -c '
 import sys, json
+label = sys.argv[1]
 try:
     data = json.load(sys.stdin)
 except ValueError:
     raise SystemExit(0)
 for w in data.get("result", {}).get("workspaces", []):
-    print(w["workspace_id"])
-'); do
-    "$LOCAL_BIN" workspace report-metadata "$workspace" \
-      --source "remote:$HOST" --token "$TOKEN=$value" --ttl-ms "$ttl" >/dev/null 2>&1
-  done
+    if w.get("label") == label:
+        print(w["workspace_id"])
+        break
+' "$SPACE")
+  [ -n "$workspace" ] || return 1
+  "$LOCAL_BIN" workspace report-metadata "$workspace" \
+    --source "remote:$HOST" --token "$TOKEN=$value" --ttl-ms "$ttl" >/dev/null 2>&1
 }
 
 poll() {
