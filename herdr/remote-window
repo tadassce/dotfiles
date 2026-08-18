@@ -16,10 +16,10 @@
 
 set -euo pipefail
 
-host="${1:-mini}"
+host="$1"
 
 case "$host" in
-  mini) theme="light:Gruvbox Light,dark:Gruvbox Dark" ;;
+  mini) theme="light:Nord Light,dark:Nord" ;;
   *)    theme="light:Kanagawa Lotus,dark:Kanagawa Dragon" ;;
 esac
 
