@@ -35,7 +35,7 @@ alias hr='~/.dotfiles/herdr/remote-window' # hr mini
 # macOS
 if [[ `uname -s` == 'Darwin' ]]; then
   alias bs='brew services'
-  alias brewupd="brew update && echo \"$fg[blue]==>$reset_color Outdated\" && brew outdated"
+  alias brewupd='brew update && print -P "%F{blue}==>%f Outdated" && brew outdated'
   alias brewupg="brew upgrade && brew cleanup"
   # Must be an alias, not a symlink: the binary needs its bundle context.
   alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
