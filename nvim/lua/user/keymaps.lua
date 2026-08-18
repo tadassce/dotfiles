@@ -66,6 +66,12 @@ nmap('<leader>xx', ':!open %<cr>')
 -- Open word/URL under cursor in a browser
 nmap('<leader>xo', ':!open <cWORD><cr>')
 
+-- Toggle dark/light background
+vim.keymap.set('n', '<leader>yob', function()
+  local bg = vim.o.background == 'dark' and 'light' or 'dark'
+  vim.o.background = bg
+end, { desc = 'Toggle background' })
+
 -- gx to open URL/file under cursor (replaces netrw's gx and vim-markdown's gx)
 local function open_under_cursor()
   local word = vim.fn.expand('<cfile>')
