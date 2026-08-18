@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+#
+# Jump to the last "❯ " in a pane's scrollback — the prompt you last sent to
+# Claude Code, which the transcript prefixes with that glyph.
+#
+# herdr has no scrollback search: copy mode selects and prefix+e opens the whole
+# buffer in $EDITOR, neither of which takes a pattern. So this dumps the pane
+# through `herdr pane read` and hands the dump to nvim already sitting on the
+# last match, with the pattern still loaded so n/N walk back through earlier
+# prompts.
+#
+#   herdr/last-prompt            # open the dump in nvim at the last prompt
+#   herdr/last-prompt --print    # just print that prompt
+#
+# Bound to prefix+/ in config.toml, where HERDR_ACTIVE_PANE_ID names the pane
+# that had focus. Reading is unwrapped, so a long prompt stays on one line.
+
+set -euo pipefail
+
+# A bare "❯" is the empty input box, and it is always the last one on screen.
+# The trailing space is what tells a sent prompt from that box.
+MARKER='^❯ '
+LINES="${HERDR_LAST_PROMPT_LINES:-5000}"
+PRINT=0
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --print) PRINT=1; shift ;;
+    --lines) LINES="$2"; shift 2 ;;
+    -h|--help) sed -n '2,16p' "$0"; exit 0 ;;
+    *) echo "unknown argument: $1" >&2; exit 2 ;;
+  esac
+done
+
+pane="${HERDR_ACTIVE_PANE_ID:-${HERDR_PANE_ID:-}}"
+if [ -z "$pane" ]; then
+  pane=$(herdr pane current 2>/dev/null | python3 -c '
+import sys, json
+try:
+    data = json.load(sys.stdin)
+except ValueError:
+    raise SystemExit(0)
+pane = data.get("result", {}).get("pane", {}).get("pane_id")
+if pane:
+    print(pane)
+')
+fi
+[ -n "$pane" ] || { echo "no pane to read" >&2; exit 1; }
+
+dump="${TMPDIR:-/tmp}/herdr-last-prompt-${pane//:/-}.txt"
+herdr pane read "$pane" --source recent-unwrapped --lines "$LINES" > "$dump"
+
+grep -q "$MARKER" "$dump" || { echo "no prompt found in the last $LINES lines" >&2; exit 1; }
+
+if [ "$PRINT" -eq 1 ]; then
+  # From the last prompt line to the blank line that ends it: prompts can be
+  # multi-line, but nothing else in the transcript hugs them that closely.
+  awk '/^❯ /{ start = NR } { line[NR] = $0 }
+       END {
+         for (i = start; i <= NR; i++) {
+           if (i > start && line[i] ~ /^[[:space:]]*$/) break
+           print line[i]
+         }
+       }' "$dump"
+  exit 0
+fi
+
+# $ lands on the last line, ?…? searches back from there, and the search leaves
+# the pattern in @/ so hlsearch marks every other prompt in the buffer.
+exec nvim -R "$dump" \
+  -c '$' \
+  -c "silent! ?$MARKER" \
+  -c 'normal! zt' \
+  -c 'set hlsearch'

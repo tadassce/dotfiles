@@ -32,6 +32,14 @@ key = "prefix+>"
 type = "shell"
 command = "herdr pane resize --pane \"$HERDR_ACTIVE_PANE_ID\" --direction right --amount 0.04"
 
+# what was my last claude code prompt here again?
+[[keys.command]]
+key = "prefix+shift+l"
+type = "popup"
+command = "$HOME/.dotfiles/herdr/last-prompt"
+width = "80%"
+height = "80%"
+
 [ui]
 show_agent_labels_on_pane_borders = true
 prompt_new_tab_name = false
