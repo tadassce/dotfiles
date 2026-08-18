@@ -1,5 +1,12 @@
 set nohidden
 set noswapfile
+
+" Persistent undo. The mkdir keeps this working on a freshly scp'd box —
+" vim silently skips undo files if undodir does not exist.
+silent! call mkdir(expand('~/.vim/undo'), 'p')
+set undodir=~/.vim/undo
+set undofile
+
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
