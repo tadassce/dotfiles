@@ -26,43 +26,27 @@ fi
 
 brew bundle check --file ~/.dotfiles/Brewfile || brew bundle --file ~/.dotfiles/Brewfile
 
-asdf plugin add ruby
-latest_ruby=$(asdf list-all ruby | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
-asdf install ruby "$latest_ruby"
-asdf global ruby "$latest_ruby"
+# Runtimes (mise picks versions up per project; these are the global fallbacks)
+mise use --global ruby@latest node@latest python@latest
 
-asdf plugin add nodejs
-latest_node=$(asdf list-all nodejs | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
-asdf install nodejs "$latest_node"
-asdf global nodejs "$latest_node"
+# -------------------------------------------------------------------
+# Symlink dotfiles
 
-asdf plugin add python
-latest_python=$(asdf list-all python | grep "^\d" | grep -v "dev\|rc\|preview" | tail -n1)
-asdf install python "$latest_python"
-asdf global python "$latest_python"
-
-# symlink dotfiles
 dots=(
   agignore
   aliases
   bin
   completions
   digrc
-  functions
   fzfrc
   gemrc
   gitattributes
   gitconfig
-  githelpers
   gitignore_global
   gitmessage
-  gvimrc
   inputrc
   prompt
-  pryrc
-  rspec
   tmux.conf
-  vim
   vimrc
   zsh
   zshrc
@@ -75,13 +59,30 @@ done
 
 [ ! -L ~/.icloud ] && ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
 [ ! -L ~/.config ] && ln -s ~/.icloud/Config ~/.config
-[ ! -L ~/.hammerspoon ] && ln -s ~/.icloud/Config/hammerspoon ~/.hammerspoon
 
 ln -sf "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
+
+# Only the config file: herdr keeps sockets, logs and session.json here too.
+mkdir -p "$HOME/.config/herdr"
+ln -sf "$HOME/.dotfiles/herdr/config.toml" "$HOME/.config/herdr/config.toml"
 
 mkdir -p "$HOME/.pi/agent/extensions"
 ln -sf "$HOME/.dotfiles/pi/extensions/tmux-window-status.ts" "$HOME/.pi/agent/extensions/tmux-window-status.ts"
 
+# Ghostty: config plus the custom app icon it references.
+mkdir -p "$HOME/.config/ghostty"
+ln -sf "$HOME/.dotfiles/ghostty/config" "$HOME/.config/ghostty/config"
+ln -sf "$HOME/.dotfiles/ghostty/icons" "$HOME/.config/ghostty/icons"
+
+# The macOS app bundle does not put the `ghostty` CLI on PATH; only shells
+# started inside Ghostty get it via shell integration.
+ghostty_bin="/Applications/Ghostty.app/Contents/MacOS/ghostty"
+if [ -x "$ghostty_bin" ]; then
+  mkdir -p "$HOME/.local/bin"
+  ln -sf "$ghostty_bin" "$HOME/.local/bin/ghostty"
+fi
+
+touch ~/.private_aliases
 touch ~/.private_profile
 touch ~/.tmux_private.conf
 
@@ -89,21 +90,10 @@ touch ~/.tmux_private.conf
 # TODO: check if $SHELL ends with /zsh
 # chsh -s $(brew --prefix)/bin/zsh
 
-# Vim undo (gitignored)
-mkdir -p ~/.vim/undo
+# -------------------------------------------------------------------
 
-# Vim Plugins
-# Install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# Install the vim plugins
-vim -es -u vimrc -i NONE -c "PlugInstall" -c "qa"
-
-# Nvim
-# vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-nvim --noplugin --headless -c 'PlugInstall' -c 'qa'
+# Neovim plugins (lazy.nvim bootstraps itself from nvim/lua/user/plugins.lua)
+nvim --headless "+Lazy! sync" +qa
 
 # Tmux Plugin Manager
 if [ ! -d ~/.tmux/plugins/tpm ]; then
@@ -115,21 +105,5 @@ fi
 
 # Enable key repeat in VS Code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
-
-# Linters
-gem install \
-  standard \
-  reek \
-  rubocop \
-  ruby-lint \
-  coderay \
-  brakeman \
-  rails_best_practices
-npm i -g \
-  standard \
-  jshint \
-  jsonlint \
-  prettier \
-  swaglint
 
 echo Done.
