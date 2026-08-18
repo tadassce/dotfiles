@@ -20,7 +20,7 @@
 [core]
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore_global
-	editor = vim
+	editor = nvim
 	warnambiguousrefs = false
 	attributesfile = ~/.gitattributes
 [alias]
@@ -61,8 +61,6 @@
 	wt = worktree
 [github]
 	user = tadassce
-[difftool]
-	prompt = false
 [merge]
 	conflictstyle = zdiff3
 [mergetool]
@@ -71,15 +69,10 @@
 	default = current
 	autoSetupRemote = true
 [pull]
-	default = tracking
 	rebase = true
 [grep]
 	extendRegexp = true
 	lineNumber = true
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
 [commit]
 	template = ~/.gitmessage
 	gpgsign = true
@@ -87,14 +80,8 @@
 	autoStash = true
 [diff]
 	noprefix = true
-	tool = vimdiff
 	algorithm = patience
 [init]
 	defaultBranch = main
 [include]
 	path = ~/.gitconfig_private
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
