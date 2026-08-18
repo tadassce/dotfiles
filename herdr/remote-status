@@ -49,7 +49,6 @@ summarise() {
     | python3 -c '
 import sys, json
 
-label = sys.argv[1]
 agents, spaces = [], []
 for line in sys.stdin:
     line = line.strip()
@@ -80,8 +79,8 @@ if not parts:
     panes = sum(s.get("pane_count", 0) for s in spaces)
     parts = ["%dw %dp" % (len(spaces), panes)] if spaces else ["idle"]
 
-print("%s %s" % (label, " ".join(parts)))
-' "$HOST"
+print(" ".join(parts))
+'
 }
 
 report() {
@@ -112,7 +111,7 @@ poll() {
   if summary="$(summarise)" && [ -n "$summary" ]; then
     report "$summary" "$ttl"
   else
-    report "$HOST ?" "$ttl"
+    report "?" "$ttl"
   fi
 }
 
