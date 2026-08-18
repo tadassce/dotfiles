@@ -12,7 +12,7 @@
 #   herdr/last-prompt            # open the dump in nvim at the last prompt
 #   herdr/last-prompt --print    # just print that prompt
 #
-# Bound to prefix+/ in config.toml, where HERDR_ACTIVE_PANE_ID names the pane
+# Bound to prefix+shift+l in config.toml, where HERDR_ACTIVE_PANE_ID names the pane
 # that had focus. Reading is unwrapped, so a long prompt stays on one line.
 
 set -euo pipefail
