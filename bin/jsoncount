@@ -1,5 +1,0 @@
-#! /usr/bin/env ruby
-
-require 'oj'
-
-puts Oj.load(ARGF.read).count
