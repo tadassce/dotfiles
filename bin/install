@@ -75,6 +75,17 @@ mkdir -p "$HOME/.config/ghostty"
 ln -sf "$HOME/.dotfiles/ghostty/config" "$HOME/.config/ghostty/config"
 ln -sfn "$HOME/.dotfiles/ghostty/icons" "$HOME/.config/ghostty/icons"
 
+# Per-host Ghostty overrides: "TS-Mac-mini" -> ghostty/config.mini, the same
+# short host name the prompt and herdr/remote-window use. The link lives in
+# $HOME because ~/.config is an iCloud symlink and would sync it everywhere.
+host=$(hostname -s)
+host=$(printf '%s' "${host##*-}" | tr '[:upper:]' '[:lower:]')
+if [ -f "$HOME/.dotfiles/ghostty/config.$host" ]; then
+  ln -sfn "$HOME/.dotfiles/ghostty/config.$host" "$HOME/.ghostty_local"
+elif [ -L "$HOME/.ghostty_local" ]; then
+  rm -f "$HOME/.ghostty_local"  # stale link from a previous host
+fi
+
 # The macOS app bundle does not put the `ghostty` CLI on PATH; only shells
 # started inside Ghostty get it via shell integration.
 ghostty_bin="/Applications/Ghostty.app/Contents/MacOS/ghostty"

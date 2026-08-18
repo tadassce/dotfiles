@@ -3,8 +3,10 @@
 # font-family = "iMWritingMono Nerd Font"
 font-size = 16
 # theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+# theme = light:Ayu Light,dark:Ayu
 theme = light:Rose Pine Dawn,dark:Rose Pine Moon
 macos-icon = custom
+# macos-custom-icon = ~/.config/ghostty/icons/ayu-dark.icns
 macos-custom-icon = ~/.config/ghostty/icons/catppuccin-mocha.icns
 title = " "
 
@@ -23,3 +25,10 @@ notify-on-command-finish-action = notify
 notify-on-command-finish-after = 3s
 
 keybind = super+y=copy_url_to_clipboard
+
+# Per-host overrides, kept last so they win whichever way Ghostty orders an
+# include. `install` links this to ghostty/config.<host> when that file exists.
+# It lives in $HOME rather than next to this config because ~/.config is an
+# iCloud symlink, and anything in there would sync to every machine. The ?
+# makes it optional, so hosts without an override file load nothing.
+config-file = ?~/.ghostty_local
