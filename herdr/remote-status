@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+#
+# Bridge a remote herdr's agent state into the local sidebar.
+#
+# herdr has no cross-server view: a client attaches to exactly one server, and
+# `--remote` swaps which server that is rather than merging them. Even the CLI
+# refuses `--remote` on subcommands. So this polls the remote over ssh and
+# writes a summary into local workspace metadata, which the sidebar renders as
+# a $<token> row.
+#
+#   herdr/remote-status                 # poll once
+#   herdr/remote-status --watch 30      # poll every 30s
+#
+# Sidebar side, in config.toml:
+#   [ui.sidebar.spaces]
+#   rows = [["state_icon","workspace"], ["branch","git_status"], ["$mini"]]
+#
+# This is a status readout, not integration: you can see that mini has a
+# blocked agent, but you cannot focus it from here. Getting to it still means
+# `herdr --remote mini`.
+
+set -uo pipefail
+
+HOST="${HERDR_REMOTE_HOST:-mini}"
+# herdr is not on PATH for a non-interactive ssh shell, so address it directly.
+REMOTE_BIN="${HERDR_REMOTE_BIN:-\$HOME/.local/bin/herdr}"
+TOKEN="${HERDR_REMOTE_TOKEN:-mini}"
+INTERVAL=0
+
+LOCAL_BIN="${HERDR_BIN_PATH:-}"
+[ -n "$LOCAL_BIN" ] || LOCAL_BIN="$(command -v herdr 2>/dev/null || echo /opt/homebrew/bin/herdr)"
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --watch) INTERVAL="${2:-30}"; shift 2 ;;
+    --once)  INTERVAL=0; shift ;;
+    --host)  HOST="$2"; shift 2 ;;
+    --token) TOKEN="$2"; shift 2 ;;
+    -h|--help) sed -n '2,22p' "$0"; exit 0 ;;
+    *) echo "unknown argument: $1" >&2; exit 2 ;;
+  esac
+done
+
+summarise() {
+  ssh -o ConnectTimeout=8 -o BatchMode=yes "$HOST" \
+    "$REMOTE_BIN agent list; $REMOTE_BIN workspace list" 2>/dev/null \
+    | python3 -c '
+import sys, json
+
+label = sys.argv[1]
+agents, spaces = [], []
+for line in sys.stdin:
+    line = line.strip()
+    if not line:
+        continue
+    try:
+        result = json.loads(line).get("result", {})
+    except ValueError:
+        continue
+    if result.get("type") == "agent_list":
+        agents = result.get("agents", [])
+    elif result.get("type") == "workspace_list":
+        spaces = result.get("workspaces", [])
+
+if not agents and not spaces:
+    raise SystemExit(1)
+
+# Only the states worth a glance; idle and unknown are the quiet ones.
+glyphs = [("blocked", "!"), ("working", "◔"), ("done", "✔︎")]
+counts = {}
+for agent in agents:
+    state = agent.get("state") or agent.get("agent_status") or "unknown"
+    counts[state] = counts.get(state, 0) + 1
+
+parts = ["%d%s" % (counts[state], glyph) for state, glyph in glyphs if counts.get(state)]
+if not parts:
+    # No agents running, so show that the box is alive and how much is open.
+    panes = sum(s.get("pane_count", 0) for s in spaces)
+    parts = ["%dw %dp" % (len(spaces), panes)] if spaces else ["idle"]
+
+print("%s %s" % (label, " ".join(parts)))
+' "$HOST"
+}
+
+report() {
+  local value="$1" ttl="$2" workspace
+  for workspace in $("$LOCAL_BIN" workspace list 2>/dev/null | python3 -c '
+import sys, json
+try:
+    data = json.load(sys.stdin)
+except ValueError:
+    raise SystemExit(0)
+for w in data.get("result", {}).get("workspaces", []):
+    print(w["workspace_id"])
+'); do
+    "$LOCAL_BIN" workspace report-metadata "$workspace" \
+      --source "remote:$HOST" --token "$TOKEN=$value" --ttl-ms "$ttl" >/dev/null 2>&1
+  done
+}
+
+poll() {
+  local ttl summary
+  # Expire well after the next poll is due, so a stopped bridge goes blank
+  # instead of leaving a stale number on screen forever.
+  if [ "$INTERVAL" -gt 0 ]; then ttl=$(( INTERVAL * 3 * 1000 )); else ttl=300000; fi
+
+  if summary="$(summarise)" && [ -n "$summary" ]; then
+    report "$summary" "$ttl"
+  else
+    report "$HOST ?" "$ttl"
+  fi
+}
+
+if [ "$INTERVAL" -gt 0 ]; then
+  while :; do
+    poll
+    sleep "$INTERVAL"
+  done
+else
+  poll
+fi
