@@ -1,45 +1,36 @@
 # vim: ft=ruby
+#
+# Essentials only — things worth having on a fresh machine on day one.
+# Anything else gets installed ad hoc.
 
-brew "asdf"
-brew "ctags"
-brew "fd"
-brew "fzf"
-brew "gawk"
-brew "gcc"
-brew "gh"
-brew "git"
-brew "git-delta"
-brew "gnupg"
-brew "hadolint"
-brew "htop"
-brew "jq"
-brew "mas"
-brew "mosh"
-brew "ncdu"
-brew "nvim"
-brew "openssh"
-brew "openssl"
-brew "python"
-brew "readline"
-brew "reattach-to-user-namespace"
-brew "shellcheck"
-brew "switchaudio-osx"
-brew "the_silver_searcher"
-brew "tig"
-brew "tldr"
-brew "tmux"
-brew "tree"
-brew "vim"
-brew "vips"
-brew "watch"
-brew "wget"
+# Shell
 brew "zsh"
 brew "zsh-autosuggestions"
+brew "fzf"
+brew "mosh"
+brew "tmux"
 
+# Editors
+brew "nvim"
+brew "vim"        # bare vim, configured by vimrc
+brew "ctags"
+
+# Git
+brew "git"
+brew "gh"
+brew "tig"
+brew "gnupg"      # commit signing
+
+# Tools
+brew "the_silver_searcher"
+brew "jq"
+brew "mise"       # runtime version manager
+brew "restic"     # backups
+brew "awscli"
+brew "herdr"
+
+cask "ghostty"
 cask "raycast"
 cask "swiftbar"
+cask "tailscale-app"
 cask "transmit"
-
-mas "Lungo", id: 1263070803
-mas "Pixelmator Pro", id: 1289583905
-mas "iA Writer", id: 775737590
