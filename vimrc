@@ -1,6 +1,3 @@
-" Config for the bare vim binary — nvim is the real editor (see nvim/).
-" Also fine to scp to remote boxes.
-
 set nohidden
 set noswapfile
 set tabstop=2
