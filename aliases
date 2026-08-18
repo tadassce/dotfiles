@@ -30,6 +30,7 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias be='bundle exec'
 alias h='herdr'
+alias hr='~/.dotfiles/herdr/remote-window' # hr mini
 
 # macOS
 if [[ `uname -s` == 'Darwin' ]]; then
