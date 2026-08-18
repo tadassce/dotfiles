@@ -19,7 +19,7 @@ brew "ctags"
 brew "git"
 brew "gh"
 brew "tig"
-brew "gnupg"      # commit signing
+brew "gnupg"      # only to verify the old PGP-signed commits; signing is SSH now
 
 # Tools
 brew "the_silver_searcher"
