@@ -92,10 +92,13 @@ try:
     data = json.load(sys.stdin)
 except ValueError:
     raise SystemExit(0)
-for w in data.get("result", {}).get("workspaces", []):
-    if w.get("label") == label:
-        print(w["workspace_id"])
-        break
+# The label may carry a marker prefix, e.g. "* mini", so fall back to a
+# containment match rather than requiring the bare host name.
+spaces = data.get("result", {}).get("workspaces", [])
+match = next((w for w in spaces if w.get("label") == label), None) \
+    or next((w for w in spaces if label in (w.get("label") or "")), None)
+if match:
+    print(match["workspace_id"])
 ' "$SPACE")
   [ -n "$workspace" ] || return 1
   "$LOCAL_BIN" workspace report-metadata "$workspace" \
