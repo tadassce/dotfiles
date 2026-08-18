@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Minimal zsh config for remote boxes: scp to ~/.zshrc where the full
+# dotfiles setup is not worth installing.
+
 ##########################################################
 # History
 if [ -z $HISTFILE ]; then

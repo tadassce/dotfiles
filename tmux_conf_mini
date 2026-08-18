@@ -1,3 +1,6 @@
+# Minimal tmux config for remote boxes: scp to ~/.tmux.conf where the full
+# dotfiles setup is not worth installing.
+
 # remap prefix to Control + a
 set -g prefix C-a
 unbind C-b
