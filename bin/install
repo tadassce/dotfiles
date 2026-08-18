@@ -55,13 +55,13 @@ dots=(
 
 for dot in "${dots[@]}"
 do
-  ln -sf "$HOME/.dotfiles/$dot" "$HOME/.$dot"
+  ln -sfn "$HOME/.dotfiles/$dot" "$HOME/.$dot"
 done
 
 [ ! -L ~/.icloud ] && ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
 [ ! -L ~/.config ] && ln -s ~/.icloud/Config ~/.config
 
-ln -sf "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
+ln -sfn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
 
 # Only the config file: herdr keeps sockets, logs and session.json here too.
 mkdir -p "$HOME/.config/herdr"
@@ -73,7 +73,7 @@ ln -sf "$HOME/.dotfiles/pi/extensions/tmux-window-status.ts" "$HOME/.pi/agent/ex
 # Ghostty: config plus the custom app icon it references.
 mkdir -p "$HOME/.config/ghostty"
 ln -sf "$HOME/.dotfiles/ghostty/config" "$HOME/.config/ghostty/config"
-ln -sf "$HOME/.dotfiles/ghostty/icons" "$HOME/.config/ghostty/icons"
+ln -sfn "$HOME/.dotfiles/ghostty/icons" "$HOME/.config/ghostty/icons"
 
 # The macOS app bundle does not put the `ghostty` CLI on PATH; only shells
 # started inside Ghostty get it via shell integration.
