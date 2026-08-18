@@ -10,13 +10,8 @@ if [[ `uname -s` == 'Darwin' ]]; then
   source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-if [ $SPIN ]; then
-  spin_zshrc='/etc/zsh/zshrc.default.inc.zsh'
-  [[ -e "$spin_zshrc" ]] && source "$spin_zshrc"
-fi
-
 export PATH
-export EDITOR=vim
+export EDITOR=nvim
 
 # History
 if [ -z $HISTFILE ]; then
@@ -58,7 +53,6 @@ alias time='time -p ' # -p for POSIX output
 bindkey -M vicmd 'u' undo
 
 # load custom functions
-source ~/.functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
