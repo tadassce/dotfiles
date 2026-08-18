@@ -1,0 +1,25 @@
+# vim: ft=config
+
+# font-family = "iMWritingMono Nerd Font"
+font-size = 16
+# theme = light:Catppuccin Latte,dark:Catppuccin Mocha
+theme = light:Rose Pine Dawn,dark:Rose Pine Moon
+macos-icon = custom
+macos-custom-icon = ~/.config/ghostty/icons/catppuccin-mocha.icns
+title = " "
+
+# Defaults
+# ghostty +show-config --default --docs | vim -
+
+# Keyboard shortcuts
+# cmd+shift+, - reload config
+
+# Terminal bell behavior: macOS alert sound, Dock attention bounce, and title marker (enable notifications in system preferences for Ghostty)
+bell-features = system,attention,title
+
+# Notify when commands run for at least 3s and finish while the surface is unfocused
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = notify
+notify-on-command-finish-after = 3s
+
+keybind = super+y=copy_url_to_clipboard
