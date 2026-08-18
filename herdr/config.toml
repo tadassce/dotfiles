@@ -1,5 +1,5 @@
 # herdr — https://herdr.dev/docs/
-# Symlinked to ~/.config/herdr/config.toml by ./setup.
+# Symlinked to ~/.config/herdr/config.toml by bin/install.
 #
 # Only non-default values belong here. Everything else, annotated:
 #   herdr --default-config
