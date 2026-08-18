@@ -1,10 +1,11 @@
+-- Statusline colours follow the per-host colourscheme in user/theme.lua.
 return {
   'nvim-lualine/lualine.nvim',
   opts = {
     options = {
       always_divide_middle = true,
       icons_enabled = true,
-      theme = 'iceberg',
+      theme = require('user.theme').lualine,
       component_separators = { " ", " " },
       section_separators = { left = " ", right = " " },
     },
