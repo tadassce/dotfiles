@@ -185,12 +185,21 @@ nmap('<leader>em', ":%s/—/-/ge<cr>:%s/[’“”]/'/ge<cr>:%s/;/,/ge<cr>")
 nmap('<leader>gb', ':GBrowse<cr>')
 nmap('yog', ':GitGutterToggle<cr>')
 
--- Vimux
-nmap('gh', ':w<cr>:VimuxRunLastCommand<cr>')
-nmap('<Leader>vp', ':VimuxPromptCommand<cr>')
-nmap('<Leader>vl', ':VimuxRunLastCommand<cr>')
-nmap('<Leader>vi', ':VimuxInspectRunner<cr>')
-nmap('<Leader>vz', ':VimuxZoomRunner<cr>')
+-- herdr runner
+local herdr = require('user.herdr')
+keymap.set('n', 'gh', function() vim.cmd('write') herdr.run_last() end, { desc = "Save and re-run last command" })
+keymap.set('n', '<Leader>vp', herdr.prompt, { desc = "Prompt for a command to run" })
+keymap.set('n', '<Leader>vl', herdr.run_last, { desc = "Re-run last command" })
+keymap.set('n', '<Leader>vi', herdr.inspect, { desc = "Focus the runner pane" })
+keymap.set('n', '<Leader>vz', herdr.zoom, { desc = "Zoom the runner pane" })
+keymap.set('n', '<Leader>vq', herdr.close, { desc = "Close the runner pane" })
+
+-- Vimux. Still installed; swap these back in to go back to tmux.
+-- nmap('gh', ':w<cr>:VimuxRunLastCommand<cr>')
+-- nmap('<Leader>vp', ':VimuxPromptCommand<cr>')
+-- nmap('<Leader>vl', ':VimuxRunLastCommand<cr>')
+-- nmap('<Leader>vi', ':VimuxInspectRunner<cr>')
+-- nmap('<Leader>vz', ':VimuxZoomRunner<cr>')
 
 -- Rails I18n
 nmap('<leader>lt', ':call localorie#translate()<cr>', { silent = true })

@@ -1,0 +1,44 @@
+# herdr — https://herdr.dev/docs/
+# Symlinked to ~/.config/herdr/config.toml by ./setup.
+#
+# Only non-default values belong here. Everything else, annotated:
+#   herdr --default-config
+# Reload without restarting: herdr server reload-config  (or prefix+shift+r)
+
+onboarding = false
+
+[theme]
+auto_switch = true
+dark_name = "rose-pine"
+light_name = "rose-pine-dawn"
+
+[keys]
+prefix = "ctrl+a"
+copy_mode = "prefix+["
+
+# Second binding on each keeps ctrl held down through the whole chord.
+next_tab = ["prefix+n", "prefix+ctrl+n"]
+previous_tab = ["prefix+p", "prefix+ctrl+p"]
+
+split_vertical = ["prefix+v", "prefix+%"]
+split_horizontal = ["prefix+minus", 'prefix+"']
+
+# tmux: bind < resize-pane -L 4 / bind > resize-pane -R 4
+# herdr has no direct resize action, only modal resize_mode, so these go
+# through the CLI. HERDR_ACTIVE_PANE_ID is set for custom commands.
+[[keys.command]]
+key = "prefix+<"
+type = "shell"
+command = "herdr pane resize --pane \"$HERDR_ACTIVE_PANE_ID\" --direction left --amount 0.04"
+
+[[keys.command]]
+key = "prefix+>"
+type = "shell"
+command = "herdr pane resize --pane \"$HERDR_ACTIVE_PANE_ID\" --direction right --amount 0.04"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+prompt_new_tab_name = false
+
+[ui.toast]
+delivery = "system"
