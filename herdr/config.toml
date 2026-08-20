@@ -36,7 +36,7 @@ command = "herdr pane resize --pane \"$HERDR_ACTIVE_PANE_ID\" --direction right 
 [[keys.command]]
 key = "prefix+shift+l"
 type = "popup"
-command = "$HOME/.dotfiles/herdr/last-prompt"
+command = "$HOME/src/dotfiles/herdr/last-prompt"
 width = "80%"
 height = "80%"
 

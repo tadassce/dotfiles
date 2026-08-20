@@ -12,8 +12,10 @@ if ! command -v xcodebuild &> /dev/null; then
 fi
 
 # Set up dotfiles
-if [ ! -d ~/.dotfiles ]; then
-  git clone https://github.com/tadassce/dotfiles.git ~/.dotfiles
+dotfiles_dir="$HOME/src/dotfiles"
+if [ ! -d "$dotfiles_dir" ]; then
+  mkdir -p "$HOME/src"
+  git clone https://github.com/tadassce/dotfiles.git "$dotfiles_dir"
 fi
 
 # Install Homebrew
@@ -24,7 +26,7 @@ else
   brew analytics off
 fi
 
-brew bundle check --file ~/.dotfiles/Brewfile || brew bundle --file ~/.dotfiles/Brewfile
+brew bundle check --file "$dotfiles_dir/Brewfile" || brew bundle --file "$dotfiles_dir/Brewfile"
 
 # Runtimes (mise picks versions up per project; these are the global fallbacks)
 mise use --global ruby@latest node@latest python@latest
@@ -55,33 +57,33 @@ dots=(
 
 for dot in "${dots[@]}"
 do
-  ln -sfn "$HOME/.dotfiles/$dot" "$HOME/.$dot"
+  ln -sfn "$dotfiles_dir/$dot" "$HOME/.$dot"
 done
 
 [ ! -L ~/.icloud ] && ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/.icloud
 [ ! -L ~/.config ] && ln -s ~/.icloud/Config ~/.config
 
-ln -sfn "$HOME/.dotfiles/nvim" "$HOME/.config/nvim"
+ln -sfn "$dotfiles_dir/nvim" "$HOME/.config/nvim"
 
 # Only the config file: herdr keeps sockets, logs and session.json here too.
 mkdir -p "$HOME/.config/herdr"
-ln -sf "$HOME/.dotfiles/herdr/config.toml" "$HOME/.config/herdr/config.toml"
+ln -sf "$dotfiles_dir/herdr/config.toml" "$HOME/.config/herdr/config.toml"
 
 mkdir -p "$HOME/.pi/agent/extensions"
-ln -sf "$HOME/.dotfiles/pi/extensions/tmux-window-status.ts" "$HOME/.pi/agent/extensions/tmux-window-status.ts"
+ln -sf "$dotfiles_dir/pi/extensions/tmux-window-status.ts" "$HOME/.pi/agent/extensions/tmux-window-status.ts"
 
 # Ghostty: config plus the custom app icon it references.
 mkdir -p "$HOME/.config/ghostty"
-ln -sf "$HOME/.dotfiles/ghostty/config" "$HOME/.config/ghostty/config"
-ln -sfn "$HOME/.dotfiles/ghostty/icons" "$HOME/.config/ghostty/icons"
+ln -sf "$dotfiles_dir/ghostty/config" "$HOME/.config/ghostty/config"
+ln -sfn "$dotfiles_dir/ghostty/icons" "$HOME/.config/ghostty/icons"
 
 # Per-host Ghostty overrides: "TS-Mac-mini" -> ghostty/config.mini, the same
 # short host name the prompt and herdr/remote-window use. The link lives in
 # $HOME because ~/.config is an iCloud symlink and would sync it everywhere.
 host=$(hostname -s)
 host=$(printf '%s' "${host##*-}" | tr '[:upper:]' '[:lower:]')
-if [ -f "$HOME/.dotfiles/ghostty/config.$host" ]; then
-  ln -sfn "$HOME/.dotfiles/ghostty/config.$host" "$HOME/.ghostty_local"
+if [ -f "$dotfiles_dir/ghostty/config.$host" ]; then
+  ln -sfn "$dotfiles_dir/ghostty/config.$host" "$HOME/.ghostty_local"
 elif [ -L "$HOME/.ghostty_local" ]; then
   rm -f "$HOME/.ghostty_local"  # stale link from a previous host
 fi
@@ -113,7 +115,7 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 fi
 
 # Set some macOS defaults
-~/.dotfiles/macos-defaults
+"$dotfiles_dir/macos-defaults"
 
 # Enable key repeat in VS Code
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
