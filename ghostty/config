@@ -1,12 +1,9 @@
 # vim: ft=config
 
-# font-family = "iMWritingMono Nerd Font"
+font-family = "JetBrains Mono"
 font-size = 16
-# theme = light:Catppuccin Latte,dark:Catppuccin Mocha
-# theme = light:Ayu Light,dark:Ayu
-theme = light:Rose Pine Dawn,dark:Rose Pine Moon
+theme = light:Catppuccin Latte,dark:Catppuccin Mocha
 macos-icon = custom
-# macos-custom-icon = ~/.config/ghostty/icons/ayu-dark.icns
 macos-custom-icon = ~/.config/ghostty/icons/catppuccin-mocha.icns
 title = " "
 
