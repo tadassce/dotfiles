@@ -1,11 +1,5 @@
 # vim: ft=config
 #
-# Mac mini overrides, loaded by ghostty/config through ~/.ghostty_local.
-#
-# Nord is the mini's colour throughout: herdr/remote-window themes its remote
-# windows Nord, and the prompt and Neovim pick their own tell from the host
-# name. Only the keys that differ from the shared config belong here.
+# Mac mini overrides. Main config: ~/.config/ghostty/config
 
 theme = light:Nord Light,dark:Nord
-macos-custom-icon = ~/.config/ghostty/icons/nord.icns
-title = "Ghostty @ mini"

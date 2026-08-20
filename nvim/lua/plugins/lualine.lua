@@ -5,7 +5,9 @@ return {
     options = {
       always_divide_middle = true,
       icons_enabled = true,
-      theme = require('user.theme').lualine,
+      theme = function()
+        return require('user.theme').current().lualine
+      end,
       component_separators = { " ", " " },
       section_separators = { left = " ", right = " " },
     },

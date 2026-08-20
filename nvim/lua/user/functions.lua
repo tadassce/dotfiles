@@ -55,12 +55,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   callback = strip_trailing_whitespace
 })
 
--- Get macOS theme (dark/light)
-function _G.is_dark_mode()
-  local theme = vim.fn.system("defaults read -g AppleInterfaceStyle 2>/dev/null")
-  return theme == "Dark\n"
-end
-
 -- Convert an xterm-256 color index to RGB for 'termguicolors'.
 local function xterm_color(index)
   local base_colors = {
@@ -190,7 +184,6 @@ vim.api.nvim_create_user_command('ReloadConfig', reload_config, { desc = 'Reload
 
 -- Export functions that need to be used in other modules
 return {
-  is_dark_mode = _G.is_dark_mode,
   strip_trailing_whitespace = strip_trailing_whitespace,
   get_alternate = get_alternate,
   show_colors = show_colors,

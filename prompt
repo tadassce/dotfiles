@@ -6,8 +6,8 @@ setopt promptsubst
 # colour so it is obvious at a glance which one a terminal is on.
 host=${(L)${${HOST%%.*}##*-}}
 case $host in
-  mini) host_color=magenta ;;
-  *)    host_color=cyan    ;;
+  mini) host_color=yellow ;;
+  *)    host_color=cyan   ;;
 esac
 
 # Branch name, green when the tree is clean and magenta when it is dirty.

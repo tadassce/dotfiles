@@ -68,8 +68,8 @@ nmap('<leader>xo', ':!open <cWORD><cr>')
 
 -- Toggle dark/light background
 vim.keymap.set('n', '<leader>yob', function()
-  local bg = vim.o.background == 'dark' and 'light' or 'dark'
-  vim.o.background = bg
+  local appearance = vim.o.background == 'dark' and 'light' or 'dark'
+  require('user.theme').apply(appearance)
 end, { desc = 'Toggle background' })
 
 -- gx to open URL/file under cursor (replaces netrw's gx and vim-markdown's gx)
