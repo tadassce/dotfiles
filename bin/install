@@ -96,7 +96,7 @@ fi
 
 touch ~/.private_aliases
 touch ~/.private_profile
-touch ~/.tmux_private.conf
+touch ~/.tmux_local.conf
 
 # Set the default shell (and in Users' prefs)
 # TODO: check if $SHELL ends with /zsh
