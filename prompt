@@ -13,8 +13,9 @@ autoload -Uz add-zsh-hook
 # at the cost of one scutil call per shell start.
 host=${HOST_LABEL:-${(L)${$(scutil --get LocalHostName)##*-}}}
 case $host in
-  mini) host_color=yellow ;;
-  *)    host_color=cyan   ;;
+  mini) host_color=yellow  ;;
+  air)  host_color=blue    ;;
+  *)    host_color=magenta ;;
 esac
 
 # Branch name, green when the tree is clean and magenta when it is dirty.
