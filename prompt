@@ -1,26 +1,52 @@
 #!/bin/zsh
 
 setopt promptsubst
+autoload -Uz add-zsh-hook
 
-# Machine name: "TS-MacBook-Air.local" -> "air". Each machine gets its own
-# colour so it is obvious at a glance which one a terminal is on.
-host=${(L)${${HOST%%.*}##*-}}
+# Machine name: "mba", "mini". Each machine gets its own colour so it is
+# obvious at a glance which one a terminal is on.
+#
+# Deliberately not from $HOST: macOS adopts a hostname handed out by the
+# network when HostName is unset, so on some networks $HOST is "Mac.lan" and
+# the prompt would read "mac". Set HOST_LABEL per machine in
+# ~/.private_profile (free); LocalHostName is the fallback, "TS-MBA" -> "mba",
+# at the cost of one scutil call per shell start.
+host=${HOST_LABEL:-${(L)${$(scutil --get LocalHostName)##*-}}}
 case $host in
   mini) host_color=yellow ;;
   *)    host_color=cyan   ;;
 esac
 
 # Branch name, green when the tree is clean and magenta when it is dirty.
-git_br() {
-  local ref
-  ref=$(git symbolic-ref --short HEAD 2>/dev/null) ||
-    ref=$(git rev-parse --short HEAD 2>/dev/null) || return
-  if [[ -n $(git status --porcelain 2>/dev/null) ]]; then
-    print -n "%F{magenta}$ref%f "
-  else
-    print -n "%F{green}$ref%f "
-  fi
+#
+# One `git status` yields both the branch and the dirty flag, and precmd caches
+# the result into $git_prompt so redraws are free - the prompt is redrawn on
+# every vi mode switch, which would otherwise re-run git on each Esc.
+git_prompt=''
+_git_prompt() {
+  git_prompt=''
+
+  # Cheap pure-zsh repo check: a fork costs ~5ms, these stats cost nothing.
+  local dir=$PWD
+  until [[ -e $dir/.git ]]; do
+    [[ $dir == / ]] && return
+    dir=${dir:h}
+  done
+
+  local line ref='' oid='' color=green
+  for line in ${(f)"$(git --no-optional-locks status --porcelain=v2 --branch 2>/dev/null)"}; do
+    case $line in
+      '# branch.head '*) ref=${line#'# branch.head '} ;;
+      '# branch.oid '*)  oid=${line#'# branch.oid '}  ;;
+      '#'*)                                           ;;
+      *)                 color=magenta; break         ;; # any entry means dirty
+    esac
+  done
+
+  [[ $ref == '(detached)' ]] && ref=${oid[1,7]}
+  [[ -n $ref ]] && git_prompt="%F{$color}${ref//\%/%%}%f "
 }
+add-zsh-hook precmd _git_prompt
 
 # NORMAL indicator on the right, in the host colour, while in vi command mode.
 vim_prompt="%B%F{$host_color}[NORMAL]%f%b"
@@ -32,4 +58,4 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 # host:dir branch %   - the % turns red when the last command failed.
-PROMPT="%F{$host_color}$host%f:%F{green}%c%f \$(git_br)%(?.%F{green}.%F{red})%%%f "
+PROMPT="%F{$host_color}$host%f:%F{green}%c%f "'${git_prompt}'"%(?.%F{green}.%F{red})%%%f "
