@@ -1,3 +1,5 @@
+" -- General Settings -------------------------------------------------
+
 macmenu &File.Print key=<nop>
 
 " remove the scrollbars
@@ -9,8 +11,8 @@ set linespace=0
 
 set cc=
 
-nmap ,ve :e ~/.gvimrc<cr>
-nmap ,vv :so ~/.gvimrc<cr>
+
+" -- Appearance -------------------------------------------------------
 
 " Dark/Light mode
 nmap ,bl :set background=light<cr>
@@ -26,3 +28,18 @@ else
 endif
 
 colorscheme catppuccin
+
+
+" -- Mappings ---------------------------------------------------------
+
+nmap ,ve :e ~/.gvimrc<cr>
+nmap ,vv :so ~/.gvimrc<cr>
+
+nmap yow :set wrap!<cr>
+nmap yon :set number!<cr>
+
+nmap ]b :bn<cr>
+nmap [b :bp<cr>
+
+
+" ---------------------------------------------------------------------
