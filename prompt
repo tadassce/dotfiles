@@ -3,19 +3,14 @@
 setopt promptsubst
 autoload -Uz add-zsh-hook
 
-# Machine name: "mba", "mini". Each machine gets its own colour so it is
-# obvious at a glance which one a terminal is on.
-#
-# Deliberately not from $HOST: macOS adopts a hostname handed out by the
-# network when HostName is unset, so on some networks $HOST is "Mac.lan" and
-# the prompt would read "mac". Set HOST_LABEL per machine in
-# ~/.private_profile (free); LocalHostName is the fallback, "TS-MBA" -> "mba",
-# at the cost of one scutil call per shell start.
+# colour for the NORMAL indicator.
+# Set HOST_LABEL in ~/.private_profile; LocalHostName is the fallback.
+# Avoid $HOST, which macOS may take from the current network.
 host=${HOST_LABEL:-${(L)${$(scutil --get LocalHostName)##*-}}}
 case $host in
   mini) host_color=yellow  ;;
-  air)  host_color=blue    ;;
-  *)    host_color=magenta ;;
+  air)  host_color=magenta ;;
+  *)    host_color=blue    ;;
 esac
 
 # Branch name, green when the tree is clean and magenta when it is dirty.
@@ -58,5 +53,4 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-# host:dir branch %   - the % turns red when the last command failed.
-PROMPT="%F{$host_color}$host%f:%F{green}%c%f "'${git_prompt}'"%(?.%F{green}.%F{red})%%%f "
+PROMPT="%F{green}%c%f "'${git_prompt}'"%(?.%F{green}.%F{red})%%%f "
