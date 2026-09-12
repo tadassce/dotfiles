@@ -85,3 +85,5 @@
 	defaultBranch = main
 [include]
 	path = ~/.gitconfig_private
+[url "git@github.com:"]
+	insteadOf = https://github.com/
