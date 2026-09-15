@@ -21,4 +21,9 @@ set wildmenu
 set wildmode=list:longest,full
 set showcmd
 set splitbelow
+
 nmap <space> :
+nmap ,ve :e ~/.vimrc<cr>
+nmap ,vv :so ~/.vimrc<cr>
+nmap yow :set wrap!<cr>
+nmap yon :set number!<cr>
