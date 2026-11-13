@@ -3,7 +3,6 @@ local g = vim.g
 
 g.mapleader = ','
 
-o.clipboard = 'unnamedplus'
 o.hidden = true
 o.swapfile = false
 o.tabstop = 2
@@ -39,3 +38,17 @@ o.listchars = {
 }
 
 vim.cmd('syntax enable')
+
+g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+  },
+}
+
+o.clipboard = 'unnamedplus'
