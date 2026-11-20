@@ -51,4 +51,14 @@ g.clipboard = {
   },
 }
 
-o.clipboard = 'unnamedplus'
+-- Plain p stays local: Rex can forward OSC 52 writes without answering reads.
+o.clipboard = ''
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('user_clipboard', { clear = true }),
+  callback = function()
+    local yank = vim.v.event
+    if yank.operator == 'y' and yank.regname == '' then
+      vim.fn.setreg('+', yank.regcontents, yank.regtype)
+    end
+  end,
+})
